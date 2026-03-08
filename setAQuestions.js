@@ -962,6 +962,7 @@ export const setAQuestions = `
     </div>
 </div>
 
+
 <div class="slide" id="slide-sAaVq01" data-question-id="sAaVq01" data-type="Theory" data-set="Set A" data-difficulty="Average" data-topic="Statement of Financial Position" data-answer="B" data-points="6">
     <div class="quiz-container">
         <div class="topic-text">Topic: Statement of Financial Position</div>
@@ -989,6 +990,71 @@ export const setAQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: B) Current and Non-current</strong></p>
         <p>Under the Philippine Accounting Standards (PAS 1), an entity must present current and non-current assets, and current and non-current liabilities, as separate classifications in its statement of financial position.</p>
+        <h3>The Regulatory Framework (PAS 1 / IAS 1)</h3>
+    <p>Under international and local accounting standards (such as PAS 1 or IAS 1), an entity is generally required to present current and non-current assets, and current and non-current liabilities, as separate classifications on the face of its <strong>Statement of Financial Position</strong>. This "classified" format provides a structured overview of an entity's financial structure by grouping items according to the timing of their expected cash flows.</p>
+
+    <h3>Defining the Primary Classifications</h3>
+    <ul>
+        <li><strong>Current Assets:</strong> Resources expected to be realized, sold, or consumed within twelve months after the reporting period or within the entity's normal operating cycle (whichever is longer). Common examples include cash, accounts receivable, and inventory.</li>
+        <li><strong>Non-current Assets:</strong> Resources that are not intended for sale or consumption in the near term and provide value for longer than one year. These include long-term investments and property, plant, and equipment (PPE).</li>
+        <li><strong>Current Liabilities:</strong> Obligations expected to be settled within twelve months or the normal operating cycle. Examples include accounts payable and short-term loans.</li>
+        <li><strong>Non-current Liabilities:</strong> Debts and obligations that the entity does not expect to settle within the next year, such as mortgages or long-term bonds.</li>
+    </ul>
+
+    <h3>Significance: Liquidity and Solvency</h3>
+    <p>This distinction is critical for financial analysis. The ratio of current assets to current liabilities (the <strong>Current Ratio</strong>) allows users to assess <strong>liquidity</strong>—the company's ability to pay its short-term bills as they come due. Conversely, the classification of non-current items helps analysts evaluate <strong>solvency</strong>, or the entity's long-term financial stability and capacity to meet major future obligations.</p>
+
+    <h3>Analysis of Alternative (Incorrect) Options</h3>
+    <p>To understand why Option B is the primary standard, we must look at how the other options relate to financial reporting:</p>
+
+    <p><strong>A) Alphabetical order:</strong>
+    Assets and liabilities are listed based on <strong>liquidity</strong> (ease of conversion to cash), not by name.
+    <ul><li><em>Relationship:</em> Listing alphabetically would mix highly liquid items like Cash with illiquid items like Buildings. This would obscure the company's financial health, making it impossible to determine if the business has enough "ready cash" to cover immediate debts.</li></ul></p>
+
+    <p><strong>C) Tangible and Intangible:</strong>
+    This classification is based on <strong>physical existence</strong>.
+    <ul><li><em>Relationship:</em> While this distinction is vital for valuation and determining how an asset is consumed (depreciation for tangibles vs. amortization for intangibles), it is a <em>sub-category</em> of non-current assets. Because "Current Assets" also include tangibles (like inventory), "Tangible vs. Intangible" cannot serve as the <em>primary</em> structural divider for the entire statement.</li></ul></p>
+
+    <p><strong>D) Operating and Non-operating:</strong>
+    This classification is based on <strong>usage or purpose</strong> relative to core business activities.
+    <ul><li><em>Relationship:</em> Operating assets (like machinery) support daily revenue generation, while non-operating assets (like vacant land) do not. While useful for internal management to calculate "Net Operating Assets," it is not the standard primary classification for general-purpose external reports, as it does not address the time-based risks (liquidity) that investors and creditors prioritize.</li></ul></p>
+
+    <h3>Summary Comparison Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Classification Basis</th>
+                <th>Primary Usage</th>
+                <th>Required by Standards?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Convertibility (B)</strong></td>
+                <td><strong>Liquidity and Solvency Analysis</strong></td>
+                <td><strong>Yes (PAS 1 / IAS 1)</strong></td>
+            </tr>
+            <tr>
+                <td>Physical Form (C)</td>
+                <td>Valuation and Depreciation</td>
+                <td>Secondary classification</td>
+            </tr>
+            <tr>
+                <td>Business Purpose (D)</td>
+                <td>Operational Efficiency analysis</td>
+                <td>Supplemental info</td>
+            </tr>
+            <tr>
+                <td>Name (A)</td>
+                <td>None (clutters analysis)</td>
+                <td>No</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion</h3>
+    <p>While an entity may provide supplemental information based on physical existence or operating purpose, the <strong>current vs. non-current</strong> distinction remains the fundamental requirement for a properly prepared Statement of Financial Position. It ensures that the financial "story" being told is one of stability and realistic expectations for future cash flows.</p>
+
     </div>
 </div>
 
@@ -1019,6 +1085,92 @@ export const setAQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: C) Depreciation expense</strong></p>
         <p>Depreciation is a non-cash expense that was deducted to arrive at Net Income. Since no cash actually left the business for depreciation in the current period, it must be added back to compute the actual operating cash flow.</p>
+        <h3>The Logic of the Indirect Method</h3>
+    <p>The <strong>Cash Flow Statement</strong> tracks the actual movement of cash in and out of a business. While the Income Statement shows profitability based on <em>accrual accounting</em> (recording revenue when earned and expenses when incurred), the Cash Flow Statement focuses on <em>liquidity</em>—the actual cash available to cover daily expenses and obligations.</p>
+    
+    <p>Under the <strong>indirect method</strong>, the accountant begins with <strong>Net Income</strong> and performs a series of adjustments to "undo" the effects of accrual-basis accounting, effectively converting profit into actual cash from operations. These adjustments generally fall into three categories: non-cash expenses, non-operating items, and changes in working capital.</p>
+
+    <h3>Analysis of the Correct Answer: Depreciation</h3>
+    <p><strong>C) Depreciation expense:</strong> This is a non-cash expense that represents the gradual wear and tear of long-term assets over time. 
+    <ul>
+        <li><strong>The Adjustment:</strong> When calculating Net Income, depreciation is subtracted as an expense. However, no physical cash leaves the business for depreciation in the current period.</li>
+        <li><strong>Why it's added back:</strong> Because Net Income was reduced by an amount that did not actually consume cash, we must <strong>add it back</strong> to show the true amount of cash generated by operations.</li>
+    </ul></p>
+
+    <h3>Analysis of Alternative (Incorrect) Options</h3>
+    <p>Understanding why the other options are subtracted (or ignored) requires looking at how changes in the Balance Sheet impact cash:</p>
+
+    <p><strong>A) Increase in accounts receivable:</strong> 
+    Accounts receivable represents money owed to the company by customers.
+    <ul>
+        <li><em>Relationship:</em> An increase means the company made more sales on credit than it collected in cash during the period.</li>
+        <li><em>Why it's incorrect:</em> This "ties up" cash that would otherwise be available. Because this revenue is included in Net Income but hasn't been received as cash yet, it must be <strong>subtracted</strong> from net income to reach the operating cash flow.</li>
+    </ul></p>
+
+    <p><strong>B) Decrease in accounts payable:</strong> 
+    Accounts payable represents money the company owes to suppliers.
+    <ul>
+        <li><em>Relationship:</em> A decrease means the company used its cash to pay off outstanding debts from previous periods.</li>
+        <li><em>Why it's incorrect:</em> Paying off a liability is a cash outflow. Since this outflow is not recorded as an "expense" on the Income Statement (it's a reduction of a liability), it must be <strong>subtracted</strong> from net income to accurately reflect the cash spent.</li>
+    </ul></p>
+
+    <p><strong>D) Gain on sale of equipment:</strong> 
+    A gain occurs when an asset is sold for more than its remaining book value.
+    <ul>
+        <li><em>Relationship:</em> This gain is included in Net Income, but it is not considered "operating" cash flow; it belongs in the <strong>Investing Activities</strong> section where the total proceeds of the sale are recorded.</li>
+        <li><em>Why it's incorrect:</em> To prevent "double-counting" the cash and to isolate core business performance, the non-operating gain must be <strong>subtracted</strong> from net income in the operating section.</li>
+    </ul></p>
+
+    <h3>Adjustment Summary Table (Indirect Method)</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Item Type</th>
+                <th>Change/Event</th>
+                <th>Adjustment to Net Income</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Non-Cash Expense</strong></td>
+                <td>Depreciation / Amortization</td>
+                <td><strong>Add Back</strong></td>
+            </tr>
+            <tr>
+                <td>Current Asset</td>
+                <td>Increase (e.g., A/R, Inventory)</td>
+                <td>Subtract</td>
+            </tr>
+            <tr>
+                <td>Current Asset</td>
+                <td>Decrease (e.g., A/R, Inventory)</td>
+                <td>Add</td>
+            </tr>
+            <tr>
+                <td>Current Liability</td>
+                <td>Increase (e.g., A/P, Wages Payable)</td>
+                <td>Add</td>
+            </tr>
+            <tr>
+                <td>Current Liability</td>
+                <td>Decrease (e.g., A/P, Accrued Expenses)</td>
+                <td>Subtract</td>
+            </tr>
+            <tr>
+                <td>Non-Operating Item</td>
+                <td>Gain on Sale of Assets</td>
+                <td>Subtract</td>
+            </tr>
+            <tr>
+                <td>Non-Operating Item</td>
+                <td>Loss on Sale of Assets</td>
+                <td>Add Back</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion</h3>
+    <p>Mastering the indirect method is essential for assessing a company's <strong>Liquidity Analysis</strong>—its ability to cover short-term obligations using the cash actually generated from its core business performance. By correctly adding back non-cash items like depreciation and adjusting for changes in working capital, accountants provide a clear picture of the company's financial health and operational stability.</p>
     </div>
 </div>
 
@@ -1049,6 +1201,82 @@ export const setAQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: C) Acid-Test (Quick) Ratio</strong></p>
         <p>The Acid-Test or Quick Ratio strictly measures immediate liquidity by only using highly liquid assets (Cash, Cash Equivalents, and Receivables) divided by Current Liabilities. It specifically excludes Inventory and Prepaid Expenses.</p>
+        <h3>Understanding Liquidity Ratios</h3>
+    <p>In financial analysis, <strong>liquidity</strong> refers to a company's ability to meet its short-term financial obligations—such as paying suppliers, staff, and short-term loans—as they fall due. Liquidity ratios transform raw balance sheet data into meaningful insights about a company's immediate cash position and operational stability.</p>
+
+    <h3>The "Strict" Test: Acid-Test (Quick) Ratio</h3>
+    <p>The <strong>Acid-Test Ratio</strong> (also commonly called the <strong>Quick Ratio</strong>) is a refined and conservative measure of liquidity. While general liquidity measures look at all current assets, the Acid-Test ratio "strips out" assets that are less liquid to provide a more realistic view of a firm's ability to handle a sudden "cash crunch."</p>
+    
+    <p>The formula for the Acid-Test Ratio is:
+    $$\text{Quick Ratio} = \frac{\text{Current Assets} - \text{Inventory} - \text{Prepaid Expenses}}{\text{Current Liabilities}}$$</p>
+
+    <p><strong>Why exclude Inventory?</strong> Inventory is excluded because it is the least liquid of the current assets. For a company to turn inventory into cash, it must first find a buyer and then collect the payment. In times of financial stress or market downturns, selling inventory quickly may be impossible without a significant price discount. By removing inventory, the ratio focuses only on "quick assets"—cash, cash equivalents, and accounts receivable.</p>
+
+    <h3>Analysis of Alternative (Incorrect) Options</h3>
+    <p>Understanding why the other options are incorrect involves distinguishing between different categories of financial performance metrics:</p>
+
+    <p><strong>A) Current Ratio: The Broad Liquidity Measure</strong><br>
+    The Current Ratio is the most common liquidity measure, calculated as:
+    $$\text{Current Ratio} = \frac{\text{Current Assets}}{\text{Current Liabilities}}$$
+    <ul>
+        <li><em>Relationship:</em> It is the parent category for the Acid-Test ratio. However, it is not the <strong>strict</strong> measure requested because it includes inventory and supplies. A company could have a high Current Ratio but still be in trouble if most of its value is "tied up" in slow-moving stock.</li>
+    </ul></p>
+
+    <p><strong>B) Debt-to-Equity Ratio: The Solvency Metric</strong><br>
+    This ratio is used to evaluate a company's <strong>solvency</strong> rather than its liquidity.
+    $$\text{Debt-to-Equity} = \frac{\text{Total Liabilities}}{\text{Total Equity}}$$ [1]
+    <ul>
+        <li><em>Relationship:</em> While liquidity looks at the next few months, solvency looks at the long-term "big picture"—specifically, whether total assets can cover all long-term debts. It measures financial leverage and reliance on borrowed capital rather than immediate cash availability.</li>
+    </ul></p>
+
+    <p><strong>D) Return on Assets (ROA): The Profitability Metric</strong><br>
+    ROA is a profitability ratio that measures how efficiently a company uses its assets to generate earnings.
+    $$\text{ROA} = \frac{\text{Net Income}}{\text{Total Assets}}$$
+    <ul>
+        <li><em>Relationship:</em> ROA measures <strong>performance</strong>, not survival. A company could be highly profitable (high ROA) but still face bankruptcy if it lacks the liquidity to pay its immediate bills (low Quick Ratio).</li>
+    </ul></p>
+
+    <h3>Summary Comparison of Key Ratios</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Metric Type</th>
+                <th>Ratio Name</th>
+                <th>Conservative Level</th>
+                <th>Core Focus</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Liquidity</td>
+                <td>Current Ratio</td>
+                <td>Moderate</td>
+                <td>All short-term resources.</td>
+            </tr>
+            <tr>
+                <td><strong>Liquidity</strong></td>
+                <td><strong>Acid-Test (Quick)</strong></td>
+                <td><strong>High</strong></td>
+                <td><strong>Immediate cash availability.</strong></td>
+            </tr>
+            <tr>
+                <td>Solvency</td>
+                <td>Debt-to-Equity</td>
+                <td>N/A</td>
+                <td>Long-term financial structure.</td>
+            </tr>
+            <tr>
+                <td>Profitability</td>
+                <td>Return on Assets</td>
+                <td>N/A</td>
+                <td>Efficiency in generating profit.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion</h3>
+    <p>Analysts use the <strong>Acid-Test Ratio</strong> to ensure a company has enough "buffer" to survive unexpected costs or slow sales periods without needing to rely on future revenue or emergency financing. A ratio of $1.0$ or higher generally indicates that a business is in a strong position to meet its immediate financial commitments using only its most liquid assets.</p>
+
     </div>
 </div>
 
@@ -1079,6 +1307,72 @@ export const setAQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: B) Deducted from the bank statement balance</strong></p>
         <p>An outstanding check is a check issued and recorded by the company (already deducted from books) but not yet presented to the bank for payment. Therefore, it must be deducted from the bank balance to reconcile.</p>
+        <h3>Conceptual Overview: The Timing Difference</h3>
+    <p>A <strong>Bank Reconciliation Statement</strong> is a critical internal control tool used to ensure that a company’s internal cash records (the "books") match the records provided by the financial institution (the "bank statement"). In a perfect system, these balances would be identical, but they almost never match at the end of a month due to <strong>timing differences</strong>. Timing differences occur when a transaction is recorded in one set of records but hasn't yet appeared in the other.</p>
+
+    <h3>Defining the Outstanding Check</h3>
+    <p>An <strong>outstanding check</strong> is a check that a business has written, recorded in its own books (crediting the cash account), and delivered to a payee, but which has <strong>not yet been presented</strong> to the bank for payment. From the company's perspective, that money is already spent and gone. However, from the bank's perspective, the money is still in the account because the payee hasn't "cashed" it yet.</p>
+    
+    <p>Because the bank statement balance appears higher than the company's actual available funds, we must adjust the bank's number downward to reflect reality.</p>
+
+    <h3>Analysis of Alternative (Incorrect) Options</h3>
+    <p>Understanding why the other treatments are incorrect requires identifying whether the "error" or "delay" lives on the bank side or the book side of the equation:</p>
+
+    <p><strong>A) Added to the bank statement balance:</strong>
+    Adding a check to the bank balance would imply that an outstanding check is a <em>deposit</em> (like a "deposit in transit") rather than a <em>withdrawal</em>.
+    <ul>
+        <li><em>Relationship:</em> This is the opposite of the correct logic. Since a check represents a future decrease in the bank's cash, adding it would double the discrepancy rather than resolving it.</li>
+    </ul></p>
+
+    <p><strong>C) Added to the book balance:</strong>
+    This adjustment suggests that the company made a mistake in recording the payment and needs to "put the money back" into its internal records.
+    <ul>
+        <li><em>Relationship:</em> This is incorrect because the company <em>did</em> legitimately spend that money. Adding it back to the books would overstate the company's available cash and could lead to the business committing to funds that are no longer available, potentially resulting in bounced payments or overdrafts.</li>
+    </ul></p>
+
+    <p><strong>D) Deducted from the book balance:</strong>
+    This is a common point of confusion for students. 
+    <ul>
+        <li><em>Relationship:</em> An outstanding check has <strong>already been deducted</strong> from the books at the moment the check was written and journalized. If you were to deduct it again during the reconciliation process, you would be "double-counting" the withdrawal. We only adjust the book balance for items the company <em>didn't</em> know about yet, such as bank service fees or NSF checks.</li>
+    </ul></p>
+
+    <h3>The Reconciliation Framework</h3>
+    <p>To keep these rules clear, accountants use a two-sided adjustment framework:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Adjustment Side</th>
+                <th>Reconciling Item</th>
+                <th>Mathematical Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Bank Statement</strong></td>
+                <td>Deposits in Transit</td>
+                <td>Add ($+$)</td>
+            </tr>
+            <tr>
+                <td><strong>Bank Statement</strong></td>
+                <td><strong>Outstanding Checks</strong></td>
+                <td><strong>Subtract ($-$)</strong></td>
+            </tr>
+            <tr>
+                <td>Book Records</td>
+                <td>Interest Earned / Collections</td>
+                <td>Add ($+$)</td>
+            </tr>
+            <tr>
+                <td>Book Records</td>
+                <td>Bank Fees / NSF Checks</td>
+                <td>Subtract ($-$)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion: The Importance of Accuracy</h3>
+    <p>Correctly identifying outstanding checks ensures that a company’s <strong>Adjusted Bank Balance</strong> matches its <strong>Adjusted Book Balance</strong>. This process does more than just fix math; it acts as a safeguard against fraud and provides management with a reliable "snapshot" of actual liquidity, allowing for smarter decisions regarding investments and growth.</p>
+
     </div>
 </div>
 
@@ -1109,6 +1403,81 @@ export const setAQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: C) Percentage Tax</strong></p>
         <p>Percentage Tax is a business tax imposed on individuals or businesses that sell or lease goods, properties, or services, and whose gross annual sales or receipts do not exceed the VAT threshold.</p>
+        <h3>The VAT Registration Threshold</h3>
+    <p>In the Philippine tax system, businesses are primarily classified as either <strong>VAT-registered</strong> or <strong>Non-VAT</strong>. The determining factor for this classification is the <strong>VAT registration threshold</strong>, which is currently set at $₱3,000,000$ in annual gross sales or receipts, as updated by the <strong>TRAIN Law</strong> (Republic Act No. 10963).</p>
+    
+    <p>Entities that exceed this threshold are required to pay the $12\%$ Value-Added Tax (VAT), which is an <em>indirect tax</em> that can be passed on to customers. However, for small businesses, freelancers, and professionals whose annual earnings stay <strong>below the threshold</strong>, the Bureau of Internal Revenue (BIR) imposes a simpler <strong>Percentage Tax</strong> (also known as Other Percentage Tax).</p>
+
+    <h3>Core Analysis: Percentage Tax (The Correct Choice)</h3>
+    <p><strong>Percentage Tax</strong> is a direct business tax calculated based on a fixed percentage of the company’s <strong>gross quarterly sales or receipts</strong>.
+    <ul>
+        <li><strong>The Rate:</strong> The standard rate is $3\%$, though temporary adjustments (like the $1\%$ rate under the CREATE Law) are sometimes implemented during economic shifts.</li>
+        <li><strong>Nature:</strong> Unlike VAT, Percentage Tax is a <em>direct tax</em>, meaning it is shouldered by the taxpayer and cannot be legally passed on to the customer by adding it to the invoice.</li>
+        <li><strong>Benefit:</strong> It is significantly easier to compute than VAT because the business does not need to track "input" and "output" taxes—they simply pay a percentage of what they earned.</li>
+    </ul></p>
+
+    <h3>Analysis of Alternative (Incorrect) Options</h3>
+    <p>While the other options are valid Philippine taxes, they serve entirely different fiscal purposes and are not the primary tax for small-scale revenue entities:</p>
+
+    <p><strong>A) Income Tax:</strong>
+    Income tax is a national tax imposed on <strong>net earnings</strong> (profit) rather than gross sales.
+    <ul>
+        <li><em>Relationship:</em> Every business must pay Income Tax <em>in addition</em> to their business tax (VAT or Percentage Tax). While Percentage Tax is based on what you <strong>sold</strong>, Income Tax is based on what you <strong>kept</strong> after expenses. An entity is never exempt from Income Tax just because they are below the VAT threshold.</li>
+    </ul></p>
+
+    <p><strong>B) Excise Tax:</strong>
+    Excise tax is an "add-on" tax applied to the production, sale, or consumption of <strong>specific commodities</strong> manufactured or produced in the Philippines (e.g., alcohol, tobacco, fuel, automobiles).
+    <ul>
+        <li><em>Relationship:</em> Excise taxes are intended to raise revenue or discourage the consumption of "sin products" or luxuries. It is applied regardless of whether the business is large or small; a small tobacco shop earns low receipts, but the products themselves are still subject to excise tax before they ever reach the shelf.</li>
+    </ul></p>
+
+    <p><strong>D) Documentary Stamp Tax (DST):</strong>
+    DST is an excise-natured tax levied on <strong>documents, instruments, and papers</strong> that evidence the acceptance or transfer of an obligation, right, or property (e.g., loan agreements, deeds of sale, issuance of shares).
+    <ul>
+        <li><em>Relationship:</em> DST is triggered by the <strong>execution of a document</strong>, not by the business's total annual volume of sales. For example, a small shop pays DST on its lease agreement, but that is unrelated to whether its annual sales are above or below the $₱3,000,000$ threshold.</li>
+    </ul></p>
+
+    <h3>Comparison Summary Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Tax Type</th>
+                <th>Tax Base</th>
+                <th>Triggering Factor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Percentage Tax</strong></td>
+                <td>Gross Sales/Receipts</td>
+                <td><strong>Earnings $\le ₱3,000,000$ (Non-VAT)</strong></td>
+            </tr>
+            <tr>
+                <td>Value-Added Tax (VAT)</td>
+                <td>Gross Sales/Receipts</td>
+                <td>Earnings $> ₱3,000,000$ (Mandatory)</td>
+            </tr>
+            <tr>
+                <td>Income Tax</td>
+                <td>Net Taxable Income</td>
+                <td>Profitability / Net Earnings</td>
+            </tr>
+            <tr>
+                <td>Excise Tax</td>
+                <td>Units / Weight / Value</td>
+                <td>Specific goods (Sin, fuel, etc.)</td>
+            </tr>
+            <tr>
+                <td>Doc. Stamp Tax</td>
+                <td>Face Value of Document</td>
+                <td>Execution of specific legal papers</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion</h3>
+    <p>The <strong>Percentage Tax</strong> serves as a relief for micro, small, and medium enterprises (MSMEs) by providing a simplified tax structure. It ensures that businesses with modest revenues do not have to deal with the administrative complexity of the VAT system while still fulfilling their obligation to contribute to national revenue based on their commercial activity.</p>
+
     </div>
 </div>
 
@@ -1145,6 +1514,58 @@ export const setAQuestions = `
         <div class="book-content-question">The beginning capital of a sole proprietorship is ₱150,000. During the year, the owner made an additional investment of ₱20,000, withdrew ₱15,000 for personal use, and the business earned a net income of ₱45,000. What is the ending capital balance? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 200,000</strong></p>
         <p>Ending Capital = Beginning Capital (150,000) + Additional Investment (20,000) + Net Income (45,000) - Withdrawals (15,000). Total = ₱200,000.</p>
+        <h3>1. Analysis of Financial Elements (The "Inputs")</h3>
+    <p>To solve for Net Income in a merchandising context, we must first understand the specific roles of the three figures provided in the problem. In this case, <strong>all three factors are essential parts of the solution</strong> because they represent the distinct layers of profitability.</p>
+
+    <ul>
+        <li><strong>Net Sales (₱250,000):</strong> This is the <strong>primary revenue source</strong>. It represents the total amount received from selling merchandise after deducting sales returns, allowances, and discounts. It serves as the starting point (top line) of the income statement.</li>
+        <li><strong>Cost of Goods Sold (COGS) (₱140,000):</strong> This is the <strong>direct cost</strong> associated with the inventory that was actually sold during the period.[1] For a merchandiser, this is typically the most significant expense. It is a "part of the solution" because it must be matched against Net Sales to determine the core markup of the products.</li>
+        <li><strong>Operating Expenses (₱60,000):</strong> These are the <strong>indirect costs</strong> required to run the daily business activities, such as salaries, rent, utilities, and marketing.[2, 3] Unlike COGS, these are not tied to a specific item sold but are necessary for the business to exist. They are the final deduction needed to reach the "bottom line" (Net Income).</li>
+    </ul>
+
+    <h3>2. The Multi-Step Logic: Gross Profit vs. Net Income</h3>
+    <p>A "Merchandising Business" typically uses a <strong>Multi-Step Income Statement</strong>. This format is preferred over a single-step version because it highlights <strong>Gross Profit</strong>—a critical metric that shows whether the company is selling its inventory for significantly more than its purchase cost.[1, 4] If Gross Profit is too low, the business will fail even if its operating expenses are well-managed.</p>
+
+    <p>The logical flow is:
+    <ol>
+        <li>Determine the <strong>Trading Result</strong> (Gross Profit).</li>
+        <li>Determine the <strong>Operating Result</strong> (Net Income).</li>
+    </ol></p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We apply the formula for the Statement of Comprehensive Income in two distinct mathematical stages:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Calculate <strong>Gross Profit</strong></td>
+                <td>$Net Sales - COGS$ <br> $₱250,000 - ₱140,000$</td>
+                <td><strong>₱110,000</strong></td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Calculate <strong>Net Income</strong></td>
+                <td>$Gross Profit - Operating Expenses$ <br> $₱110,000 - ₱60,000$</td>
+                <td><strong>₱50,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Why No Factors were Excluded</h3>
+    <p>In some advanced problems, you might be given "Other Comprehensive Income" items (like unrealized gains on investments) or "Non-operating items" (like interest expense).[2, 5] In this specific problem, those were not provided. Because the goal was to find the final "Net Income," we utilized the entire set of data. Had the problem provided <strong>"Ending Inventory"</strong> as an extra amount, it would have been <strong>excluded</strong> from the final subtraction because Ending Inventory is already factored into the calculation of COGS (it represents what was <em>not</em> sold).</p>
+
+    <h3>Conclusion: The "Bottom Line" Significance</h3>
+    <p>The resulting <strong>₱50,000 Net Income</strong> represents the final "earnings" of the business for the period. This amount will eventually be transferred to <strong>Retained Earnings</strong> in the Statement of Changes in Equity, effectively increasing the owner's stake in the business. By following this multi-step process, stakeholders can see that for every ₱1.00 of sales, the company keeps ₱0.44 as Gross Profit ($110,000/250,000$) but only ₱0.20 as final Net Income ($50,000/250,000$).</p>
+
     </div>
 </div>
 
@@ -1163,6 +1584,67 @@ export const setAQuestions = `
         <div class="book-content-question">A business has a Net Income of ₱60,000 and Average Total Assets of ₱600,000. What is the Return on Assets (ROA) percentage? (Enter the percentage number only, e.g., if 15%, enter 15)</div>
         <p class="correct-line"><strong>Correct Answer: 10</strong></p>
         <p>Return on Assets (ROA) = Net Income / Average Total Assets. (60,000 / 600,000 = 0.10). Multiply by 100 to get the percentage format: 10%.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>In financial ratio analysis, identifying the specific "inputs" from the financial statements is the first step toward a correct calculation. In this problem, both given numerical values are <strong>essential components</strong> of the solution.</p>
+
+    <ul>
+        <li><strong>Net Income (₱60,000):</strong> This is a <strong>core part</strong> of the solution. Found at the "bottom line" of the Statement of Comprehensive Income, it represents the final profit after all revenues, expenses, and taxes have been accounted for.[1, 2] It serves as the "Return" in the ROA calculation.</li>
+        <li><strong>Average Total Assets (₱600,000):</strong> This is a <strong>core part</strong> of the solution. Assets represent the total economic resources (e.g., cash, equipment, inventory) controlled by the firm to generate income. 
+            <ul>
+                <li><em>Why "Average"?</em> Because Net Income is earned over a <strong>period of time</strong> (a flow), it must be compared to the assets held throughout that same period. Using the average of beginning and ending assets prevents a skewed result that might occur if a large asset was purchased or sold on the very last day of the year.</li>
+            </ul>
+        </li>
+        <li><strong>The Target: ROA Percentage:</strong> This is a <strong>profitability ratio</strong> that measures how efficiently management uses its assets to generate earnings. It essentially answers: "For every ₱1 of assets we own, how many centavos of profit did we make?"</li>
+    </ul>
+
+    <h3>2. The Logic: The Efficiency Framework</h3>
+    <p>The <strong>Return on Assets (ROA)</strong> is an indicator of the <strong>utilization efficiency</strong> of a company's resource base. Unlike Net Profit Margin (which compares profit to sales), ROA tells stakeholders how well the company is "putting its tools to work." A higher ROA indicates a more "asset-light" or highly efficient business, while a lower ROA suggests the company may have excessive "idle" assets or high non-operating expenses.</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>The solution requires applying the standard profitability formula and converting the decimal result into the requested format:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>State the ROA formula</td>
+                <td>$ROA = \frac{\text{Net Income}}{\text{Average Total Assets}}$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Substitute the given values</td>
+                <td>$\frac{₱60,000}{₱600,000}$</td>
+                <td>$0.10$</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Convert to percentage</td>
+                <td>$0.10 \times 100$</td>
+                <td>$10\%$</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Potential Errors (Why Alternative Answers are Incorrect)</h3>
+    <p>Understanding where calculations often go wrong helps in verifying the 10% result:</p>
+    <ul>
+        <li><strong>Decimal Error (0.1):</strong> A student might stop at the decimal stage. While mathematically identical to 10%, the problem specifically asks for the "percentage number only," making 0.1 technically incorrect in the context of the input field.</li>
+        <li><strong>Inverse Error (1000):</strong> This occurs if a student divides Assets by Income ($\frac{600,000}{60,000} = 10$). This would incorrectly represent the "Asset-to-Income" ratio, which is not a standard measure of return.</li>
+        <li><strong>Multiplication Error (3.6B):</strong> Multiplying the two values ($60,000 \times 600,000$) yields a nonsensical number that ignores the "rate of return" logic fundamental to finance.</li>
+    </ul>
+
+    <h3>Conclusion: Significance of the 10% ROA</h3>
+    <p>A <strong>10% ROA</strong> means that for every peso invested in the company's assets, the business generated 10 centavos of profit. For management, this provides a benchmark for future performance and capital allocation decisions. For investors, this ratio allows for a "level-playing field" comparison between companies of different sizes; a large company and a small company can both be evaluated on their ability to generate a 10% return on whatever resources they have available.</p>
+
     </div>
 </div>
 
@@ -1181,6 +1663,58 @@ export const setAQuestions = `
         <div class="book-content-question">The cash balance per bank statement is ₱85,000. There is a deposit in transit of ₱15,000 and outstanding checks totaling ₱8,000. What is the adjusted cash balance? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 92,000</strong></p>
         <p>Adjusted Bank Balance = Unadjusted Bank Balance (85,000) + Deposits in Transit (15,000) - Outstanding Checks (8,000) = ₱92,000.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>To determine the "Adjusted Cash Balance," we must identify which items have already been recorded by the business but are missing from the bank's records due to timing differences. In this problem, <strong>all three numerical factors are essential components</strong> of the calculation:</p>
+
+    <ul>
+        <li><strong>Cash Balance per Bank Statement (₱85,000):</strong> This is the <strong>starting point</strong> of the solution. It represents the amount of cash the bank believes the company has at the end of the reporting period. It is unadjusted because it does not yet account for transactions currently "in the mail" or "in limbo."</li>
+        <li><strong>Deposit in Transit (₱15,000):</strong> This is a <strong>core part</strong> of the solution. It refers to cash receipts that the company has already recorded and deposited, but which the bank has not yet processed. Since this money is already in the bank's possession (or will be shortly), it must be <strong>added</strong> to the bank balance.</li>
+        <li><strong>Outstanding Checks (₱8,000):</strong> This is a <strong>core part</strong> of the solution. These are checks written and recorded by the business but not yet presented to the bank for payment. From the company's perspective, this money is already spent, so it must be <strong>deducted</strong> from the bank balance to show the true available cash.</li>
+    </ul>
+
+    <h3>2. The Logic: Adjusted Bank vs. Adjusted Book Balance</h3>
+    <p>The goal of a bank reconciliation is to reach the <strong>True Cash Balance</strong>. A complete reconciliation has two sides: the bank side and the book side. In this specific problem, we are only given bank-side information. Because the adjusted bank balance <strong>must equal</strong> the adjusted book balance in a correct reconciliation, solving the bank side effectively gives us the final answer for the entire company.</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We apply the standard bank-side reconciliation formula to arrive at the final result:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Identify Unadjusted Balance</td>
+                <td>₱85,000</td>
+                <td>₱85,000</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Add Deposits in Transit</td>
+                <td>$85,000 + 15,000$</td>
+                <td>₱100,000</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Deduct Outstanding Checks</td>
+                <td>$100,000 - 8,000$</td>
+                <td><strong>₱92,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Why No Factors were Excluded</h3>
+    <p>In this problem, no information was provided regarding "Book Side" items, such as bank service charges, NSF checks, or interest earned. If these had been provided <em>alongside</em> the bank balance, they would have been <strong>excluded</strong> from this specific calculation. Why? Because book-side items adjust the company's internal records, not the bank statement balance. Since we started with the bank's figure, we only apply adjustments that the bank is unaware of.</p>
+
+    <h3>Conclusion: The Importance of the Adjusted Balance</h3>
+    <p>The resulting <strong>₱92,000 Adjusted Cash Balance</strong> represents the actual amount of cash available for the business to use. If the company were to ignore these adjustments and rely solely on the ₱85,000 shown on the statement, they would be understating their wealth. Conversely, if they didn't account for the ₱8,000 in outstanding checks, they might accidentally overspend and trigger <strong>non-sufficient funds (NSF)</strong> fees or overdrafts.</p>
+
     </div>
 </div>
 
@@ -1199,6 +1733,59 @@ export const setAQuestions = `
         <div class="book-content-question">A company generated ₱120,000 from operating activities, spent ₱50,000 on investing activities, and received ₱30,000 from financing activities. If the beginning cash balance was ₱25,000, what is the ending cash balance? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 125,000</strong></p>
         <p>Net Increase in Cash = Operating Cash (120,000) - Investing Cash outflow (50,000) + Financing Cash inflow (30,000) = 100,000. Ending Cash = Net Increase (100,000) + Beginning Cash (25,000) = ₱125,000.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>A Cash Flow Statement provides a clear picture of an entity's liquidity by tracking how cash is generated and spent across three distinct business activities. In this problem, <strong>all four numerical factors are essential</strong> to finding the final ending balance:</p>
+
+    <ul>
+        <li><strong>Operating Activities (₱120,000 Inflow):</strong> This represents cash generated from core business operations (e.g., selling goods or services). It is a <strong>positive inflow</strong> and a primary component of the total cash change.</li>
+        <li><strong>Investing Activities (₱50,000 Outflow):</strong> This represents cash <em>spent</em> on long-term assets, such as purchasing property, plant, or equipment. Because the problem states the company "spent" this amount, it must be treated as a <strong>negative outflow</strong> in the calculation.</li>
+        <li><strong>Financing Activities (₱30,000 Inflow):</strong> This represents cash <em>received</em> from external sources to fund operations, such as issuing new stock or taking out a bank loan. This is a <strong>positive inflow</strong> that contributes to the total liquidity.</li>
+        <li><strong>Beginning Cash Balance (₱25,000):</strong> This is the <strong>starting foundation</strong> for the period. It represents the cash on hand at the end of the <em>previous</em> period, which must be added to the current period's net change to find the final result.</li>
+    </ul>
+
+    <h3>2. The Logic: Total Net Change in Cash</h3>
+    <p>The goal of the statement is to show the <strong>Net Change in Cash</strong>, which is the sum of the results from the three activity sections.
+    $$Net Change = Operating Cash Flow + Investing Cash Flow + Financing Cash Flow$$
+    
+    Once the net change is determined, it is added to the beginning balance to calculate the "Ending Cash Balance," which must match the cash amount reported on the company's year-end Balance Sheet.</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Determine <strong>Net Change in Cash</strong></td>
+                <td>$₱120,000 + (-₱50,000) + ₱30,000$</td>
+                <td><strong>₱100,000 (Increase)</strong></td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Identify <strong>Beginning Balance</strong></td>
+                <td>Given in the problem</td>
+                <td>₱25,000</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Calculate <strong>Ending Cash Balance</strong></td>
+                <td>$Net Change + Beginning Balance$ <br> $₱100,000 + ₱25,000$</td>
+                <td><strong>₱125,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Why No Factors were Excluded</h3>
+    <p>In this specific case, every amount provided represented an actual cash movement or a required starting/ending point. However, in more complex scenarios, "non-cash transactions" might be mentioned to test your understanding. For example, if the problem had mentioned <strong>"₱10,000 Depreciation Expense"</strong> or <strong>"₱40,000 Stock issued in exchange for Land,"</strong> these would have been <strong>excluded</strong> from the mathematical calculation of the cash balance because no physical money changed hands. We only include items that impact the actual "checkbook" of the business.</p>
+
+    <h3>Conclusion: Significance of the Results</h3>
+    <p>The company ended the period with <strong>₱125,000</strong>. Analysis of this result shows a healthy trend: the core business (Operating Activities) generated ₱120,000, which was more than enough to cover the company's infrastructure growth (₱50,000 Investing) and still allow the company to build up its cash reserves. Regularly reviewing these totals helps management plan future investments and ensure they can meet their financial obligations without excessive borrowing.</p>
     </div>
 </div>
 
