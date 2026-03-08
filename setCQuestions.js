@@ -299,4 +299,462 @@ export const setBQuestions = `
     </div>
 </div>
 
+
+<div class="slide" id="slide-sCaVq01" data-question-id="sCaVq01" data-type="Theory" data-set="Set C" data-difficulty="Average" data-topic="Statement of Financial Position" data-answer="C" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Statement of Financial Position</div>
+        <div class="question-text">Which of the following is an example of a non-current liability?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="mcq-option" onclick="selectOption('sCaVq01', 'A')">A) Accounts Payable</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq01', 'B')">B) Salaries Payable</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq01', 'C')">C) Bonds Payable (due in 5 years)</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq01', 'D')">D) Unearned Revenue (due in 6 months)</li>
+        </ul>
+        <input type="hidden" id="input-sCaVq01" value="">
+        <button class="submit-btn" id="submit-sCaVq01" onclick="submitAnswer('sCaVq01')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq01" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq01"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Statement of Financial Position</h2>
+         <div class="book-content-question">Which of the following is an example of a non-current liability?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="book-mcq-option" onclick="selectOption('sCaVq01', 'A')">A) Accounts Payable</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq01', 'B')">B) Salaries Payable</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq01', 'C')">C) Bonds Payable (due in 5 years)</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq01', 'D')">D) Unearned Revenue (due in 6 months)</li>
+        </ul>
+        <p class="correct-line"><strong>Correct Answer: C</strong></p>
+        <p>Non-current liabilities are obligations that are not expected to be settled within one year or the normal operating cycle. Bonds payable due in 5 years clearly fall under this classification, while the others are current liabilities.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq02" data-question-id="sCaVq02" data-type="Theory" data-set="Set C" data-difficulty="Average" data-topic="Statement of Comprehensive Income" data-answer="B" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Statement of Comprehensive Income</div>
+        <div class="question-text">In a service business using a single-step income statement, how is net income computed?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="mcq-option" onclick="selectOption('sCaVq02', 'A')">A) Gross Profit minus Operating Expenses</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq02', 'B')">B) Total Revenues minus Total Expenses</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq02', 'C')">C) Net Sales minus Cost of Goods Sold</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq02', 'D')">D) Operating Income minus Taxes</li>
+        </ul>
+        <input type="hidden" id="input-sCaVq02" value="">
+        <button class="submit-btn" id="submit-sCaVq02" onclick="submitAnswer('sCaVq02')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq02" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq02"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Statement of Comprehensive Income</h2>
+        <div class="book-content-question">In a service business using a single-step income statement, how is net income computed?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="book-mcq-option" onclick="selectOption('sCaVq02', 'A')">A) Gross Profit minus Operating Expenses</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq02', 'B')">B) Total Revenues minus Total Expenses</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq02', 'C')">C) Net Sales minus Cost of Goods Sold</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq02', 'D')">D) Operating Income minus Taxes</li>
+        </ul>
+        <p class="correct-line"><strong>Correct Answer: B</strong></p>
+        <p>In a single-step income statement format, all revenues are grouped together, and all expenses are grouped together. Net income is determined in one step by subtracting Total Expenses from Total Revenues.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq03" data-question-id="sCaVq03" data-type="Theory" data-set="Set C" data-difficulty="Average" data-topic="Bank Reconciliation Statement" data-answer="C" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Bank Reconciliation Statement</div>
+        <div class="question-text">A credit memo issued by the bank (such as interest earned on a deposit) should be treated how on the bank reconciliation?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="mcq-option" onclick="selectOption('sCaVq03', 'A')">A) Added to the bank statement balance</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq03', 'B')">B) Deducted from the bank statement balance</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq03', 'C')">C) Added to the book balance</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq03', 'D')">D) Deducted from the book balance</li>
+        </ul>
+        <input type="hidden" id="input-sCaVq03" value="">
+        <button class="submit-btn" id="submit-sCaVq03" onclick="submitAnswer('sCaVq03')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq03" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq03"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Bank Reconciliation Statement</h2>
+        <div class="book-content-question">A credit memo issued by the bank (such as interest earned on a deposit) should be treated how on the bank reconciliation?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="book-mcq-option" onclick="selectOption('sCaVq03', 'A')">A) Added to the bank statement balance</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq03', 'B')">B) Deducted from the bank statement balance</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq03', 'C')">C) Added to the book balance</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq03', 'D')">D) Deducted from the book balance</li>
+        </ul>
+        <p class="correct-line"><strong>Correct Answer: C</strong></p>
+        <p>A credit memo represents an increase in the depositor's bank account (like interest earned or notes collected by the bank). Since the bank has already added it, the company must add it to its book balance to reconcile.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq04" data-question-id="sCaVq04" data-type="Theory" data-set="Set C" data-difficulty="Average" data-topic="Financial Statement Analysis" data-answer="D" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Financial Statement Analysis</div>
+        <div class="question-text">In vertical analysis of a Statement of Comprehensive Income, what is typically used as the base amount (100%)?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="mcq-option" onclick="selectOption('sCaVq04', 'A')">A) Gross Profit</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq04', 'B')">B) Total Assets</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq04', 'C')">C) Net Income</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq04', 'D')">D) Net Sales</li>
+        </ul>
+        <input type="hidden" id="input-sCaVq04" value="">
+        <button class="submit-btn" id="submit-sCaVq04" onclick="submitAnswer('sCaVq04')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq04" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq04"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Financial Statement Analysis</h2>
+        <div class="book-content-question">In vertical analysis of a Statement of Comprehensive Income, what is typically used as the base amount (100%)?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="book-mcq-option" onclick="selectOption('sCaVq04', 'A')">A) Gross Profit</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq04', 'B')">B) Total Assets</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq04', 'C')">C) Net Income</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq04', 'D')">D) Net Sales</li>
+        </ul>
+        <p class="correct-line"><strong>Correct Answer: D</strong></p>
+        <p>In vertical analysis (common-size financial statements), each line item on the income statement is expressed as a percentage of Net Sales. For the balance sheet, the base is Total Assets.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq05" data-question-id="sCaVq05" data-type="Theory" data-set="Set C" data-difficulty="Average" data-topic="Income and Business Taxation" data-answer="B" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Income and Business Taxation</div>
+        <div class="question-text">Under the Philippine tax system (post-TRAIN law), what is the basic frequency of filing the Value-Added Tax (VAT) return using BIR Form 2550Q?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="mcq-option" onclick="selectOption('sCaVq05', 'A')">A) Monthly</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq05', 'B')">B) Quarterly</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq05', 'C')">C) Annually</li>
+            <li class="mcq-option" onclick="selectOption('sCaVq05', 'D')">D) Semi-annually</li>
+        </ul>
+        <input type="hidden" id="input-sCaVq05" value="">
+        <button class="submit-btn" id="submit-sCaVq05" onclick="submitAnswer('sCaVq05')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq05" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq05"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Income and Business Taxation</h2>
+        <div class="book-content-question">Under the Philippine tax system (post-TRAIN law), what is the basic frequency of filing the Value-Added Tax (VAT) return using BIR Form 2550Q?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="book-mcq-option" onclick="selectOption('sCaVq05', 'A')">A) Monthly</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq05', 'B')">B) Quarterly</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq05', 'C')">C) Annually</li>
+            <li class="book-mcq-option" onclick="selectOption('sCaVq05', 'D')">D) Semi-annually</li>
+        </ul>
+        <p class="correct-line"><strong>Correct Answer: B</strong></p>
+        <p>Under the updated tax laws (TRAIN Law provisions taking full effect), VAT-registered taxpayers are required to file their VAT returns on a quarterly basis using BIR Form 2550Q.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq06" data-question-id="sCaVq06" data-type="Problem Solving" data-set="Set C" data-difficulty="Average" data-topic="Statement of Changes in Equity" data-answer="290000" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Statement of Changes in Equity</div>
+        <div class="question-text">The owner's equity at the beginning of the year is ₱250,000. During the year, total revenues were ₱180,000, total expenses were ₱110,000, and the owner withdrew ₱30,000. What is the ending owner's equity? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCaVq06" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCaVq06" onclick="submitAnswer('sCaVq06')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq06" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq06"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Statement of Changes in Equity</h2>
+        <div class="book-content-question">The owner's equity at the beginning of the year is ₱250,000. During the year, total revenues were ₱180,000, total expenses were ₱110,000, and the owner withdrew ₱30,000. What is the ending owner's equity? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 290,000</strong></p>
+        <p>First, compute Net Income: 180,000 (Rev) - 110,000 (Exp) = 70,000. Ending Equity = Beginning Equity (250,000) + Net Income (70,000) - Withdrawals (30,000) = ₱290,000.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq07" data-question-id="sCaVq07" data-type="Problem Solving" data-set="Set C" data-difficulty="Average" data-topic="Statement of Financial Position" data-answer="180000" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Statement of Financial Position</div>
+        <div class="question-text">A company has Cash of ₱80,000, Accounts Receivable of ₱40,000, Inventory of ₱60,000, and Equipment of ₱150,000. Its Current Liabilities are ₱70,000. What is the total amount of Current Assets? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCaVq07" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCaVq07" onclick="submitAnswer('sCaVq07')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq07" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq07"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Statement of Financial Position</h2>
+        <div class="book-content-question">A company has Cash of ₱80,000, Accounts Receivable of ₱40,000, Inventory of ₱60,000, and Equipment of ₱150,000. Its Current Liabilities are ₱70,000. What is the total amount of Current Assets? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 180,000</strong></p>
+        <p>Current Assets include Cash, Accounts Receivable, and Inventory. 80,000 + 40,000 + 60,000 = ₱180,000. Equipment is a non-current asset and is excluded from this calculation.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq08" data-question-id="sCaVq08" data-type="Problem Solving" data-set="Set C" data-difficulty="Average" data-topic="Financial Statement Analysis" data-answer="60" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Financial Statement Analysis</div>
+        <div class="question-text">A company has Net Sales of ₱500,000 and a Gross Profit of ₱200,000. What is the Cost of Goods Sold ratio? (Enter the percentage number only, e.g., if 40%, enter 40)</div>
+        <input type="number" class="input-field" id="input-sCaVq08" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCaVq08" onclick="submitAnswer('sCaVq08')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq08" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq08"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Financial Statement Analysis</h2>
+        <div class="book-content-question">A company has Net Sales of ₱500,000 and a Gross Profit of ₱200,000. What is the Cost of Goods Sold ratio? (Enter the percentage number only, e.g., if 40%, enter 40)</div>
+        <p class="correct-line"><strong>Correct Answer: 60</strong></p>
+        <p>First, find Cost of Goods Sold: 500,000 (Sales) - 200,000 (Gross Profit) = 300,000 (COGS). The COGS ratio is COGS / Net Sales. 300,000 / 500,000 = 0.60 or 60%.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq09" data-question-id="sCaVq09" data-type="Problem Solving" data-set="Set C" data-difficulty="Average" data-topic="Bank Reconciliation Statement" data-answer="130000" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Bank Reconciliation Statement</div>
+        <div class="question-text">The unadjusted bank balance is ₱120,000. There is a deposit in transit of ₱25,000, outstanding checks of ₱15,000, and a bank service charge of ₱2,000 not yet recorded in the books. What is the adjusted bank balance? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCaVq09" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCaVq09" onclick="submitAnswer('sCaVq09')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq09" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq09"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Bank Reconciliation Statement</h2>
+        <div class="book-content-question">The unadjusted bank balance is ₱120,000. There is a deposit in transit of ₱25,000, outstanding checks of ₱15,000, and a bank service charge of ₱2,000 not yet recorded in the books. What is the adjusted bank balance? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 130,000</strong></p>
+        <p>Adjusted Bank Balance = Unadjusted Bank Balance (120,000) + Deposits in Transit (25,000) - Outstanding Checks (15,000) = ₱130,000. Note: The bank service charge is used to adjust the *book* balance, not the bank balance.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCaVq10" data-question-id="sCaVq10" data-type="Problem Solving" data-set="Set C" data-difficulty="Average" data-topic="Cash Flow Statement" data-answer="145000" data-points="6">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Cash Flow Statement</div>
+        <div class="question-text">A company has a Net Income of ₱150,000. Accounts Receivable decreased by ₱20,000, Inventory increased by ₱35,000, and Accounts Payable increased by ₱10,000. Using the indirect method, what is the net cash provided by operating activities? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCaVq10" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCaVq10" onclick="submitAnswer('sCaVq10')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCaVq10" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCaVq10"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Cash Flow Statement</h2>
+        <div class="book-content-question">A company has a Net Income of ₱150,000. Accounts Receivable decreased by ₱20,000, Inventory increased by ₱35,000, and Accounts Payable increased by ₱10,000. Using the indirect method, what is the net cash provided by operating activities? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 145,000</strong></p>
+        <p>Net Cash from Operating Activities = Net Income (150,000) + Decrease in AR (20,000, cash collected) - Increase in Inventory (35,000, cash spent) + Increase in AP (10,000, cash saved) = ₱145,000.</p>
+    </div>
+</div>
+
+
+<div class="slide" id="slide-sCdIq01" data-question-id="sCdIq01" data-type="Theory" data-set="Set C" data-difficulty="Difficult" data-topic="Financial Statement Analysis" data-answer="B" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Financial Statement Analysis</div>
+        <div class="question-text">Which of the following ratios is the most appropriate indicator of a firm's long-term debt-paying ability and its capacity to meet fixed interest obligations?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="mcq-option" onclick="selectOption('sCdIq01', 'A')">A) Current Ratio</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq01', 'B')">B) Times Interest Earned Ratio</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq01', 'C')">C) Inventory Turnover</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq01', 'D')">D) Gross Profit Margin</li>
+        </ul>
+        <input type="hidden" id="input-sCdIq01" value="">
+        <button class="submit-btn" id="submit-sCdIq01" onclick="submitAnswer('sCdIq01')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq01" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq01"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Financial Statement Analysis</h2>
+        <div class="book-content-question">Which of the following ratios is the most appropriate indicator of a firm's long-term debt-paying ability and its capacity to meet fixed interest obligations?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="book-mcq-option" onclick="selectOption('sCdIq01', 'A')">A) Current Ratio</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq01', 'B')">B) Times Interest Earned Ratio</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq01', 'C')">C) Inventory Turnover</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq01', 'D')">D) Gross Profit Margin</li>
+        </ul>
+        <p class="correct-line"><strong>Correct Answer: B</strong></p>
+        <p>The Times Interest Earned (TIE) ratio measures a company's ability to meet its debt obligations based on its current income. It is calculated as Earnings Before Interest and Taxes (EBIT) divided by Interest Expense, directly assessing solvency and capacity to cover fixed interest charges.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq02" data-question-id="sCdIq02" data-type="Theory" data-set="Set C" data-difficulty="Difficult" data-topic="Bank Reconciliation Statement" data-answer="A" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Bank Reconciliation Statement</div>
+        <div class="question-text">In a comprehensive two-date (proof of cash) bank reconciliation statement, what is the effect of a "deposit in transit" at the end of the current month on the "receipts" column of the bank?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="mcq-option" onclick="selectOption('sCdIq02', 'A')">A) It is added to the bank receipts</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq02', 'B')">B) It is deducted from the bank receipts</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq02', 'C')">C) It is added to the book receipts</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq02', 'D')">D) It is deducted from the book receipts</li>
+        </ul>
+        <input type="hidden" id="input-sCdIq02" value="">
+        <button class="submit-btn" id="submit-sCdIq02" onclick="submitAnswer('sCdIq02')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq02" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq02"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Bank Reconciliation Statement</h2>
+        <div class="book-content-question">In a comprehensive two-date (proof of cash) bank reconciliation statement, what is the effect of a "deposit in transit" at the end of the current month on the "receipts" column of the bank?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="book-mcq-option" onclick="selectOption('sCdIq02', 'A')">A) It is added to the bank receipts</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq02', 'B')">B) It is deducted from the bank receipts</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq02', 'C')">C) It is added to the book receipts</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq02', 'D')">D) It is deducted from the book receipts</li>
+        </ul>
+        <p class="correct-line"><strong>Correct Answer: A</strong></p>
+        <p>In a proof of cash, a deposit in transit at the end of the current month represents cash received by the company during the month but not yet recorded by the bank. To reconcile the bank's receipts to the true total receipts for the period, it must be added to the bank receipts column.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq03" data-question-id="sCdIq03" data-type="Theory" data-set="Set C" data-difficulty="Difficult" data-topic="Income and Business Taxation" data-answer="B" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Income and Business Taxation</div>
+        <div class="question-text">Under the Philippine National Internal Revenue Code, which of the following is considered passive income subject to a final withholding tax of 20% for a domestic corporation?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="mcq-option" onclick="selectOption('sCdIq03', 'A')">A) Dividend income received from another domestic corporation</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq03', 'B')">B) Interest income from a peso bank deposit</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq03', 'C')">C) Capital gain from the sale of real property</li>
+            <li class="mcq-option" onclick="selectOption('sCdIq03', 'D')">D) Income from general business operations</li>
+        </ul>
+        <input type="hidden" id="input-sCdIq03" value="">
+        <button class="submit-btn" id="submit-sCdIq03" onclick="submitAnswer('sCdIq03')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq03" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq03"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Income and Business Taxation</h2>
+        <div class="book-content-question">Under the Philippine National Internal Revenue Code, which of the following is considered passive income subject to a final withholding tax of 20% for a domestic corporation?</div>
+        <ul style="list-style: none; padding: 0;">
+            <li class="book-mcq-option" onclick="selectOption('sCdIq03', 'A')">A) Dividend income received from another domestic corporation</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq03', 'B')">B) Interest income from a peso bank deposit</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq03', 'C')">C) Capital gain from the sale of real property</li>
+            <li class="book-mcq-option" onclick="selectOption('sCdIq03', 'D')">D) Income from general business operations</li>
+        </ul>
+        <p class="correct-line"><strong>Correct Answer: B</strong></p>
+        <p>Interest income from a regular Philippine peso bank deposit earned by a domestic corporation is subjected to a 20% final withholding tax. Dividend income from another domestic corporation is tax-exempt for domestic corporations.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq04" data-question-id="sCdIq04" data-type="Problem Solving" data-set="Set C" data-difficulty="Difficult" data-topic="Statement of Financial Position" data-answer="28000" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Statement of Financial Position</div>
+        <div class="question-text">The allowance for doubtful accounts has a beginning credit balance of ₱15,000. During the year, the company recorded bad debt expense of ₱25,000 and wrote off uncollectible accounts amounting to ₱12,000. What is the ending credit balance of the allowance for doubtful accounts? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCdIq04" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCdIq04" onclick="submitAnswer('sCdIq04')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq04" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq04"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Statement of Financial Position</h2>
+        <div class="book-content-question">The allowance for doubtful accounts has a beginning credit balance of ₱15,000. During the year, the company recorded bad debt expense of ₱25,000 and wrote off uncollectible accounts amounting to ₱12,000. What is the ending credit balance of the allowance for doubtful accounts? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 28,000</strong></p>
+        <p>Using T-account analysis for the Allowance account: Beginning Balance (15,000 credit) + Bad Debt Expense recorded (25,000 credit) - Accounts written off (12,000 debit) = ₱28,000 ending credit balance.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq05" data-question-id="sCdIq05" data-type="Problem Solving" data-set="Set C" data-difficulty="Difficult" data-topic="Statement of Comprehensive Income" data-answer="750000" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Statement of Comprehensive Income</div>
+        <div class="question-text">An entity provided the following data: Gross purchases ₱800,000, Purchase returns and allowances ₱30,000, Purchase discounts ₱20,000, and Freight-in ₱50,000. If the beginning inventory is ₱100,000 and the ending inventory is ₱150,000, what is the Cost of Goods Sold? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCdIq05" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCdIq05" onclick="submitAnswer('sCdIq05')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq05" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq05"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Statement of Comprehensive Income</h2>
+        <div class="book-content-question">An entity provided the following data: Gross purchases ₱800,000, Purchase returns and allowances ₱30,000, Purchase discounts ₱20,000, and Freight-in ₱50,000. If the beginning inventory is ₱100,000 and the ending inventory is ₱150,000, what is the Cost of Goods Sold? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 750,000</strong></p>
+        <p>First, calculate Net Purchases: Gross Purchases (800,000) - Returns (30,000) - Discounts (20,000) + Freight-in (50,000) = 800,000. Then, calculate Cost of Goods Sold: Beginning Inventory (100,000) + Net Purchases (800,000) - Ending Inventory (150,000) = ₱750,000.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq06" data-question-id="sCdIq06" data-type="Problem Solving" data-set="Set C" data-difficulty="Difficult" data-topic="Bank Reconciliation Statement" data-answer="363000" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Bank Reconciliation Statement</div>
+        <div class="question-text">The cash in bank account has an unadjusted book balance of ₱350,000. A review of the bank statement reveals a credit memo for a collected note of ₱40,000 (including ₱5,000 interest), bank service charges of ₱2,000, and an NSF check of ₱15,000. Furthermore, a check payment for rent originally written and cleared for ₱18,000 was erroneously recorded in the books as ₱8,000. What is the adjusted cash balance? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCdIq06" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCdIq06" onclick="submitAnswer('sCdIq06')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq06" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq06"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Bank Reconciliation Statement</h2>
+        <div class="book-content-question">The cash in bank account has an unadjusted book balance of ₱350,000. A review of the bank statement reveals a credit memo for a collected note of ₱40,000 (including ₱5,000 interest), bank service charges of ₱2,000, and an NSF check of ₱15,000. Furthermore, a check payment for rent originally written and cleared for ₱18,000 was erroneously recorded in the books as ₱8,000. What is the adjusted cash balance? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 363,000</strong></p>
+        <p>Adjusted Book Balance = Unadjusted Book (350,000) + Note Collected (40,000) - Service Charge (2,000) - NSF Check (15,000) - Book Error (10,000). The book error requires a 10,000 deduction because rent expense was under-recorded by that amount (18,000 actual - 8,000 recorded). Total = ₱363,000.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq07" data-question-id="sCdIq07" data-type="Problem Solving" data-set="Set C" data-difficulty="Difficult" data-topic="Financial Statement Analysis" data-answer="60" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Financial Statement Analysis</div>
+        <div class="question-text">A company has Net Sales of ₱2,400,000 and Average Accounts Receivable of ₱400,000. Assuming a 360-day business year, what is the average collection period in days? (Enter the exact number of days only)</div>
+        <input type="number" class="input-field" id="input-sCdIq07" placeholder="Enter numerical value...">
+        <button class="submit-btn" id="submit-sCdIq07" onclick="submitAnswer('sCdIq07')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq07" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq07"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Financial Statement Analysis</h2>
+        <div class="book-content-question">A company has Net Sales of ₱2,400,000 and Average Accounts Receivable of ₱400,000. Assuming a 360-day business year, what is the average collection period in days? (Enter the exact number of days only)</div>
+        <p class="correct-line"><strong>Correct Answer: 60</strong></p>
+        <p>First, calculate the Accounts Receivable Turnover: Net Sales (2,400,000) / Average AR (400,000) = 6 times per year. To find the collection period in days, divide the days in the year by the turnover rate: 360 / 6 = 60 days.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq08" data-question-id="sCdIq08" data-type="Problem Solving" data-set="Set C" data-difficulty="Difficult" data-topic="Cash Flow Statement" data-answer="180000" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Cash Flow Statement</div>
+        <div class="question-text">Equipment with a historical cost of ₱500,000 and accumulated depreciation of ₱300,000 was sold resulting in a loss on sale of ₱20,000. How much is the actual cash proceeds from the sale of the equipment that should be reported under investing activities? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCdIq08" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCdIq08" onclick="submitAnswer('sCdIq08')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq08" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq08"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Cash Flow Statement</h2>
+        <div class="book-content-question">Equipment with a historical cost of ₱500,000 and accumulated depreciation of ₱300,000 was sold resulting in a loss on sale of ₱20,000. How much is the actual cash proceeds from the sale of the equipment that should be reported under investing activities? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 180,000</strong></p>
+        <p>First, determine the carrying (book) value of the asset: Cost (500,000) - Accumulated Depreciation (300,000) = 200,000. Since it was sold at a loss of 20,000, the cash proceeds must be the book value minus the loss: 200,000 - 20,000 = ₱180,000.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq09" data-question-id="sCdIq09" data-type="Problem Solving" data-set="Set C" data-difficulty="Difficult" data-topic="Statement of Changes in Equity" data-answer="250000" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Statement of Changes in Equity</div>
+        <div class="question-text">A sole proprietor’s capital account increased by a net amount of ₱400,000 during the year. The owner made personal withdrawals totaling ₱100,000 and invested an additional ₱250,000 into the business. What is the net income for the year? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCdIq09" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCdIq09" onclick="submitAnswer('sCdIq09')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq09" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq09"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Statement of Changes in Equity</h2>
+        <div class="book-content-question">A sole proprietor’s capital account increased by a net amount of ₱400,000 during the year. The owner made personal withdrawals totaling ₱100,000 and invested an additional ₱250,000 into the business. What is the net income for the year? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 250,000</strong></p>
+        <p>The formula for net change in equity is: Net Increase = Additional Investment + Net Income - Withdrawals. Substituting the known values: 400,000 = 250,000 + Net Income - 100,000. Solving for Net Income: 400,000 = 150,000 + Net Income, meaning Net Income is ₱250,000.</p>
+    </div>
+</div>
+
+<div class="slide" id="slide-sCdIq10" data-question-id="sCdIq10" data-type="Problem Solving" data-set="Set C" data-difficulty="Difficult" data-topic="Income and Business Taxation" data-answer="750000" data-points="9">
+    <div class="quiz-container">
+        <div class="topic-text">Topic: Income and Business Taxation</div>
+        <div class="question-text">A domestic corporation has a gross income of ₱8,000,000 and allowable business deductions of ₱5,000,000. It also received ₱100,000 in interest from a peso bank deposit, which was subjected to a 20% final withholding tax by the bank. Assuming the regular corporate income tax rate is 25%, what is the regular corporate income tax due to be paid to the BIR? (Enter numbers only)</div>
+        <input type="number" class="input-field" id="input-sCdIq10" placeholder="Enter numerical amount...">
+        <button class="submit-btn" id="submit-sCdIq10" onclick="submitAnswer('sCdIq10')">Submit Answer</button>
+        <button class="exp-btn" id="exp-sCdIq10" onclick="toggleBookMode()">Show Explanation</button>
+        <div class="quiz-feedback" id="feedback-sCdIq10"></div>
+    </div>
+    <div class="book-content">
+        <button class="back-quiz-btn" onclick="toggleBookMode()">← Back to Quiz</button>
+        <h2>Explanation: Income and Business Taxation</h2>
+        <div class="book-content-question">A domestic corporation has a gross income of ₱8,000,000 and allowable business deductions of ₱5,000,000. It also received ₱100,000 in interest from a peso bank deposit, which was subjected to a 20% final withholding tax by the bank. Assuming the regular corporate income tax rate is 25%, what is the regular corporate income tax due to be paid to the BIR? (Enter numbers only)</div>
+        <p class="correct-line"><strong>Correct Answer: 750,000</strong></p>
+        <p>Regular corporate income tax is applied only to net taxable income from operations. Passive income subjected to final tax (like the bank interest) is excluded from this computation. Taxable Income = Gross Income (8,000,000) - Deductions (5,000,000) = 3,000,000. Income Tax Due = 3,000,000 × 25% = ₱750,000.</p>
+    </div>
+</div>            
+
 `;
