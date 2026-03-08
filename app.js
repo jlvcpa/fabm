@@ -819,4 +819,3 @@ function previewStudent(data, rowDiv) {
     });
     showSlide(0);
 }
-</script>
