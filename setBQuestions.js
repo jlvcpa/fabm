@@ -1299,7 +1299,7 @@ export const setBQuestions = `
     <p><strong>A) Additional cash investment by the owner:</strong>
     This is the functional opposite of a withdrawal.
     <ul>
-        <li><em>Relationship:</em> When an owner invests cash, equipment, or other assets, the company's resources increase ($Assets \uparrow$).[4, 6]</li>
+        <li><em>Relationship:</em> When an owner invests cash, equipment, or other assets, the company's resources increase ($Assets \\uparrow$).[4, 6]</li>
         <li><em>Why it's incorrect:</em> To maintain balance, there must be a corresponding increase in the owner's claim on those resources. This results in a <strong>direct increase</strong> (Credit) to the owner's capital account, rather than a decrease.[4, 5]</li>
     </ul></p>
 
