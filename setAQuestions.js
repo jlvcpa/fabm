@@ -1862,6 +1862,80 @@ export const setAQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: B) Biological Assets</strong></p>
         <p>In standard financial reporting frameworks, PAS 1 mandates specific line items to be shown on the face of the SFP if applicable. Biological assets are explicitly required. Contingent liabilities are disclosed in the notes, not on the face. Advances and specific equity breakdowns are generally lumped or shown in the notes or the Statement of Changes in Equity.</p>
+        <h3>The Regulatory Framework of PAS 1</h3>
+    <p><strong>PAS 1 (Presentation of Financial Statements)</strong> prescribes the basis for presenting general-purpose financial statements to ensure comparability both with the entity's own previous records and with those of other entities. A critical component of this standard is Paragraph 54, which identifies a <strong>minimum list</strong> of line items that must be presented on the face of the <strong>Statement of Financial Position (SFP)</strong>. These items are deemed sufficiently distinct in nature or function to warrant separate visibility to users of the financial statements.</p>
+
+    <h3>Core Analysis: Biological Assets (The Correct Choice)</h3>
+    <p><strong>Biological assets</strong> (defined under PAS 41 as living animals or plants) are explicitly required by PAS 1 to be shown as a separate line item on the face of the SFP. 
+    <ul>
+        <li><strong>The Rationale:</strong> Biological assets have unique characteristics, such as natural transformation (growth, degeneration, and procreation), which require a distinct measurement basis—typically fair value less costs to sell. Because their economic behavior differs significantly from traditional Property, Plant, and Equipment (PPE) or Inventories, they must be isolated to ensure fair representation of the entity’s productive resources.</li>
+    </ul></p>
+
+    <h3>Analysis of Alternative (Incorrect) Options</h3>
+    <p>Understanding why the other options are excluded from the "mandatory line item" list involves applying the principles of <strong>Materiality and Aggregation</strong>.</p>
+
+    <p><strong>A) Contingent Liabilities: The Disclosure Boundary</strong><br>
+    A contingent liability is a potential obligation that depends on the outcome of an uncertain future event (e.g., a pending lawsuit).
+    <ul>
+        <li><em>Relationship:</em> Under PAS 37, contingent liabilities do not meet the criteria for recognition as a liability on the face of the SFP because they are not yet probable or cannot be measured with sufficient reliability.</li>
+        <li><em>Why it's incorrect:</em> PAS 1 mandates that <strong>Provisions</strong> (liabilities of uncertain timing or amount that <em>are</em> probable) be shown on the face, but contingent liabilities are relegated to the <strong>Notes to the Financial Statements</strong>. Including them on the face would violate the fundamental definition of the accounting equation: $Assets = Liabilities + Equity$.[1, 2]</li>
+    </ul></p>
+
+    <p><strong>C) Advances to Officers: The Aggregation Principle</strong><br>
+    These represent short-term loans or prepayments made by the company to its internal management personnel.
+    <ul>
+        <li><em>Relationship:</em> While these are valid assets, they fall under the broader functional category of <strong>Trade and other receivables</strong>.</li>
+        <li><em>Why it's incorrect:</em> PAS 1 requires the face of the SFP to show "Trade and other receivables" as a summary line item. Specific details, such as the breakdown between trade customers and advances to related parties (officers), are typically disclosed in the <strong>Notes</strong> or a subsidiary schedule. Separating them on the face is permitted if material, but it is not a *mandatory minimum* requirement of the standard.</li>
+    </ul></p>
+
+    <p><strong>D) Unappropriated Retained Earnings: The Equity Sub-category</strong><br>
+    Retained earnings represent the cumulative profit the company has kept rather than distributed as dividends. "Unappropriated" refers to the portion not restricted for specific future uses.
+    <ul>
+        <li><em>Relationship:</em> This is a sub-component of the equity section.</li>
+        <li><em>Why it's incorrect:</em> PAS 1 requires the face of the SFP to show a summary line item for <strong>Issued capital and reserves attributable to owners of the parent</strong>. The granular breakdown of those reserves—including the distinction between appropriated and unappropriated retained earnings—is mandatory, but it may be presented either in the <strong>Notes</strong> or in the <strong>Statement of Changes in Equity</strong> rather than on the face of the SFP itself.</li>
+    </ul></p>
+
+    <h3>Presentation Summary Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Line Item / Account</th>
+                <th>Standard Treatment</th>
+                <th>PAS 1 Requirement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Biological Assets</strong></td>
+                <td><strong>Face of SFP</strong></td>
+                <td><strong>Mandatory (Paragraph 54)</strong></td>
+            </tr>
+            <tr>
+                <td>Provisions</td>
+                <td>Face of SFP</td>
+                <td>Mandatory</td>
+            </tr>
+            <tr>
+                <td>Contingent Liabilities</td>
+                <td>Notes Only</td>
+                <td>Mandatory Disclosure</td>
+            </tr>
+            <tr>
+                <td>Advances to Officers</td>
+                <td>Notes (usually)</td>
+                <td>Aggregated on Face</td>
+            </tr>
+            <tr>
+                <td>Retained Earnings</td>
+                <td>Face or Notes</td>
+                <td>Aggregated on Face</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion: The Goal of Financial Structure</h3>
+    <p>The selection of line items for the face of the SFP is guided by the objective of providing information that is <strong>relevant</strong> to the economic decisions of users. By mandating the separation of items like biological assets, investment property, and financial assets, PAS 1 ensures that the liquidity, solvency, and operational capacity of an entity are clearly visible through its structural narrative. Any further detail that might clutter this "high-level story" is properly moved to the supplementary notes.</p>
+
     </div>
 </div>
 
@@ -1892,6 +1966,80 @@ export const setAQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: D) It is not reported as a cash inflow or outflow</strong></p>
         <p>A classic board-level conceptual question: The purchase of a 3-month Treasury bill is merely a transfer between "Cash" and "Cash Equivalents". Since both are part of the total cash pool being reconciled in the CFS, the transaction itself does not constitute a cash flow (inflow or outflow) for the entity.</p>
+        <h3>The Conceptual Framework: Defining the Scope of the CFS</h3>
+    <p>The <strong>Statement of Cash Flows (CFS)</strong> is designed to provide information about the changes in <strong>Cash and Cash Equivalents (CCE)</strong> of an entity for a specific period. A crucial, yet often misunderstood, principle of this statement is that it reports movements into and out of the "CCE pool" as a whole, rather than movements <em>between</em> items within that pool.</p>
+
+    <p>According to <strong>PAS 7 (Statement of Cash Flows)</strong>, cash equivalents are short-term, highly liquid investments that are readily convertible to known amounts of cash and which are subject to an insignificant risk of changes in value.[1, 2] Generally, an investment only qualifies as a cash equivalent when it has a short maturity of, say, <strong>three months or less</strong> from the date of acquisition.</p>
+
+    <h3>Core Analysis: The Treasury Bill Transaction</h3>
+    <p>In this problem, the entity is moving funds from "Cash in Bank" to a "3-month Treasury Bill." 
+    <ul>
+        <li><strong>Cash in Bank:</strong> Meets the definition of "Cash."[1]</li>
+        <li><strong>3-month Treasury Bill:</strong> Meets the definition of a "Cash Equivalent" due to its short maturity and high liquidity.</li>
+    </ul>
+    Because both accounts belong to the same CCE classification, the transaction is essentially an internal transfer—much like moving money from a savings account to a checking account. Since the <strong>total balance</strong> of "Cash and Cash Equivalents" remains unchanged, no "flow" has occurred from the perspective of the CFS.</p>
+
+    <h3>Analysis of Alternative (Incorrect) Options</h3>
+    <p>To master this concept, we must understand why the other classifications would be misleading:</p>
+
+    <p><strong>A) As an outflow from investing activities:</strong>
+    Investing activities typically involve the acquisition and disposal of long-term assets and other investments <em>not</em> included in cash equivalents.[3, 4]
+    <ul>
+        <li><em>Relationship:</em> If the Treasury bill had a maturity of <strong>one year</strong>, this would be the correct answer. Long-term securities are not "cash-like" enough to be in the pool, so buying them would represent cash leaving the pool to acquire a non-cash asset.[3] However, for a 3-month bill, the asset is considered "near-cash" and stays inside the pool limits.</li>
+    </ul></p>
+
+    <p><strong>B) As an outflow from operating activities:</strong>
+    Operating activities primarily derive from the principal revenue-producing activities of the entity.
+    <ul>
+        <li><em>Relationship:</em> Operating cash flows include cash receipts from sales and payments to suppliers or employees.[3, 5] Buying a government security is a financial management decision, not a day-to-day operational expense (like paying rent or utilities), and thus can never be an operating outflow.</li>
+    </ul></p>
+
+    <p><strong>C) As a deduction to arrive at cash and cash equivalents:</strong>
+    This choice is a technical distractor.
+    <ul>
+        <li><em>Relationship:</em> Cash equivalents are <strong>added</strong> to cash to arrive at the final figure reported on the Statement of Financial Position.[6, 7] They are never deducted to "arrive" at the total; they *are* a component of the total. Furthermore, the CFS reconciles the *change* in the total pool, not the mechanical addition of its parts.</li>
+    </ul></p>
+
+    <h3>Summary Classification Table</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Item Purchased</th>
+                <th>Maturity from Acquisition</th>
+                <th>Classification</th>
+                <th>CFS Reporting Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Treasury Bill</strong></td>
+                <td><strong>$\le$ 3 Months</strong></td>
+                <td><strong>Cash Equivalent</strong></td>
+                <td><strong>No Flow (Internal Transfer)</strong></td>
+            </tr>
+            <tr>
+                <td>Treasury Bill</td>
+                <td>$>$ 3 Months (e.g., 6 months)</td>
+                <td>Short-term Investment</td>
+                <td>Investing Activity (Outflow)</td>
+            </tr>
+            <tr>
+                <td>Corporate Bonds</td>
+                <td>Long-term (e.g., 5 years)</td>
+                <td>Non-current Asset</td>
+                <td>Investing Activity (Outflow)</td>
+            </tr>
+            <tr>
+                <td>Inventory</td>
+                <td>N/A</td>
+                <td>Current Asset</td>
+                <td>Operating Activity (Outflow)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion</h3>
+    <p>The "Cash and Cash Equivalents" line item is treated as a single, unified bucket of liquidity. Professional accountants must distinguish between investments that represent a <strong>use of cash</strong> (Investments) and investments that are merely <strong>temporary storage for cash</strong> (Cash Equivalents). Because a 3-month Treasury bill is a form of temporary storage, its acquisition does not constitute a "cash flow" event for the entity.</p>
     </div>
 </div>
 
@@ -1922,6 +2070,57 @@ export const setAQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: C) Deduction from the book balance</strong></p>
         <p>The company issued a check for ₱5,400 but only deducted ₱4,500 in its books (an under-deduction of ₱900). To correct the book balance to match reality (and the bank, which cleared the true ₱5,400 amount), the company must deduct the remaining ₱900 from the book balance.</p>
+        <h3>The Mechanics of Book Errors</h3>
+    <p>A bank reconciliation statement is a critical accounting control used to verify that the general ledger reflects the company's actual cash position by accounting for discrepancies between the internal records and the bank statement. While many differences arise from "timing" (like deposits in transit), others arise from <strong>clerical errors</strong>.</p>
+
+    <p>In this scenario, the error is a <strong>Company Error</strong> (Book Error) because the mistake occurred during the journalizing process within the company's own records. The company physically wrote a check for ₱5,400 but only "told" its books that it spent ₱4,500. This resulted in an <strong>under-deduction</strong> of cash in the company's ledger.</p>
+
+    <p>To determine the correction, we look at the difference:
+    $$Actual Payment (₱5,400) - Recorded Payment (₱4,500) = Under-deduction (₱900)$$
+    Because the books currently show ₱900 more than what actually exists, we must <strong>deduct</strong> ₱900 from the book balance to bring it in line with reality.</p>
+
+    <h3>Analysis of Alternative (Incorrect) Options</h3>
+    <p>Understanding the "Who made the mistake?" and "How did it affect the balance?" logic helps identify why the other options are incorrect:</p>
+
+    <p><strong>A) Addition to the bank balance / B) Deduction from the bank balance:</strong>
+    The bank-side of the reconciliation is reserved only for <strong>Bank Errors</strong> or items the bank doesn't know about yet (like Deposits in Transit or Outstanding Checks).
+    <ul>
+        <li><em>Relationship:</em> If the <em>bank</em> had cashed the ₱5,400 check but mistakenly recorded it as ₱4,500 on the statement, then Option B would be the correct adjustment to the bank side.</li>
+        <li><em>Why they are incorrect:</em> The prompt explicitly states the error was "recorded in the <strong>company's journal</strong>." Adjusting the bank balance for a company mistake would not resolve the discrepancy; it would double the error.</li>
+    </ul></p>
+
+    <p><strong>D) Addition to the book balance:</strong>
+    This adjustment would be used if the company had <strong>over-recorded</strong> a payment.
+    <ul>
+        <li><em>Relationship:</em> If the check was for ₱4,500 but the company mistakenly recorded it as ₱5,400, the company would have subtracted <em>too much</em> from its books. In that case, adding ₱900 back (Option D) would be the correct fix.</li>
+        <li><em>Why it is incorrect:</em> In this specific problem, the company spent <em>more</em> than it recorded. Adding ₱900 to the books would make the book balance even higher, moving it further away from the actual ₱5,400 withdrawal.</li>
+    </ul></p>
+
+    <h3>Summary Correction Matrix for Payment Errors</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Scenario</th>
+                <th>Book Balance Condition</th>
+                <th>Adjustment Required</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Recorded amount $<$ Actual Check (Under-recorded)</td>
+                <td>Overstated (Too high)</td>
+                <td><strong>Deduct ($-$)</strong></td>
+            </tr>
+            <tr>
+                <td>Recorded amount $>$ Actual Check (Over-recorded)</td>
+                <td>Understated (Too low)</td>
+                <td>Add ($+$)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion: The Goal of Reconciliation</h3>
+    <p>Properly classifying this as a book deduction ensures that the <strong>Adjusted Book Balance</strong> matches the <strong>Adjusted Bank Balance</strong>. Once the reconciliation is complete, the company must record an <strong>Adjusting Journal Entry</strong> to officially correct the cash account in the general ledger. Without this step, the company's financial statements would overstate its assets, potentially leading to poor management decisions or overdraft risks.</p>
     </div>
 </div>
 
@@ -1940,6 +2139,61 @@ export const setAQuestions = `
         <div class="book-content-question">An entity reported a Gross Profit of ₱1,500,000. Its ending inventory was ₱400,000, and the total Cost of Goods Available for Sale during the period was ₱2,400,000. Using the reconstruction method, what is the amount of Net Sales? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 3,500,000</strong></p>
         <p>A classic reverse-computation problem: First, find Cost of Goods Sold (COGS). COGS = Goods Available for Sale (2,400,000) - Ending Inventory (400,000) = ₱2,000,000. Since Gross Profit = Net Sales - COGS, then Net Sales = Gross Profit (1,500,000) + COGS (2,000,000) = ₱3,500,000.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>To solve for an "unknown" at the top of the income statement (Net Sales), we must use the **reconstruction method** (also known as the reverse-computation method). This requires identifying how each given element relates to the flow of merchandise costs. In this problem, <strong>all three numerical factors are essential components</strong> of the final solution.</p>
+
+    <ul>
+        <li><strong>Gross Profit (₱1,500,000):</strong> This is a <strong>core part</strong> of the solution. It represents the "margin" or the excess of sales over the cost of the inventory sold.[1, 2] It serves as the final link in our reverse calculation.</li>
+        <li><strong>Cost of Goods Available for Sale (COGAFS) (₱2,400,000):</strong> This is a <strong>core part</strong> of the solution. It represents the total pool of inventory the business had (Beginning Inventory + Net Purchases) that <em>could</em> have been sold during the period. It is the "source" from which COGS is derived.</li>
+        <li><strong>Ending Inventory (₱400,000):</strong> This is a <strong>core part</strong> of the solution. It represents the portion of the COGAFS that remained on the shelves and was <em>not</em> sold. Subtracting this from the total pool reveals the cost of what actually left the building.</li>
+    </ul>
+
+    <h3>2. The Logic: The Cost Flow Mechanism</h3>
+    <p>The reconstruction method relies on the logic that the Statement of Comprehensive Income for a merchandiser is a sequence of linked equations. 
+    <ol>
+        <li>First, we determine the **Cost of Goods Sold (COGS)**. COGS is not what we *had*, but what we *gave up* to generate revenue.</li>
+        <li>Second, we recognize that **Net Sales** is simply the sum of the cost of the items sold and the profit markup added to them.[1, 2]</li>
+    </ol></p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We solve the problem by working backward from the inventory pool to the sales figure:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Calculate <strong>Cost of Goods Sold (COGS)</strong></td>
+                <td>$COGAFS - Ending Inventory$ <br> $₱2,400,000 - ₱400,000$</td>
+                <td><strong>₱2,000,000</strong></td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>State the <strong>Gross Profit Formula</strong></td>
+                <td>$Gross Profit = Net Sales - COGS$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Transpose and solve for <strong>Net Sales</strong></td>
+                <td>$Net Sales = Gross Profit + COGS$ <br> $₱1,500,000 + ₱2,000,000$</td>
+                <td><strong>₱3,500,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Why No Factors were Excluded</h3>
+    <p>In this "Difficult" level problem, no distractors were included. However, if the problem had provided <strong>"Operating Expenses"</strong> or <strong>"Net Income,"</strong> those figures would have been <strong>excluded</strong> from the solution. Why? Because Gross Profit is calculated <em>before</em> operating expenses are considered. Adding operating expenses to our calculation would lead us to "Net Income," which was not the target variable requested.</p>
+
+    <h3>Conclusion: The Goal of Reconstruction</h3>
+    <p>The resulting <strong>₱3,500,000 Net Sales</strong> tells a complete story: The company started with ₱2,400,000 worth of products available. At the end of the year, ₱400,000 remained, meaning ₱2,000,000 was sold (at cost). To achieve a Gross Profit of ₱1,500,000, the company had to sell those ₱2,000,000 worth of items for a total of ₱3,500,000. This analysis allows management to determine if their 42.8% gross margin ($1.5M / 3.5M$) is sufficient to cover their remaining operating costs.</p>
     </div>
 </div>
 
@@ -1958,6 +2212,69 @@ export const setAQuestions = `
         <div class="book-content-question">The bank statement shows an unadjusted balance of ₱600,000. Deposits in transit amount to ₱150,000 and outstanding checks total ₱85,000. Upon investigation, a company check for ₱30,000 issued to a supplier was erroneously cleared by the bank as ₱3,000. What is the correct adjusted cash balance? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 638,000</strong></p>
         <p>Adjusted Bank Balance = Unadjusted Bank Balance (600,000) + Deposits in Transit (150,000) - Outstanding Checks (85,000) - Bank Error (27,000). The bank error is a deduction because the bank only cleared ₱3,000 instead of the actual ₱30,000 check, meaning the bank balance is currently overstated by ₱27,000.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>To find the <strong>Adjusted Cash Balance</strong> (the "true" cash position), we must identify all items that the bank is currently unaware of or has recorded incorrectly. In this problem, all four provided amounts are essential components of the solution:</p>
+
+    <ul>
+        <li><strong>Unadjusted Bank Balance (₱600,000):</strong> This is the <strong>starting point</strong>. It represents the cash on record at the financial institution, which must be adjusted for timing differences and errors.</li>
+        <li><strong>Deposits in Transit (₱150,000):</strong> This is a <strong>core part</strong> of the solution. These are cash receipts already recorded in the company's books but not yet processed by the bank. They represent an <strong>addition</strong> to the bank balance.</li>
+        <li><strong>Outstanding Checks (₱85,000):</strong> This is a <strong>core part</strong> of the solution. These are checks written and recorded by the company but not yet presented to the bank for payment. They represent a <strong>deduction</strong> from the bank balance.</li>
+        <li><strong>Bank Error (₱27,000):</strong> This is a <strong>critical adjustment</strong>. The bank cleared a ₱30,000 check for only ₱3,000.
+            <ul>
+                <li><em>The Logic:</em> The bank was supposed to subtract ₱30,000 from the account but only subtracted ₱3,000. This means the bank balance is currently <strong>overstated</strong> (too high) by ₱27,000 ($30,000 - 3,000$). To correct this, we must <strong>deduct</strong> the difference from the statement balance.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2. The Logic: The Bank-Side Formula</h3>
+    <p>The reconciliation process follows a specific mathematical structure for the bank statement side:
+    $$Adjusted Balance = Unadjusted Balance + Deposits in Transit - Outstanding Checks \pm Bank Errors$$
+    
+    Because the adjusted bank balance <strong>must match</strong> the adjusted book balance in a successful reconciliation, solving this side provides the final true cash figure for the entire business.</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Running Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Identify Bank Balance</td>
+                <td>₱600,000</td>
+                <td>₱600,000</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Add Deposits in Transit</td>
+                <td>$600,000 + 150,000$</td>
+                <td>₱750,000</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Deduct Outstanding Checks</td>
+                <td>$750,000 - 85,000$</td>
+                <td>₱665,000</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Adjust for Bank Error</td>
+                <td>$665,000 - 27,000$</td>
+                <td><strong>₱638,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Why No Factors were Excluded</h3>
+    <p>In this high-difficulty problem, all factors provided were bank-side reconciling items. Had the problem included "Book-Side" items—such as <strong>bank service charges</strong>, <strong>NSF checks</strong>, or <strong>interest earned</strong>—they would have been <strong>excluded</strong> from this specific bank-side calculation. While those items would eventually lead to the same ₱638,000 result when adjusting the company's internal books, they do not impact the adjustment of the ₱600,000 bank statement figure.</p>
+
+    <h3>Conclusion: The Goal of Financial Integrity</h3>
+    <p>The resulting <strong>₱638,000 Adjusted Cash Balance</strong> represents the actual amount of money the company has available to spend. By identifying the ₱27,000 bank under-deduction, the company prevents a situation where they might over-commit funds based on an incorrectly inflated bank statement. Regular bank reconciliation acts as a vital internal control, catching clerical errors and providing management with a reliable snapshot of the firm's liquidity.</p>
     </div>
 </div>
 
@@ -1976,6 +2293,81 @@ export const setAQuestions = `
         <div class="book-content-question">Net income for the year is ₱850,000. Additional data: Depreciation is ₱150,000; Gain on sale of equipment is ₱50,000; Accounts receivable increased by ₱120,000; Inventory decreased by ₱90,000; Accounts payable decreased by ₱60,000. Using the indirect method, what is the net cash provided by operating activities? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 860,000</strong></p>
         <p>Net Cash = Net Income (850,000) + Depreciation (150,000) - Gain on Sale (50,000) - AR Increase (120,000) + Inventory Decrease (90,000) - AP Decrease (60,000) = ₱860,000. Gains are deducted to prevent double counting, as the full cash received from the sale goes to Investing Activities.</p>
+        <h3>1. Analysis of Factors and Financial Elements</h3>
+    <p>Under the indirect method, the objective is to transform <strong>Net Income</strong> (an accrual-basis figure) into <strong>Net Cash from Operating Activities</strong> (a cash-basis figure). In this problem, <strong>every factor provided is an essential component</strong> of the solution because each represents a specific discrepancy between profit and physical cash movement.</p>
+
+    <ul>
+        <li><strong>Net Income (₱850,000):</strong> This is the <strong>starting foundation</strong>. It includes all revenues earned and expenses incurred, regardless of whether cash changed hands.</li>
+        <li><strong>Depreciation (₱150,000):</strong> This is a <strong>non-cash expense</strong>. It was subtracted to arrive at net income, but no cash actually left the business. Therefore, it must be added back to "undo" the non-cash deduction.</li>
+        <li><strong>Gain on Sale of Equipment (₱50,000):</strong> This is a <strong>non-operating item</strong>. While it increased net income, the total cash received from the sale belongs in the <em>Investing Activities</em> section. It is subtracted here to prevent double-counting and to isolate purely "operating" cash.</li>
+        <li><strong>Increase in Accounts Receivable (₱120,000):</strong> This represents <strong>sales made on credit</strong> for which cash has not yet been collected. Because this revenue is in net income but the cash is not in the bank, it must be subtracted.</li>
+        <li><strong>Decrease in Inventory (₱90,000):</strong> This implies that the company sold more goods than it purchased during the period. This "releases" cash that was previously tied up in stock, acting as a <strong>cash inflow</strong> relative to net income.</li>
+        <li><strong>Decrease in Accounts Payable (₱60,000):</strong> This indicates that the company used cash to pay off its suppliers for prior obligations. This <strong>cash outflow</strong> must be subtracted from net income to reflect the true cash position.</li>
+    </ul>
+
+    <h3>2. The Logic: Accrual vs. Cash Basis</h3>
+    <p>The core logic of these adjustments relies on the relationship between net income and the balance sheet:
+    <ul>
+        <li><strong>Non-cash items:</strong> Expenses like depreciation reduce profit but not cash (Add back).</li>
+        <li><strong>Current Assets:</strong> An increase ties up cash (Subtract); a decrease frees up cash (Add).</li>
+        <li><strong>Current Liabilities:</strong> An increase conserves cash by delaying payment (Add); a decrease uses cash to settle debt (Subtract).</li>
+    </ul></p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We calculate the net operating cash flow by applying the following adjustments to the net income:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Adjustment Logic</th>
+                <th>Amount (₱)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Net Income</strong></td>
+                <td>Starting Point</td>
+                <td>850,000</td>
+            </tr>
+            <tr>
+                <td>Depreciation</td>
+                <td>Add back non-cash expense</td>
+                <td>+ 150,000</td>
+            </tr>
+            <tr>
+                <td>Gain on Sale</td>
+                <td>Subtract non-operating gain</td>
+                <td>- 50,000</td>
+            </tr>
+            <tr>
+                <td>Increase in A/R</td>
+                <td>Subtract (Revenue not yet collected)</td>
+                <td>- 120,000</td>
+            </tr>
+            <tr>
+                <td>Decrease in Inventory</td>
+                <td>Add (Cash released from stock)</td>
+                <td>+ 90,000</td>
+            </tr>
+            <tr>
+                <td>Decrease in A/P</td>
+                <td>Subtract (Cash used to pay debt)</td>
+                <td>- 60,000</td>
+            </tr>
+            <tr>
+                <td><strong>Net Operating Cash</strong></td>
+                <td><strong>Final Result</strong></td>
+                <td><strong>860,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Why No Factors were Excluded</h3>
+    <p>In this difficult-level problem, every data point was relevant to the "Operating Activities" section. Had the problem included <strong>"Proceeds from Sale of Land"</strong> or <strong>"Dividends Paid,"</strong> those would have been <strong>excluded</strong> from this specific calculation because they belong in the <em>Investing</em> and <em>Financing</em> sections, respectively. Similarly, <strong>"Interest Expense"</strong> is already factored into Net Income and typically does not require a separate adjustment unless the company uses a specific classification permitted under IFRS.</p>
+
+    <h3>Conclusion: The "Cash Position" Narrative</h3>
+    <p>The resulting <strong>₱860,000</strong> indicates that the company's core operations are healthy and generating more cash than the "paper profit" suggests. This surplus is largely due to the high non-cash depreciation and the successful reduction of inventory, which offset the cash used to pay suppliers and the growth in uncollected credit sales.</p>
     </div>
 </div>
 
@@ -1994,6 +2386,68 @@ export const setAQuestions = `
         <div class="book-content-question">An entity has current assets of ₱1,200,000 and current liabilities of ₱600,000. If the entity immediately pays ₱200,000 of its accounts payable using cash, what will be the new Current Ratio? (Enter the decimal number only, e.g., if 2.50, enter 2.5)</div>
         <p class="correct-line"><strong>Correct Answer: 2.5</strong></p>
         <p>Original Current Ratio = 1,200k / 600k = 2.0. Paying accounts payable with cash reduces both Current Assets and Current Liabilities by 200,000. New Current Assets = 1,000,000. New Current Liabilities = 400,000. New Ratio = 1,000,000 / 400,000 = 2.5.</p>
+        <h3>1. Analysis of Problem Factors and Financial Elements</h3>
+    <p>In advanced financial analysis, we must identify not only the static amounts but how specific transactions alter the components of a ratio. <strong>All numerical factors provided in this problem are essential components</strong> of the solution.</p>
+
+    <ul>
+        <li><strong>Initial Current Assets (₱1,200,000):</strong> This is the <strong>starting numerator</strong>. It represents the total liquid resources (Cash, A/R, Inventory) available to the company before the payment.</li>
+        <li><strong>Initial Current Liabilities (₱600,000):</strong> This is the <strong>starting denominator</strong>. It represents the total obligations due within one year before the payment.</li>
+        <li><strong>Payment Amount (₱200,000):</strong> This is the <strong>active variable</strong> in the solution. It represents the amount of the transaction.</li>
+        <li><strong>Accounts Payable & Cash (Qualitative Factors):</strong> These identify <em>where</em> the change occurs. Because Cash is a <strong>Current Asset</strong> and Accounts Payable is a <strong>Current Liability</strong>, both the numerator and the denominator of the ratio are affected equally by the ₱200,000.</li>
+    </ul>
+
+    <h3>2. The Logic: The Mathematical Rule of Fractions</h3>
+    <p>A fundamental rule of ratio analysis is that an <strong>equal decrease</strong> to both the numerator and denominator will <strong>increase</strong> the ratio if the starting ratio is greater than $1.0$. Conversely, if the ratio were less than $1.0$, an equal decrease would make the ratio worse. This phenomenon is often used in "Window Dressing," where companies pay off debts right before the reporting date to make their liquidity appear stronger.</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Analyze Impact on Assets</td>
+                <td>$₱1,200,000 - ₱200,000$ (Cash Outflow)</td>
+                <td><strong>₱1,000,000</strong> (New CA)</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Analyze Impact on Liabilities</td>
+                <td>$₱600,000 - ₱200,000$ (Debt Paid)</td>
+                <td><strong>₱400,000</strong> (New CL)</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Apply Current Ratio Formula</td>
+                <td>$\frac{New Current Assets}{New Current Liabilities}$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Final Calculation</td>
+                <td>$\frac{1,000,000}{400,000}$</td>
+                <td><strong>2.5</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Alternative (Incorrect) Results</h3>
+    <p>Understanding the logic behind common distractors helps prevent technical errors:</p>
+    <ul>
+        <li><strong>2.0 (The "No Change" Error):</strong> This results from assuming that because ₱200,000 was subtracted from both sides, the ratio stays the same. This ignores the mathematical property of proportions.</li>
+        <li><strong>1.67 (The "Addition" Error):</strong> This occurs if a student <em>adds</em> the ₱200,000 to both sides ($1.4M / 0.8M$). While this is a valid transaction (e.g., buying inventory on credit), it is the opposite of the "payment" described in the prompt.</li>
+        <li><strong>1.50 (One-Sided Asset Error):</strong> This happens if the student only subtracts ₱200,000 from Assets ($1.0M / 600k$). This violates the double-entry principle, as you cannot spend cash without either reducing a liability or increasing another asset.</li>
+        <li><strong>3.00 (One-Sided Liability Error):</strong> This happens if the student only subtracts ₱200,000 from Liabilities ($1.2M / 400k$), failing to account for the cash used to make the payment.</li>
+    </ul>
+
+    <h3>Conclusion: Significance of the Result</h3>
+    <p>The entity improved its Current Ratio from $2.0$ to $2.5$. While the company has ₱200,000 less in absolute cash, its <strong>relative</strong> liquidity position has strengthened because its remaining assets now cover its remaining debts $2.5$ times over. This illustrates why creditors look at ratios rather than just total balances when assessing a company's ability to survive financial challenges.</p>
     </div>
 </div>
 
@@ -2030,6 +2484,84 @@ export const setAQuestions = `
         <div class="book-content-question">A VAT-registered merchandising business has gross sales of ₱3,360,000 (inclusive of 12% VAT) for the quarter. Its purchases from VAT-registered suppliers amounted to ₱2,240,000 (inclusive of 12% VAT). What is the VAT payable for the quarter? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 120,000</strong></p>
         <p>To extract the VAT from a VAT-inclusive amount, multiply by (12/112). Output VAT = 3,360,000 * (12/112) = 360,000. Input VAT = 2,240,000 * (12/112) = 240,000. VAT Payable = Output VAT (360,000) - Input VAT (240,000) = ₱120,000.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>In advanced accounting, Net Income can be determined even without revenue or expense data by analyzing the "residual interest" of the owner over time. In this problem, <strong>every numerical factor provided is an essential component</strong> of the final solution:</p>
+
+    <ul>
+        <li><strong>Beginning Assets (₱2,000,000) & Liabilities (₱800,000):</strong> These are <strong>core parts</strong> of the solution used to establish the "Starting Point" of the owner's investment (Beginning Equity).</li>
+        <li><strong>Increase in Assets (₱500,000):</strong> This is a <strong>core part</strong> of the solution. It identifies the growth in the company's resource base, regardless of how that growth was funded.</li>
+        <li><strong>Decrease in Liabilities (₱100,000):</strong> This is a <strong>core part</strong> of the solution. A reduction in debt effectively "frees up" more of the company's value for the owner, contributing to an increase in equity.</li>
+        <li><strong>Withdrawals (₱150,000):</strong> This is a <strong>core part</strong> of the solution. Withdrawals represent a distribution of wealth <em>out</em> of the business. Since we are solving for profit, we must "add back" this amount to the observed increase in equity to find the total earnings generated before the owner took their share.</li>
+        <li><strong>"No Additional Investments":</strong> This <strong>simplifies the solution</strong>. If the owner had invested more capital, that amount would have been excluded from the "income" portion of the equity growth because it didn't come from earnings.</li>
+    </ul>
+
+    <h3>2. The Logic: The Bridge between Balance Sheet and Income</h3>
+    <p>The solution relies on the **Accounting Equation** ($Assets = Liabilities + Equity$) and the **Equity Formula**:
+    $$Ending Equity = Beginning Equity + Investment + Net Income - Withdrawals$$
+    
+    This logic tells us that any increase in equity that did <em>not</em> come from the owner putting more money in (Investment) must have come from the business performing well (Net Income). However, because the owner <em>took</em> money out (Withdrawals), the observed growth on the Balance Sheet is "net" of those withdrawals. To find the true performance, we must reconstruct the gross earnings.</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Find <strong>Beginning Equity</strong></td>
+                <td>$A_{beg} - L_{beg} = ₱2,000,000 - ₱800,000$</td>
+                <td>₱1,200,000</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Find <strong>Ending Assets</strong></td>
+                <td>$₱2,000,000 + ₱500,000$</td>
+                <td>₱2,500,000</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Find <strong>Ending Liabilities</strong></td>
+                <td>$₱800,000 - ₱100,000$</td>
+                <td>₱700,000</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Find <strong>Ending Equity</strong></td>
+                <td>$A_{end} - L_{end} = ₱2,500,000 - ₱700,000$</td>
+                <td>₱1,800,000</td>
+            </tr>
+            <tr>
+                <td><strong>5</strong></td>
+                <td>Calculate <strong>Total Growth in Equity</strong></td>
+                <td>$E_{end} - E_{beg} = ₱1,800,000 - ₱1,200,000$</td>
+                <td>₱600,000</td>
+            </tr>
+            <tr>
+                <td><strong>6</strong></td>
+                <td>Solve for <strong>Net Income</strong></td>
+                <td>$Growth + Withdrawals = ₱600,000 + ₱150,000$</td>
+                <td><strong>₱750,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Potential Pitfalls</h3>
+    <p>Understanding where common errors occur helps verify the ₱750,000 result:</p>
+    <ul>
+        <li><strong>₱600,000 (The "Net Change" Error):</strong> This occurs if a student stops after Step 5. This figure represents the <em>observed</em> growth, but it ignores the fact that the business actually earned ₱150,000 more than this, which the owner then took home.</li>
+        <li><strong>₱450,000 (The "Subtraction" Error):</strong> This happens if a student <em>subtracts</em> the withdrawal from the growth ($600k - 150k$). This is logically flawed because it suggests that taking money out of the business somehow reduces the total profit the business <em>generated</em> during the year.</li>
+        <li><strong>₱400,000 (The "Liability Direction" Error):</strong> This occurs if a student adds the ₱100,000 decrease in liabilities to the starting debt rather than subtracting it, leading to a lower ending equity.</li>
+    </ul>
+
+    <h3>Conclusion: The "Capital Maintenance" Concept</h3>
+    <p>The resulting <strong>₱750,000 Net Income</strong> proves that the business was highly profitable. It was able to support a ₱150,000 lifestyle for the owner while still increasing the company's net worth by ₱600,000 through increased assets and debt reduction. This "big picture" analysis allows stakeholders to evaluate management performance without getting lost in the details of individual revenue or expense accounts.</p>
+
     </div>
 </div>
 
@@ -2048,6 +2580,72 @@ export const setAQuestions = `
         <div class="book-content-question">An entity's trial balance included: Cash in bank ₱400,000; Petty cash fund ₱10,000; Cash restricted for plant expansion ₱500,000; Accounts receivable ₱250,000; Allowance for doubtful accounts ₱20,000; Inventory ₱300,000. What is the correct total amount of Current Assets to be reported? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 940,000</strong></p>
         <p>Current Assets = Cash in bank (400,000) + Petty cash (10,000) + Net Accounts Receivable (250,000 - 20,000 = 230,000) + Inventory (300,000) = ₱940,000. Cash restricted for plant expansion is classified as a non-current asset under PFRS.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>Under <strong>PAS 1 (Presentation of Financial Statements)</strong>, current assets are resources expected to be realized, sold, or consumed within twelve months after the reporting period or within the entity's normal operating cycle.[1, 2] To solve this problem, we must evaluate each trial balance item against this liquidity criteria.</p>
+
+    <ul>
+        <li><strong>Cash in Bank (₱400,000):</strong> This is a <strong>core part</strong> of the solution. It represents the most liquid asset available for immediate use in operations.</li>
+        <li><strong>Petty Cash Fund (₱10,000):</strong> This is a <strong>core part</strong> of the solution. It consists of actual notes and coins held "in hand" for small, routine business expenditures.</li>
+        <li><strong>Accounts Receivable (₱250,000) & Allowance for Doubtful Accounts (₱20,000):</strong> These are <strong>core parts</strong> of the solution. Accounts receivable represent money owed by customers. However, the asset must be reported at its <strong>Net Realizable Value (NRV)</strong>, which is the gross amount minus the allowance for those accounts estimated to be uncollectible.</li>
+        <li><strong>Inventory (₱300,000):</strong> This is a <strong>core part</strong> of the solution. Inventory consists of goods held for sale in the ordinary course of business and is expected to be converted into cash within the operating cycle.[3, 2]</li>
+        <li><strong>Cash Restricted for Plant Expansion (₱500,000):</strong> This factor is <strong>excluded</strong> from the solution.
+            <ul>
+                <li><em>The Logic:</em> While it is physically "cash," its use is restricted for a long-term capital project (plant expansion). Because this cash is not available to settle current liabilities or fund daily operations, it is classified as a <strong>Non-current Asset</strong> (typically under Long-term Investments or Other Assets).[1, 4, 2]</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2. The Logic: Valuation and Aggregation</h3>
+    <p>A properly prepared Statement of Financial Position does not merely list every account; it aggregates them based on their nature and liquidity.[5, 6] For current assets, the logic requires summing all unrestricted cash, near-cash items, and resources expected to turn into cash within the year. Crucially, "Contra-Asset" accounts like the <strong>Allowance for Doubtful Accounts</strong> must be netted against their parent accounts to reflect a "true and fair view" of the entity's expected cash inflows.</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Calculate <strong>Net Receivables</strong></td>
+                <td>$₱250,000 - ₱20,000$</td>
+                <td>₱230,000</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Identify <strong>Total Cash</strong></td>
+                <td>$₱400,000 (Bank) + ₱10,000 (Petty)$</td>
+                <td>₱410,000</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Aggregate All <strong>Current Items</strong></td>
+                <td>$Cash + Net AR + Inventory$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Final Summation</td>
+                <td>$₱410,000 + ₱230,000 + ₱300,000$</td>
+                <td><strong>₱940,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Potential Classification Errors</h3>
+    <p>Understanding why alternative totals are incorrect is vital for avoiding common reporting mistakes:</p>
+    <ul>
+        <li><strong>₱1,440,000 (The "Restriction" Error):</strong> This occurs if a student mistakenly includes the ₱500,000 restricted cash. This overstates the company's <strong>liquidity</strong> and would lead to an incorrectly high Current Ratio.[1, 4]</li>
+        <li><strong>₱960,000 (The "Gross" Error):</strong> This results from failing to subtract the ₱20,000 Allowance for Doubtful Accounts. This violates the principle of <strong>faithful representation</strong> by reporting receivables at a value the company does not actually expect to collect.</li>
+        <li><strong>₱410,000 (The "Cash Only" Error):</strong> This occurs if a student forgets that inventory and receivables are considered "current" because they will become cash within the operating cycle.[3, 2]</li>
+    </ul>
+
+    <h3>Conclusion: Significance of the Result</h3>
+    <p>The total Current Assets of <strong>₱940,000</strong> represents the entity's working capital base. By correctly excluding the ₱500,000 restricted cash, the accountant ensures that financial analysts have an accurate starting point for calculating <strong>Liquidity Ratios</strong> (like the Current and Quick Ratios). This distinction is fundamental to providing a transparent narrative of the company's ability to meet its upcoming obligations without relying on non-liquid or restricted resources.</p>
     </div>
 </div>
 `;
