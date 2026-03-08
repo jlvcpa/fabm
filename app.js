@@ -591,13 +591,28 @@ window.showSlide = function(targetIndex) {
     clearInterval(window.timerInterval);
     document.getElementById('timer-display').style.display = 'none';
 
-    window.slides.forEach(s => s.classList.remove('active'));
-    window.currentSlideIndex = targetIndex;
-    
+    // DETERMINE FLIP DIRECTION
+    const direction = targetIndex > window.currentSlideIndex ? 'next' : (targetIndex < window.currentSlideIndex ? 'prev' : 'none');
+    const oldSlide = window.slides[window.currentSlideIndex];
     const currentSlide = window.slides[targetIndex];
+
+    // Clear old states and animation classes
+    window.slides.forEach(s => {
+        s.classList.remove('active', 'flip-next-out', 'flip-next-in', 'flip-prev-out', 'flip-prev-in');
+    });
+
+    // Apply Flip Animation Classes
+    if (direction === 'next' && oldSlide && oldSlide !== currentSlide) {
+        oldSlide.classList.add('flip-next-out');
+        currentSlide.classList.add('flip-next-in');
+    } else if (direction === 'prev' && oldSlide && oldSlide !== currentSlide) {
+        oldSlide.classList.add('flip-prev-out');
+        currentSlide.classList.add('flip-prev-in');
+    }
+
+    window.currentSlideIndex = targetIndex;
     currentSlide.classList.add('active');
     
-    // Auto-scroll to top when navigating inside book mode
     currentSlide.scrollTop = 0;
     
     const tracker = document.getElementById('question-tracker');
@@ -633,7 +648,6 @@ window.showSlide = function(targetIndex) {
     document.getElementById('btn-prev').disabled = targetIndex === 0;
     document.getElementById('btn-next').disabled = targetIndex === window.slides.length - 1;
 
-    // Apply the navigation visibility logic
     updateNavVisibility();
 
     if (window.currentUser && window.currentUser.role !== 'teacher' && !currentSlide.hasAttribute('data-locked')) {
@@ -733,7 +747,6 @@ window.submitAnswer = function(qId) {
             document.getElementById('celeb-msg').innerText = `Thank you for finishing ${currentSet}. You got ${sScore} out of ${sMax} possible points!`;
         }, 1000);
     } else {
-         // Auto-advance to the next question if the set isn't finished yet
          setTimeout(() => {
              if(window.currentSlideIndex < window.slides.length - 1) {
                  window.showSlide(window.currentSlideIndex + 1);
@@ -863,36 +876,34 @@ function previewStudent(data, rowDiv) {
 let touchStartX = 0;
 let touchEndX = 0;
 
-// Listen for touches specifically inside the slides container
-const slidesContainer = document.getElementById('slides-container');
-
-if (slidesContainer) {
-    slidesContainer.addEventListener('touchstart', e => {
+document.addEventListener('touchstart', e => {
+    // Only capture swipes inside the slides container
+    if (e.target.closest('#slides-container')) {
         touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
+    }
+}, { passive: true });
 
-    slidesContainer.addEventListener('touchend', e => {
+document.addEventListener('touchend', e => {
+    if (e.target.closest('#slides-container')) {
         touchEndX = e.changedTouches[0].screenX;
         handleSwipeGesture();
-    }, { passive: true });
-}
+    }
+}, { passive: true });
 
 function handleSwipeGesture() {
-    const swipeThreshold = 50; // Minimum pixel distance required to register as a swipe
+    const swipeThreshold = 50; 
 
-    // Swiped Left (Finger moved right to left) -> Go to Next Slide
+    // Swiped Left (Next Page)
     if (touchStartX - touchEndX > swipeThreshold) {
         const nextBtn = document.getElementById('btn-next');
-        // Only trigger if the Next button isn't disabled (prevents bypassing logic)
         if (nextBtn && !nextBtn.disabled) {
             window.nextSlide();
         }
     }
     
-    // Swiped Right (Finger moved left to right) -> Go to Previous Slide
+    // Swiped Right (Previous Page)
     if (touchEndX - touchStartX > swipeThreshold) {
         const prevBtn = document.getElementById('btn-prev');
-        // Only trigger if the Prev button isn't disabled
         if (prevBtn && !prevBtn.disabled) {
             window.prevSlide();
         }
