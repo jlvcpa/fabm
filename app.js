@@ -858,3 +858,43 @@ function previewStudent(data, rowDiv) {
     });
     showSlide(0);
 }
+
+// --- MOBILE SWIPE GESTURES ---
+let touchStartX = 0;
+let touchEndX = 0;
+
+// Listen for touches specifically inside the slides container
+const slidesContainer = document.getElementById('slides-container');
+
+if (slidesContainer) {
+    slidesContainer.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    slidesContainer.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipeGesture();
+    }, { passive: true });
+}
+
+function handleSwipeGesture() {
+    const swipeThreshold = 50; // Minimum pixel distance required to register as a swipe
+
+    // Swiped Left (Finger moved right to left) -> Go to Next Slide
+    if (touchStartX - touchEndX > swipeThreshold) {
+        const nextBtn = document.getElementById('btn-next');
+        // Only trigger if the Next button isn't disabled (prevents bypassing logic)
+        if (nextBtn && !nextBtn.disabled) {
+            window.nextSlide();
+        }
+    }
+    
+    // Swiped Right (Finger moved left to right) -> Go to Previous Slide
+    if (touchEndX - touchStartX > swipeThreshold) {
+        const prevBtn = document.getElementById('btn-prev');
+        // Only trigger if the Prev button isn't disabled
+        if (prevBtn && !prevBtn.disabled) {
+            window.prevSlide();
+        }
+    }
+}
