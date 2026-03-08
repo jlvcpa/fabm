@@ -181,21 +181,30 @@ function updateNavVisibility() {
     const currentSlide = window.slides[window.currentSlideIndex];
     if (!currentSlide) return;
     
-    const currentSet = currentSlide.getAttribute('data-set');
-    const setStatus = getSetStatus(currentSet);
-    const isBookMode = document.body.classList.contains('book-mode');
     const isTeacher = window.currentUser && window.currentUser.role === 'teacher';
-    
     const navControls = document.getElementById('nav-controls');
+    const prevBtn = document.getElementById('btn-prev');
+    const nextBtn = document.getElementById('btn-next');
     
-    // Teachers always see controls. Students ONLY see controls if they are in Book Mode AND the set is 100% completed.
-    if (isTeacher) {
-        navControls.style.display = 'flex';
-    } else if (isBookMode && setStatus.state === 'completed') {
-        navControls.style.display = 'flex';
-    } else {
-        navControls.style.display = 'none';
+    // Always display the container so desktop users can see the buttons
+    if (navControls) navControls.style.display = 'flex';
+    
+    // Default boundaries (disable Prev on first slide, Next on last slide)
+    let prevDisabled = window.currentSlideIndex === 0;
+    let nextDisabled = window.currentSlideIndex === window.slides.length - 1;
+    
+    // STRICT SEQUENCING LOCK FOR STUDENTS
+    if (!isTeacher) {
+        const qId = currentSlide.getAttribute('data-question-id');
+        // If the current question is UNANSWERED, mathematically lock the 'Next' button
+        if (!window.studentAnswers[qId]) {
+            nextDisabled = true;
+        }
     }
+    
+    // Apply the locked/unlocked states to the buttons
+    if (prevBtn) prevBtn.disabled = prevDisabled;
+    if (nextBtn) nextBtn.disabled = nextDisabled;
 }
 
 window.showDashboard = function() {
@@ -730,6 +739,7 @@ window.submitAnswer = function(qId) {
     const { sScore, sMax } = updateSetScoreDisplay(currentSet);
     
     saveToFirebase();
+    updateNavVisibility();
 
     let allAnswered = true;
     window.slides.forEach(s => {
