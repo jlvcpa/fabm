@@ -1,5 +1,4 @@
 export const setBQuestions = `
-<!--SET B EASY START -->
 <div class="slide" id="slide-sBeAq01" data-question-id="sBeAq01" data-type="Theory" data-set="Set B" data-difficulty="Easy" data-topic="Introduction to Accounting" data-answer="B" data-points="3">
     <div class="quiz-container">
         <div class="topic-text">Topic: Introduction to Accounting</div>
@@ -57,6 +56,72 @@ export const setBQuestions = `
         </ul>
         <p class="correct-line"><strong>Correct Answer: B</strong></p>
         <p>Auditing is the independent review and examination of financial records and statements to express an opinion on their fairness and compliance with Generally Accepted Accounting Principles (GAAP).</p>
+        <h3>Defining the Investigative Branch: Auditing</h3>
+    <p>While the other branches of accounting are primarily concerned with <strong>producing</strong> financial information, <strong>Auditing</strong> is the branch specialized in <strong>verifying</strong> it.[1, 2] It is defined as the independent examination of the financial records and statements of an organization to ensure they provide a "true and fair view" of the entity's economic reality.[3, 4]</p>
+    
+    <p>The core objective of an audit is to express a professional opinion on whether the statements are prepared, in all material respects, in accordance with an identified financial reporting framework, such as <strong>Generally Accepted Accounting Principles (GAAP)</strong> or <strong>International Financial Reporting Standards (IFRS)</strong>.[1, 5, 3] This independent oversight is essential for maintaining stakeholder trust; without it, investors and creditors would have no assurance that the management-produced reports are accurate or free from bias and fraud.</p>
+
+    <h3>Comparative Analysis: Producers vs. Verifiers</h3>
+    <p>To understand why <strong>Auditing</strong> is the unique answer, it is helpful to look at the "Master" each branch serves and the rules they follow:</p>
+
+    <p><strong>A) Cost Accounting: The Efficiency Tool</strong><br>
+    Cost accounting is a specialized subset of managerial accounting focused on identifying, measuring, and controlling the costs associated with producing goods or services.[1, 6]
+    <ul>
+        <li><em>Relationship:</em> Cost accountants provide the granular data needed to set product prices and evaluate factory efficiency.[6, 7] While they "examine" numbers, their work is internal and subjective—designed to help a company save money rather than to prove fairness to the public.</li>
+    </ul></p>
+
+    <p><strong>C) Tax Accounting: The Language of Law</strong><br>
+    Tax accounting involves the preparation of financial information according to the government's tax code (e.g., the Internal Revenue Code in the U.S. or the NIRC in the Philippines).[1, 8]
+    <ul>
+        <li><em>Relationship:</em> The goal here is compliance and the legal minimization of tax liability.[1, 7] A tax accountant’s "fairness" is defined by adherence to law, not necessarily by providing a holistic picture of business performance. In fact, a "taxable profit" is often very different from the "accounting profit" shown to investors.[1]</li>
+    </ul></p>
+
+    <p><strong>D) Management Accounting: The Internal Decision Engine</strong><br>
+    Management (or Managerial) accounting provides financial and non-financial data for internal use by a company's own managers.[1, 9, 6]
+    <ul>
+        <li><em>Relationship:</em> This branch is forward-looking, focusing on budgeting, forecasting, and production planning.[1, 7] Because it is for internal use only, it is <strong>not independent</strong> and is not bound by GAAP rules. While management accountants "examine" results to catch errors, their primary job is to support strategic choices, not to certify the fairness of public reports.</li>
+    </ul></p>
+
+    <h3>Summary of Branch Characteristics</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Branch</th>
+                <th>Primary Objective</th>
+                <th>Primary Audience</th>
+                <th>Independence Required?</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Auditing</strong></td>
+                <td><strong>Verification & Fairness</strong></td>
+                <td><strong>External (Public/Banks)</strong></td>
+                <td><strong>Yes (Absolute)</strong></td>
+            </tr>
+            <tr>
+                <td>Management</td>
+                <td>Internal Decision Support</td>
+                <td>Internal (Managers)</td>
+                <td>No (Internal Staff)</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td>Compliance & Liability Reduction</td>
+                <td>External (Government)</td>
+                <td>No (Entity Advocate)</td>
+            </tr>
+            <tr>
+                <td>Cost</td>
+                <td>Operational Efficiency</td>
+                <td>Internal (Operations)</td>
+                <td>No (Internal Staff)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Conclusion: The Role of Independence</h3>
+    <p>The word <strong>"independent"</strong> is the most critical descriptor in this context. While every accountant checks their work, an <strong>Auditor</strong> must remain separate from the daily operations of the firm to provide an unbiased perspective. This independence allows the audit to function as a vital "detective control" within the organization's financial framework, catching data entry errors, system glitches, and potential fraud before they impact financial reporting. Thus, Auditing acts as the reliability check for the entire "language of business," ensuring that the story told to the world is honest and standardized.[10]</p>
     </div>
 </div>
 
@@ -299,9 +364,7 @@ export const setBQuestions = `
         <p>The Sales Journal is a special journal used exclusively to record all sales of merchandise on account (credit). Cash sales would go in the Cash Receipts Journal.</p>
     </div>
 </div>
-<!--SET B EASY END -->
 
-<!--SET B AVERAGE START -->            
 <div class="slide" id="slide-sBaVq01" data-question-id="sBaVq01" data-type="Theory" data-set="Set B" data-difficulty="Average" data-topic="Statement of Financial Position" data-answer="D" data-points="6">
     <div class="quiz-container">
         <div class="topic-text">Topic: Statement of Financial Position</div>
@@ -541,9 +604,7 @@ export const setBQuestions = `
         <p>Net Cash from Operating Activities = Net Income (80,000) + Depreciation (20,000 non-cash expense added back) - Increase in AR (10,000 cash tied up in receivables) + Increase in AP (15,000 cash saved by delaying payment) = ₱105,000.</p>
     </div>
 </div>
-<!--SET A AVERAGE END -->
 
-<!--SET B DIFFICULT START -->
 <div class="slide" id="slide-sBdIq01" data-question-id="sBdIq01" data-type="Theory" data-set="Set B" data-difficulty="Difficult" data-topic="Cash Flow Statement" data-answer="B" data-points="9">
     <div class="quiz-container">
         <div class="topic-text">Topic: Cash Flow Statement</div>
@@ -759,6 +820,5 @@ export const setBQuestions = `
         <p>First, find the total Quick Assets: Quick Ratio (1.5) × Current Liabilities (400,000) = ₱600,000. Next, find Total Current Assets by adding back Inventory: 600,000 + 200,000 = ₱800,000. Finally, compute the Current Ratio: Current Assets (800,000) / Current Liabilities (400,000) = 2.0.</p>
     </div>
 </div>            
-<!--SET B DIFFICULT END -->
 `;
 
