@@ -719,7 +719,7 @@ export const setBQuestions = `
             <tr>
                 <td><strong>4</strong></td>
                 <td>Check Balance</td>
-                
+                <td>$Assets (\\uparrow ₱15k) = Liabilities (0) + Equity (\uparrow ₱15k)$</td>
                 <td><strong>Balanced</strong></td>
             </tr>
         </tbody>
