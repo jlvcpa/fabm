@@ -719,7 +719,7 @@ export const setBQuestions = `
             <tr>
                 <td><strong>4</strong></td>
                 <td>Check Balance</td>
-                <td>$Assets (\uparrow ₱15k) = Liabilities (0) + Equity (\uparrow ₱15k)$</td>
+                
                 <td><strong>Balanced</strong></td>
             </tr>
         </tbody>
@@ -2155,6 +2155,66 @@ export const setBQuestions = `
         <div class="book-content-question">A company has Total Assets of ₱5,000,000. Its Debt Ratio is 40%. If its current liabilities amount to ₱800,000, what is the amount of non-current liabilities? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 1,200,000</strong></p>
         <p>First, determine Total Liabilities using the Debt Ratio: ₱5,000,000 × 40% = ₱2,000,000. Since Total Liabilities = Current Liabilities + Non-Current Liabilities, then ₱2,000,000 - ₱800,000 = ₱1,200,000 Non-Current Liabilities.</p>
+        <h3>1. Analysis of Problem Factors and Financial Elements</h3>
+    <p>In advanced financial reporting, we must reconcile "top-down" ratios with "bottom-up" account classifications. To solve this problem, we must understand how specific data points interact across the <strong>Statement of Financial Position (Balance Sheet)</strong>. In this scenario, <strong>all three numerical factors are essential components</strong> of the final solution:</p>
+
+    <ul>
+        <li><strong>Total Assets (₱5,000,000):</strong> This is a <strong>core part</strong> of the solution. It represents the total economic resources owned or controlled by the firm.[1, 2] In solvency analysis, this figure serves as the "denominator" or base against which we measure the company's total debt burden.[1]</li>
+        <li><strong>Debt Ratio (40%):</strong> This is a <strong>core part</strong> of the solution. The debt ratio is a solvency metric that measures the proportion of total assets provided or financed by the company's creditors.[1] It identifies what percentage of the company is "owned" by outsiders rather than the owner.</li>
+        <li><strong>Current Liabilities (₱800,000):</strong> This is a <strong>core part</strong> of the solution. It represents the portion of total debt that must be settled within one year or one operating cycle.[3, 4] This figure is required to perform the "isolation step"—subtracting known short-term debt from total debt to find the unknown long-term portion.</li>
+    </ul>
+
+    <h3>2. The Logic: Solvency and Classification</h3>
+    <p>The solution relies on the mathematical definition of the <strong>Debt Ratio</strong> and the structural rules for a <strong>Classified Balance Sheet</strong>.
+    <ol>
+        <li>First, we apply the <strong>Solvency Logic</strong>: $Total Debt = Total Assets \times Debt Ratio$.[1] This reveals the total "claims" external parties have against the firm's resources.</li>
+        <li>Second, we apply the <strong>Classification Logic</strong>: Total Liabilities are always the sum of Current and Non-current portions ($L_{total} = L_{current} + L_{non-current}$).[3, 5] By knowing any two of these, the third can be derived through simple subtraction.</li>
+    </ol></p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We work backward from the capital structure ratio to the specific classified balance:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Identify <strong>Total Debt</strong></td>
+                <td>$Total Assets \times Debt Ratio$ <br> $₱5,000,000 \times 0.40$</td>
+                <td><strong>₱2,000,000</strong></td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>State the <strong>Classification Equation</strong></td>
+                <td>$Total Liabilities = Current + Non-current$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Transpose and solve for <strong>Non-current</strong></td>
+                <td>$₱2,000,000 - ₱800,000$</td>
+                <td><strong>1,200,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Potential Errors (The "Wrong" Answers)</h3>
+    <p>Understanding the logic of common distractors is vital for avoiding technical errors in difficult-level problems:</p>
+    <ul>
+        <li><strong>₱2,000,000 (The "Incomplete Calculation" Error):</strong> This is the most common distractor. It represents the <strong>Total Liabilities</strong>. A student who selects this has correctly applied the Debt Ratio but has failed to answer the specific question, which asks only for the <em>non-current</em> portion.</li>
+        <li><strong>₱3,000,000 (The "Equity" Error):</strong> This result comes from calculating the owner's stake ($Assets \times 60\%$). While ₱3,000,000 is the correct <strong>Total Equity</strong> ($Equity = Assets - Liabilities$), it is unrelated to the specific liability breakdown requested.[1, 2]</li>
+        <li><strong>₱4,200,000 (The "Classification Mismatch" Error):</strong> This result occurs if a student mistakenly subtracts Current Liabilities directly from Total Assets ($5M - 800k$). This is logically flawed because it treats assets and liabilities as interchangeable parts of the same classification pool.</li>
+    </ul>
+
+    <h3>Conclusion: Significance of the Result</h3>
+    <p>The resulting <strong>₱1,200,000 in Non-current Liabilities</strong> indicates that the majority ($60\%$) of the company's debt is long-term in nature. From an analysis perspective, having ₱1.2M in non-current debt and only ₱800k in current debt suggests that the company has successfully pushed its major repayment obligations into the future, providing more room for immediate <strong>liquidity</strong> and operational growth.[3, 1] By maintaining this structural clarity, accountants ensure the financial "story" accurately depicts both the company's immediate survival and its long-term leverage.[1]</p>
     </div>
 </div>
 
@@ -2173,6 +2233,73 @@ export const setBQuestions = `
         <div class="book-content-question">The bank statement balance is ₱450,000, while the unadjusted book balance is ₱420,000. Reconciling items include: Outstanding checks of ₱60,000, Bank service charges of ₱2,000, NSF Check of ₱8,000, and Notes collected by the bank of ₱30,000. Assuming no errors, what is the amount of the Deposit in Transit? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 50,000</strong></p>
         <p>First, calculate the true adjusted balance using the book side: 420,000 - 2,000 (service charge) - 8,000 (NSF) + 30,000 (Note collected) = ₱440,000 adjusted balance. The bank side must also equal ₱440,000. Bank Balance (450,000) + DIT - Outstanding Checks (60,000) = 440,000. 390,000 + DIT = 440,000. DIT = ₱50,000.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>In advanced bank reconciliation, we often have to solve for an "unknown" reconciling item by utilizing the equality of the adjusted balances. To do this, we must first categorize every provided amount into its respective "side" (Bank vs. Book) and determine its directional effect.</p>
+    
+    <ul>
+        <li><strong>Bank Statement Balance (₱450,000):</strong> This is the <strong>starting point for the Bank Side</strong>. It represents the cash on record at the financial institution.</li>
+        <li><strong>Unadjusted Book Balance (₱420,000):</strong> This is the <strong>starting point for the Book Side</strong>. It represents the cash currently recorded in the company's general ledger.</li>
+        <li><strong>Outstanding Checks (₱60,000):</strong> These are checks issued and recorded by the company but not yet presented to the bank. They are a <strong>Bank Side Deduction</strong> because they represent money that is "gone" from the company's perspective but still in the bank's account.</li>
+        <li><strong>Bank Service Charges (₱2,000):</strong> Fees deducted by the bank that the company hasn't recorded yet. They are a <strong>Book Side Deduction</strong>.</li>
+        <li><strong>NSF Check (₱8,000):</strong> A "bounced" customer check that the bank has reversed from the account. This is a <strong>Book Side Deduction</strong> because the company must now reduce its records to match the bank's reality.</li>
+        <li><strong>Notes Collected by Bank (₱30,000):</strong> Amounts added to the bank account on behalf of the company (Credit Memo). This is a <strong>Book Side Addition</strong>.</li>
+        <li><strong>The Target: Deposit in Transit:</strong> Receipts recorded by the company but not yet processed by the bank. This is a <strong>Bank Side Addition</strong>.</li>
+    </ul>
+
+    <h3>2. The Logic: The Equality Principle</h3>
+    <p>The fundamental principle of a bank reconciliation is that the <strong>Adjusted Bank Balance</strong> must equal the <strong>Adjusted Book Balance</strong>. 
+    Since we have all the information needed to solve the Book Side, we can find the "True Cash Balance" first and then use that figure to work backward and find the missing Bank Side item (Deposit in Transit).</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We solve the problem in two distinct mathematical stages:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Calculate <strong>Adjusted Book Balance</strong></td>
+                <td>$420,000 (Book) - 2,000 (SC) - 8,000 (NSF) + 30,000 (Note)$</td>
+                <td><strong>₱440,000</strong></td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Set <strong>Adjusted Bank</strong> = ₱440,000</td>
+                <td>Adjusted Bank Balance must match Adjusted Book.</td>
+                <td>₱440,000</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>State <strong>Bank Side Formula</strong></td>
+                <td>$Bank Balance + DIT - Outstanding Checks = Adjusted Balance$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Transpose and solve for <strong>DIT</strong></td>
+                <td>$450,000 + DIT - 60,000 = 440,000$ <br> $390,000 + DIT = 440,000$</td>
+                <td><strong>50,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Mathematical Traps (Distractors)</h3>
+    <p>Understanding common logical errors helps confirm the ₱50,000 result:</p>
+    <ul>
+        <li><strong>₱20,000 (The "Note Collected" Omission):</strong> This occurs if a student fails to add the ₱30,000 Note Collected to the book side. They would find an adjusted balance of ₱410,000, leading to a DIT of only ₱20,000. This ignores that a bank collection is an <em>increase</em> to the company's true wealth.</li>
+        <li><strong>₱66,000 (The "NSF Sign" Error):</strong> This results if the ₱8,000 NSF check is mistakenly <em>added</em> instead of subtracted. This treats a failed payment as a gain, which is logically impossible in accounting.</li>
+        <li><strong>₱30,000 (The "Simple Difference" Error):</strong> This is just the gap between the unadjusted balances ($450k - 420k$). This ignores the timing differences (OC and DIT) that are the very reason the balances don't match initially.</li>
+    </ul>
+
+    <h3>Conclusion: Significance of the Result</h3>
+    <p>The resulting <strong>₱50,000 Deposit in Transit</strong> completes the financial picture. It proves that the business had ₱50,000 in cash receipts near the end of the month that simply hadn't "hit" the bank's computer yet. By identifying this unknown, the company ensures its general ledger reflects a true cash balance of ₱440,000, providing an accurate basis for preparing the Balance Sheet and planning future expenditures.</p>
     </div>
 </div>
 
@@ -2191,6 +2318,72 @@ export const setBQuestions = `
         <div class="book-content-question">An entity's net sales are ₱2,500,000. The gross profit rate based on sales is 30%. Operating expenses are strictly computed as 20% of the cost of goods sold. What is the entity's net income? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 400,000</strong></p>
         <p>Gross Profit = 2,500,000 × 30% = 750,000. Cost of Goods Sold = Sales - Gross Profit = 1,750,000. Operating Expenses = 1,750,000 × 20% = 350,000. Net Income = Gross Profit (750,000) - Operating Expenses (350,000) = ₱400,000.</p>
+        <h3>1. Analysis of Problem Factors and Financial Elements</h3>
+    <p>In "Difficult" level accounting problems, information is often presented as relationships or rates rather than raw figures. To reach the "bottom line" (Net Income), we must systematically derive each layer of the Income Statement. In this problem, <strong>every factor and percentage provided is an essential component</strong> of the solution:</p>
+
+    <ul>
+        <li><strong>Net Sales (₱2,500,000):</strong> This is the <strong>starting point</strong>. It represents the total revenue recognized for the period after returns and discounts. In this problem, it serves as the base for calculating the absolute amount of Gross Profit.</li>
+        <li><strong>Gross Profit Rate (30% based on sales):</strong> This is a <strong>core part</strong> of the solution. It identifies the "trading margin." Because it is "based on sales," it means 30 centavos of every peso sold is profit after inventory costs. This is used to find the absolute Gross Profit and, by extension, the Cost of Goods Sold.</li>
+        <li><strong>Operating Expenses (20% of COGS):</strong> This is a <strong>conditional factor</strong>. Unlike standard problems where expenses are a fixed amount, here they are linked to the efficiency of inventory management. This makes calculating the <strong>Cost of Goods Sold (COGS)</strong> a mandatory intermediate step.</li>
+    </ul>
+
+    <h3>2. The Logic: The Multi-Step Derivation</h3>
+    <p>A multi-step Statement of Comprehensive Income organizes data to highlight specific profitability benchmarks.[1, 2] The logic for this specific derivation is as follows:
+    <ol>
+        <li><strong>Step A:</strong> Use Sales and the GP Rate to find the "Gross Profit" ($$Sales \times GP\%$$).</li>
+        <li><strong>Step B:</strong> Use the relationship between Sales and GP to find the "Cost of Goods Sold" ($$Sales - GP$$).</li>
+        <li><strong>Step C:</strong> Apply the expense rate to the COGS found in Step B to find the "Operating Expenses."</li>
+        <li><strong>Step D:</strong> Subtract those expenses from Gross Profit to find the final "Net Income."[1, 3]</li>
+    </ol></p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Calculate <strong>Gross Profit</strong></td>
+                <td>$₱2,500,000 \times 30\%$</td>
+                <td>₱750,000</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Calculate <strong>Cost of Goods Sold</strong></td>
+                <td>$₱2,500,000 - ₱750,000$</td>
+                <td>₱1,750,000</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Calculate <strong>Operating Expenses</strong></td>
+                <td>$₱1,750,000 \times 20\%$</td>
+                <td>₱350,000</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Calculate <strong>Net Income</strong></td>
+                <td>$Gross Profit (₱750,000) - OPEX (₱350,000)$</td>
+                <td><strong>400,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Potential Pitfalls (Incorrect Results)</h3>
+    <p>Understanding why alternative calculations are incorrect is vital for avoiding technical errors in advanced exams:</p>
+    <ul>
+        <li><strong>₱250,000 (The "Sales-Base" Error):</strong> This occurs if a student mistakenly calculates Operating Expenses as 20% of <em>Sales</em> ($500,000$) instead of 20% of <em>COGS</em>. This ignores the specific "strictly computed" instructions in the prompt.</li>
+        <li><strong>₱750,000 (The "Gross Profit" Error):</strong> This happens if a student stops the calculation too early. While ₱750k is the correct Gross Profit, it does not account for the ₱350,000 in operating overhead required to reach Net Income.[1, 3]</li>
+        <li><strong>₱350,000 (The "Expense-Only" Error):</strong> This is simply the amount of the Operating Expenses. This represents a "part" of the solution but fails to calculate the final residual income.</li>
+    </ul>
+
+    <h3>Conclusion: Significance of the Result</h3>
+    <p>The entity achieved a <strong>Net Income of ₱400,000</strong>, representing a $16\%$ Net Profit Margin ($400k/2.5M$). This analysis reveals that for every ₱1 of sales, ₱0.70 goes to the cost of inventory, ₱0.14 goes to operating costs ($350k/2.5M$), and ₱0.16 remains as profit.[1, 3] By linking expenses to COGS, management can see that their overhead is highly dependent on their inventory volume, which is a critical insight for strategic scaling.</p>
     </div>
 </div>
 
@@ -2209,6 +2402,73 @@ export const setBQuestions = `
         <div class="book-content-question">The beginning capital of a sole proprietorship is ₱800,000 and the ending capital is ₱1,100,000. During the year, the owner withdrew ₱150,000 and the business incurred a Net Loss of ₱50,000. How much was the additional investment made by the owner? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 500,000</strong></p>
         <p>Using the equity formula algebraically: End Cap = Beg Cap + Add Inv - Net Loss - Withdrawals. 1,100,000 = 800,000 + Add Inv - 50,000 - 150,000. 1,100,000 = 600,000 + Add Inv. Additional Investment = ₱500,000.</p>
+        <h3>1. Analysis of Problem Factors and Financial Elements</h3>
+    <p>In "Difficult" level equity problems, we must use the <strong>reconstruction method</strong> to solve for a specific transaction by analyzing the movement between the beginning and ending balances. In this problem, <strong>every numerical factor provided is an essential component</strong> of the final solution:</p>
+
+    <ul>
+        <li><strong>Beginning Capital (₱800,000):</strong> This is the <strong>starting foundation</strong>. it represents the owner's residual interest at the commencement of the period. It is a mandatory part of the equity roll-forward equation.</li>
+        <li><strong>Ending Capital (₱1,100,000):</strong> This is the <strong>target balance</strong>. It represents the final position after all operational and capital transactions have occurred. We use this to establish the "Check Value" for our algebraic equation.</li>
+        <li><strong>Withdrawals (₱150,000):</strong> This is a <strong>core part</strong> of the solution. Known as "Drawings," these represent assets removed by the owner for personal use. Because they decrease the owner's stake, they must be factored in as a deduction to find the missing investment.</li>
+        <li><strong>Net Loss (₱50,000):</strong> This is a <strong>core part</strong> of the solution. A net loss occurs when expenses exceed revenues. Unlike net income, which increases equity, a loss acts as a reduction to the capital account.</li>
+        <li><strong>The Target: Additional Investment:</strong> This represents "New Capital" contributed by the owner. It is the unknown variable ($x$) in our reconstruction.</li>
+    </ul>
+
+    <h3>2. The Logic: The Equity Roll-Forward</h3>
+    <p>The Statement of Changes in Equity serves as the mathematical bridge between two Balance Sheet dates. The logic relies on the fact that any change in the capital balance that is not explained by <strong>Net Loss</strong> or <strong>Withdrawals</strong> must have been caused by an <strong>Additional Investment</strong>.</p>
+    
+    <p>The fundamental formula for a sole proprietorship is:
+    $$Ending Capital = Beginning Capital + Additional Investment - Net Loss - Withdrawals$$</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We solve the problem by treating the formula as an algebraic equation and isolating the unknown variable:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Mathematical Expression</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>State the Equity Equation</td>
+                <td>$End = Beg + Add - Loss - With$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Substitute known values</td>
+                <td>$1,100,000 = 800,000 + Add - 50,000 - 150,000$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Simplify known side</td>
+                <td>$1,100,000 = 600,000 + Add$</td>
+                <td>₱600,000 (Adjusted Base)</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Solve for <strong>Add. Investment</strong></td>
+                <td>$1,100,000 - 600,000$</td>
+                <td><strong>₱500,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Potential Mathematical Pitfalls</h3>
+    <p>Understanding why alternative calculations are incorrect helps verify the ₱500,000 result:</p>
+    <ul>
+        <li><strong>₱300,000 (The "Simple Change" Error):</strong> This occurs if a student only subtracts beginning capital from ending capital ($1.1M - 800k$). This ignores the fact that the business actually "lost" ₱200,000 through operations and withdrawals, meaning the owner had to invest even more just to reach the final ₱1.1M figure.</li>
+        <li><strong>₱400,000 (The "Loss Addition" Error):</strong> This happens if a student mistakenly <em>adds</em> the Net Loss as if it were income, then accounts for the withdrawal. This violates the definition of a loss as a reduction in equity.</li>
+        <li><strong>₱100,000 (The "One-Sided" Error):</strong> This occurs if a student accounts for the withdrawal but ignores the loss, failing to capture the full impact of the year's activities.</li>
+    </ul>
+
+    <h3>Conclusion: The "Bottom Line" for the Owner</h3>
+    <p>The resulting <strong>₱500,000 Additional Investment</strong> shows a significant commitment from the owner. Despite the business losing ₱50,000 and the owner taking home ₱150,000 for personal use, the total value of the firm still grew. This was only possible because the owner's fresh contribution of ₱500,000 was large enough to cover the "outflows" and still increase the company's net worth.</p>
     </div>
 </div>
 
@@ -2227,6 +2487,79 @@ export const setBQuestions = `
         <div class="book-content-question">An entity reported sales for the year of ₱900,000 (all on credit). Accounts Receivable decreased by ₱40,000 during the year. Furthermore, the entity recorded bad debt expense of ₱10,000 and wrote off uncollectible accounts amounting to ₱15,000. How much cash was actually collected from customers? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 925,000</strong></p>
         <p>Reconstruct the Accounts Receivable T-account: Decrease in AR = 40,000. Therefore, Beg AR - End AR = 40,000. Formula: End AR = Beg AR + Sales - Collections - Write-offs. Rearranging: Collections = Sales + Decrease in AR - Write-offs. Collections = 900,000 + 40,000 - 15,000 = ₱925,000. (Bad debt expense affects the Allowance account, not gross AR).</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>In advanced financial accounting, calculating cash movement requires isolating transactions that affect the "Gross" asset balance from those that are merely non-cash estimates. To solve for cash collections, we must analyze each provided factor:</p>
+
+    <ul>
+        <li><strong>Credit Sales (₱900,000):</strong> This is a <strong>core part</strong> of the solution. It represents the total amount of new debt added to the Accounts Receivable (AR) ledger during the period. It increases the balance of the asset.</li>
+        <li><strong>Decrease in Accounts Receivable (₱40,000):</strong> This is a <strong>core part</strong> of the solution. A decrease indicates that the total "reductions" (collections and write-offs) exceeded the new "additions" (sales). Numerically, this means $Beginning AR - Ending AR = ₱40,000$.</li>
+        <li><strong>Write-offs of Uncollectible Accounts (₱15,000):</strong> This is a <strong>core part</strong> of the solution. A write-off is the actual removal of a specific customer's balance from the ledger. While it is not a cash receipt, it *does* reduce the Gross AR balance. Failure to account for write-offs would result in overstating the amount of cash actually received.</li>
+        <li><strong>Bad Debt Expense (₱10,000):</strong> This factor is <strong>excluded from the solution</strong>.
+            <ul>
+                <li><em>The Logic:</em> Bad Debt Expense is a non-cash <strong>estimate</strong> recorded at the end of the period to reflect potential future losses. It is recorded by debiting an expense and crediting the <em>Allowance for Doubtful Accounts</em> (a contra-asset). Crucially, recording the expense does not reduce the <strong>Gross AR</strong> balance; only the subsequent "write-off" of a specific account does that. Including both would lead to "double-counting" the loss.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>2. The Logic: Reconstructing the AR T-Account</h3>
+    <p>The solution relies on the fundamental flow of a Gross Accounts Receivable account. The total value of the account changes according to the following mathematical identity:
+    $$Beginning AR + Credit Sales - Cash Collections - Write-offs = Ending AR$$
+    
+    To find the cash collected, we rearrange the formula to isolate <strong>Collections</strong>:
+    $$Collections = Sales + (Beginning AR - Ending AR) - Write-offs$$
+    
+    Since $(Beginning AR - Ending AR)$ represents the <strong>Decrease in AR</strong>, the formula simplifies to:
+    $$Collections = Sales + Decrease in AR - Write-offs$$</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Identify <strong>Additions</strong> to AR</td>
+                <td>Credit Sales</td>
+                <td>₱900,000</td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Identify <strong>Total Reductions</strong></td>
+                <td>$Collections + Write-offs$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Set up <strong>Net Change Equation</strong></td>
+                <td>$₱900,000 - (Collections + ₱15,000) = -₱40,000$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Transpose and solve</td>
+                <td>$₱900,000 + ₱40,000 - ₱15,000$</td>
+                <td><strong>925,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Potential Pitfalls (Incorrect Results)</h3>
+    <p>Understanding common errors helps in verifying the ₱925,000 result:</p>
+    <ul>
+        <li><strong>₱940,000 (The "Write-off Omission" Error):</strong> This occurs if a student simply adds the AR decrease to Sales ($900k + 40k$). This assumes the <em>entire</em> ₱40,000 reduction was due to cash, ignoring that ₱15,000 of it was actually due to uncollectible write-offs.</li>
+        <li><strong>₱915,000 (The "Bad Debt Expense" Error):</strong> This happens if a student mistakenly subtracts the Bad Debt Expense estimate instead of (or in addition to) the write-off. This fails to distinguish between the <em>Allowance adjustment</em> and the <em>Gross AR removal</em>.</li>
+        <li><strong>₱860,000 (The "Directional" Error):</strong> This results from <em>subtracting</em> the AR decrease from Sales ($900k - 40k$). This is logically flawed; if AR decreased, it means you collected <em>more</em> than you sold, not less.</li>
+    </ul>
+
+    <h3>Conclusion: The "Cash vs. Accrual" Reality</h3>
+    <p>The resulting <strong>₱925,000</strong> represents the actual liquidity generated from the company's customers. By correctly filtering out non-cash estimates like Bad Debt Expense and adjusting for write-offs, the accountant ensures that the <strong>Operating Activities</strong> section of the Cash Flow Statement reflects physical cash reality rather than just accrual-basis accounting entries.</p>
+
     </div>
 </div>
 
@@ -2245,6 +2578,66 @@ export const setBQuestions = `
         <div class="book-content-question">A corporate taxpayer operating in the Philippines has a gross income of ₱5,000,000 and allowable business deductions of ₱3,000,000 for the taxable year. Assuming the applicable regular corporate income tax rate is strictly 25%, what is the income tax due? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 500,000</strong></p>
         <p>Net Taxable Income is calculated by subtracting allowable deductions from gross income: ₱5,000,000 - ₱3,000,000 = ₱2,000,000. The income tax due is ₱2,000,000 × 25% = ₱500,000.</p>
+        <h3>1. Analysis of Problem Factors and Financial Elements</h3>
+    <p>In Philippine taxation, determining the final tax liability requires a systematic "netting" of economic inflows and outflows. In this problem, <strong>every numerical factor and entity status is an essential component</strong> of the final solution:</p>
+
+    <ul>
+        <li><strong>Corporate Taxpayer (Philippines):</strong> This identifies the <strong>Tax Subject</strong>. Domestic corporations are generally subject to tax on their worldwide income, while resident foreign corporations (branches) are taxed on Philippine-sourced income. This status confirms the entity is subject to the Regular Corporate Income Tax (RCIT) framework.</li>
+        <li><strong>Gross Income (₱5,000,000):</strong> This is a <strong>core part</strong> of the solution. It represents the total profit derived from the conduct of trade or business before deducting operating expenses. Under the NIRC, gross income includes all wealth that flows into the taxpayer other than mere a return of capital.</li>
+        <li><strong>Allowable Business Deductions (₱3,000,000):</strong> This is a <strong>core part</strong> of the solution. These are the ordinary and necessary expenses paid or incurred during the taxable year in carrying on the business. They are subtracted from gross income to reach the net taxable base.</li>
+        <li><strong>Tax Rate (Strictly 25%):</strong> This is the <strong>core multiplier</strong>. While some small domestic corporations may qualify for a preferential 20% rate if their net taxable income is below ₱5 million and total assets are below ₱100 million, the prompt specifies to use the standard 25% RCIT rate.</li>
+    </ul>
+
+    <h3>2. The Logic: The Net Taxable Income Model</h3>
+    <p>Corporate taxation in the Philippines follows the <strong>Net Income Method</strong>. Unlike Business Taxes (like VAT or Percentage Tax) which are often based on "Gross Sales," Income Tax is based on <strong>Profitability</strong>. The logic is that a business should only contribute a portion of its <em>actual earnings</em> to the government.
+    
+    The fundamental sequence is:
+    <ol>
+        <li>Determine the <strong>Net Taxable Income</strong> ($Gross Income - Allowable Deductions$).</li>
+        <li>Apply the <strong>Statutory Rate</strong> to that base to find the tax due.</li>
+    </ol></p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Calculate <strong>Net Taxable Income</strong></td>
+                <td>$₱5,000,000 - ₱3,000,000$</td>
+                <td><strong>₱2,000,000</strong></td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Identify <strong>Applicable Tax Rate</strong></td>
+                <td>Strictly 25% (as per prompt)</td>
+                <td>$0.25$</td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Calculate <strong>Income Tax Due</strong></td>
+                <td>$₱2,000,000 \times 25\%$</td>
+                <td><strong>500,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Factors Excluded (Distractors)</h3>
+    <p>In advanced taxation, we must look for items that <em>should</em> have been considered but were not present.
+    <ul>
+        <li><strong>Minimum Corporate Income Tax (MCIT):</strong> This factor was <strong>omitted/excluded</strong>. MCIT is a 2% tax on gross income applied starting in the fourth year of operations if it is higher than the RCIT. In this case, 2% of ₱5M is only ₱100,000. Since the RCIT (₱500,000) is higher, the MCIT is irrelevant to the final payment.</li>
+        <li><strong>Final Taxes/Withholding:</strong> The problem does not mention "Passive Income" (like bank interest) or "Creditable Taxes Withheld." Had these been provided, they would be <strong>excluded</strong> from the net taxable income calculation but <strong>included</strong> as a subtraction (tax credit) from the final ₱500,000 tax due.</li>
+    </ul></p>
+
+    <h3>Conclusion: The Fiscal Responsibility</h3>
+    <p>The resulting <strong>₱500,000</strong> represents the corporation's contribution to the national budget for the year. This payment follows the <strong>Lifeblood Doctrine</strong>, providing the state with the revenue needed to fund public infrastructure and services that, in turn, provide the protection and environment necessary for the corporation to continue its profitable operations.</p>
     </div>
 </div>
 
@@ -2263,6 +2656,75 @@ export const setBQuestions = `
         <div class="book-content-question">A company's Quick Ratio (Acid-Test Ratio) is 1.5. Its current liabilities are ₱400,000. The only non-quick current asset the company holds is inventory, which amounts to ₱200,000 (prepaid expenses are zero). What is the company's Current Ratio? (Enter the number only, e.g., if 3.5, enter 3.5)</div>
         <p class="correct-line"><strong>Correct Answer: 2</strong></p>
         <p>First, find the total Quick Assets: Quick Ratio (1.5) × Current Liabilities (400,000) = ₱600,000. Next, find Total Current Assets by adding back Inventory: 600,000 + 200,000 = ₱800,000. Finally, compute the Current Ratio: Current Assets (800,000) / Current Liabilities (400,000) = 2.0.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>In advanced financial analysis, we must often work backward from one ratio to find the components needed for another. To solve for the Current Ratio, we must first decompose the <strong>Quick Ratio</strong>. In this scenario, <strong>all four factors provided are essential components</strong> of the final solution:</p>
+
+    <ul>
+        <li><strong>Quick Ratio (1.5):</strong> This is a <strong>core part</strong> of the solution. It is a conservative liquidity metric that excludes inventory and prepaids.[1, 2] It serves as the primary multiplier to find the value of the most liquid assets.</li>
+        <li><strong>Current Liabilities (₱400,000):</strong> This is a <strong>core part</strong> of the solution. It represents the total obligations due within one year.[3, 4] This figure is essential because it acts as the "denominator" for both the Quick Ratio and the Current Ratio calculations.</li>
+        <li><strong>Inventory (₱200,000):</strong> This is a <strong>core part</strong> of the solution. Inventory is a current asset but is excluded from the Quick Ratio because it is less liquid—it must be sold before it becomes cash.[3, 1] It represents the "bridge" between quick assets and total current assets.</li>
+        <li><strong>Prepaid Expenses (0):</strong> This is a <strong>qualitative factor</strong>. By specifying that prepaids are zero, the problem clarifies that inventory is the <em>only</em> item separating the quick asset pool from the current asset pool, ensuring mathematical precision.</li>
+    </ul>
+
+    <h3>2. The Logic: The Hierarchy of Conservatism</h3>
+    <p>Financial analysts use a hierarchy of ratios to assess <strong>Short-term Liquidity</strong> (the ability to pay bills as they come due).[2, 5]
+    <ul>
+        <li><strong>The Quick Ratio</strong> is a "strict" test. It only considers assets that are already cash or can be converted to cash within 90 days (Cash, Marketable Securities, and Accounts Receivable).[1, 6]</li>
+        <li><strong>The Current Ratio</strong> is a "broad" test. It includes all short-term resources, including those that might take 12 months to realize, such as inventory.[3, 7]</li>
+    </ul>
+    The logic for this reconstruction is: 
+    $$\text{Total Current Assets} = \text{Quick Assets} + \text{Inventory} + \text{Prepaid Expenses}$$</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We solve the problem by finding the missing numerator from the first ratio and using it to build the numerator for the second:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1</strong></td>
+                <td>Solve for <strong>Quick Assets</strong></td>
+                <td>$Quick Ratio \times Current Liabilities$ <br> $1.5 \times ₱400,000$</td>
+                <td><strong>₱600,000</strong></td>
+            </tr>
+            <tr>
+                <td><strong>2</strong></td>
+                <td>Assemble <strong>Current Assets</strong></td>
+                <td>$Quick Assets (₱600k) + Inventory (₱200k) + 0$</td>
+                <td><strong>₱800,000</strong></td>
+            </tr>
+            <tr>
+                <td><strong>3</strong></td>
+                <td>Apply <strong>Current Ratio Formula</strong></td>
+                <td>$\frac{\text{Current Assets}}{\text{Current Liabilities}}$</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td><strong>4</strong></td>
+                <td>Final Calculation</td>
+                <td>$\frac{₱800,000}{₱400,000}$</td>
+                <td><strong>2</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Analysis of Potential Pitfalls (Incorrect Results)</h3>
+    <p>Understanding the mathematical relationship helps identify why common distractors are incorrect:</p>
+    <ul>
+        <li><strong>1.5 (The "No Inventory" Error):</strong> This occurs if a student assumes the ratios are identical, ignoring that the Current Ratio must always be equal to or <em>higher</em> than the Quick Ratio because it includes a broader asset base.[1, 2]</li>
+        <li><strong>0.5 (The "Inverse" Error):</strong> This happens if a student divides liabilities by assets ($\frac{400k}{800k}$). This incorrectly measures "Current Debt-to-Asset" coverage rather than liquidity.</li>
+        <li><strong>2.5 (The "Prepaid" Error):</strong> This would occur if a student incorrectly added the liabilities <em>to</em> the assets instead of using them as a divisor.</li>
+    </ul>
+
+    <h3>Conclusion: Significance of the Result</h3>
+    <p>The company has a <strong>Current Ratio of 2.0</strong>, which is generally considered a "healthy" benchmark indicating the company has ₱2.00 of resources for every ₱1.00 of debt.[1, 8] However, the <strong>Quick Ratio of 1.5</strong> provides the deeper insight: out of that ₱2.00 in assets, ₱1.50 is already liquid, while only ₱0.50 is tied up in inventory. This reveals a business with strong <strong>Cash Position</strong> and low dependency on immediate inventory sales to survive.[2, 5]</p>
     </div>
 </div>            
 `;
