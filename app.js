@@ -321,22 +321,29 @@ function buildNavigator() {
                 setLi.classList.add('locked');
                 setLi.innerHTML = `<span>🔒 ${sSet}</span>`;
                 setLi.onclick = (e) => { e.stopPropagation(); alert(`Finish answering previous sets to unlock ${sSet}.`); };
+                
+                navList.appendChild(setLi); // Add Locked Parent
+                currentSetUl = null; // Ensure we don't append to a locked set
             } else {
                 setLi.innerHTML = `<span>${sSet}</span> <span>▼</span>`;
-                currentSetUl = document.createElement('ul');
-                currentSetUl.className = 'nav-week-children';
-                currentSetUl.setAttribute('data-set-ul', setKey);
-                currentSetUl.style.display = 'none'; 
+                
+                // Create a block-scoped constant for closure preservation
+                const mySetUl = document.createElement('ul');
+                mySetUl.className = 'nav-week-children';
+                mySetUl.setAttribute('data-set-ul', setKey);
+                mySetUl.style.display = 'none'; 
+                currentSetUl = mySetUl; 
                 
                 setLi.onclick = (e) => {
                     e.stopPropagation();
-                    const isOpening = currentSetUl.style.display !== 'block';
+                    const isOpening = mySetUl.style.display !== 'block';
                     document.querySelectorAll('.nav-week-children').forEach(ul => ul.style.display = 'none');
-                    if (isOpening) currentSetUl.style.display = 'block';
+                    if (isOpening) mySetUl.style.display = 'block';
                 };
-                navList.appendChild(currentSetUl);
+                
+                navList.appendChild(setLi);    // Append the LI FIRST
+                navList.appendChild(mySetUl);  // Append the UL AFTER the LI
             }
-            navList.appendChild(setLi);
         }
 
         if (sDiff !== currentDiff && currentSetUl) {
@@ -347,20 +354,25 @@ function buildNavigator() {
             diffLi.setAttribute('data-diff', diffKey);
             diffLi.innerHTML = `<span>${sDiff}</span> <span>▼</span>`;
             
-            currentDiffUl = document.createElement('ul');
-            currentDiffUl.className = 'nav-day-children';
-            currentDiffUl.setAttribute('data-diff-ul', diffKey);
-            currentDiffUl.style.display = 'none';
+            // Create a block-scoped constant for closure preservation
+            const myDiffUl = document.createElement('ul');
+            myDiffUl.className = 'nav-day-children';
+            myDiffUl.setAttribute('data-diff-ul', diffKey);
+            myDiffUl.style.display = 'none';
+            currentDiffUl = myDiffUl;
             
+            // Capture the specific parent set to search inside
+            const parentSetUl = currentSetUl; 
+
             diffLi.onclick = (e) => {
                 e.stopPropagation();
-                const isOpening = currentDiffUl.style.display !== 'block';
-                currentSetUl.querySelectorAll('.nav-day-children').forEach(ul => ul.style.display = 'none');
-                if (isOpening) currentDiffUl.style.display = 'block';
+                const isOpening = myDiffUl.style.display !== 'block';
+                parentSetUl.querySelectorAll('.nav-day-children').forEach(ul => ul.style.display = 'none');
+                if (isOpening) myDiffUl.style.display = 'block';
             };
             
-            currentSetUl.appendChild(diffLi);
-            currentSetUl.appendChild(currentDiffUl);
+            currentSetUl.appendChild(diffLi);    // Append the Difficulty LI
+            currentSetUl.appendChild(myDiffUl);  // Append the Container for Questions AFTER
             
             qCounters[diffKey] = 1;
         }
