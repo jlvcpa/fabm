@@ -31,13 +31,16 @@ body, html {
 /* Ownership Footer */
     #courseware-footer {
         position: absolute;
-        bottom: 0; left: 0; width: 100%; padding: 10px 0;
+        bottom: 0; left: 0; width: 100%; 
+        padding: 10px 0;
+        /* env() ensures the text isn't hidden under the iPhone home swipe bar */
+        padding-bottom: calc(10px + env(safe-area-inset-bottom)); 
         background: #0d1117; 
-        color: rgba(255,255,255,0.6); /* Made slightly brighter for better readability */
+        color: rgba(255,255,255,0.6); 
         font-size: 0.85rem;
         text-align: center; 
         border-top: 1px solid #30363d; 
-        z-index: 9999 !important; /* Forces it to always sit above the 3D slides */
+        z-index: 9999 !important; 
         pointer-events: none;
         transition: all 0.4s ease;
     }
