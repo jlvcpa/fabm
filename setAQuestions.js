@@ -1,5 +1,4 @@
 export const setAQuestions = `
-<!--SET A EASY START -->             
 <div class="slide" id="slide-sAeAq01" data-question-id="sAeAq01" data-type="Theory" data-set="Set A" data-difficulty="Easy" data-topic="Introduction to Accounting" data-answer="B" data-points="3">
     <div class="quiz-container">
         <div class="topic-text">Topic: Introduction to Accounting</div>
@@ -961,7 +960,6 @@ export const setAQuestions = `
     <p>The key to selecting the correct journal lies in identifying the nature of the event (buying vs. selling) and the timing of the payment (immediate cash vs. future credit). Because the business is <strong>buying</strong> inventory <strong>on account</strong>, the transaction must be logged in the Purchases Journal to ensure accurate tracking of the money owed to suppliers in the Accounts Payable subsidiary ledger.</p>
     </div>
 </div>
-<!--SET A EASY END -->
 
 <div class="slide" id="slide-sAaVq01" data-question-id="sAaVq01" data-type="Theory" data-set="Set A" data-difficulty="Average" data-topic="Statement of Financial Position" data-answer="B" data-points="6">
     <div class="quiz-container">
@@ -1202,6 +1200,7 @@ export const setAQuestions = `
         <p>Net Increase in Cash = Operating Cash (120,000) - Investing Cash outflow (50,000) + Financing Cash inflow (30,000) = 100,000. Ending Cash = Net Increase (100,000) + Beginning Cash (25,000) = ₱125,000.</p>
     </div>
 </div>
+
 <div class="slide" id="slide-sAdIq01" data-question-id="sAdIq01" data-type="Theory" data-set="Set A" data-difficulty="Difficult" data-topic="Statement of Financial Position" data-answer="B" data-points="9">
     <div class="quiz-container">
         <div class="topic-text">Topic: Statement of Financial Position</div>
