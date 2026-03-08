@@ -1,17 +1,17 @@
 import { collection, query, getDocs, orderBy, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 import { db, loginUser } from './auth.js';
 import { setAQuestions } from './setAQuestions.js';
-// import { setBQuestions } from './setBQuestions.js';  <-- Uncomment as you add files
+// import { setBQuestions } from './setBQuestions.js';  
 // import { setCQuestions } from './setCQuestions.js';
 // import { setDQuestions } from './setDQuestions.js';
 // import { setEQuestions } from './setEQuestions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Combine all question modules and inject them into the DOM container
     const container = document.getElementById('slides-container');
     if (container) {
+        // Uncomment the rest as you add your files
         // container.innerHTML = setAQuestions + setBQuestions + setCQuestions + setDQuestions + setEQuestions;
-        container.innerHTML = setAQuestions; // Using only Set A for this example
+        container.innerHTML = setAQuestions; 
     }
 });
 
@@ -176,6 +176,28 @@ function getSetStatus(setName) {
     return { state: 'locked', text: 'Locked', class: 'status-locked' };
 }
 
+// INTELLIGENT NAVIGATION VISIBILITY HANDLER
+function updateNavVisibility() {
+    const currentSlide = window.slides[window.currentSlideIndex];
+    if (!currentSlide) return;
+    
+    const currentSet = currentSlide.getAttribute('data-set');
+    const setStatus = getSetStatus(currentSet);
+    const isBookMode = document.body.classList.contains('book-mode');
+    const isTeacher = window.currentUser && window.currentUser.role === 'teacher';
+    
+    const navControls = document.getElementById('nav-controls');
+    
+    // Teachers always see controls. Students ONLY see controls if they are in Book Mode AND the set is 100% completed.
+    if (isTeacher) {
+        navControls.style.display = 'flex';
+    } else if (isBookMode && setStatus.state === 'completed') {
+        navControls.style.display = 'flex';
+    } else {
+        navControls.style.display = 'none';
+    }
+}
+
 window.showDashboard = function() {
     document.getElementById('container').style.display = 'none';
     window.speechSynthesis.cancel();
@@ -322,12 +344,11 @@ function buildNavigator() {
                 setLi.innerHTML = `<span>🔒 ${sSet}</span>`;
                 setLi.onclick = (e) => { e.stopPropagation(); alert(`Finish answering previous sets to unlock ${sSet}.`); };
                 
-                navList.appendChild(setLi); // Add Locked Parent
-                currentSetUl = null; // Ensure we don't append to a locked set
+                navList.appendChild(setLi); 
+                currentSetUl = null; 
             } else {
                 setLi.innerHTML = `<span>${sSet}</span> <span>▼</span>`;
                 
-                // Create a block-scoped constant for closure preservation
                 const mySetUl = document.createElement('ul');
                 mySetUl.className = 'nav-week-children';
                 mySetUl.setAttribute('data-set-ul', setKey);
@@ -341,8 +362,8 @@ function buildNavigator() {
                     if (isOpening) mySetUl.style.display = 'block';
                 };
                 
-                navList.appendChild(setLi);    // Append the LI FIRST
-                navList.appendChild(mySetUl);  // Append the UL AFTER the LI
+                navList.appendChild(setLi);    
+                navList.appendChild(mySetUl);  
             }
         }
 
@@ -354,14 +375,12 @@ function buildNavigator() {
             diffLi.setAttribute('data-diff', diffKey);
             diffLi.innerHTML = `<span>${sDiff}</span> <span>▼</span>`;
             
-            // Create a block-scoped constant for closure preservation
             const myDiffUl = document.createElement('ul');
             myDiffUl.className = 'nav-day-children';
             myDiffUl.setAttribute('data-diff-ul', diffKey);
             myDiffUl.style.display = 'none';
             currentDiffUl = myDiffUl;
             
-            // Capture the specific parent set to search inside
             const parentSetUl = currentSetUl; 
 
             diffLi.onclick = (e) => {
@@ -371,8 +390,8 @@ function buildNavigator() {
                 if (isOpening) myDiffUl.style.display = 'block';
             };
             
-            currentSetUl.appendChild(diffLi);    // Append the Difficulty LI
-            currentSetUl.appendChild(myDiffUl);  // Append the Container for Questions AFTER
+            currentSetUl.appendChild(diffLi);    
+            currentSetUl.appendChild(myDiffUl);  
             
             qCounters[diffKey] = 1;
         }
@@ -450,6 +469,7 @@ window.toggleNavigator = function(event) {
 
 window.toggleBookMode = function() {
     document.body.classList.toggle('book-mode');
+    updateNavVisibility(); // Updates the UI dynamically when toggling
 };
 
 window.returnToDashboardFromCeleb = function() {
@@ -577,6 +597,9 @@ window.showSlide = function(targetIndex) {
     const currentSlide = window.slides[targetIndex];
     currentSlide.classList.add('active');
     
+    // Auto-scroll to top when navigating inside book mode
+    currentSlide.scrollTop = 0;
+    
     const tracker = document.getElementById('question-tracker');
     const navControls = document.getElementById('nav-controls');
     currentSlide.appendChild(tracker);
@@ -609,6 +632,9 @@ window.showSlide = function(targetIndex) {
 
     document.getElementById('btn-prev').disabled = targetIndex === 0;
     document.getElementById('btn-next').disabled = targetIndex === window.slides.length - 1;
+
+    // Apply the navigation visibility logic
+    updateNavVisibility();
 
     if (window.currentUser && window.currentUser.role !== 'teacher' && !currentSlide.hasAttribute('data-locked')) {
         if(targetIndex > 0) {
@@ -707,6 +733,7 @@ window.submitAnswer = function(qId) {
             document.getElementById('celeb-msg').innerText = `Thank you for finishing ${currentSet}. You got ${sScore} out of ${sMax} possible points!`;
         }, 1000);
     } else {
+         // Auto-advance to the next question if the set isn't finished yet
          setTimeout(() => {
              if(window.currentSlideIndex < window.slides.length - 1) {
                  window.showSlide(window.currentSlideIndex + 1);
