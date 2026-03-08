@@ -310,6 +310,32 @@ body.role-teacher #teacher-sidebar { display: block; }
     }
     body.book-mode .slide > :not(.book-content):not(#nav-controls) { display: none !important; }
     body.book-mode .book-content { display: block !important; }
+/* ==============================================
+       NEW ENHANCED SPACING FOR BOOK CONTENT LISTS 
+       ============================================== */
+    /* Target lists specifically in the Book Mode explanations to match paragraph text */
+    .book-mode .slide .book-content ul {
+        margin-top: 15px;    /* Comfort space above the list */
+        margin-bottom: 30px; /* Generous space below the list, like a paragraph */
+        padding-left: 40px;  /* Distinct bullet indentation */
+        font-size: 20px;
+    }
+
+    /* Target the list items themselves for correct vertical and line spacing */
+    .book-mode .slide .book-content li {
+        margin-bottom: 18px; /* Key change: vertical separation BETWEEN items, like paragraphs */
+        line-height: 1.6;    /* Match paragraph line spacing ( comfortable and readable) */
+        filter: none;        /* Ensures text clarity */
+    }
+
+    /* Optional: Handle nested lists if you have them (like in the "Logic" example) */
+    .book-mode .slide .book-content ul ul {
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    .book-mode .slide .book-content ul ul li {
+        margin-bottom: 10px;
+    }
 
 .book-mcq-option { margin-bottom: 12px; padding: 15px 20px; background: none; border: 2px solid #30363d; border-radius: 8px; list-style: none; transition: all 0.2s; cursor: pointer; }
 .book-content-question { font-size: 2rem; margin-bottom: 25px; color: #000; }
