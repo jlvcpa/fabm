@@ -322,6 +322,8 @@ body.role-teacher #teacher-sidebar { display: block; }
     }
 
     /* Target the list items themselves for correct vertical and line spacing */
+    .book-mode .slide .book-content h2 { font-size: 1.5rem; }
+    .book-mode .slide .book-content p { font-size: 1.4rem; }
     .book-mode .slide .book-content li {
         margin-bottom: 18px; /* Key change: vertical separation BETWEEN items, like paragraphs */
         line-height: 1.6;    /* Match paragraph line spacing ( comfortable and readable) */
