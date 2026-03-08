@@ -318,12 +318,9 @@ body.role-teacher #teacher-sidebar { display: block; }
         margin-top: 15px;    /* Comfort space above the list */
         margin-bottom: 30px; /* Generous space below the list, like a paragraph */
         padding-left: 40px;  /* Distinct bullet indentation */
-        font-size: 1.4rem;
     }
 
     /* Target the list items themselves for correct vertical and line spacing */
-    .book-mode .slide .book-content h2 { font-size: 1.5rem; }
-    .book-mode .slide .book-content p { font-size: 1.4rem; }
     .book-mode .slide .book-content li {
         margin-bottom: 18px; /* Key change: vertical separation BETWEEN items, like paragraphs */
         line-height: 1.6;    /* Match paragraph line spacing ( comfortable and readable) */
@@ -387,8 +384,8 @@ body.role-teacher #teacher-sidebar { display: block; }
     .quiz-feedback { font-size: 1rem !important; padding: 10px !important;}
     
     #top-hud { top: 15px !important; left: 0 !important; width: 100% !important; }
-    .score-display { right: 15px !important; top: 0 !important; font-size: 0.9rem !important; padding: 8px 12px !important; }
-    .timer-display { font-size: 1rem !important; padding: 8px 12px !important; }
+    .score-display { right: 15px !important; top: 0 !important; font-size: 1.4rem !important; padding: 8px 12px !important; }
+    .timer-display { font-size: 1.4rem !important; padding: 8px 12px !important; }
     
     #nav-toggle-btn { top: 15px !important; left: 15px !important; font-size: 0.9rem !important; padding: 8px 12px !important; }
     #dashboard-toggle-btn { top: 15px !important; left: 100px !important; font-size: 0.9rem !important; padding: 8px 12px !important; }
@@ -399,7 +396,7 @@ body.role-teacher #teacher-sidebar { display: block; }
     
     body.book-mode .slide { padding: 80px 15px 100px 15px !important; }
     .book-content h2 { font-size: 1.4rem !important; }
-    .book-content p { font-size: 1rem !important; }
+    .book-content p { font-size: 1.3rem !important; }
     
     .celeb-title { font-size: 2rem !important; }
     .celeb-text { font-size: 1.1rem !important; }
