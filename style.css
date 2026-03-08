@@ -216,7 +216,6 @@ body.book-mode #slides-container { background-color: #fdf6e3; }
 body.book-mode .slide { padding: 80px 150px 100px 150px; align-items: flex-start; justify-content: flex-start; }
 body.book-mode .slide > :not(.book-content):not(#nav-controls) { display: none !important; }
 body.book-mode .book-content { display: block !important; }
-body.book-mode #nav-controls { display: none !important; }
 
 .book-mcq-option { margin-bottom: 12px; padding: 15px 20px; background: none; border: 2px solid #30363d; border-radius: 8px; list-style: none; transition: all 0.2s; cursor: pointer; }
 .book-content-question { font-size: 2rem; margin-bottom: 25px; color: #000; }
