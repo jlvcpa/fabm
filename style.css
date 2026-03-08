@@ -379,7 +379,7 @@ body.role-teacher #teacher-sidebar { display: block; }
     
     .quiz-container { padding: 15px !important; width: 100% !important; }
     .input-field { font-size: 1rem !important; padding: 12px !important; }
-    .mcq-option { padding: 10px 15px !important; font-size: 0.95rem !important; margin-bottom: 8px !important; line-height: 1.3;}
+    .mcq-option { padding: 12px 15px !important; font-size: 1.2rem !important; margin-bottom: 8px !important; line-height: 1.3;}
     .submit-btn, .exp-btn, .back-quiz-btn { font-size: 0.95rem !important; padding: 12px !important; width: 100% !important; margin-right: 0 !important; margin-bottom: 10px !important; margin-top: 10px !important;}
     .quiz-feedback { font-size: 1rem !important; padding: 10px !important;}
     
@@ -395,9 +395,12 @@ body.role-teacher #teacher-sidebar { display: block; }
     .nav-btn { font-size: 0.9rem !important; padding: 10px 15px !important; }
     
     body.book-mode .slide { padding: 80px 15px 100px 15px !important; }
-    .book-content h2 { font-size: 1.4rem !important; }
+    .book-content h2 { font-size: 1.6rem !important; }
     .book-content p { font-size: 1.3rem !important; }
-    
+    .book-content li { font-size: 1.3rem !important; }
+    .book-content ul ul { font-size: 1.3rem !important; }
+    .book-content ul ul li { font-size: 1.3rem !important; }
+        
     .celeb-title { font-size: 2rem !important; }
     .celeb-text { font-size: 1.1rem !important; }
     
