@@ -1313,7 +1313,7 @@ export const setBQuestions = `
     <p><strong>D) Taking out a short-term bank loan:</strong>
     This transaction affects the "Financing" side of the equation without involving the owner's stake.
     <ul>
-        <li><em>Relationship:</em> Borrowing money results in an increase in cash ($Assets \uparrow$) and an equal increase in the obligation to pay the bank back ($Liabilities \uparrow$).</li>
+        <li><em>Relationship:</em> Borrowing money results in an increase in cash ($Assets \\uparrow$) and an equal increase in the obligation to pay the bank back ($Liabilities \\uparrow$).</li>
         <li><em>Why it's incorrect:</em> Because both the asset and the liability increased by the same amount, the <strong>owner's residual interest (Equity) remains unchanged</strong>.[7, 1] Debt is a claim by creditors, not a reduction of the owner's capital.</li>
     </ul></p>
 
