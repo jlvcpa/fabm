@@ -1496,6 +1496,52 @@ export const setAQuestions = `
         <div class="book-content-question">A merchandising business has Net Sales of ₱250,000, Cost of Goods Sold of ₱140,000, and Operating Expenses of ₱60,000. What is the Net Income? (Enter numbers only)</div>
         <p class="correct-line"><strong>Correct Answer: 50,000</strong></p>
         <p>First, calculate Gross Profit: Net Sales (250,000) - Cost of Goods Sold (140,000) = 110,000. Then subtract Operating Expenses: Gross Profit (110,000) - Operating Expenses (60,000) = ₱50,000 Net Income.</p>
+        <h3>1. Analysis of Problem Factors and Elements</h3>
+    <p>In a merchandising business, the Statement of Comprehensive Income (Income Statement) identifies the various layers of profit. In this specific problem, <strong>all three provided amounts are essential components</strong> of the final solution because they represent the three core stages of the merchandising profit cycle.</p>
+
+    <ul>
+        <li><strong>Net Sales (₱250,000):</strong> This is a <strong>core part</strong> of the solution. It represents the primary source of revenue—the total amount received from customers for goods sold, after deducting returns and discounts. It serves as the mathematical starting point.</li>
+        <li><strong>Cost of Goods Sold (COGS) (₱140,000):</strong> This is a <strong>core part</strong> of the solution. It represents the direct cost incurred to purchase or produce the inventory that was sold during the period. This factor is required to calculate the "trading profit" or Gross Profit.</li>
+        <li><strong>Operating Expenses (₱60,000):</strong> This is a <strong>core part</strong> of the solution. These are the indirect, daily costs of running the business, such as salaries, rent, and utilities. This factor is required to move from Gross Profit to the final Net Income.</li>
+    </ul>
+
+    <h3>2. The Logic: The Multi-Step Income Statement</h3>
+    <p>Merchandising businesses typically use a multi-step format to distinguish between the <strong>Gross Profit</strong> (the margin made directly on the goods) and <strong>Net Income</strong> (the final profit after all other business costs are paid). The logic follows that the business must first cover the cost of its inventory before it can even begin to address its operating overhead.</p>
+
+    <h3>3. Step-by-Step Solution</h3>
+    <p>We solve the problem by applying the merchandising income formula in two distinct stages:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+                <th>Formula / Calculation</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Calculate Gross Profit</td>
+                <td>$Net Sales - COGS$ <br> $₱250,000 - ₱140,000$</td>
+                <td>₱110,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Calculate Net Income</td>
+                <td>$Gross Profit - Operating Expenses$ <br> $₱110,000 - ₱60,000$</td>
+                <td><strong>₱50,000</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>4. Why No Factors were Excluded</h3>
+    <p>There were no "distractor" elements in this problem. For example, if the problem had mentioned <strong>"Beginning Inventory"</strong> or <strong>"Purchase Discounts,"</strong> these might have been excluded if the COGS was already provided, as COGS is a summary figure that already incorporates those values. Similarly, if <strong>"Interest Expense"</strong> were mentioned, it would be treated as a non-operating expense and subtracted <em>after</em> calculating operating income, but it would still be part of the final Net Income calculation.</p>
+
+    <h3>Conclusion</h3>
+    <p>The final amount of <strong>₱50,000</strong> represents the "bottom line"—the actual profit the company has earned during the period that can be reinvested into the business or distributed to owners.[1] Understanding this flow ensures that managers can pinpoint whether a lack of profit is due to high inventory costs (low Gross Profit) or excessive administrative overhead (high Operating Expenses).</p>
+
     </div>
 </div>
 
