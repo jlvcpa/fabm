@@ -1,7 +1,7 @@
 import { collection, query, getDocs, orderBy, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 import { db, loginUser } from './auth.js';
 import { setAQuestions } from './setAQuestions.js';
-// import { setBQuestions } from './setBQuestions.js';  
+import { setBQuestions } from './setBQuestions.js';  
 // import { setCQuestions } from './setCQuestions.js';
 // import { setDQuestions } from './setDQuestions.js';
 // import { setEQuestions } from './setEQuestions.js';
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('slides-container');
     if (container) {
         // Add setBQuestions, setCQuestions, etc., here as you import them
-        container.innerHTML = setAQuestions; 
+        container.innerHTML = setAQuestions + setBQuestions; 
     }
 });
 
