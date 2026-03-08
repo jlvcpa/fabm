@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
         // Uncomment the rest as you add your files
         // container.innerHTML = setAQuestions + setBQuestions + setCQuestions + setDQuestions + setEQuestions;
-        container.innerHTML = setAQuestions; 
+        container.innerHTML = setAQuestions + setBQuestions; 
     }
 });
 
