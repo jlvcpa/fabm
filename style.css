@@ -318,7 +318,7 @@ body.role-teacher #teacher-sidebar { display: block; }
         margin-top: 15px;    /* Comfort space above the list */
         margin-bottom: 30px; /* Generous space below the list, like a paragraph */
         padding-left: 40px;  /* Distinct bullet indentation */
-        font-size: 20px;
+        font-size: 1.4rem;
     }
 
     /* Target the list items themselves for correct vertical and line spacing */
