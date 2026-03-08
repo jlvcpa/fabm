@@ -28,12 +28,26 @@ body, html {
     transition: background-color 0.4s ease;
 }
 
-#courseware-footer {
-    position: absolute;
-    bottom: 0; left: 0; width: 100%; padding: 10px 0;
-    background: #0d1117; color: rgba(255,255,255,0.4); font-size: 0.85rem;
-    text-align: center; border-top: 1px solid #30363d; z-index: 100; pointer-events: none;
-}
+/* Ownership Footer */
+    #courseware-footer {
+        position: absolute;
+        bottom: 0; left: 0; width: 100%; padding: 10px 0;
+        background: #0d1117; 
+        color: rgba(255,255,255,0.6); /* Made slightly brighter for better readability */
+        font-size: 0.85rem;
+        text-align: center; 
+        border-top: 1px solid #30363d; 
+        z-index: 9999 !important; /* Forces it to always sit above the 3D slides */
+        pointer-events: none;
+        transition: all 0.4s ease;
+    }
+
+    /* Make the footer match the yellow-gold theme when in Book Mode */
+    body.book-mode #courseware-footer {
+        background: #fdf6e3;
+        color: #555555;
+        border-top: 1px solid #d1d5db;
+    }
 
 #overlay, #login-overlay, #dashboard-overlay, #headsup-overlay {
     position: absolute;
