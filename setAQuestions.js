@@ -2485,21 +2485,21 @@ export const setAQuestions = `
         <p class="correct-line"><strong>Correct Answer: 120,000</strong></p>
         <p>To extract the VAT from a VAT-inclusive amount, multiply by (12/112). Output VAT = 3,360,000 * (12/112) = 360,000. Input VAT = 2,240,000 * (12/112) = 240,000. VAT Payable = Output VAT (360,000) - Input VAT (240,000) = ₱120,000.</p>
         <h3>1. Analysis of Problem Factors and Elements</h3>
-    <p>In advanced accounting, Net Income can be determined even without revenue or expense data by analyzing the "residual interest" of the owner over time. In this problem, <strong>every numerical factor provided is an essential component</strong> of the final solution:</p>
+    <p>In Philippine taxation, calculating the Value-Added Tax requires distinguishing between the price of the goods and the tax collected on behalf of the government. In this problem, <strong>all provided amounts and statuses are essential components</strong> of the solution:</p>
 
     <ul>
-        <li><strong>Beginning Assets (₱2,000,000) & Liabilities (₱800,000):</strong> These are <strong>core parts</strong> of the solution used to establish the "Starting Point" of the owner's investment (Beginning Equity).</li>
-        <li><strong>Increase in Assets (₱500,000):</strong> This is a <strong>core part</strong> of the solution. It identifies the growth in the company's resource base, regardless of how that growth was funded.</li>
-        <li><strong>Decrease in Liabilities (₱100,000):</strong> This is a <strong>core part</strong> of the solution. A reduction in debt effectively "frees up" more of the company's value for the owner, contributing to an increase in equity.</li>
-        <li><strong>Withdrawals (₱150,000):</strong> This is a <strong>core part</strong> of the solution. Withdrawals represent a distribution of wealth <em>out</em> of the business. Since we are solving for profit, we must "add back" this amount to the observed increase in equity to find the total earnings generated before the owner took their share.</li>
-        <li><strong>"No Additional Investments":</strong> This <strong>simplifies the solution</strong>. If the owner had invested more capital, that amount would have been excluded from the "income" portion of the equity growth because it didn't come from earnings.</li>
+        <li><strong>"VAT-registered" Status:</strong> This is a <strong>core factor</strong>. It confirms that the business is required to collect $12\%$ VAT on its sales (Output VAT) and is legally entitled to deduct the VAT it paid on its purchases (Input VAT) from its final liability.</li>
+        <li><strong>Gross Sales (₱3,360,000):</strong> This is a <strong>core part</strong> of the solution. It represents the total cash inflow from customers. Because it is "VAT-inclusive," it represents $112\%$ of the base selling price ($100\%$ price $+$ $12\%$ tax).</li>
+        <li><strong>Purchases (₱2,240,000):</strong> This is a <strong>core part</strong> of the solution. These are the costs incurred to acquire inventory from other VAT-registered suppliers. Like sales, this figure is "VAT-inclusive" and must be "de-taxed" to find the creditable amount.</li>
+        <li><strong>12% VAT Rate:</strong> This is the <strong>standard rate</strong> applied to most goods and services in the Philippines under the National Internal Revenue Code.</li>
     </ul>
 
-    <h3>2. The Logic: The Bridge between Balance Sheet and Income</h3>
-    <p>The solution relies on the **Accounting Equation** ($Assets = Liabilities + Equity$) and the **Equity Formula**:
-    $$Ending Equity = Beginning Equity + Investment + Net Income - Withdrawals$$
+    <h3>2. The Logic: Output VAT minus Input VAT</h3>
+    <p>VAT is an <strong>indirect tax</strong>, meaning the end-consumer ultimately bears the cost, but the business acts as the collection agent for the Bureau of Internal Revenue (BIR). The business only remits the "value added" portion. The fundamental formula is:
+    $$VAT Payable = Output VAT - Input VAT$$
     
-    This logic tells us that any increase in equity that did <em>not</em> come from the owner putting more money in (Investment) must have come from the business performing well (Net Income). However, because the owner <em>took</em> money out (Withdrawals), the observed growth on the Balance Sheet is "net" of those withdrawals. To find the true performance, we must reconstruct the gross earnings.</p>
+    A critical mathematical hurdle in this problem is <strong>Tax Extraction</strong>. When an amount is "inclusive" of tax, you cannot simply multiply by $12\%$. Instead, you must use the tax fraction:
+    $$\text{VAT Amount} = \text{Gross Amount} \times \frac{12}{112}$$</p>
 
     <h3>3. Step-by-Step Solution</h3>
     <table>
@@ -2514,54 +2514,35 @@ export const setAQuestions = `
         <tbody>
             <tr>
                 <td><strong>1</strong></td>
-                <td>Find <strong>Beginning Equity</strong></td>
-                <td>$A_{beg} - L_{beg} = ₱2,000,000 - ₱800,000$</td>
-                <td>₱1,200,000</td>
+                <td>Extract <strong>Output VAT</strong> (from Sales)</td>
+                <td>$₱3,360,000 \times \frac{12}{112}$</td>
+                <td>₱360,000</td>
             </tr>
             <tr>
                 <td><strong>2</strong></td>
-                <td>Find <strong>Ending Assets</strong></td>
-                <td>$₱2,000,000 + ₱500,000$</td>
-                <td>₱2,500,000</td>
+                <td>Extract <strong>Input VAT</strong> (from Purchases)</td>
+                <td>$₱2,240,000 \times \frac{12}{112}$</td>
+                <td>₱240,000</td>
             </tr>
             <tr>
                 <td><strong>3</strong></td>
-                <td>Find <strong>Ending Liabilities</strong></td>
-                <td>$₱800,000 - ₱100,000$</td>
-                <td>₱700,000</td>
-            </tr>
-            <tr>
-                <td><strong>4</strong></td>
-                <td>Find <strong>Ending Equity</strong></td>
-                <td>$A_{end} - L_{end} = ₱2,500,000 - ₱700,000$</td>
-                <td>₱1,800,000</td>
-            </tr>
-            <tr>
-                <td><strong>5</strong></td>
-                <td>Calculate <strong>Total Growth in Equity</strong></td>
-                <td>$E_{end} - E_{beg} = ₱1,800,000 - ₱1,200,000$</td>
-                <td>₱600,000</td>
-            </tr>
-            <tr>
-                <td><strong>6</strong></td>
-                <td>Solve for <strong>Net Income</strong></td>
-                <td>$Growth + Withdrawals = ₱600,000 + ₱150,000$</td>
-                <td><strong>₱750,000</strong></td>
+                <td>Calculate <strong>VAT Payable</strong></td>
+                <td>$Output VAT - Input VAT$ <br> $₱360,000 - ₱240,000$</td>
+                <td><strong>₱120,000</strong></td>
             </tr>
         </tbody>
     </table>
 
-    <h3>4. Analysis of Potential Pitfalls</h3>
-    <p>Understanding where common errors occur helps verify the ₱750,000 result:</p>
+    <h3>4. Analysis of Potential Calculation Errors</h3>
+    <p>Understanding why alternative computations fail is vital for board-level exam preparation:</p>
     <ul>
-        <li><strong>₱600,000 (The "Net Change" Error):</strong> This occurs if a student stops after Step 5. This figure represents the <em>observed</em> growth, but it ignores the fact that the business actually earned ₱150,000 more than this, which the owner then took home.</li>
-        <li><strong>₱450,000 (The "Subtraction" Error):</strong> This happens if a student <em>subtracts</em> the withdrawal from the growth ($600k - 150k$). This is logically flawed because it suggests that taking money out of the business somehow reduces the total profit the business <em>generated</em> during the year.</li>
-        <li><strong>₱400,000 (The "Liability Direction" Error):</strong> This occurs if a student adds the ₱100,000 decrease in liabilities to the starting debt rather than subtracting it, leading to a lower ending equity.</li>
+        <li><strong>₱134,400 (The "Simple Percentage" Error):</strong> This occurs if a student multiplies the net difference (₱1,120,000) by $12\%$. This is incorrect because the ₱1,120,000 difference is still a "VAT-inclusive" number. Tax must be extracted using the $112\%$ divisor, not added on top of an already taxed amount.</li>
+        <li><strong>₱403,200 (The "Sales Only" Error):</strong> This results from multiplying Gross Sales by $12\%$. This ignores both the "inclusive" nature of the prompt and the legal right to deduct Input VAT.</li>
+        <li><strong>₱360,000 (The "No Purchases" Error):</strong> This happens if a student correctly extracts Output VAT but fails to subtract the Input VAT "credit." This is a common error for businesses that are not properly registered or fail to keep valid VAT invoices.</li>
     </ul>
 
-    <h3>Conclusion: The "Capital Maintenance" Concept</h3>
-    <p>The resulting <strong>₱750,000 Net Income</strong> proves that the business was highly profitable. It was able to support a ₱150,000 lifestyle for the owner while still increasing the company's net worth by ₱600,000 through increased assets and debt reduction. This "big picture" analysis allows stakeholders to evaluate management performance without getting lost in the details of individual revenue or expense accounts.</p>
-
+    <h3>Conclusion: Significance of the Result</h3>
+    <p>The resulting <strong>₱120,000 VAT Payable</strong> represents the net tax the business must remit to the BIR for the quarter. By maintaining a VAT-registered status, the business was able to "save" ₱240,000 by claiming the tax paid to suppliers as a credit. This clearing mechanism ensures that the government collects $12\%$ on the total final value of the goods sold without taxing the same item multiple times at every stage of production (cascading tax).</p>
     </div>
 </div>
 
