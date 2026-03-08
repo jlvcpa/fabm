@@ -693,87 +693,88 @@ export const setAQuestions = `
         <h2>Explanation: Books of Accounts</h2>
         <div class="book-content-question">A company purchases new equipment for ₱10,000 in cash. How is this recorded in the General Journal?</div>
         <ul style="list-style: none; padding: 0;">
-            <li class="book-mcq-option" onclick="selectOption('sAeAq08', 'A')">A) Increase Equipment, Increase Cash</li>
-            <li class="book-mcq-option" onclick="selectOption('sAeAq08', 'B')">B) Increase Equipment, Decrease Cash</li>
-            <li class="book-mcq-option" onclick="selectOption('sAeAq08', 'C')">C) Decrease Equipment, Increase Cash</li>
-            <li class="book-mcq-option" onclick="selectOption('sAeAq08', 'D')">D) Decrease Equipment, Decrease Cash</li>
+            <li class="book-mcq-option">A) Increase Equipment, Increase Cash</li>
+            <li class="book-mcq-option">B) Increase Equipment, Decrease Cash</li>
+            <li class="book-mcq-option">C) Decrease Equipment, Increase Cash</li>
+            <li class="book-mcq-option">D) Decrease Equipment, Decrease Cash</li>
         </ul>
         <p class="correct-line"><strong>Correct Answer: B</strong></p>
         <p>When you buy equipment for cash, you are acquiring an asset (Equipment goes up) and giving up an asset (Cash goes down) simultaneously.</p>
+        
         <h3>The Logic of the "Exchange of Assets"</h3>
-    <p>When a business uses cash to buy equipment, it is engaging in what accountants call an <strong>exchange of assets</strong>. In this scenario, the business is not gaining "new" value in the sense of total wealth; rather, it is changing the <em>form</em> of its wealth from a liquid asset (Cash) to a long-term productive asset (Equipment).</p>
-    
-    <p>This transaction affects the fundamental accounting equation as follows:
-    $$Assets (\uparrow Equipment) + Assets (\downarrow Cash) = Liabilities (No Change) + Equity (No Change)$$
-    
-    Because one asset increases and another decreases by the exact same amount ($10,000$), the total assets remain the same, and the equation stays in perfect balance.</p>
+        <p>When a business uses cash to buy equipment, it is engaging in what accountants call an <strong>exchange of assets</strong>. In this scenario, the business is not gaining "new" value in the sense of total wealth; rather, it is changing the <em>form</em> of its wealth from a liquid asset (Cash) to a long-term productive asset (Equipment).</p>
+        
+        <p>This transaction affects the fundamental accounting equation as follows:
+        $$Assets (\\uparrow Equipment) + Assets (\\downarrow Cash) = Liabilities (No Change) + Equity (No Change)$$
+        
+        Because one asset increases and another decreases by the exact same amount (₱10,000), the total assets remain the same, and the equation stays in perfect balance.</p>
 
-    <h3>Step-by-Step Journalization</h3>
-    <p>To record this in the <strong>General Journal</strong> (the "book of original entry"), we apply the rules of debits and credits:
-    <ol>
-        <li><strong>Identify the Accounts:</strong> Both "Equipment" and "Cash" are Asset accounts.</li>
-        <li><strong>Determine the Direction:</strong> Equipment is being <em>acquired</em> (increasing), and Cash is being <em>spent</em> (decreasing).</li>
-        <li><strong>Apply the Rule:</strong> An increase in an asset is recorded as a <strong>Debit</strong>. A decrease in an asset is recorded as a <strong>Credit</strong>.</li>
-    </ol></p>
+        <h3>Step-by-Step Journalization</h3>
+        <p>To record this in the <strong>General Journal</strong> (the "book of original entry"), we apply the rules of debits and credits:
+        <ol>
+            <li><strong>Identify the Accounts:</strong> Both "Equipment" and "Cash" are Asset accounts.</li>
+            <li><strong>Determine the Direction:</strong> Equipment is being <em>acquired</em> (increasing), and Cash is being <em>spent</em> (decreasing).</li>
+            <li><strong>Apply the Rule:</strong> An increase in an asset is recorded as a <strong>Debit</strong>. A decrease in an asset is recorded as a <strong>Credit</strong>.</li>
+        </ol></p>
 
-    <p>The resulting entry looks like this in the General Journal:
-    <table>
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Particulars</th>
-                <th>Debit (₱)</th>
-                <th>Credit (₱)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>202X</td>
-                <td>Equipment</td>
-                <td>10,000</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;Cash</td>
-                <td></td>
-                <td>10,000</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><em>(To record purchase of equipment for cash)</em></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table></p>
+        <p>The resulting entry looks like this in the General Journal:
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Particulars</th>
+                    <th>Debit (₱)</th>
+                    <th>Credit (₱)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>202X</td>
+                    <td>Equipment</td>
+                    <td>10,000</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;Cash</td>
+                    <td></td>
+                    <td>10,000</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><em>(To record purchase of equipment for cash)</em></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table></p>
 
-    <h3>Analysis of Wrong Answers</h3>
-    <p>Understanding why the other options are incorrect is vital for avoiding common bookkeeping errors:</p>
+        <h3>Analysis of Wrong Answers</h3>
+        <p>Understanding why the other options are incorrect is vital for avoiding common bookkeeping errors:</p>
 
-    <p><strong>A) Increase Equipment, Increase Cash: The "Money from Nowhere" Error</strong><br>
-    This option suggests that the business somehow gained ₱10,000 in physical equipment while <em>also</em> gaining ₱10,000 in cash. 
-    <ul>
-        <li><strong>Why it's incorrect:</strong> This would create a "unilateral increase" that breaks the accounting equation ($+₱20,000 = 0 + 0$). For Cash to increase alongside Equipment, there would have to be a corresponding increase in a Liability (like a loan) or Equity (like an owner's investment), which is not the case here.</li>
-    </ul></p>
+        <p><strong>A) Increase Equipment, Increase Cash: The "Money from Nowhere" Error</strong><br>
+        This option suggests that the business somehow gained ₱10,000 in physical equipment while <em>also</em> gaining ₱10,000 in cash. 
+        <ul>
+            <li><strong>Why it's incorrect:</strong> This would create a "unilateral increase" that breaks the accounting equation (+₱20,000 = 0 + 0). For Cash to increase alongside Equipment, there would have to be a corresponding increase in a Liability (like a loan) or Equity (like an owner's investment), which is not the case here.</li>
+        </ul></p>
 
-    <p><strong>C) Decrease Equipment, Increase Cash: The "Sale" Error</strong><br>
-    This recording describes the exact <em>opposite</em> of the actual event. 
-    <ul>
-        <li><strong>Why it's incorrect:</strong> This entry would be used if the company were <strong>selling</strong> its existing equipment for cash. While it keeps the equation balanced, it incorrectly describes the economic reality of the transaction. In accounting, this is often called an "error of reversal."</li>
-    </ul></p>
+        <p><strong>C) Decrease Equipment, Increase Cash: The "Sale" Error</strong><br>
+        This recording describes the exact <em>opposite</em> of the actual event. 
+        <ul>
+            <li><strong>Why it's incorrect:</strong> This entry would be used if the company were <strong>selling</strong> its existing equipment for cash. While it keeps the equation balanced, it incorrectly describes the economic reality of the transaction. In accounting, this is often called an "error of reversal."</li>
+        </ul></p>
 
-    <p><strong>D) Decrease Equipment, Decrease Cash: The "Double Loss" Error</strong><br>
-    This option implies the company lost ₱10,000 worth of equipment and ₱10,000 in cash simultaneously.
-    <ul>
-        <li><strong>Why it's incorrect:</strong> This would result in a total asset decrease of ₱20,000 without any explanation. This does not happen in a standard purchase. This might only occur in a catastrophic event (like a fire destroying equipment) followed by an unrelated cash theft, which clearly does not match the prompt.</li>
-    </ul></p>
+        <p><strong>D) Decrease Equipment, Decrease Cash: The "Double Loss" Error</strong><br>
+        This option implies the company lost ₱10,000 worth of equipment and ₱10,000 in cash simultaneously.
+        <ul>
+            <li><strong>Why it's incorrect:</strong> This would result in a total asset decrease of ₱20,000 without any explanation. This does not happen in a standard purchase. This might only occur in a catastrophic event (like a fire destroying equipment) followed by an unrelated cash theft, which clearly does not match the prompt.</li>
+        </ul></p>
 
-    <h3>Broader Impact: Liquidity and Financial Health</h3>
-    <p>While the total assets don't change, the <strong>liquidity</strong> of the business does. Cash is a "current asset" used to pay immediate bills, while equipment is a "non-current" or long-term asset. By spending cash on equipment, the company reduces its <strong>working capital</strong>, meaning it has less "ready money" but has gained a resource that will help generate revenue over several years through the process of <strong>depreciation</strong>.</p>
+        <h3>Broader Impact: Liquidity and Financial Health</h3>
+        <p>While the total assets don't change, the <strong>liquidity</strong> of the business does. Cash is a "current asset" used to pay immediate bills, while equipment is a "non-current" or long-term asset. By spending cash on equipment, the company reduces its <strong>working capital</strong>, meaning it has less "ready money" but has gained a resource that will help generate revenue over several years through the process of <strong>depreciation</strong>.</p>
 
-    <h3>Conclusion</h3>
-    <p>Accurate journalizing is the foundation of reliable financial statements. By correctly identifying that a cash purchase is an <strong>increase in one asset</strong> (Debit) and a <strong>decrease in another</strong> (Credit), the accountant ensures that the "book of original entry" provides a faithful representation of the firm's economic activities.</p>
+        <h3>Conclusion</h3>
+        <p>Accurate journalizing is the foundation of reliable financial statements. By correctly identifying that a cash purchase is an <strong>increase in one asset</strong> (Debit) and a <strong>decrease in another</strong> (Credit), the accountant ensures that the "book of original entry" provides a faithful representation of the firm's economic activities.</p>
     </div>
 </div>
 
