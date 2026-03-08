@@ -218,9 +218,13 @@ body.book-mode .slide > :not(.book-content):not(#nav-controls) { display: none !
 body.book-mode .book-content { display: block !important; }
 body.book-mode #nav-controls { display: none !important; }
 
+.book-mcq-option { margin-bottom: 12px; padding: 15px 20px; background: none; border: 2px solid #30363d; border-radius: 8px; list-style: none; transition: all 0.2s; cursor: pointer; }
+.book-content-question { font-size: 2rem; margin-bottom: 25px; color: #000; }
 .book-content { display: none; font-family: 'Georgia', serif; color: #333333; width: 100%; max-width: 900px; margin: 0 auto; text-align: left; }
 .book-content h2 { color: #111; font-family: 'Segoe UI', sans-serif; font-size: 2.5rem; border-bottom: 2px solid #ccc; padding-bottom: 10px; margin-bottom: 25px; }
 .book-content p { color: #333; font-size: 1.4rem; line-height: 1.8; margin-bottom: 20px; }
+.correct-line { display: inline-block; width: 100%; margin: 16px 0; padding: 12px 16px; background: linear-gradient(90deg, rgba(59,130,246,0.08), rgba(88,166,255,0.04)); border-left: 4px solid #3b82f6; color: #0f172a; border-radius: 8px; box-shadow: 0 1px 0 rgba(15,23,42,0.04), 0 6px 18px rgba(2,6,23,0.04); font-weight: 600; transition: transform 120ms ease, box-shadow 120ms ease; }
+
 
 #celebration-modal {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
