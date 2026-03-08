@@ -286,10 +286,16 @@ body.role-teacher #teacher-sidebar { display: block; }
 .nav-child-item:hover { background: rgba(88, 166, 255, 0.1); color: #c9d1d9; }
 .nav-child-item.active-nav { background: rgba(88, 166, 255, 0.2); color: #3fb950; border-left: 4px solid #3fb950; font-weight: bold; }
 
-body.book-mode #slides-container { background-color: #fdf6e3; }
-body.book-mode .slide { padding: 80px 150px 100px 150px; align-items: flex-start; justify-content: flex-start; }
-body.book-mode .slide > :not(.book-content):not(#nav-controls) { display: none !important; }
-body.book-mode .book-content { display: block !important; }
+/* Book Mode Adjustments */
+    body.book-mode #slides-container { background-color: #fdf6e3; }
+    body.book-mode .slide { 
+        padding: 80px 150px 100px 150px; 
+        align-items: flex-start; 
+        justify-content: flex-start; 
+        background-color: #fdf6e3; /* Restores the yellow-gold background */
+    }
+    body.book-mode .slide > :not(.book-content):not(#nav-controls) { display: none !important; }
+    body.book-mode .book-content { display: block !important; }
 
 .book-mcq-option { margin-bottom: 12px; padding: 15px 20px; background: none; border: 2px solid #30363d; border-radius: 8px; list-style: none; transition: all 0.2s; cursor: pointer; }
 .book-content-question { font-size: 2rem; margin-bottom: 25px; color: #000; }
