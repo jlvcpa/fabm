@@ -395,6 +395,7 @@ body.role-teacher #teacher-sidebar { display: block; }
     .nav-btn { font-size: 0.9rem !important; padding: 10px 15px !important; }
     
     body.book-mode .slide { padding: 80px 15px 100px 15px !important; }
+    .book-mcq-option { font-size: 1.3rem !important; }
     .book-content h2 { font-size: 1.6rem !important; }
     .book-content p { font-size: 1.3rem !important; }
     .book-content li { font-size: 1.3rem !important; }
