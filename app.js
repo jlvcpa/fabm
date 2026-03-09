@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('slides-container');
     if (container) {
         // Add setBQuestions, setCQuestions, etc., here as you import them
-        container.innerHTML = setAQuestions + setAQuestions; 
+        container.innerHTML = setAQuestions + setBQuestions; 
     }
 });
 
