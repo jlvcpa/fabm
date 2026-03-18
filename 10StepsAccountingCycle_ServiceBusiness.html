@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Steps Accounting Cycle (Service Business) - Interactive Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Base font root. JavaScript will scale this to zoom ALL text globally */
+        html { 
+            font-size: 16px; 
+            scroll-behavior: smooth; 
+        }
+
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            color: #1e293b; 
+            line-height: 1.4; 
+            overflow: hidden; 
+        }
+
+        p { 
+            line-height: 1.3 !important; 
+        }
+
+        ul, li { 
+            line-height: 1.2 !important; 
+        }
+        
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+        
+        /* Light Theme Sidebar Active State */
+        .nav-link.active { background-color: #eff6ff; color: #1d4ed8; border-left: 4px solid #2563eb; font-weight: 600; }
+        .nav-link { transition: all 0.2s ease-in-out; border-left: 4px solid transparent; }
+        
+        .acctg-row { 
+            animation: fadeIn 0.4s ease-in-out; 
+            transition: background-color 0.5s ease; 
+            border-radius: 3px;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Tighter table padding */
+        table th, table td { padding-top: 2px; padding-bottom: 2px; padding-left: 4px; padding-right: 4px; }
+
+        /* View section styles */
+        .view-section {
+            display: none;
+            flex: 1;
+            min-height: 0;
+            width: 100%;
+            animation: fadeIn 0.3s ease-in-out;
+            position: relative;
+        }
+        .view-section.active { display: flex; flex-direction: column; }
+
+        /* The Viewport window for topics */
+        .book-viewport {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            overflow: hidden; 
+            touch-action: pan-y;
+        }
+
+        .content-flow {
+            height: 100%;
+            column-gap: 0;      
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .avoid-break {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        /* Reduced Topic Padding */
+        .topic-section {
+            padding: 0 2rem !important;
+            margin-bottom: 1.5rem;
+        }
+
+        ol, li, ul {
+            padding-right: 1rem !important;
+            break-inside: auto !important;
+            page-break-inside: auto !important;
+            orphans: 1;
+            widows: 1;
+        }
+
+        ol, ul {
+            padding-left: 3rem !important;
+        }
+
+        li {
+            padding-left: 0;
+        }
+
+        li::marker {
+            margin-right: 0.5rem;
+        }
+
+        h2, h3, h4 {
+            break-after: avoid !important;
+            page-break-after: avoid !important;
+        }
+
+        @media (min-width: 1024px) {
+            .topic-section { padding: 0 2rem; }
+        }
+
+        /* Nav Arrows overlaying the screen */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.5rem;
+            height: 4rem;
+            z-index: 30;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.2;
+            transition: opacity 0.2s;
+            background: rgba(241, 245, 249, 0.7);
+            border-radius: 0.5rem;
+        }
+        .nav-arrow:hover { opacity: 1; }
+        .nav-arrow-left { left: 0.5rem; }
+        .nav-arrow-right { right: 0.5rem; }
+
+    </style>
+</head>
+<body class="bg-slate-300 flex justify-center items-center w-full p-0.5" style="height: 100vh; height: 100dvh;">
+
+    <div class="flex h-full w-full max-w-[1400px] bg-white md:shadow-2xl overflow-hidden relative">
+
+        <nav id="sidebar" class="w-64 bg-slate-50 border-r border-slate-200 absolute h-full z-50 transition-transform -translate-x-full flex flex-col shadow-xl">
+            <div class="p-3 border-b border-slate-200 bg-white flex justify-between items-center">
+                <div>
+                    <h1 class="text-[13px] font-bold text-slate-800 leading-tight">Financial Accounting</h1>
+                    <p class="text-[11px] text-slate-500 font-medium">The Accounting Cycle</p>
+                </div>
+                <button onclick="toggleMenu()" class="text-slate-500 hover:text-slate-800 p-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <div class="p-2 border-b border-slate-200 bg-slate-50">
+                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Text Size</div>
+                <div class="flex items-center justify-between bg-white border border-slate-200 rounded p-1 shadow-sm">
+                    <button class="text-slate-600 px-2 hover:bg-slate-100 rounded font-bold" onclick="changeZoom(-10)">-</button>
+                    <input type="text" id="zoom-input" class="w-12 text-center bg-transparent text-slate-800 text-xs font-mono font-semibold outline-none" value="100%" onchange="setZoom(this.value)">
+                    <button class="text-slate-600 px-2 hover:bg-slate-100 rounded font-bold" onclick="changeZoom(10)">+</button>
+                </div>
+            </div>
+
+            <div class="flex-1 overflow-y-auto py-2">
+                <div class="px-3 py-1 text-slate-400 uppercase text-[10px] font-bold tracking-wider">Topics and Examples</div>
+                <ul class="flex flex-col mt-1 space-y-0.5">
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700 active" data-target="step1" onclick="goToSection('view-topics-1', 'step1')">1. Analysis of Transactions</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step2" onclick="goToSection('view-topics-1', 'step2')">2. Journalizing</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-blue-50 text-sm text-blue-700 font-bold" data-target="case-study-1" onclick="goToSection('view-case-1', null)">Ex 1: Vertex Co. Journal</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step3" onclick="goToSection('view-topics-2', 'step3')">3. Posting to the Ledger</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step4" onclick="goToSection('view-topics-2', 'step4')">4. Unadjusted Trial Balance</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-teal-50 text-sm text-teal-700 font-bold" data-target="case-study-2" onclick="goToSection('view-case-2', null)">Ex 2: Vertex Co. Ledger/TB</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step5a" onclick="goToSection('view-topics-3', 'step5a')">5a. Adjusting Entries</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step5b" onclick="goToSection('view-topics-3', 'step5b')">5b. The Worksheet</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-amber-50 text-sm text-amber-700 font-bold" data-target="case-study-3" onclick="goToSection('view-case-3', null)">Ex 3: Vertex Co. Worksheet</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step6" onclick="goToSection('view-topics-4', 'step6')">6. Financial Statements</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-indigo-50 text-sm text-indigo-700 font-bold" data-target="case-study-4" onclick="goToSection('view-case-4', null)">Ex 4: Vertex Co. Fin. Stat.</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step7" onclick="goToSection('view-topics-5', 'step7')">7. Post Adjusting Entries</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step8" onclick="goToSection('view-topics-5', 'step8')">8. Closing Entries</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step9" onclick="goToSection('view-topics-5', 'step9')">9. Post-Closing TB</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-slate-100 text-sm text-slate-700" data-target="step10" onclick="goToSection('view-topics-5', 'step10')">10. Reversing Entries</a></li>
+                    <li><a href="#" class="nav-link block py-1.5 px-3 hover:bg-rose-50 text-sm text-rose-700 font-bold" data-target="case-study-5" onclick="goToSection('view-case-5', null)">Ex 5: Vertex Co. Wrap-up</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="menuOverlay" class="fixed inset-0 bg-slate-900 bg-opacity-40 z-40 hidden" onclick="toggleMenu()"></div>
+
+        <main class="flex-1 flex flex-col min-h-0 relative bg-white w-full">
+            
+            <header class="flex justify-between items-center bg-slate-800 text-slate-200 border-b border-slate-700 flex-shrink-0 z-10" style="padding: 2px 8px; font-size: 1.5rem;">
+                <div class="flex items-center gap-2">
+                    <button id="menuBtn" onclick="toggleMenu()" class="text-white hover:text-slate-300 focus:outline-none" style="padding: 2px;">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    <span class="font-bold uppercase tracking-wide max-w-[500px] md:max-w-md text-sm md:text-xl truncate">10 Steps of the Accounting Cycle</span>
+                </div>
+                <div class="font-mono tracking-wider text-sm md:text-base">
+                    PAGE <span id="page-indicator" class="font-bold text-white">1 / ?</span>
+                </div>
+            </header>
+
+            <div class="flex-1 relative flex flex-col min-h-0 overflow-hidden">
+                
+                <div class="nav-arrow nav-arrow-left" onclick="prevPage()">
+                    <svg class="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path></svg>
+                </div>
+                <div class="nav-arrow nav-arrow-right" onclick="nextPage()">
+                    <svg class="w-6 h-6 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+
+                <div id="view-topics-1" class="view-section active">
+                    <div class="book-viewport mt-3" id="viewport-1">
+                        <div class="content-flow" id="content-1">
+                            
+                            <section id="learning-objectives" class="topic-section section-marker mb-6 bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                <h2 class="text-xl font-bold text-slate-800 mb-2 border-l-4 border-blue-600 pl-2">The Accounting Cycle Overview</h2>
+                                
+                                <p class="text-base text-slate-700 mb-3 mt-3">The accounting cycle is a holistic, step-by-step process of recording, classifying, and summarizing the economic transactions of a business to ultimately produce useful financial statements. It ensures accuracy and compliance over a specific reporting period (typically a month, quarter, or year). In this module, we will follow <strong>Vertex Consulting</strong> through its entire first month of operations to demonstrate the cycle perfectly.</p>
+                                <ul class="list-disc pl-5 text-base text-slate-700 space-y-1">
+                                    <li>To master the sequential mechanics of accounting from source documents to post-closing.</li>
+                                    <li>To understand the dual effect of business transactions (Debits and Credits).</li>
+                                    <li>To accurately measure net income through adjusting entries (Accruals and Deferrals).</li>
+                                    <li>To prepare the books for the next operating period via closing and reversing entries.</li>
+                                </ul>
+                            </section>
+
+                            <section id="step1" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-2 border-l-4 border-blue-600 pl-2">Step 1: Analysis of Transactions</h2>
+                                <h3 class="text-lg font-semibold text-slate-800 mb-1 mt-3">Definition & Source Documents</h3>
+                                <p class="text-slate-700 text-base mb-3 avoid-break">
+                                    The first and most critical step is analyzing economic events to determine their impact on the accounting equation: <strong>Assets = Liabilities + Equity</strong>. Not all business events are recorded in the books—only those that can be quantified in monetary terms. We identify these transactions through <em>source documents</em> such as official receipts, sales invoices, deposit slips, and purchase orders.
+                                </p>
+                                
+                                <h3 class="text-lg font-semibold text-slate-800 mb-1 mt-3 avoid-break">Rules of Debit and Credit</h3>
+                                <p class="text-base text-slate-700 mb-2">Accounting uses a double-entry system where every transaction affects at least two accounts, keeping the equation in constant balance. "Debit" (Dr) simply means left, and "Credit" (Cr) means right. The normal balance of an account indicates which side increases its value.</p>
+                                
+                                <div class="bg-slate-100 border border-slate-300 p-3 rounded avoid-break mt-3 shadow-sm mb-4">
+                                    <h4 class="font-bold text-slate-800 text-sm border-b border-slate-300 pb-1 mb-2">The DEALER Acronym</h4>
+                                    <table class="w-full text-left text-sm text-slate-700">
+                                        <thead><tr class="text-slate-500 border-b border-slate-300"><th>Account Type</th><th>Normal Balance (Increase)</th><th>Decrease Side</th></tr></thead>
+                                        <tbody>
+                                            <tr><td class="font-bold text-green-700">Dividends (Withdrawals)</td><td>Debit</td><td>Credit</td></tr>
+                                            <tr><td class="font-bold text-green-700">Expenses</td><td>Debit</td><td>Credit</td></tr>
+                                            <tr><td class="font-bold text-green-700">Assets</td><td>Debit</td><td>Credit</td></tr>
+                                            <tr class="border-t border-slate-300"><td class="font-bold text-red-700">Liabilities</td><td>Credit</td><td>Debit</td></tr>
+                                            <tr><td class="font-bold text-red-700">Equity (Capital)</td><td>Credit</td><td>Debit</td></tr>
+                                            <tr><td class="font-bold text-red-700">Revenue (Income)</td><td>Credit</td><td>Debit</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                            <section id="step2" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-2 border-l-4 border-blue-600 pl-2 mt-4">Step 2: Journalizing</h2>
+                                
+                                <p class="text-base text-slate-700 mb-4 avoid-break">
+                                    Once analyzed, transactions are recorded chronologically in the <strong>General Journal</strong>, often called the "Book of Original Entry."  A complete journal entry includes the date, the accounts to be debited (written first and aligned left), the accounts to be credited (written next and indented), the amounts separated into two distinct columns (Debit and Credit), and a brief explanation.
+                                </p>
+
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2 mt-3 avoid-break">Alternative Methods for Prepayments and Precollections</h3>
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    When paying or receiving cash in advance, an accountant can choose between two methods. Both are correct, but they require different adjustments at month-end.
+                                </p>
+
+                                <div class="overflow-x-auto mb-4 avoid-break w-full">
+                                    <h4 class="font-semibold text-sm text-slate-800 bg-slate-200 px-2 py-1 rounded-t border border-slate-300 border-b-0">Prepayments (e.g., Paying Rent in Advance)</h4>
+                                    <table class="w-full min-w-[500px] text-left border-collapse text-sm text-slate-700 border border-slate-300 mb-4">
+                                        <thead class="bg-slate-100">
+                                            <tr>
+                                                <th class="border border-slate-300 px-2 py-1 w-1/2">Asset Method (Common)</th>
+                                                <th class="border border-slate-300 px-2 py-1 w-1/2">Expense Method</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font-mono text-xs">
+                                            <tr class="bg-white">
+                                                <td class="border border-slate-300 px-2 py-2 align-top">
+                                                    <span class="text-slate-500 italic font-sans text-[11px]">Initial Payment: Record as an Asset.</span><br>
+                                                    Prepaid Rent &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XX,XXX<br>
+                                                    &nbsp;&nbsp;Cash &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XX,XXX
+                                                </td>
+                                                <td class="border border-slate-300 px-2 py-2 align-top">
+                                                    <span class="text-slate-500 italic font-sans text-[11px]">Initial Payment: Record as an Expense outright.</span><br>
+                                                    Rent Expense &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XX,XXX<br>
+                                                    &nbsp;&nbsp;Cash &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XX,XXX
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                    <h4 class="font-semibold text-sm text-slate-800 bg-slate-200 px-2 py-1 rounded-t border border-slate-300 border-b-0 mt-4">Precollections (e.g., Receiving Cash in Advance)</h4>
+                                    <table class="w-full min-w-[500px] text-left border-collapse text-sm text-slate-700 border border-slate-300">
+                                        <thead class="bg-slate-100">
+                                            <tr>
+                                                <th class="border border-slate-300 px-2 py-1 w-1/2">Liability Method (Common)</th>
+                                                <th class="border border-slate-300 px-2 py-1 w-1/2">Income Method</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font-mono text-xs">
+                                            <tr class="bg-white">
+                                                <td class="border border-slate-300 px-2 py-2 align-top">
+                                                    <span class="text-slate-500 italic font-sans text-[11px]">Initial Receipt: Record as a Liability.</span><br>
+                                                    Cash &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XX,XXX<br>
+                                                    &nbsp;&nbsp;Unearned Revenue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XX,XXX
+                                                </td>
+                                                <td class="border border-slate-300 px-2 py-2 align-top">
+                                                    <span class="text-slate-500 italic font-sans text-[11px]">Initial Receipt: Record as Revenue outright.</span><br>
+                                                    Cash &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XX,XXX<br>
+                                                    &nbsp;&nbsp;Service Revenue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XX,XXX
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="overflow-x-auto mb-4 avoid-break w-full mt-6">
+                                    <h4 class="font-semibold text-sm text-slate-800 bg-slate-200 px-2 py-1 rounded-t border border-slate-300 border-b-0">Other Common Journalizing Examples</h4>
+                                    <table class="w-full min-w-[500px] text-left border-collapse text-sm text-slate-700 border border-slate-300">
+                                        <thead class="bg-slate-100">
+                                            <tr>
+                                                <th class="border border-slate-300 px-2 py-1 w-1/2">Transaction Type & Explanation</th>
+                                                <th class="border border-slate-300 px-2 py-1 w-1/4 text-right">Debit</th>
+                                                <th class="border border-slate-300 px-2 py-1 w-1/4 text-right">Credit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font-mono text-xs">
+                                            <tr class="bg-white">
+                                                <td class="border border-slate-300 px-2 py-2">
+                                                    <strong class="font-sans text-indigo-700 block mb-1">1. Services provided for Cash</strong>
+                                                    Cash (Asset increases)<br>
+                                                    &nbsp;&nbsp;&nbsp;Service Revenue (Equity increases)
+                                                </td>
+                                                <td class="border border-slate-300 px-2 py-2 text-right align-top">XX,XXX<br></td>
+                                                <td class="border border-slate-300 px-2 py-2 text-right align-top"><br>XX,XXX</td>
+                                            </tr>
+                                            <tr class="bg-slate-50">
+                                                <td class="border border-slate-300 px-2 py-2">
+                                                    <strong class="font-sans text-indigo-700 block mb-1">2. Services provided on Account</strong>
+                                                    Accounts Receivable (Asset increases)<br>
+                                                    &nbsp;&nbsp;&nbsp;Service Revenue (Equity increases)
+                                                </td>
+                                                <td class="border border-slate-300 px-2 py-2 text-right align-top">XX,XXX<br></td>
+                                                <td class="border border-slate-300 px-2 py-2 text-right align-top"><br>XX,XXX</td>
+                                            </tr>
+                                            <tr class="bg-white">
+                                                <td class="border border-slate-300 px-2 py-2">
+                                                    <strong class="font-sans text-indigo-700 block mb-1">3. Purchase Equipment on Account</strong>
+                                                    Equipment (Asset increases)<br>
+                                                    &nbsp;&nbsp;&nbsp;Accounts Payable (Liability increases)
+                                                </td>
+                                                <td class="border border-slate-300 px-2 py-2 text-right align-top">XX,XXX<br></td>
+                                                <td class="border border-slate-300 px-2 py-2 text-right align-top"><br>XX,XXX</td>
+                                            </tr>
+                                            <tr class="bg-slate-50">
+                                                <td class="border border-slate-300 px-2 py-2">
+                                                    <strong class="font-sans text-indigo-700 block mb-1">4. Outright Payment of Expense (Utilities)</strong>
+                                                    Utilities Expense (Equity decreases)<br>
+                                                    &nbsp;&nbsp;&nbsp;Cash (Asset decreases)
+                                                </td>
+                                                <td class="border border-slate-300 px-2 py-2 text-right align-top">XX,XXX<br></td>
+                                                <td class="border border-slate-300 px-2 py-2 text-right align-top"><br>XX,XXX</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-1" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-1">
+                        <div id="scroll-container-c1" class="flex-1 flex flex-col lg:flex-row gap-3 px-6 pt-6 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden">
+                            <div class="w-full lg:w-1/2 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded p-3 border border-slate-700 shadow-sm text-sm">
+                                    <p class="text-slate-200 mb-2">Ex 1: Journalize the following transactions for <strong>Vertex Consulting</strong> during its first month of operations (Dec 2025). The company uses the <strong>Asset Method</strong> for prepayments and <strong>Liability Method</strong> for precollections.</p>
+                                    <h3 class="font-semibold text-slate-200 pb-0.1 text-lg">Transactions List</h3>
+                                    <table class="w-full text-left border-collapse font-mono text-[11px] md:text-[12px] text-slate-300 mb-3">
+                                        <thead><tr class="text-slate-400 border-b border-slate-600"><th>Date</th><th>Event</th></tr></thead>
+                                        <tbody>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 1</td><td>Owner (J. Vertex) invested P100,000 cash.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 2</td><td>Paid P12,000 for 6 months rent in advance.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 3</td><td>Bought Office Equipment for P40,000 on account.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 5</td><td>Bought Office Supplies for P5,000 cash.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 8</td><td>Paid P6,000 for a 1-year insurance policy.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 10</td><td>Received P15,000 cash for services to be rendered over 3 months.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 15</td><td>Provided consulting services for P30,000 cash.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 18</td><td>Provided consulting services to a client on account, P25,000.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 20</td><td>Paid P3,000 for utilities.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 22</td><td>Received P10,000 cash from the client billed on Dec 18.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 24</td><td>Paid P1,000 for miscellaneous expenses.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 28</td><td>Owner withdrew P4,000 cash for personal use.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 30</td><td>Paid P15,000 on the equipment purchased on Dec 3.</td></tr>
+                                            <tr class="border-b border-slate-700"><td class="align-top pr-2">Dec 31</td><td>Paid P10,000 for employee salaries.</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-1/2 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c1-container" class="bg-blue-50 rounded p-3 shadow-inner border-2 border-blue-300 font-mono text-sm text-slate-800 lg:h-full lg:overflow-y-auto pb-6">
+                                    <h4 class="font-bold text-base text-blue-900 text-center uppercase bg-blue-50 mb-2">Vertex Co. General Journal</h4>
+                                    
+                                    <div class="flex justify-between border-b-2 border-blue-800 text-blue-900 font-bold text-[11px] uppercase pb-1 mb-2 sticky top-0 bg-blue-50 z-10">
+                                        <span class="w-1/2">Date / Account Titles</span>
+                                        <span class="w-1/4 text-right">Debit</span>
+                                        <span class="w-1/4 text-right">Credit</span>
+                                    </div>
+
+                                    <div id="c1-dec1" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 1</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Cash</span><span class="w-1/4 text-right">100,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Owner's Capital</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">100,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">To record initial investment.</div>
+                                    </div>
+                                    
+                                    <div id="c1-dec2" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 2</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Prepaid Rent</span><span class="w-1/4 text-right">12,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Cash</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">12,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Prepayment (Asset Method).</div>
+                                    </div>
+
+                                    <div id="c1-dec3" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 3</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Office Equipment</span><span class="w-1/4 text-right">40,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Accounts Payable</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">40,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Purchase of equipment on account.</div>
+                                    </div>
+
+                                    <div id="c1-dec5" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 5</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Office Supplies</span><span class="w-1/4 text-right">5,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Cash</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">5,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Purchase supplies (Asset Method).</div>
+                                    </div>
+
+                                    <div id="c1-dec8" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 8</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Prepaid Insurance</span><span class="w-1/4 text-right">6,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Cash</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">6,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Prepayment (Asset Method).</div>
+                                    </div>
+
+                                    <div id="c1-dec10" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 10</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Cash</span><span class="w-1/4 text-right">15,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Unearned Revenue</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">15,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Precollection (Liability Method).</div>
+                                    </div>
+
+                                    <div id="c1-dec15" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 15</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Cash</span><span class="w-1/4 text-right">30,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Service Revenue</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">30,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Services provided for cash.</div>
+                                    </div>
+
+                                    <div id="c1-dec18" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 18</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Accounts Receivable</span><span class="w-1/4 text-right">25,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Service Revenue</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">25,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Services provided on account.</div>
+                                    </div>
+
+                                    <div id="c1-dec20" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 20</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Utilities Expense</span><span class="w-1/4 text-right">3,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Cash</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">3,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Outright payment of expense.</div>
+                                    </div>
+
+                                    <div id="c1-dec22" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 22</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Cash</span><span class="w-1/4 text-right">10,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Accounts Receivable</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">10,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Collection of receivable.</div>
+                                    </div>
+
+                                    <div id="c1-dec24" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 24</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Miscellaneous Expense</span><span class="w-1/4 text-right">1,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Cash</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">1,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Outright payment of expense.</div>
+                                    </div>
+
+                                    <div id="c1-dec28" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 28</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Owner's Draw</span><span class="w-1/4 text-right">4,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Cash</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">4,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Owner withdrawal.</div>
+                                    </div>
+
+                                    <div id="c1-dec30" class="acctg-row hidden border-b border-blue-200 pb-2 mb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 30</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Accounts Payable</span><span class="w-1/4 text-right">15,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Cash</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">15,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Partial payment of debt.</div>
+                                    </div>
+
+                                    <div id="c1-dec31" class="acctg-row hidden pb-2">
+                                        <div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Dec 31</div>
+                                        <div class="flex justify-between text-blue-800 font-bold"><span class="w-1/2">Salaries Expense</span><span class="w-1/4 text-right">10,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-blue-800"><span class="w-1/2 pl-4">Cash</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">10,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">Payment of employee salaries.</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-4px_10px_-1px_rgba(0,0,0,0.2)]">
+                            <div class="w-full bg-blue-950 p-3 border-t-2 border-blue-500">
+                                <p id="expC1" class="text-sm text-blue-100 leading-snug text-center">Review initial data.</p>
+                            </div>
+                            <div class="w-full bg-slate-800 border-t border-slate-700 p-2 flex flex-col gap-2">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-2">
+                                    <label class="flex items-center gap-1.5 text-xs text-blue-300 cursor-pointer font-medium">
+                                        <input type="checkbox" id="voiceC1" class="w-4 h-4 accent-blue-500"> Voice
+                                    </label>
+                                    <div id="circlesC1" class="flex flex-wrap justify-end gap-1"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-1.5">
+                                    <button id="btnStartC1" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">Start</button>
+                                    <button id="btnPrevC1" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">&laquo; Prev</button>
+                                    <button id="btnNextC1" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded font-bold text-sm border border-blue-500 disabled:opacity-50">Next &raquo;</button>
+                                    <button id="btnEndC1" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-topics-2" class="view-section">
+                    <div class="book-viewport mt-3" id="viewport-2">
+                        <div class="content-flow" id="content-2">
+                            
+                            <section id="step3" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-blue-600 pl-2 mt-4 avoid-break">Step 3: Posting to the Ledger</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    While the journal records events chronologically, the <strong>General Ledger</strong> groups transactions by specific account (e.g., all Cash transactions together). This is the "Book of Final Entry."  Posting is the mechanical process of transferring debits and credits from the journal to the ledger to determine the updated balance of each account.
+                                </p>
+                                
+                                <h4 class="font-bold text-slate-800 text-base mb-2 mt-4 avoid-break">Illustration of Posting</h4>
+                                <p class="text-sm text-slate-600 mb-2 avoid-break">Consider the transaction on Dec 1 where J. Vertex invests P100,000. Here is how the Journal Entry is posted to a formal two-sided ledger format:</p>
+                                
+                                <div class="bg-blue-50 border border-blue-200 p-2 rounded mb-4 text-xs font-mono avoid-break">
+                                    <span class="font-bold text-blue-900 block mb-1">General Journal (Page J1)</span>
+                                    <div class="flex justify-between w-full max-w-sm"><span class="w-16">Dec 1</span><span class="flex-1 font-bold">Cash</span><span class="w-16 text-right">100,000</span><span class="w-16 text-right"></span></div>
+                                    <div class="flex justify-between w-full max-w-sm"><span class="w-16"></span><span class="flex-1 pl-4">Owner's Capital</span><span class="w-16 text-right"></span><span class="w-16 text-right">100,000</span></div>
+                                </div>
+
+                                <div class="overflow-x-auto w-full avoid-break">
+                                    <h4 class="font-semibold text-sm text-slate-800 bg-slate-200 px-2 py-1 rounded-t border border-slate-300 border-b-0 text-center">General Ledger: Cash (Acct No. 101)</h4>
+                                    <table class="w-full min-w-[600px] text-left border-collapse text-xs text-slate-700 border border-slate-300">
+                                        <thead class="bg-slate-100">
+                                            <tr>
+                                                <th colspan="4" class="border-r border-slate-400 px-2 py-1 text-center w-1/2 border-b-2 border-b-slate-400">DEBIT SIDE</th>
+                                                <th colspan="4" class="px-2 py-1 text-center w-1/2 border-b-2 border-b-slate-400">CREDIT SIDE</th>
+                                            </tr>
+                                            <tr>
+                                                <th class="border border-slate-300 px-1 py-1">Date</th>
+                                                <th class="border border-slate-300 px-1 py-1">Particulars</th>
+                                                <th class="border border-slate-300 px-1 py-1 text-center">PR</th>
+                                                <th class="border-r border-slate-400 px-1 py-1 text-right">Amount</th>
+                                                <th class="border border-slate-300 px-1 py-1">Date</th>
+                                                <th class="border border-slate-300 px-1 py-1">Particulars</th>
+                                                <th class="border border-slate-300 px-1 py-1 text-center">PR</th>
+                                                <th class="border border-slate-300 px-1 py-1 text-right">Amount</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font-mono">
+                                            <tr class="bg-white">
+                                                <td class="border border-slate-300 px-1 py-1">Dec 1</td>
+                                                <td class="border border-slate-300 px-1 py-1">Investment</td>
+                                                <td class="border border-slate-300 px-1 py-1 text-center">J1</td>
+                                                <td class="border-r border-slate-400 px-1 py-1 text-right font-bold text-green-700">100,000</td>
+                                                <td class="border border-slate-300 px-1 py-1"></td>
+                                                <td class="border border-slate-300 px-1 py-1"></td>
+                                                <td class="border border-slate-300 px-1 py-1 text-center"></td>
+                                                <td class="border border-slate-300 px-1 py-1 text-right"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                            <section id="step4" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-blue-600 pl-2 mt-4 avoid-break">Step 4: Unadjusted Trial Balance</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    After all postings for the period are complete, an unadjusted trial balance is prepared. This is a simple list of all open ledger accounts and their ending balances, arranged in standard chart of accounts order: <strong>Assets, Liabilities, Equity, Revenues, and Expenses (ALORE)</strong>.
+                                </p>
+                                <p class="text-base text-slate-700 mb-4 avoid-break">
+                                    Its primary purpose is to mathematically prove that total Debits equal total Credits (the fundamental rule of double-entry accounting). However, a balanced trial balance does <em>not</em> guarantee that no errors were made. For example, if an entire transaction was completely omitted, or posted to the wrong account but on the correct side, the trial balance will still balance.
+                                </p>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-2" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-2">
+                        <div id="scroll-container-c2" class="flex-1 flex flex-col lg:flex-row gap-3 px-6 pt-6 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden">
+                            <div class="w-full lg:w-1/2 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded p-3 border border-slate-700 shadow-sm text-sm">
+                                    <p class="text-slate-200 mb-2">Ex 2: We have posted all the Dec journal entries for <strong>Vertex Consulting</strong> to the General Ledger. Below are the resulting T-Accounts. Calculate the balances and transfer them to the Unadjusted Trial Balance in ALORE order.</p>
+                                    
+                                    <div class="grid grid-cols-2 gap-2 mt-3 text-[10px] font-mono">
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Cash</div>
+                                            <div class="flex justify-between border-b border-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">100,000</span><span class="w-1/2 text-right pl-1">12,000</span></div>
+                                            <div class="flex justify-between border-b border-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">15,000</span><span class="w-1/2 text-right pl-1">5,000</span></div>
+                                            <div class="flex justify-between border-b border-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">30,000</span><span class="w-1/2 text-right pl-1">6,000</span></div>
+                                            <div class="flex justify-between border-b border-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">10,000</span><span class="w-1/2 text-right pl-1">3,000</span></div>
+                                            <div class="flex justify-between border-b border-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">1,000</span></div>
+                                            <div class="flex justify-between border-b border-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">4,000</span></div>
+                                            <div class="flex justify-between border-b border-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">15,000</span></div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">10,000</span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 99,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Accounts Receivable</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">25,000</span><span class="w-1/2 text-right pl-1">10,000</span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 15,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Office Supplies</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">5,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 5,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Prepaid Rent</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">12,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 12,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Prepaid Insurance</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">6,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 6,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Office Equipment</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">40,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 40,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Accounts Payable</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">15,000</span><span class="w-1/2 text-right pl-1">40,000</span></div>
+                                            <div class="flex justify-between font-bold text-red-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">Bal: 25,000</span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Unearned Revenue</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">15,000</span></div>
+                                            <div class="flex justify-between font-bold text-red-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">Bal: 15,000</span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Owner's Capital</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">100,000</span></div>
+                                            <div class="flex justify-between font-bold text-red-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">Bal: 100,000</span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Owner's Draw</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">4,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 4,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Service Revenue</div>
+                                            <div class="flex justify-between border-b border-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">30,000</span></div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">25,000</span></div>
+                                            <div class="flex justify-between font-bold text-red-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1"></span><span class="w-1/2 text-right pl-1">Bal: 55,000</span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Salaries Expense</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">10,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 10,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Utilities Expense</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">3,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 3,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                        <div class="bg-slate-100 text-slate-800 rounded p-1 border border-slate-300 h-fit">
+                                            <div class="text-center font-bold border-b border-slate-300 mb-1 bg-slate-200">Misc Expense</div>
+                                            <div class="flex justify-between border-b border-slate-400"><span class="w-1/2 text-right border-r border-slate-300 pr-1">1,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                            <div class="flex justify-between font-bold text-green-700 bg-slate-200"><span class="w-1/2 text-right border-r border-slate-300 pr-1">Bal: 1,000</span><span class="w-1/2 text-right pl-1"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-1/2 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c2-container" class="bg-teal-50 rounded p-3 shadow-inner border-2 border-teal-300 font-mono text-sm text-slate-800 lg:h-full lg:overflow-y-auto pb-6">
+                                    <h4 class="font-bold text-base text-teal-900 text-center uppercase bg-teal-50">Vertex Consulting</h4>
+                                    <h4 class="text-xs text-teal-900 text-center bg-teal-50 mb-2">Unadjusted Trial Balance<br><span class="font-sans font-normal text-[10px]">December 31, 2025</span></h4>
+                                    
+                                    <div class="flex justify-between border-b-2 border-teal-800 text-teal-900 font-bold text-[11px] uppercase pb-1 mb-2">
+                                        <span class="w-1/2">Account Titles</span>
+                                        <span class="w-1/4 text-right">Debit</span>
+                                        <span class="w-1/4 text-right">Credit</span>
+                                    </div>
+
+                                    <div id="c2-cash" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Cash</span><span class="w-1/4 text-right">99,000</span><span class="w-1/4 text-right"></span></div>
+                                    <div id="c2-ar" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Accounts Receivable</span><span class="w-1/4 text-right">15,000</span><span class="w-1/4 text-right"></span></div>
+                                    <div id="c2-sup" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Office Supplies</span><span class="w-1/4 text-right">5,000</span><span class="w-1/4 text-right"></span></div>
+                                    <div id="c2-prent" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Prepaid Rent</span><span class="w-1/4 text-right">12,000</span><span class="w-1/4 text-right"></span></div>
+                                    <div id="c2-pins" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Prepaid Insurance</span><span class="w-1/4 text-right">6,000</span><span class="w-1/4 text-right"></span></div>
+                                    <div id="c2-eq" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Office Equipment</span><span class="w-1/4 text-right">40,000</span><span class="w-1/4 text-right"></span></div>
+                                    <div id="c2-ad" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Accumulated Depreciation</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">-</span></div>
+                                    
+                                    <div id="c2-ap" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Accounts Payable</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">25,000</span></div>
+                                    <div id="c2-un" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Unearned Revenue</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">15,000</span></div>
+                                    <div id="c2-accp" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Accrued Expenses Payable</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">-</span></div>
+                                    
+                                    <div id="c2-cap" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Owner's Capital</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">100,000</span></div>
+                                    <div id="c2-draw" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Owner's Draw</span><span class="w-1/4 text-right">4,000</span><span class="w-1/4 text-right"></span></div>
+
+                                    <div id="c2-rev" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Service Revenue</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">55,000</span></div>
+
+                                    <div id="c2-exp1" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Salaries Expense</span><span class="w-1/4 text-right">10,000</span><span class="w-1/4 text-right"></span></div>
+                                    <div id="c2-exp2" class="acctg-row hidden flex justify-between py-0.5 text-slate-800"><span class="w-1/2">Utilities Expense</span><span class="w-1/4 text-right">3,000</span><span class="w-1/4 text-right"></span></div>
+                                    <div id="c2-exp3" class="acctg-row hidden flex justify-between py-0.5 text-slate-800 mb-2"><span class="w-1/2">Miscellaneous Expense</span><span class="w-1/4 text-right">1,000</span><span class="w-1/4 text-right"></span></div>
+
+                                    <div id="c2-totals" class="acctg-row hidden flex justify-between py-1 border-y-4 border-double border-teal-800 text-teal-900 font-bold bg-teal-200">
+                                        <span class="w-1/2">Totals</span>
+                                        <span class="w-1/4 text-right">195,000</span>
+                                        <span class="w-1/4 text-right">195,000</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-4px_10px_-1px_rgba(0,0,0,0.2)]">
+                            <div class="w-full bg-teal-950 p-3 border-t-2 border-teal-500">
+                                <p id="expC2" class="text-sm text-teal-100 leading-snug text-center">Review initial data.</p>
+                            </div>
+                            <div class="w-full bg-slate-800 border-t border-slate-700 p-2 flex flex-col gap-2">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-2">
+                                    <label class="flex items-center gap-1.5 text-xs text-teal-300 cursor-pointer font-medium">
+                                        <input type="checkbox" id="voiceC2" class="w-4 h-4 accent-teal-500"> Voice
+                                    </label>
+                                    <div id="circlesC2" class="flex flex-wrap justify-end gap-1"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-1.5">
+                                    <button id="btnStartC2" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">Start</button>
+                                    <button id="btnPrevC2" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">&laquo; Prev</button>
+                                    <button id="btnNextC2" class="bg-teal-600 hover:bg-teal-500 text-white px-4 py-1.5 rounded font-bold text-sm border border-teal-500 disabled:opacity-50">Next &raquo;</button>
+                                    <button id="btnEndC2" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-topics-3" class="view-section">
+                    <div class="book-viewport mt-3" id="viewport-3">
+                        <div class="content-flow" id="content-3">
+                            
+                            <section id="step5a" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-blue-600 pl-2 mt-4 avoid-break">Step 5a: Adjusting Entries</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    Under the <strong>accrual basis of accounting</strong>, revenues are recognized when earned, and expenses are recognized when incurred, regardless of when cash changes hands. At the end of the period, some ledger balances are not perfectly up-to-date. Adjusting entries correct these balances before financial statements are prepared.
+                                </p>
+                                
+                                <h3 class="text-lg font-semibold text-slate-800 mb-1 mt-3 avoid-break">Types of Adjustments</h3>
+                                <ul class="list-none text-base text-slate-700 space-y-3 mb-4 pl-3 border-l-2 border-amber-300">
+                                    <li>
+                                        <span class="text-amber-700 font-bold">1. Deferrals (Prepayments):</span> Cash is paid/received <em>before</em> the expense is incurred or revenue is earned. Examples include Prepaid Rent (adjusting using the asset method creates Rent Expense) and Unearned Revenue.
+                                    </li>
+                                    <li>
+                                        <span class="text-amber-700 font-bold">2. Accruals:</span> Cash will be paid/received <em>after</em> the expense is incurred or revenue is earned. Examples include Accrued Salaries and Accrued Interest Revenue.
+                                    </li>
+                                    <li>
+                                        <span class="text-amber-700 font-bold">3. Estimates:</span> Non-cash allocations like Depreciation and Bad Debts.
+                                    </li>
+                                </ul>
+                                <p class="text-sm text-slate-600 mt-1 mb-2 italic">Golden Rule: An adjusting entry will NEVER involve the Cash account. It always affects one Balance Sheet account and one Income Statement account.</p>
+                            </section>
+
+                            <section id="step5b" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-amber-600 pl-2 mt-4 avoid-break">Step 5b: The Worksheet</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    The worksheet is an optional, informal working tool used by accountants to organize data for financial statements.  It visually connects the unadjusted trial balance, the adjustments, and the final statement columns.
+                                </p>
+                                
+                                <h4 class="font-bold text-slate-800 text-sm mb-2 mt-2 avoid-break">Step-by-step Guide to the Worksheet:</h4>
+                                <ol class="list-decimal pl-5 text-sm text-slate-700 space-y-1 mb-4">
+                                    <li><strong>Unadjusted Trial Balance:</strong> Copy the initial balances from the ledger.</li>
+                                    <li><strong>Adjustments:</strong> Enter the adjusting debits and credits. Create new rows for new accounts (like Depreciation Expense) if they aren't listed yet.</li>
+                                    <li><strong>Adjusted Trial Balance:</strong> Combine the unadjusted balances with the adjustments. (e.g., A debit balance + a debit adjustment = larger debit).</li>
+                                    <li><strong>Income Statement:</strong> Extend only the Revenue and Expense accounts to these columns.</li>
+                                    <li><strong>Balance Sheet:</strong> Extend Assets, Liabilities, and Equity (including Drawings) to these columns.</li>
+                                    <li><strong>Net Income Balancing:</strong> The difference between IS Debits and IS Credits is Net Income (if Credits > Debits). Place this amount in the IS Debit column and the BS Credit column to balance both sets of columns.</li>
+                                </ol>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-3" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-3">
+                        <div id="scroll-container-c3" class="flex-1 flex flex-col lg:flex-row gap-3 px-6 pt-6 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden">
+                            <div class="w-full lg:w-1/3 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded p-3 border border-slate-700 shadow-sm text-sm">
+                                    <p class="text-slate-200 mb-2">Ex 3: Record the adjusting entries on Dec 31 for <strong>Vertex Consulting</strong> and complete the 10-column worksheet.</p>
+                                    <h3 class="font-semibold text-slate-200 pb-0.1 text-lg">Adjustment Data (Dec 31)</h3>
+                                    <ul class="list-none pl-1 font-mono text-[10px] md:text-[11px] text-slate-300 mb-3 space-y-2 mt-2">
+                                        <li><strong>(a)</strong> A physical count reveals P2,000 of Office Supplies remain on hand. (Asset method was used).</li>
+                                        <li><strong>(b)</strong> Rent was prepaid for 6 months on Dec 2 (P12,000). One month has expired.</li>
+                                        <li><strong>(c)</strong> Insurance was prepaid for 1 year on Dec 8 (P6,000). One month has expired.</li>
+                                        <li><strong>(d)</strong> Office equipment depreciates by P800 for the month.</li>
+                                        <li><strong>(e)</strong> Unearned revenue (P15,000 for 3 months) shows one month has been earned.</li>
+                                        <li><strong>(f)</strong> Employees earned P2,000 in accrued salaries not yet paid.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/3 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c3-container" class="bg-amber-50 rounded p-2 shadow-inner border-2 border-amber-300 font-mono text-[8px] md:text-[9px] text-slate-800 lg:h-full lg:overflow-y-auto pb-6">
+                                    <h4 class="font-bold text-sm text-amber-900 text-center uppercase bg-amber-50 mb-1">Vertex Consulting - 10 Column Worksheet</h4>
+                                    
+                                    <div class="overflow-x-auto w-full avoid-break mt-1">
+                                        <table class="w-full min-w-[700px] text-left border-collapse text-slate-800 border border-amber-300">
+                                            <thead class="bg-amber-100/50">
+                                                <tr>
+                                                    <th class="border border-amber-300 px-1 py-1 w-[120px]" rowspan="2">Account Titles</th>
+                                                    <th colspan="2" class="border border-amber-300 px-1 py-1 text-center">Unadjusted TB</th>
+                                                    <th colspan="2" class="border border-amber-300 px-1 py-1 text-center bg-amber-200/40">Adjustments</th>
+                                                    <th colspan="2" class="border border-amber-300 px-1 py-1 text-center">Adjusted TB</th>
+                                                    <th colspan="2" class="border border-amber-300 px-1 py-1 text-center bg-blue-100/50">Income Statement</th>
+                                                    <th colspan="2" class="border border-amber-300 px-1 py-1 text-center bg-teal-100/50">Balance Sheet</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="border border-amber-300 text-center">Dr</th><th class="border border-amber-300 text-center">Cr</th>
+                                                    <th class="border border-amber-300 text-center bg-amber-200/40">Dr</th><th class="border border-amber-300 text-center bg-amber-200/40">Cr</th>
+                                                    <th class="border border-amber-300 text-center">Dr</th><th class="border border-amber-300 text-center">Cr</th>
+                                                    <th class="border border-amber-300 text-center bg-blue-100/50">Dr</th><th class="border border-amber-300 text-center bg-blue-100/50">Cr</th>
+                                                    <th class="border border-amber-300 text-center bg-teal-100/50">Dr</th><th class="border border-amber-300 text-center bg-teal-100/50">Cr</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="font-mono text-right">
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Cash</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">99,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-cash"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-cash"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Accounts Receivable</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">15,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-ar"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-ar"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Office Supplies</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">5,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-red-600 font-bold" id="ws-adj-sup"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-sup"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-sup"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Prepaid Rent</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">12,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-red-600 font-bold" id="ws-adj-prent"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-prent"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-prent"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Prepaid Insurance</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">6,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-red-600 font-bold" id="ws-adj-pins"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-pins"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-pins"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Office Equipment</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">40,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-eq"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-eq"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Accum. Depr.</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">-</td><td class="border border-amber-300 px-1 py-0.5">-</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-red-600 font-bold" id="ws-adj-ad"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-atb-ad"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-ad"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Accounts Payable</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5">25,000</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-atb-ap"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-ap"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Unearned Revenue</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5">15,000</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-red-600 font-bold" id="ws-adj-un1"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-atb-un"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-un"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Accrued Exp Pay.</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">-</td><td class="border border-amber-300 px-1 py-0.5">-</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-red-600 font-bold" id="ws-adj-accp"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-atb-accp"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-accp"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Owner's Capital</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5">100,000</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-atb-cap"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-cap"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Owner's Draw</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">4,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-draw"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-800" id="ws-bs-draw"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Service Revenue</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5">55,000</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-green-600 font-bold" id="ws-adj-un2"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-atb-rev"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-800 font-bold" id="ws-is-rev"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Salaries Expense</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">10,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-green-600 font-bold" id="ws-adj-sal"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-sal"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-800 font-bold" id="ws-is-sal"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate">Utilities Expense</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">3,000</td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-ut"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-800 font-bold" id="ws-is-ut"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans truncate border-b-2 border-slate-500">Misc Expense</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 border-b-2 border-slate-500">1,000</td><td class="border border-amber-300 px-1 py-0.5 border-b-2 border-slate-500"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50 border-b-2 border-slate-500"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50 border-b-2 border-slate-500"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 border-b-2 border-slate-500" id="ws-atb-misc"></td><td class="border border-amber-300 px-1 py-0.5 border-b-2 border-slate-500"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50 border-b-2 border-slate-500 text-blue-800 font-bold" id="ws-is-misc"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50 border-b-2 border-slate-500"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 border-b-2 border-slate-500"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50 border-b-2 border-slate-500"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans text-slate-500 italic truncate">Supplies Expense</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-green-600 font-bold" id="ws-adj-supe"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-supe"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-800 font-bold" id="ws-is-supe"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans text-slate-500 italic truncate">Rent Expense</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-green-600 font-bold" id="ws-adj-rente"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-rente"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-800 font-bold" id="ws-is-rente"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans text-slate-500 italic truncate">Insurance Expense</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-green-600 font-bold" id="ws-adj-inse"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-inse"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-800 font-bold" id="ws-is-inse"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans text-slate-500 italic truncate">Depreciation Exp</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-green-600 font-bold" id="ws-adj-depe"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-depe"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-800 font-bold" id="ws-is-depe"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50"></td>
+                                                </tr>
+                                                
+                                                <tr class="font-bold border-t-2 border-slate-500 bg-slate-100">
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans">Subtotals</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5">195,000</td><td class="border border-amber-300 px-1 py-0.5">195,000</td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-amber-900" id="ws-adj-tdr"></td><td class="border border-amber-300 px-1 py-0.5 bg-amber-50 text-amber-900" id="ws-adj-tcr"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-atb-tdr"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-atb-tcr"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-900" id="ws-is-tdr"></td><td class="border border-amber-300 px-1 py-0.5 bg-blue-50 text-blue-900" id="ws-is-tcr"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-900" id="ws-bs-tdr"></td><td class="border border-amber-300 px-1 py-0.5 bg-teal-50 text-teal-900" id="ws-bs-tcr"></td>
+                                                </tr>
+                                                <tr class="bg-indigo-100 font-bold">
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans text-indigo-700">Net Income</td>
+                                                    <td colspan="6" class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-indigo-700" id="ws-ni-is"></td><td class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5"></td><td class="border border-amber-300 px-1 py-0.5 text-indigo-700" id="ws-ni-bs"></td>
+                                                </tr>
+                                                <tr class="border-y-4 border-double border-amber-800 font-bold bg-amber-200/50">
+                                                    <td class="border border-amber-300 px-1 py-0.5 text-left font-sans">Final Totals</td>
+                                                    <td colspan="6" class="border border-amber-300 px-1 py-0.5"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-ft-isdr"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-ft-iscr"></td>
+                                                    <td class="border border-amber-300 px-1 py-0.5" id="ws-ft-bsdr"></td><td class="border border-amber-300 px-1 py-0.5" id="ws-ft-bscr"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-4px_10px_-1px_rgba(0,0,0,0.2)]">
+                            <div class="w-full bg-amber-950 p-3 border-t-2 border-amber-500">
+                                <p id="expC3" class="text-sm text-amber-100 leading-snug text-center">Review initial data.</p>
+                            </div>
+                            <div class="w-full bg-slate-800 border-t border-slate-700 p-2 flex flex-col gap-2">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-2">
+                                    <label class="flex items-center gap-1.5 text-xs text-amber-300 cursor-pointer font-medium">
+                                        <input type="checkbox" id="voiceC3" class="w-4 h-4 accent-amber-500"> Voice
+                                    </label>
+                                    <div id="circlesC3" class="flex flex-wrap justify-end gap-1"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-1.5">
+                                    <button id="btnStartC3" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">Start</button>
+                                    <button id="btnPrevC3" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">&laquo; Prev</button>
+                                    <button id="btnNextC3" class="bg-amber-600 hover:bg-amber-500 text-white px-4 py-1.5 rounded font-bold text-sm border border-amber-500 disabled:opacity-50">Next &raquo;</button>
+                                    <button id="btnEndC3" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-topics-4" class="view-section">
+                    <div class="book-viewport mt-3" id="viewport-4">
+                        <div class="content-flow" id="content-4">
+                            
+                            <section id="step6" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-blue-600 pl-2 mt-4 avoid-break">Step 6: Preparing Financial Statements</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    Using the Adjusted Trial Balance (or the worksheet columns), we formally present the financial position and performance to stakeholders. They must be prepared in a strict order because numbers flow from one statement to the next:
+                                </p>
+                                <ol class="list-decimal pl-5 text-base text-slate-700 space-y-2 mb-4">
+                                    <li><strong>Income Statement:</strong> Revenues minus Expenses equals Net Income (or Net Loss).</li>
+                                    <li><strong>Statement of Changes in Equity:</strong> Beginning Capital + Net Income - Withdrawals = Ending Capital.</li>
+                                    <li><strong>Statement of Financial Position (Balance Sheet):</strong> Assets = Liabilities + Ending Capital. </li>
+                                    <li><strong>Statement of Cash Flows:</strong> Identifies cash inflows and outflows (Operating, Investing, Financing).</li>
+                                </ol>
+                            </section>
+
+                            <section id="step7" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-blue-600 pl-2 mt-4 avoid-break">Step 7: Journalizing and Posting Adjusting Entries</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    The worksheet created in Step 5 is just an informal tool. The adjustments we discovered and calculated there must now be officially recorded in the accounting system. 
+                                </p>
+                                <p class="text-base text-slate-700 mb-4 avoid-break">
+                                    We journalize the adjustments in the General Journal and then post them to the General Ledger. This process permanently updates the actual ledger accounts to reflect the accurate, accrual-basis balances shown in the financial statements.
+                                </p>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-4" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-4">
+                        <div id="scroll-container-c4" class="flex-1 flex flex-col lg:flex-row gap-3 px-6 pt-6 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden">
+                            <div class="w-full lg:w-1/3 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded p-3 border border-slate-700 shadow-sm text-sm">
+                                    <p class="text-slate-200 mb-2">Ex 4: Prepare the Income Statement, Statement of Changes in Equity, and Balance Sheet for <strong>Vertex Consulting</strong> based on the completed worksheet data.</p>
+                                    <h3 class="font-semibold text-slate-200 pb-0.1 text-lg">Key Worksheet Data</h3>
+                                    <table class="w-full text-left border-collapse font-mono text-[10px] md:text-[11px] text-slate-300 mb-3 mt-1">
+                                        <thead><tr class="text-slate-400 border-b border-slate-600"><th>Account</th><th class="text-right">Balance</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>Total Revenue</td><td class="text-right">60,000</td></tr>
+                                            <tr><td>Total Expenses</td><td class="text-right">22,300</td></tr>
+                                            <tr class="font-bold text-indigo-300 border-b border-slate-700"><td>Net Income</td><td class="text-right">37,700</td></tr>
+                                            <tr><td>Beg. Capital</td><td class="text-right">0</td></tr>
+                                            <tr><td>Initial Investment</td><td class="text-right">100,000</td></tr>
+                                            <tr class="border-b border-slate-700"><td>Owner's Draw</td><td class="text-right">4,000</td></tr>
+                                            <tr><td>Total Assets</td><td class="text-right">170,700</td></tr>
+                                            <tr><td>Total Liabilities</td><td class="text-right">37,000</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/3 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c4-container" class="bg-indigo-50 rounded p-4 shadow-inner border-2 border-indigo-300 font-mono text-sm text-slate-800 lg:h-full lg:overflow-y-auto pb-6">
+                                    
+                                    <div id="c4-is" class="hidden mb-6 bg-white p-3 rounded shadow-sm border border-slate-200">
+                                        <h4 class="font-bold text-base text-indigo-900 text-center uppercase">Vertex Consulting</h4>
+                                        <h4 class="text-sm text-indigo-900 text-center">Income Statement</h4>
+                                        <h4 class="text-xs text-indigo-900 text-center mb-3">For the month ended December 31, 2025</h4>
+                                        
+                                        <div class="flex justify-between font-bold mb-1"><span>Revenues:</span><span></span></div>
+                                        <div class="flex justify-between pl-4"><span>Service Revenue</span><span>P 60,000</span></div>
+                                        
+                                        <div class="flex justify-between font-bold mt-3 mb-1"><span>Expenses:</span><span></span></div>
+                                        <div class="flex justify-between pl-4"><span>Salaries Expense</span><span>12,000</span></div>
+                                        <div class="flex justify-between pl-4"><span>Supplies Expense</span><span>3,000</span></div>
+                                        <div class="flex justify-between pl-4"><span>Utilities Expense</span><span>3,000</span></div>
+                                        <div class="flex justify-between pl-4"><span>Rent Expense</span><span>2,000</span></div>
+                                        <div class="flex justify-between pl-4"><span>Miscellaneous Expense</span><span>1,000</span></div>
+                                        <div class="flex justify-between pl-4"><span>Depreciation Expense</span><span>800</span></div>
+                                        <div class="flex justify-between pl-4 border-b border-slate-400 pb-1"><span>Insurance Expense</span><span>500</span></div>
+                                        <div class="flex justify-between pl-4 font-semibold mt-1"><span>Total Expenses</span><span>(22,300)</span></div>
+                                        
+                                        <div class="flex justify-between font-bold text-indigo-700 border-t-2 border-double border-indigo-800 mt-2 pt-1"><span>Net Income</span><span>P 37,700</span></div>
+                                    </div>
+                                    
+                                    <div id="c4-sce" class="hidden mb-6 bg-white p-3 rounded shadow-sm border border-slate-200">
+                                        <h4 class="font-bold text-base text-indigo-900 text-center uppercase">Vertex Consulting</h4>
+                                        <h4 class="text-sm text-indigo-900 text-center">Statement of Changes in Equity</h4>
+                                        <h4 class="text-xs text-indigo-900 text-center mb-3">For the month ended December 31, 2025</h4>
+                                        
+                                        <div class="flex justify-between"><span>Vertex, Capital, Dec 1</span><span>P 0</span></div>
+                                        <div class="flex justify-between pl-4"><span>Add: Initial Investment</span><span>100,000</span></div>
+                                        <div class="flex justify-between pl-4"><span>Add: Net Income</span><span>37,700</span></div>
+                                        <div class="flex justify-between pl-4 font-semibold border-t border-slate-300 mt-1 pt-1"><span>Total</span><span>137,700</span></div>
+                                        <div class="flex justify-between pl-4 border-b border-slate-400 pb-1"><span>Less: Owner's Draw</span><span>(4,000)</span></div>
+                                        
+                                        <div class="flex justify-between font-bold text-indigo-700 border-t-2 border-double border-indigo-800 mt-2 pt-1"><span>Vertex, Capital, Dec 31</span><span>P 133,700</span></div>
+                                    </div>
+
+                                    <div id="c4-bs" class="hidden bg-white p-3 rounded shadow-sm border border-slate-200">
+                                        <h4 class="font-bold text-base text-indigo-900 text-center uppercase">Vertex Consulting</h4>
+                                        <h4 class="text-sm text-indigo-900 text-center">Statement of Financial Position</h4>
+                                        <h4 class="text-xs text-indigo-900 text-center mb-3">As of December 31, 2025</h4>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div>
+                                                <div class="font-bold border-b border-slate-300 mb-1">ASSETS</div>
+                                                <div class="flex justify-between pl-2"><span>Cash</span><span>99,000</span></div>
+                                                <div class="flex justify-between pl-2"><span>Accounts Receivable</span><span>15,000</span></div>
+                                                <div class="flex justify-between pl-2"><span>Prepaid Rent</span><span>10,000</span></div>
+                                                <div class="flex justify-between pl-2"><span>Prepaid Insurance</span><span>5,500</span></div>
+                                                <div class="flex justify-between pl-2"><span>Office Supplies</span><span>2,000</span></div>
+                                                <div class="flex justify-between pl-2 mt-2"><span>Office Equipment</span><span>40,000</span></div>
+                                                <div class="flex justify-between pl-2 border-b border-slate-400 pb-1"><span>Less: Accum. Depr.</span><span>(800)</span></div>
+                                                <div class="flex justify-between font-bold text-indigo-700 border-t-2 border-double border-indigo-800 mt-2 pt-1"><span>Total Assets</span><span>P 170,700</span></div>
+                                            </div>
+                                            <div>
+                                                <div class="font-bold border-b border-slate-300 mb-1">LIABILITIES & EQUITY</div>
+                                                <div class="font-semibold mt-1">Liabilities</div>
+                                                <div class="flex justify-between pl-2"><span>Accounts Payable</span><span>25,000</span></div>
+                                                <div class="flex justify-between pl-2"><span>Unearned Revenue</span><span>10,000</span></div>
+                                                <div class="flex justify-between pl-2 border-b border-slate-400 pb-1"><span>Accrued Exp Pay.</span><span>2,000</span></div>
+                                                <div class="flex justify-between pl-2 font-semibold mt-1"><span>Total Liabilities</span><span>37,000</span></div>
+                                                
+                                                <div class="font-semibold mt-3">Equity</div>
+                                                <div class="flex justify-between pl-2 border-b border-slate-400 pb-1"><span>Vertex, Capital</span><span>133,700</span></div>
+                                                
+                                                <div class="flex justify-between font-bold text-indigo-700 border-t-2 border-double border-indigo-800 mt-2 pt-1"><span>Total Liab & Equity</span><span>P 170,700</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-4px_10px_-1px_rgba(0,0,0,0.2)]">
+                            <div class="w-full bg-indigo-950 p-3 border-t-2 border-indigo-500">
+                                <p id="expC4" class="text-sm text-indigo-100 leading-snug text-center">Review initial data.</p>
+                            </div>
+                            <div class="w-full bg-slate-800 border-t border-slate-700 p-2 flex flex-col gap-2">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-2">
+                                    <label class="flex items-center gap-1.5 text-xs text-indigo-300 cursor-pointer font-medium">
+                                        <input type="checkbox" id="voiceC4" class="w-4 h-4 accent-indigo-500"> Voice
+                                    </label>
+                                    <div id="circlesC4" class="flex flex-wrap justify-end gap-1"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-1.5">
+                                    <button id="btnStartC4" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">Start</button>
+                                    <button id="btnPrevC4" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">&laquo; Prev</button>
+                                    <button id="btnNextC4" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded font-bold text-sm border border-indigo-500 disabled:opacity-50">Next &raquo;</button>
+                                    <button id="btnEndC4" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-topics-5" class="view-section">
+                    <div class="book-viewport mt-3" id="viewport-5">
+                        <div class="content-flow" id="content-5">
+                            
+                            <section id="step8" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-indigo-600 pl-2 mt-4 avoid-break">Step 8: Journalizing and Posting Closing Entries</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    At the end of the year, we must reset all <em>temporary</em> (nominal) accounts to zero so they can start fresh for the next year. Temporary accounts include Revenues, Expenses, and Withdrawals. We do not close <em>permanent</em> (real) accounts like Assets, Liabilities, or Capital.
+                                </p>
+                                <p class="text-base text-slate-700 mb-4 avoid-break">
+                                    We use a temporary clearing account called <strong>Income Summary</strong>. The closing process follows the <strong>R-E-I-D</strong> sequence:
+                                    <br>1. <strong>R</strong>evenue: Debit revenues to close, Credit Income Summary.
+                                    <br>2. <strong>E</strong>xpense: Debit Income Summary, Credit expenses to close.
+                                    <br>3. <strong>I</strong>ncome Summary: Close the net income (or loss) to Capital.
+                                    <br>4. <strong>D</strong>rawings: Credit withdrawals to close, Debit Capital.
+                                </p>
+                            </section>
+
+                            <section id="step9" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-blue-600 pl-2 mt-4 avoid-break">Step 9: Preparing the Post-Closing Trial Balance</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    This is the third and final trial balance prepared during the cycle. Because we just closed all revenues, expenses, and drawings, this trial balance will <strong>only contain permanent (real) accounts: Assets, Liabilities, and ending Capital.</strong>
+                                </p>
+                                <p class="text-base text-slate-700 mb-4 avoid-break">
+                                    Its sole purpose is to prove the equality of debits and credits of the permanent accounts that will be carried forward into the next accounting year. If this balances, the books are successfully closed for the year.
+                                </p>
+                            </section>
+
+                            <section id="step10" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-l-4 border-rose-600 pl-2 mt-4 avoid-break">Step 10: Reversing Entries</h2>
+                                
+                                <p class="text-base text-slate-700 mb-2 avoid-break">
+                                    Reversing entries are an <strong>optional</strong> accounting procedure performed on the very first day of the new accounting period. They are the exact opposite of certain adjusting entries made on the last day of the previous period.
+                                </p>
+                                <p class="text-base text-slate-700 mb-4 avoid-break">
+                                    They are primarily used for <strong>accruals</strong> (Accrued Revenues and Accrued Expenses). Reversing an accrual simplifies the routine journalizing of the subsequent cash receipt or payment in the new year, allowing the bookkeeper to record the cash entry normally without worrying about splitting the amount between the prior period liability/receivable and the current period expense/revenue.
+                                </p>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-5" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-5">
+                        <div id="scroll-container-c5" class="flex-1 flex flex-col lg:flex-row gap-3 px-6 pt-6 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden">
+                            <div class="w-full lg:w-1/3 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded p-3 border border-slate-700 shadow-sm text-sm">
+                                    <p class="text-slate-200 mb-2">Ex 5: Execute the closing, prepare PCTB, and record the reversing entry for <strong>Vertex Consulting</strong>.</p>
+                                    <ul class="list-decimal pl-4 font-mono text-[10px] md:text-[11px] text-slate-300 mb-3 space-y-2 mt-2">
+                                        <li>Close Service Revenue (60,000).</li>
+                                        <li>Close Expenses (Total 22,300).</li>
+                                        <li>Close Income Summary (Net Income 37,700) to Capital.</li>
+                                        <li>Close Drawings (4,000) to Capital.</li>
+                                        <li>Verify the Post-Closing Trial Balance.</li>
+                                        <li>Reverse the Accrued Salaries adjustment on Jan 1, 2026.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/3 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c5-container" class="bg-rose-50 rounded p-3 shadow-inner border-2 border-rose-300 font-mono text-[11px] md:text-xs text-slate-800 lg:h-full lg:overflow-y-auto pb-6">
+                                    
+                                    <div id="c5-close" class="hidden mb-4 border-b border-slate-300 pb-2">
+                                        <h4 class="font-bold text-sm text-rose-900 uppercase bg-rose-100 px-2 py-1 mb-2">Step 8: Closing Entries</h4>
+                                        <div class="flex justify-between text-rose-900 font-bold"><span class="w-1/2">Service Revenue</span><span class="w-1/4 text-right">60,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-rose-900"><span class="w-1/2 pl-4">Income Summary</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">60,000</span></div>
+                                        <div class="text-[9px] text-slate-500 font-sans italic mt-1 mb-2">To close revenue (R).</div>
+                                        
+                                        <div class="flex justify-between text-rose-900 font-bold"><span class="w-1/2">Income Summary</span><span class="w-1/4 text-right">22,300</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-rose-900"><span class="w-1/2 pl-4">Salaries Expense</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">12,000</span></div>
+                                        <div class="flex justify-between text-rose-900"><span class="w-1/2 pl-4">Supplies Expense</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">3,000</span></div>
+                                        <div class="flex justify-between text-rose-900"><span class="w-1/2 pl-4">Utilities Exp... (etc)</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">7,300</span></div>
+                                        <div class="text-[9px] text-slate-500 font-sans italic mt-1 mb-2">To close expenses (E).</div>
+
+                                        <div class="flex justify-between text-rose-900 font-bold"><span class="w-1/2">Income Summary</span><span class="w-1/4 text-right">37,700</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-rose-900"><span class="w-1/2 pl-4">Vertex, Capital</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">37,700</span></div>
+                                        <div class="text-[9px] text-slate-500 font-sans italic mt-1 mb-2">To close net income to capital (I).</div>
+
+                                        <div class="flex justify-between text-rose-900 font-bold"><span class="w-1/2">Vertex, Capital</span><span class="w-1/4 text-right">4,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-rose-900"><span class="w-1/2 pl-4">Vertex, Draw</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">4,000</span></div>
+                                        <div class="text-[9px] text-slate-500 font-sans italic mt-1">To close drawings (D).</div>
+                                    </div>
+                                    
+                                    <div id="c5-pctb" class="hidden mb-4 border-b border-slate-300 pb-2">
+                                        <h4 class="font-bold text-sm text-rose-900 uppercase bg-rose-100 px-2 py-1 mb-2">Step 9: Post-Closing TB</h4>
+                                        <div class="grid grid-cols-3 font-bold border-b border-slate-300 pb-1"><span>Account</span><span class="text-right">Debit</span><span class="text-right">Credit</span></div>
+                                        <div class="grid grid-cols-3 pt-1"><span>Cash</span><span class="text-right">99,000</span><span class="text-right"></span></div>
+                                        <div class="grid grid-cols-3"><span>AR</span><span class="text-right">15,000</span><span class="text-right"></span></div>
+                                        <div class="grid grid-cols-3"><span>Prepaid Rent</span><span class="text-right">10,000</span><span class="text-right"></span></div>
+                                        <div class="grid grid-cols-3"><span>Prepaid Ins.</span><span class="text-right">5,500</span><span class="text-right"></span></div>
+                                        <div class="grid grid-cols-3"><span>Supplies</span><span class="text-right">2,000</span><span class="text-right"></span></div>
+                                        <div class="grid grid-cols-3"><span>Equipment</span><span class="text-right">40,000</span><span class="text-right"></span></div>
+                                        <div class="grid grid-cols-3"><span>Accum. Depr.</span><span class="text-right"></span><span class="text-right">800</span></div>
+                                        <div class="grid grid-cols-3"><span>AP</span><span class="text-right"></span><span class="text-right">25,000</span></div>
+                                        <div class="grid grid-cols-3"><span>Unearned Rev</span><span class="text-right"></span><span class="text-right">10,000</span></div>
+                                        <div class="grid grid-cols-3"><span>Accrued Exp</span><span class="text-right"></span><span class="text-right">2,000</span></div>
+                                        <div class="grid grid-cols-3"><span>Capital</span><span class="text-right"></span><span class="text-right">133,700</span></div>
+                                        <div class="grid grid-cols-3 font-bold text-rose-800 border-t border-slate-400 mt-1 pt-1"><span>Totals</span><span class="text-right">171,500</span><span class="text-right">171,500</span></div>
+                                    </div>
+
+                                    <div id="c5-rev" class="hidden pb-2">
+                                        <h4 class="font-bold text-sm text-rose-900 uppercase bg-rose-100 px-2 py-1 mb-2">Step 10: Reversing Entry (Jan 1)</h4>
+                                        <div class="flex justify-between text-[11px] text-slate-500 font-sans font-bold uppercase mb-1"><span>Jan 1, 2026</span></div>
+                                        <div class="flex justify-between text-rose-900 font-bold"><span class="w-1/2">Accrued Expenses Payable</span><span class="w-1/4 text-right">2,000</span><span class="w-1/4 text-right"></span></div>
+                                        <div class="flex justify-between text-rose-900"><span class="w-1/2 pl-4">Salaries Expense</span><span class="w-1/4 text-right"></span><span class="w-1/4 text-right">2,000</span></div>
+                                        <div class="text-[10px] text-slate-500 font-sans italic mt-1">To reverse the accrued salary adjustment of Dec 31.</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-4px_10px_-1px_rgba(0,0,0,0.2)]">
+                            <div class="w-full bg-rose-950 p-3 border-t-2 border-rose-500">
+                                <p id="expC5" class="text-sm text-rose-100 leading-snug text-center">Review initial data.</p>
+                            </div>
+                            <div class="w-full bg-slate-800 border-t border-slate-700 p-2 flex flex-col gap-2">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-2">
+                                    <label class="flex items-center gap-1.5 text-xs text-rose-300 cursor-pointer font-medium">
+                                        <input type="checkbox" id="voiceC5" class="w-4 h-4 accent-rose-500"> Voice
+                                    </label>
+                                    <div id="circlesC5" class="flex flex-wrap justify-end gap-1"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-1.5">
+                                    <button id="btnStartC5" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">Start</button>
+                                    <button id="btnPrevC5" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">&laquo; Prev</button>
+                                    <button id="btnNextC5" class="bg-rose-600 hover:bg-rose-500 text-white px-4 py-1.5 rounded font-bold text-sm border border-rose-500 disabled:opacity-50">Next &raquo;</button>
+                                    <button id="btnEndC5" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <footer class="text-center text-slate-400 py-1.5 font-mono text-[10px] tracking-widest flex-shrink-0 bg-white border-t border-slate-100 z-10 relative">
+                <p>This courseware is a private property of Joselito Villarta, CPA, MBA</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // --- View & Pagination Engine ---
+        const views = [
+            'view-topics-1',
+            'view-case-1',
+            'view-topics-2',
+            'view-case-2',
+            'view-topics-3',
+            'view-case-3',
+            'view-topics-4',
+            'view-case-4',
+            'view-topics-5',
+            'view-case-5'
+        ];
+        let currentViewIndex = 0;
+        
+        let currentPage = 0;
+        let totalPages = 1;
+        let currentZoom = 100;
+
+    function updateZoomVar() {
+        const isMobile = window.innerWidth < 1024;
+        const mobileBase = 24;   // Smaller default for mobile screens
+        const desktopBase = 16;  // Your current desktop default
+        const activeBase = isMobile ? mobileBase : desktopBase;
+        document.documentElement.style.fontSize = (currentZoom / 100 * activeBase) + 'px';
+        const zoomInput = document.getElementById('zoom-input');
+        if (zoomInput) {
+            zoomInput.value = currentZoom + '%';
+        }
+        setTimeout(updatePagination, 50);
+    }
+
+        function changeZoom(delta) {
+            currentZoom += delta;
+            if(currentZoom < 50) currentZoom = 50;
+            if(currentZoom > 200) currentZoom = 200;
+            updateZoomVar();
+        }
+
+        function setZoom(val) {
+            let parsed = parseInt(val.replace('%', ''));
+            if(!isNaN(parsed)) {
+                currentZoom = parsed;
+                if(currentZoom < 50) currentZoom = 50;
+                if(currentZoom > 200) currentZoom = 200;
+            }
+            updateZoomVar();
+        }
+
+        function getActiveContentViewport() {
+            const activeView = document.getElementById(views[currentViewIndex]);
+            if (!activeView) return null;
+            return {
+                content: activeView.querySelector('.content-flow'),
+                viewport: activeView.querySelector('.book-viewport')
+            };
+        }
+
+        function updatePagination() {
+            const els = getActiveContentViewport();
+            if (!els || !els.content || !els.viewport) {
+                document.getElementById('page-indicator').innerText = 'Ex.';
+                updateSidebarHighlighting(null);
+                return;
+            }
+            
+            const isDesktop = window.innerWidth >= 1024;
+            const colsPerPage = isDesktop ? 2 : 1;
+            const viewportWidth = els.viewport.clientWidth;
+            if (viewportWidth === 0) return; 
+
+            const colWidth = viewportWidth / colsPerPage;
+            els.content.style.columnWidth = colWidth + 'px';
+
+            setTimeout(() => {
+                const totalCols = Math.ceil(els.content.scrollWidth / colWidth);
+                totalPages = Math.max(1, totalCols - colsPerPage + 1); 
+                
+                if (currentPage >= totalPages) currentPage = Math.max(0, totalPages - 1);
+                
+                els.content.style.transform = 'translateX(-' + (currentPage * colWidth) + 'px)';
+                
+                let displayPage = currentPage + 1;
+                let displayTotal = totalPages;
+                document.getElementById('page-indicator').innerText = displayPage + ' / ' + displayTotal;
+                
+                updateSidebarHighlighting(els.content, colWidth);
+            }, 10);
+        }
+
+        function updateSidebarHighlighting(contentEl, colWidth) {
+            if (!contentEl) {
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active', 'text-blue-700', 'text-teal-700', 'text-amber-700', 'text-indigo-700', 'text-rose-700', 'bg-blue-50', 'bg-teal-50', 'bg-amber-50', 'bg-indigo-50', 'bg-rose-50', 'bg-slate-100'));
+                
+                let activeId = null;
+                if (views[currentViewIndex] === 'view-case-1') activeId = 'case-study-1';
+                else if (views[currentViewIndex] === 'view-case-2') activeId = 'case-study-2';
+                else if (views[currentViewIndex] === 'view-case-3') activeId = 'case-study-3';
+                else if (views[currentViewIndex] === 'view-case-4') activeId = 'case-study-4';
+                else if (views[currentViewIndex] === 'view-case-5') activeId = 'case-study-5';
+                
+                const activeLink = document.querySelector('.nav-link[data-target="' + activeId + '"]');
+                if(activeLink) {
+                    activeLink.classList.add('active');
+                    if (activeId === 'case-study-1') activeLink.classList.add('text-blue-700', 'bg-blue-50');
+                    else if (activeId === 'case-study-2') activeLink.classList.add('text-teal-700', 'bg-teal-50');
+                    else if (activeId === 'case-study-3') activeLink.classList.add('text-amber-700', 'bg-amber-50');
+                    else if (activeId === 'case-study-4') activeLink.classList.add('text-indigo-700', 'bg-indigo-50');
+                    else if (activeId === 'case-study-5') activeLink.classList.add('text-rose-700', 'bg-rose-50');
+                }
+                return;
+            }
+
+            const contentRect = contentEl.getBoundingClientRect();
+            const markers = contentEl.querySelectorAll('.section-marker');
+            let activeId = null;
+            
+            const currentScrollPos = currentPage * colWidth;
+
+            markers.forEach(marker => {
+                const markerRect = marker.getBoundingClientRect();
+                const offsetLeft = markerRect.left - contentRect.left;
+                if (offsetLeft <= currentScrollPos + (colWidth / 2)) {
+                    activeId = marker.id;
+                }
+            });
+
+            if (activeId) {
+                document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active', 'text-blue-700', 'text-teal-700', 'text-amber-700', 'text-indigo-700', 'text-rose-700', 'bg-blue-50', 'bg-teal-50', 'bg-amber-50', 'bg-indigo-50', 'bg-rose-50', 'bg-slate-100'));
+                const activeLink = document.querySelector('.nav-link[data-target="' + activeId + '"]');
+                if(activeLink) {
+                    activeLink.classList.add('active', 'bg-slate-100');
+                }
+            }
+        }
+
+        function switchView(index) {
+            if(index < 0 || index >= views.length) return;
+            
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(views[index]).classList.add('active');
+            currentViewIndex = index;
+            currentPage = 0; 
+            
+            updatePagination();
+        }
+
+        function nextPage() {
+            const els = getActiveContentViewport();
+            if (els && els.content) {
+                if(currentPage < totalPages - 1) {
+                    currentPage++;
+                    updatePagination();
+                } else {
+                    switchView(currentViewIndex + 1); 
+                }
+            } else {
+                switchView(currentViewIndex + 1); 
+            }
+        }
+
+        function prevPage() {
+            const els = getActiveContentViewport();
+            if (els && els.content) {
+                if(currentPage > 0) {
+                    currentPage--;
+                    updatePagination();
+                } else {
+                    if(currentViewIndex > 0) {
+                        switchView(currentViewIndex - 1);
+                        setTimeout(() => {
+                            currentPage = totalPages - 1;
+                            updatePagination();
+                        }, 50);
+                    }
+                }
+            } else {
+                if(currentViewIndex > 0) {
+                    switchView(currentViewIndex - 1);
+                    setTimeout(() => {
+                        currentPage = totalPages - 1;
+                        updatePagination();
+                    }, 50);
+                }
+            }
+        }
+
+        function goToSection(viewId, targetId) {
+            const vIndex = views.indexOf(viewId);
+            if(vIndex !== -1) {
+                if (currentViewIndex !== vIndex) {
+                    document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+                    document.getElementById(views[vIndex]).classList.add('active');
+                    currentViewIndex = vIndex;
+                }
+            }
+
+            if (targetId) {
+                const els = getActiveContentViewport();
+                if(els && els.content) {
+                    const targetEl = document.getElementById(targetId);
+                    if(targetEl) {
+                        const colWidth = els.viewport.clientWidth / (window.innerWidth >= 1024 ? 2 : 1);
+                        
+                        els.content.style.transition = 'none';
+                        els.content.style.transform = 'translateX(0px)';
+                        void els.content.offsetWidth; 
+                        
+                        const offset = targetEl.getBoundingClientRect().left - els.content.getBoundingClientRect().left;
+                        currentPage = Math.floor(offset / colWidth);
+                        
+                        els.content.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+                    }
+                }
+            }
+            updatePagination();
+            toggleMenu();
+        }
+
+        let touchstartX = 0; let touchstartY = 0;
+        let touchendX = 0; let touchendY = 0;
+
+        document.body.addEventListener('touchstart', e => {
+            touchstartX = e.changedTouches[0].screenX;
+            touchstartY = e.changedTouches[0].screenY;
+        }, {passive: true});
+
+        document.body.addEventListener('touchend', e => {
+            touchendX = e.changedTouches[0].screenX;
+            touchendY = e.changedTouches[0].screenY;
+            handleSwipe(e);
+        }, {passive: true});
+
+        function handleSwipe(e) {
+            if (Math.abs(touchstartY - touchendY) > Math.abs(touchstartX - touchendX)) return;
+            const scrollableNode = e.target.closest('.overflow-x-auto');
+            if (scrollableNode && scrollableNode.scrollWidth > scrollableNode.clientWidth) return; 
+            if (e.target.type === 'range') return;
+
+            const swipeDist = touchstartX - touchendX;
+            if (swipeDist > 50) nextPage();
+            else if (swipeDist < -50) prevPage();
+        }
+
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('menuOverlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        const synth = window.speechSynthesis;
+        function playVoice(text, toggleId) {
+            if(document.getElementById(toggleId).checked) {
+                synth.cancel();
+                let utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 1.05;
+                synth.speak(utterance);
+            }
+        }
+        
+        function updateScroll(containerId, lastEl) {
+            if (!lastEl) return;
+            setTimeout(() => {
+                const isMobile = window.innerWidth < 1024;
+                let scrollContainerId = containerId;
+                if (isMobile) {
+                    scrollContainerId = containerId.replace('cf-', 'scroll-container-').replace('-container', '');
+                }
+                
+                const c = document.getElementById(scrollContainerId);
+                if (c) {
+                    const cRect = c.getBoundingClientRect();
+                    const elRect = lastEl.getBoundingClientRect();
+                    const scrollOffset = elRect.bottom - cRect.bottom + 80;
+                    if (scrollOffset > 0) {
+                        c.scrollBy({ top: scrollOffset, behavior: 'smooth' });
+                    } else if (elRect.top < cRect.top + 20) {
+                        c.scrollBy({ top: elRect.top - cRect.top - 20, behavior: 'smooth' });
+                    }
+                }
+            }, 50);
+        }
+
+        // --- CASE 3 WORKSHEET FILLER LOGIC ---
+        // Dynamically populating worksheet cells for visual effect
+        const wsData = [
+            {step: 0, actions: []},
+            {step: 1, actions: [{id: 'ws-adj-sup', v: '(a) 3,000'}, {id: 'ws-adj-supe', v: '(a) 3,000'}]},
+            {step: 2, actions: [{id: 'ws-adj-prent', v: '(b) 2,000'}, {id: 'ws-adj-rente', v: '(b) 2,000'}]},
+            {step: 3, actions: [{id: 'ws-adj-pins', v: '(c) 500'}, {id: 'ws-adj-inse', v: '(c) 500'}]},
+            {step: 4, actions: [{id: 'ws-adj-ad', v: '(d) 800'}, {id: 'ws-adj-depe', v: '(d) 800'}]},
+            {step: 5, actions: [{id: 'ws-adj-un1', v: '(e) 5,000'}, {id: 'ws-adj-un2', v: '(e) 5,000'}]},
+            {step: 6, actions: [{id: 'ws-adj-accp', v: '(f) 2,000'}, {id: 'ws-adj-sal', v: '(f) 2,000'}, 
+                // Fill Totals
+                {id: 'ws-adj-tdr', v: '13,300'}, {id: 'ws-adj-tcr', v: '13,300'},
+                // Fill Adjusted TB
+                {id: 'ws-atb-cash', v: '99,000'}, {id: 'ws-atb-ar', v: '15,000'}, {id: 'ws-atb-sup', v: '2,000'}, {id: 'ws-atb-prent', v: '10,000'}, {id: 'ws-atb-pins', v: '5,500'}, {id: 'ws-atb-eq', v: '40,000'}, {id: 'ws-atb-ad', v: '800'}, {id: 'ws-atb-ap', v: '25,000'}, {id: 'ws-atb-un', v: '10,000'}, {id: 'ws-atb-accp', v: '2,000'}, {id: 'ws-atb-cap', v: '100,000'}, {id: 'ws-atb-draw', v: '4,000'}, {id: 'ws-atb-rev', v: '60,000'}, {id: 'ws-atb-sal', v: '12,000'}, {id: 'ws-atb-ut', v: '3,000'}, {id: 'ws-atb-misc', v: '1,000'}, {id: 'ws-atb-supe', v: '3,000'}, {id: 'ws-atb-rente', v: '2,000'}, {id: 'ws-atb-inse', v: '500'}, {id: 'ws-atb-depe', v: '800'},
+                {id: 'ws-atb-tdr', v: '197,800'}, {id: 'ws-atb-tcr', v: '197,800'},
+                // Fill IS
+                {id: 'ws-is-rev', v: '60,000'}, {id: 'ws-is-sal', v: '12,000'}, {id: 'ws-is-ut', v: '3,000'}, {id: 'ws-is-misc', v: '1,000'}, {id: 'ws-is-supe', v: '3,000'}, {id: 'ws-is-rente', v: '2,000'}, {id: 'ws-is-inse', v: '500'}, {id: 'ws-is-depe', v: '800'},
+                {id: 'ws-is-tdr', v: '22,300'}, {id: 'ws-is-tcr', v: '60,000'},
+                // Fill BS
+                {id: 'ws-bs-cash', v: '99,000'}, {id: 'ws-bs-ar', v: '15,000'}, {id: 'ws-bs-sup', v: '2,000'}, {id: 'ws-bs-prent', v: '10,000'}, {id: 'ws-bs-pins', v: '5,500'}, {id: 'ws-bs-eq', v: '40,000'}, {id: 'ws-bs-ad', v: '800'}, {id: 'ws-bs-ap', v: '25,000'}, {id: 'ws-bs-un', v: '10,000'}, {id: 'ws-bs-accp', v: '2,000'}, {id: 'ws-bs-cap', v: '100,000'}, {id: 'ws-bs-draw', v: '4,000'},
+                {id: 'ws-bs-tdr', v: '175,500'}, {id: 'ws-bs-tcr', v: '137,800'},
+                // Fill NI
+                {id: 'ws-ni-is', v: '37,700'}, {id: 'ws-ni-bs', v: '37,700'},
+                // Final Totals
+                {id: 'ws-ft-isdr', v: '60,000'}, {id: 'ws-ft-iscr', v: '60,000'}, {id: 'ws-ft-bsdr', v: '175,500'}, {id: 'ws-ft-bscr', v: '175,500'}
+            ]}
+        ];
+
+        function runWsData(currStep) {
+            // Clear all
+            wsData.forEach(st => st.actions.forEach(a => { let el = document.getElementById(a.id); if(el) el.innerText = ''; }));
+            // Apply up to currStep
+            for(let i=0; i<=currStep; i++) {
+                wsData[i].actions.forEach(a => { let el = document.getElementById(a.id); if(el) el.innerText = a.v; });
+            }
+        }
+
+        // --- UNIVERSAL CASE CONTROLLER SETUP ---
+        function setupAccountingCase(prefix, steps, colorTheme) {
+            let curr = 0;
+            const initCircles = () => {
+                const container = document.getElementById('circles' + prefix);
+                if(!container) return;
+                container.innerHTML = '';
+                steps.forEach((_, i) => {
+                    const circle = document.createElement('div');
+                    circle.id = 'circle-' + prefix.toLowerCase() + '-' + i;
+                    circle.className = 'w-6 h-6 rounded-full flex items-center justify-center font-bold cursor-pointer text-[10px] shadow-sm border border-slate-600';
+                    circle.innerText = i;
+                    circle.onclick = () => { curr = i; update(); };
+                    container.appendChild(circle);
+                });
+            };
+            const update = (isEnd = false) => {
+                const step = steps[curr];
+                const expEl = document.getElementById('exp' + prefix);
+                if(expEl) expEl.innerHTML = '<span class="font-bold text-' + colorTheme + '-200">Step ' + curr + ': ' + step.title + '</span><br><span class="mt-1 block">' + step.exp + '</span>';
+                
+                document.getElementById('btnStart' + prefix).disabled = (curr === 0);
+                document.getElementById('btnPrev' + prefix).disabled = (curr === 0);
+                document.getElementById('btnNext' + prefix).disabled = (curr === steps.length - 1);
+
+                steps.flatMap(s => s.rev).forEach(id => {
+                    const el = document.getElementById(id);
+                    if(el) { el.classList.add('hidden'); el.classList.remove('!bg-white', '!bg-amber-100'); }
+                });
+                let lastEl = null;
+                for(let i=0; i<=curr; i++) {
+                    steps[i].rev.forEach(id => {
+                        const el = document.getElementById(id);
+                        if(el) { 
+                            el.classList.remove('hidden'); 
+                            if (i === curr && !isEnd) { el.classList.add('!bg-white'); lastEl = el; }
+                            else if (i === curr && isEnd) { lastEl = el; }
+                        }
+                    });
+                }
+                steps.forEach((_, i) => {
+                    const circle = document.getElementById('circle-' + prefix.toLowerCase() + '-' + i);
+                    if(circle) {
+                        if (i === curr) { circle.classList.add('bg-' + colorTheme + '-500', 'text-white'); circle.classList.remove('bg-slate-700', 'text-slate-300'); } 
+                        else { circle.classList.add('bg-slate-700', 'text-slate-300'); circle.classList.remove('bg-' + colorTheme + '-500', 'text-white'); }
+                    }
+                });
+                
+                if (prefix === 'C3') runWsData(curr);
+
+                updateScroll('cf-' + prefix.toLowerCase() + '-container', lastEl);
+                playVoice(step.nar, 'voice' + prefix);
+            };
+            document.getElementById('btnStart' + prefix).onclick = () => { curr = 0; update(); };
+            document.getElementById('btnPrev' + prefix).onclick = () => { if(curr > 0) { curr--; update(); } };
+            document.getElementById('btnNext' + prefix).onclick = () => { if(curr < steps.length - 1) { curr++; update(); } };
+            document.getElementById('btnEnd' + prefix).onclick = () => { curr = steps.length - 1; update(true); };
+
+            return { init: initCircles, update: update };
+        }
+
+        // --- CASE DATA ---
+        const case1Steps = [
+            { title: "Setup", exp: "We will journalize all 14 transactions for Vertex Consulting.", nar: "Let's journalize fourteen transactions.", rev: [] },
+            { title: "Dec 1: Investment", exp: "Owner invests 100k cash. Dr Cash, Cr Capital.", nar: "Debit cash, credit capital.", rev: ['c1-dec1'] },
+            { title: "Dec 2: Prepaid Rent", exp: "Paid 12k for 6 months rent. (Asset Method). Dr Prepaid Rent, Cr Cash.", nar: "Debit prepaid rent, credit cash.", rev: ['c1-dec2'] },
+            { title: "Dec 3: Buy Equip on Acct", exp: "Bought 40k equipment on account. Dr Office Equip, Cr AP.", nar: "Debit equipment, credit accounts payable.", rev: ['c1-dec3'] },
+            { title: "Dec 5: Buy Supplies", exp: "Bought 5k supplies. (Asset Method). Dr Office Supplies, Cr Cash.", nar: "Debit supplies, credit cash.", rev: ['c1-dec5'] },
+            { title: "Dec 8: Prepaid Ins", exp: "Paid 6k insurance. (Asset Method). Dr Prepaid Insurance, Cr Cash.", nar: "Debit prepaid insurance, credit cash.", rev: ['c1-dec8'] },
+            { title: "Dec 10: Unearned Rev", exp: "Received 15k advance. (Liability Method). Dr Cash, Cr Unearned Revenue.", nar: "Debit cash, credit unearned revenue.", rev: ['c1-dec10'] },
+            { title: "Dec 15: Rev (Cash)", exp: "Provided 30k services for cash. Dr Cash, Cr Service Revenue.", nar: "Debit cash, credit revenue.", rev: ['c1-dec15'] },
+            { title: "Dec 18: Rev (Account)", exp: "Provided 25k services on account. Dr AR, Cr Service Revenue.", nar: "Debit accounts receivable, credit revenue.", rev: ['c1-dec18'] },
+            { title: "Dec 20: Utilities Exp", exp: "Paid 3k utilities outright. Dr Utilities Exp, Cr Cash.", nar: "Debit utilities expense, credit cash.", rev: ['c1-dec20'] },
+            { title: "Dec 22: Collect AR", exp: "Collected 10k from Dec 18 bill. Dr Cash, Cr AR.", nar: "Debit cash, credit accounts receivable.", rev: ['c1-dec22'] },
+            { title: "Dec 24: Misc Exp", exp: "Paid 1k misc expense outright. Dr Misc Exp, Cr Cash.", nar: "Debit misc expense, credit cash.", rev: ['c1-dec24'] },
+            { title: "Dec 28: Owner Draw", exp: "Owner withdrew 4k cash. Dr Owner's Draw, Cr Cash.", nar: "Debit drawings, credit cash.", rev: ['c1-dec28'] },
+            { title: "Dec 30: Pay AP", exp: "Paid 15k towards the Dec 3 equipment purchase. Dr AP, Cr Cash.", nar: "Debit accounts payable, credit cash.", rev: ['c1-dec30'] },
+            { title: "Dec 31: Salaries Exp", exp: "Paid 10k salaries outright. Dr Salaries Exp, Cr Cash.", nar: "Debit salaries expense, credit cash.", rev: ['c1-dec31'] }
+        ];
+
+        const case2Steps = [
+            { title: "Setup", exp: "Sort the final ledger balances into ALORE order for the Unadjusted Trial Balance.", nar: "Sort accounts into A L O R E order.", rev: [] },
+            { title: "Assets (Debit normal)", exp: "Cash (99k), AR (15k), Supplies (5k), P.Rent (12k), P.Ins (6k), Equip (40k). Accum Depr is zero.", nar: "List assets as debits.", rev: ['c2-cash', 'c2-ar', 'c2-sup', 'c2-prent', 'c2-pins', 'c2-eq', 'c2-ad'] },
+            { title: "Liabilities (Credit normal)", exp: "Accounts Payable (25k), Unearned Revenue (15k). Accrued Exp is zero.", nar: "List liabilities as credits.", rev: ['c2-ap', 'c2-un', 'c2-accp'] },
+            { title: "Equity", exp: "Capital (100k Cr). Draw (4k Dr).", nar: "List capital and drawings.", rev: ['c2-cap', 'c2-draw'] },
+            { title: "Revenue (Credit normal)", exp: "Service Revenue (55k Cr).", nar: "List revenue.", rev: ['c2-rev'] },
+            { title: "Expense (Debit normal)", exp: "Salaries (10k), Utilities (3k), Misc (1k).", nar: "List expenses.", rev: ['c2-exp1', 'c2-exp2', 'c2-exp3'] },
+            { title: "Totals", exp: "Debits: 195k. Credits: 195k. Balanced.", nar: "Total debits equal total credits.", rev: ['c2-totals'] }
+        ];
+
+        const case3Steps = [
+            { title: "Setup", exp: "We will post adjustments to the worksheet.", nar: "Analyze data for adjusting entries.", rev: [] },
+            { title: "Supplies Used (Asset Method)", exp: "Started with 5k. Hand count 2k. Used 3k. Dr Supplies Exp 3k, Cr Supplies 3k.", nar: "Calculate supplies used and record.", rev: ['c3-adj1'] },
+            { title: "Prepaid Rent (Asset Method)", exp: "12k for 6 mos = 2k/month. 1 month expired. Dr Rent Exp 2k, Cr Prepaid Rent 2k.", nar: "Record rent expense.", rev: ['c3-adj2'] },
+            { title: "Prepaid Insurance (Asset Method)", exp: "6k for 12 mos = 500/month. 1 month expired. Dr Insurance Exp 500, Cr Prepaid Ins 500.", nar: "Record insurance expense.", rev: ['c3-adj3'] },
+            { title: "Depreciation (Estimate)", exp: "Depreciation is P800. Dr Depr Exp 800, Cr Accum Depr 800.", nar: "Record depreciation.", rev: ['c3-adj4'] },
+            { title: "Unearned Rev (Liab Method)", exp: "15k for 3 mos = 5k/month earned. Dr Unearned Rev 5k, Cr Service Rev 5k.", nar: "Record unearned revenue earned.", rev: [] },
+            { title: "Accrued Salaries", exp: "Accrued salaries P2,000. Dr Salaries Exp 2k, Cr Accrued Exp Payable 2k. Extending the balances across the worksheet produces Net Income of 37,700.", nar: "Accrue unpaid salaries and complete the worksheet.", rev: [] }
+        ];
+
+        const case4Steps = [
+            { title: "Setup", exp: "We will build the Income Statement, Statement of Changes in Equity, and Balance Sheet.", nar: "Build the financial statements.", rev: [] },
+            { title: "Income Statement", exp: "List Service Revenue (60k) minus all Adjusted Expenses (22.3k) to show Net Income (37.7k).", nar: "Revenues minus expenses equals net income.", rev: ['c4-is'] },
+            { title: "Statement of Changes in Equity", exp: "Beg Capital (0) + Invest (100k) + NI (37.7k) - Draw (4k) = End Capital (133,700).", nar: "Calculate ending capital.", rev: ['c4-sce'] },
+            { title: "Balance Sheet", exp: "Assets (170.7k) = Liabilities (37k) + Equity (133.7k). It balances perfectly.", nar: "Assets equal liabilities plus equity.", rev: ['c4-bs'] }
+        ];
+
+        const case5Steps = [
+            { title: "Setup", exp: "Follow the R-E-I-D closing process, check the PCTB, and execute a reversing entry.", nar: "Follow the closing and reversing process.", rev: [] },
+            { title: "Closing Entries", exp: "Dr Rev to IS. Cr Exp to IS. Dr IS (Net Income 37.7k) to Cap. Cr Draw (4k) to Cap.", nar: "Execute the R E I D sequence.", rev: ['c5-close'] },
+            { title: "Post-Closing TB", exp: "Only Assets, Liabilities, and ending Capital (133,700) remain. Balances at 171,500.", nar: "Check the post-closing trial balance.", rev: ['c5-pctb'] },
+            { title: "Reversing Entry", exp: "On Jan 1, we reverse the Accrued Salary. Dr Accrued Exp Payable 2,000, Cr Salaries Exp 2,000.", nar: "Reverse the accrued salary adjustment.", rev: ['c5-rev'] }
+        ];
+
+        let c1Controller, c2Controller, c3Controller, c4Controller, c5Controller;
+
+        window.onload = () => { 
+            c1Controller = setupAccountingCase('C1', case1Steps, 'blue');
+            c2Controller = setupAccountingCase('C2', case2Steps, 'teal');
+            c3Controller = setupAccountingCase('C3', case3Steps, 'amber');
+            c4Controller = setupAccountingCase('C4', case4Steps, 'indigo');
+            c5Controller = setupAccountingCase('C5', case5Steps, 'rose');
+
+            c1Controller.init(); c1Controller.update();
+            c2Controller.init(); c2Controller.update();
+            c3Controller.init(); c3Controller.update();
+            c4Controller.init(); c4Controller.update();
+            c5Controller.init(); c5Controller.update();
+        
+            updateZoomVar();
+            window.addEventListener('resize', updateZoomVar);
+        };
+    </script>
+</body>
+</html>
