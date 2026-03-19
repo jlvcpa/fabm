@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 Steps Accounting Cycle (Merchandising Business) - Interactive Study Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Base font root. JavaScript will scale this to zoom ALL text globally */
+        html { 
+            font-size: 16px; 
+            scroll-behavior: smooth; 
+        }
+
+        body { 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            color: #1e293b; 
+            line-height: 1.4; 
+            overflow: hidden; 
+            background-color: #cbd5e1;
+        }
+
+        p { 
+            line-height: 1.4 !important; 
+        }
+
+        ul, li { 
+            line-height: 1.3 !important; 
+        }
+        
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+        
+        /* Light Theme Sidebar Active State */
+        .nav-link.active { background-color: #eff6ff; color: #1d4ed8; border-left: 4px solid #2563eb; font-weight: 700; }
+        .nav-link { transition: all 0.2s ease-in-out; border-left: 4px solid transparent; }
+        .nav-link:hover { background-color: #f8fafc; }
+        
+        .acctg-row { 
+            animation: fadeIn 0.4s ease-in-out; 
+            transition: background-color 0.5s ease; 
+            border-radius: 3px;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-3px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Tighter table padding */
+        table th, table td { padding-top: 3px; padding-bottom: 3px; padding-left: 6px; padding-right: 6px; }
+
+        /* View section styles */
+        .view-section {
+            display: none;
+            flex: 1;
+            min-height: 0;
+            width: 100%;
+            animation: fadeIn 0.3s ease-in-out;
+            position: relative;
+        }
+        .view-section.active { display: flex; flex-direction: column; }
+
+        /* The Viewport window for topics */
+        .book-viewport {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            overflow: hidden; 
+            touch-action: pan-y;
+        }
+
+        .content-flow {
+            height: 100%;
+            column-gap: 0;      
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .avoid-break {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        /* Reduced Topic Padding */
+        .topic-section {
+            padding: 0 1.5rem !important;
+            margin-bottom: 2rem;
+        }
+
+        ol, li, ul {
+            padding-right: 1rem !important;
+            break-inside: auto !important;
+            page-break-inside: auto !important;
+            orphans: 1;
+            widows: 1;
+        }
+
+        ol, ul {
+            padding-left: 2rem !important;
+        }
+
+        li {
+            padding-left: 0;
+        }
+
+        h2, h3, h4 {
+            break-after: avoid !important;
+            page-break-after: avoid !important;
+        }
+
+        @media (min-width: 1024px) {
+            .topic-section { padding: 0 2.5rem !important; }
+            ol, ul { padding-left: 3rem !important; }
+        }
+
+        /* Nav Arrows overlaying the screen */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 2.5rem;
+            height: 4.5rem;
+            z-index: 30;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.15;
+            transition: all 0.2s;
+            background: rgba(241, 245, 249, 0.8);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .nav-arrow:hover { opacity: 1; background: rgba(255, 255, 255, 0.95); transform: translateY(-50%) scale(1.05); }
+        .nav-arrow-left { left: 0.5rem; }
+        .nav-arrow-right { right: 0.5rem; }
+
+        /* Custom Table borders for Worksheets to make them readable */
+        .ws-table th, .ws-table td {
+            border: 1px solid #cbd5e1;
+        }
+        .ws-table th {
+            font-weight: 600;
+            text-align: center;
+        }
+        .col-dr { background-color: #f8fafc; }
+        .col-cr { background-color: #f1f5f9; }
+        
+        .t-account {
+            border: 1px solid #94a3b8;
+            border-radius: 4px;
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        }
+        .t-header {
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 2px solid #64748b;
+            background-color: #f1f5f9;
+            padding: 2px;
+        }
+        .t-body {
+            display: flex;
+            width: 100%;
+        }
+        .t-col {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        .t-dr {
+            border-right: 1px solid #94a3b8;
+        }
+        .t-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 1px 4px;
+        }
+        .t-bal {
+            font-weight: bold;
+            background-color: #e2e8f0;
+            border-top: 1px solid #94a3b8;
+        }
+        
+    </style>
+</head>
+<body class="flex justify-center items-center w-full p-0 lg:p-1" style="height: 100vh; height: 100dvh;">
+
+    <div class="flex h-full w-full max-w-[1500px] bg-white lg:shadow-2xl overflow-hidden relative lg:rounded-md border border-slate-300">
+
+        <nav id="sidebar" class="w-64 bg-slate-50 border-r border-slate-200 absolute h-full z-50 transition-transform -translate-x-full flex flex-col shadow-2xl">
+            <div class="p-4 border-b border-slate-200 bg-white flex justify-between items-center shrink-0">
+                <div>
+                    <h1 class="text-[14px] font-extrabold text-slate-800 leading-tight">Financial Accounting</h1>
+                    <p class="text-[11px] text-slate-500 font-semibold tracking-wide">Merchandising Business</p>
+                </div>
+                <button onclick="toggleMenu()" class="text-slate-400 hover:text-slate-800 p-1 rounded hover:bg-slate-100 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <div class="p-3 border-b border-slate-200 bg-slate-100 shrink-0">
+                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1.5 pl-1">Global Zoom</div>
+                <div class="flex items-center justify-between bg-white border border-slate-300 rounded p-1 shadow-sm">
+                    <button class="text-slate-600 px-3 hover:bg-slate-100 rounded font-bold text-lg leading-none transition-colors" onclick="changeZoom(-10)">-</button>
+                    <input type="text" id="zoom-input" class="w-12 text-center bg-transparent text-slate-800 text-xs font-mono font-bold outline-none" value="100%" onchange="setZoom(this.value)">
+                    <button class="text-slate-600 px-3 hover:bg-slate-100 rounded font-bold text-lg leading-none transition-colors" onclick="changeZoom(10)">+</button>
+                </div>
+            </div>
+
+            <div class="flex-1 overflow-y-auto py-3">
+                <div class="px-4 py-1 text-slate-400 uppercase text-[10px] font-bold tracking-widest mb-1">Topics & Proformas</div>
+                <ul class="flex flex-col space-y-0.5 mb-4">
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-slate-100 text-sm text-slate-700 active" data-target="topic1" onclick="goToSection('view-topics-1', 'topic1')">1. Nature & Operations</a></li>
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-slate-100 text-sm text-slate-700" data-target="topic2" onclick="goToSection('view-topics-1', 'topic2')">2. Docs & Internal Control</a></li>
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-slate-100 text-sm text-slate-700" data-target="topic3" onclick="goToSection('view-topics-2', 'topic3')">3. Periodic vs Perpetual</a></li>
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-slate-100 text-sm text-slate-700" data-target="topic4" onclick="goToSection('view-topics-2', 'topic4')">4. Terms & Shipping</a></li>
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-blue-50 text-sm text-blue-700 font-bold border-l-4 border-transparent hover:border-blue-500" data-target="case-study-1" onclick="goToSection('view-case-1', null)">Ex 1a: Periodic Journal</a></li>
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-indigo-50 text-sm text-indigo-700 font-bold border-l-4 border-transparent hover:border-indigo-500" data-target="case-study-1b" onclick="goToSection('view-case-1b', null)">Ex 1b: Perpetual Journal</a></li>
+                </ul>
+
+                <div class="px-4 py-1 text-slate-400 uppercase text-[10px] font-bold tracking-widest mb-1 border-t border-slate-200 pt-3">Master Comprehensive</div>
+                <ul class="flex flex-col space-y-0.5">
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-slate-100 text-sm text-slate-700" data-target="topic5" onclick="goToSection('view-topics-3', 'topic5')">5. Inventory Adj. Methods</a></li>
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-indigo-50 text-sm text-indigo-700 font-bold border-l-4 border-transparent hover:border-indigo-500" data-target="case-study-2" onclick="goToSection('view-case-2', null)">Part 1: Steps 1 to 4</a></li>
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-amber-50 text-sm text-amber-700 font-bold border-l-4 border-transparent hover:border-amber-500" data-target="case-study-3" onclick="goToSection('view-case-3', null)">Part 2: Adjusting Method</a></li>
+                    <li><a href="#" class="nav-link block py-2 px-4 hover:bg-teal-50 text-sm text-teal-700 font-bold border-l-4 border-transparent hover:border-teal-500" data-target="case-study-4" onclick="goToSection('view-case-4', null)">Part 3: Closing Method</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="menuOverlay" class="fixed inset-0 bg-slate-900 bg-opacity-50 z-40 hidden backdrop-blur-sm transition-opacity" onclick="toggleMenu()"></div>
+
+        <main class="flex-1 flex flex-col min-h-0 relative bg-white w-full">
+            
+            <header class="flex justify-between items-center bg-slate-800 text-slate-100 border-b border-slate-700 flex-shrink-0 z-10 px-3 py-2 md:px-4 md:py-3 shadow-md">
+                <div class="flex items-center gap-3">
+                    <button id="menuBtn" onclick="toggleMenu()" class="text-slate-300 hover:text-white focus:outline-none bg-slate-700 hover:bg-slate-600 p-1.5 rounded transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    <span class="font-bold uppercase tracking-widest text-sm md:text-lg truncate drop-shadow-sm">10 Steps (Merchandising)</span>
+                </div>
+                <div class="font-mono tracking-widest text-xs md:text-sm bg-slate-900 px-3 py-1 rounded border border-slate-600 shadow-inner">
+                    PAGE <span id="page-indicator" class="font-bold text-amber-400">1 / ?</span>
+                </div>
+            </header>
+
+            <div class="flex-1 relative flex flex-col min-h-0 overflow-hidden bg-slate-50">
+                
+                <div class="nav-arrow nav-arrow-left group" onclick="prevPage()">
+                    <svg class="w-8 h-8 text-slate-700 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+                </div>
+                <div class="nav-arrow nav-arrow-right group" onclick="nextPage()">
+                    <svg class="w-8 h-8 text-slate-700 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+
+                <div id="view-topics-1" class="view-section active">
+                    <div class="book-viewport mt-4" id="viewport-1">
+                        <div class="content-flow" id="content-1">
+                            
+                            <section id="topic1" class="topic-section section-marker mb-6 bg-blue-50 p-4 rounded-lg border border-blue-200">
+                                <h2 class="text-2xl font-extrabold text-slate-800 mb-3 tracking-tight">Nature of Merchandising Operations</h2>
+                                <p class="text-base text-slate-700 mb-4 leading-relaxed">Unlike a service business that sells expertise, time, or labor, a <strong>merchandising business</strong> (like a grocery store or a clothing retailer) buys finished goods and resells them to customers at a markup. This fundamental difference introduces a new, highly significant current asset called <strong>Inventory</strong>, and a new, major expense category called <strong>Cost of Goods Sold (COGS)</strong>.</p>
+                                
+                                <p class="text-base text-slate-700 mb-4 leading-relaxed">The presence of inventory profoundly alters the structure of the income statement. Rather than simply subtracting expenses from revenues to find net income, a merchandiser first calculates Gross Profit by subtracting COGS from Net Sales. This Gross Profit figure must be sufficient to cover all operating expenses and still leave a net profit for the owners.</p>
+
+                                <p class="text-base text-slate-700 mb-4 leading-relaxed">The operating cycle of a merchandiser is typically longer and more complex than a service firm: Cash is used to buy Inventory, Inventory is sold on account creating Accounts Receivable, and finally, Accounts Receivable is collected to generate Cash. Managing this cash-to-cash cycle efficiently is the primary key to profitability and liquidity.</p>
+                            </section>
+
+                            <section id="topic2" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-b-2 border-slate-200 pb-2">Documents & Internal Control Procedures</h2>
+                                <p class="text-slate-700 text-base mb-4 leading-relaxed avoid-break">
+                                    Because physical inventory is easily stolen or damaged, and cash transactions are highly frequent, strict internal controls and proper documentation are practically and legally required to safeguard company assets. A strong internal control system prevents fraud, ensures accurate accounting records, and promotes operational efficiency.
+                                </p>
+                                
+                                <h3 class="text-lg font-bold text-indigo-800 mb-2 mt-4 avoid-break bg-indigo-50 inline-block px-3 py-1 rounded">Purchases and Payments Cycle</h3>
+                                <p class="text-slate-700 text-base mb-3 avoid-break">To prevent unauthorized purchases and ensure the company only pays for goods it actually received and ordered, a robust procurement system is vital.</p>
+                                
+                                <ul class="list-none pl-2 text-base text-slate-700 space-y-3 mb-6 avoid-break mt-3 border-l-2 border-indigo-200 ml-2">
+                                    <li class="pl-4 relative">
+                                        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-indigo-400"></span>
+                                        <strong class="text-slate-900">Purchase Requisition:</strong> An internal formal request from a department needing goods to the centralized purchasing department. This prevents duplicate orders from different departments.
+                                    </li>
+                                    <li class="pl-4 relative">
+                                        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-indigo-400"></span>
+                                        <strong class="text-slate-900">Purchase Order (PO):</strong> A legally binding document sent to the external vendor specifying exact quantities, prices, and shipping terms. It authorizes the vendor to ship the goods.
+                                    </li>
+                                    <li class="pl-4 relative">
+                                        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-indigo-400"></span>
+                                        <strong class="text-slate-900">Receiving Report:</strong> Created by the receiving department when goods arrive. They physically count and inspect the goods without looking at the PO quantities (a control called a "blind check") to ensure accurate counting.
+                                    </li>
+                                    <li class="pl-4 relative">
+                                        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-indigo-400"></span>
+                                        <strong class="text-slate-900">Vendor Invoice:</strong> The official bill from the supplier demanding payment, detailing what was shipped and the amount owed.
+                                    </li>
+                                    <li class="pl-4 relative bg-yellow-50 p-2 rounded border border-yellow-200 mt-2">
+                                        <span class="absolute left-2 top-3.5 w-2 h-2 rounded-full bg-yellow-500"></span>
+                                        <strong class="text-yellow-900 ml-2">Internal Control (The 3-Way Match):</strong> Before paying any Accounts Payable, the accounting department matches the <em>Purchase Order</em>, <em>Receiving Report</em>, and <em>Vendor Invoice</em>. If all three match perfectly, a <strong>Voucher</strong> is prepared authorizing the cash disbursement. This guarantees the company only pays for what it ordered and received.
+                                    </li>
+                                </ul>
+
+                                <h3 class="text-lg font-bold text-teal-800 mb-2 mt-6 avoid-break bg-teal-50 inline-block px-3 py-1 rounded">Sales, Collections, and Memos</h3>
+                                <p class="text-slate-700 text-base mb-3 avoid-break">On the revenue side, controls must ensure that all shipments are billed, collections are deposited, and returns are verified.</p>
+                                
+                                <ul class="list-none pl-2 text-base text-slate-700 space-y-3 mb-6 avoid-break mt-3 border-l-2 border-teal-200 ml-2">
+                                    <li class="pl-4 relative">
+                                        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-teal-400"></span>
+                                        <strong class="text-slate-900">Sales Invoice:</strong> The primary document supporting a credit sale. It acts as the source document to record Sales and Accounts Receivable.
+                                    </li>
+                                    <li class="pl-4 relative">
+                                        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-teal-400"></span>
+                                        <strong class="text-slate-900">Official Receipt (OR):</strong> Issued immediately when cash is collected from cash sales or from collecting Accounts Receivable, providing proof of payment.
+                                    </li>
+                                    
+                                    <li class="pl-4 relative mt-4">
+                                        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-red-400"></span>
+                                        <strong class="text-slate-900">Debit Memo:</strong> A commercial document issued by a <em>buyer</em> to a seller as a means of formally requesting a price reduction. It indicates that the buyer is debiting (decreasing) their Accounts Payable liability to the seller. This is typically used when the buyer returns damaged goods or receives a short shipment.
+                                    </li>
+                                    <li class="pl-4 relative">
+                                        <span class="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-green-400"></span>
+                                        <strong class="text-slate-900">Credit Memo:</strong> A commercial document issued by a <em>seller</em> to a buyer acknowledging a reduction in the amount owed. It indicates that the seller is crediting (decreasing) the buyer's Accounts Receivable balance. This is the seller's response to a buyer's Debit Memo, officially granting the Sales Return or Allowance.
+                                    </li>
+
+                                    <li class="pl-4 relative bg-yellow-50 p-2 rounded border border-yellow-200 mt-3">
+                                        <span class="absolute left-2 top-3.5 w-2 h-2 rounded-full bg-yellow-500"></span>
+                                        <strong class="text-yellow-900 ml-2">Internal Control (Separation of Duties):</strong> The person who physically handles cash collections must <em>never</em> be the same person who records entries in the Accounts Receivable ledger. This prevents "lapping" (stealing from one customer's payment and covering it with the next). Furthermore, all cash receipts should be deposited intact daily into the bank, and all major payments should be made via check or traceable bank transfer.
+                                    </li>
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-topics-2" class="view-section">
+                    <div class="book-viewport mt-4" id="viewport-2">
+                        <div class="content-flow" id="content-2">
+                            
+                            <section id="topic3" class="topic-section section-marker avoid-break">
+                                <h2 class="text-2xl font-extrabold text-slate-800 mb-4 border-b-2 border-slate-200 pb-2 tracking-tight">Periodic vs. Perpetual Inventory Systems</h2>
+                                
+                                <p class="text-base text-slate-700 mb-4 leading-relaxed avoid-break">
+                                    Merchandisers must choose how they track their physical inventory levels and calculate their cost of goods sold. The choice of system fundamentally changes the journal entries used during the accounting cycle.
+                                </p>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 avoid-break">
+                                    <div class="bg-white border border-slate-300 p-4 rounded-lg shadow-sm">
+                                        <h3 class="font-bold text-lg text-indigo-700 mb-2 flex items-center gap-2">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                            Periodic System
+                                        </h3>
+                                        <p class="text-sm text-slate-600 mb-2 leading-relaxed">
+                                            Inventory balance is <strong>NOT</strong> updated continuously. When goods are bought, they are debited to a temporary account called <strong class="text-slate-800">Purchases</strong>. When goods are sold, only the revenue is recorded; the reduction in inventory is ignored.
+                                        </p>
+                                        <p class="text-sm text-slate-600 leading-relaxed">
+                                            At the end of the accounting cycle, a physical count is mandatory to determine Ending Inventory. COGS is calculated mathematically: <br><em class="block mt-1 bg-slate-100 p-1 text-center border border-slate-200 rounded text-slate-800 font-semibold">Beg. Inv + Net Purchases - End. Inv = COGS</em>
+                                        </p>
+                                    </div>
+
+                                    <div class="bg-white border border-slate-300 p-4 rounded-lg shadow-sm">
+                                        <h3 class="font-bold text-lg text-teal-700 mb-2 flex items-center gap-2">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                                            Perpetual System
+                                        </h3>
+                                        <p class="text-sm text-slate-600 mb-2 leading-relaxed">
+                                            Inventory is updated in <strong>real-time</strong>. Purchases are debited directly to the <strong class="text-slate-800">Inventory</strong> asset account. 
+                                        </p>
+                                        <p class="text-sm text-slate-600 leading-relaxed">
+                                            Every time a sale is made, two entries are required simultaneously: one to record the Sale at retail price, and a second to directly transfer the exact cost from Inventory to COGS. This requires computerized barcode scanners and sophisticated point-of-sale systems.
+                                        </p>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section id="topic4" class="topic-section section-marker">
+                                <h2 class="text-xl font-bold text-slate-800 mb-3 border-b-2 border-slate-200 pb-2 mt-6 avoid-break">Terms & FOB Shipping</h2>
+                                
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2 mt-4 avoid-break">Credit Terms & Cash Discounts</h3>
+                                <p class="text-base text-slate-700 mb-4 leading-relaxed avoid-break">
+                                    Terms like <strong class="bg-yellow-100 px-1 rounded">2/10, n/30</strong> mean the buyer gets a 2% discount if they pay within 10 days; otherwise, the net (full) amount is due in 30 days. For the buyer, this is a <strong>Purchase Discount</strong> (reduces cost of purchases). For the seller, this is a <strong>Sales Discount</strong> (contra-revenue account). Note: Cash discounts encourage early payment, whereas Trade discounts are simply volume reductions from the catalog price and are never recorded in the accounts.
+                                </p>
+
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2 mt-4 avoid-break">Shipping Terms (Who pays freight?)</h3>
+                                
+                                <ul class="list-none text-base text-slate-700 space-y-4 mb-6 pl-4 border-l-4 border-amber-400 mt-4 avoid-break">
+                                    <li class="bg-amber-50 p-3 rounded shadow-sm border border-amber-100">
+                                        <h4 class="font-bold text-amber-900 mb-1">FOB Shipping Point (Free On Board at the seller's dock)</h4>
+                                        <p class="text-sm">Title transfers when goods leave the seller. The <strong>Buyer</strong> owns the goods in transit and therefore must pay the freight. The buyer records this cost as <strong>Freight In</strong> (which is added to the total cost of purchases).</p>
+                                    </li>
+                                    <li class="bg-rose-50 p-3 rounded shadow-sm border border-rose-100">
+                                        <h4 class="font-bold text-rose-900 mb-1">FOB Destination (Free On Board at the buyer's door)</h4>
+                                        <p class="text-sm">Title transfers only when goods reach the buyer. The <strong>Seller</strong> owns the goods in transit and must pay the freight. The seller records this cost as <strong>Freight Out</strong> (which is reported as a normal operating/selling expense).</p>
+                                    </li>
+                                </ul>
+
+                                <div class="overflow-x-auto w-full avoid-break shadow-sm rounded-lg border border-slate-300 mb-6">
+                                    <h4 class="font-bold text-sm text-slate-100 bg-slate-700 px-3 py-2 uppercase tracking-wider">Proforma Journal Entries Comparison</h4>
+                                    <table class="w-full min-w-[700px] text-left border-collapse text-xs md:text-sm text-slate-800">
+                                        <thead>
+                                            <tr class="bg-slate-200">
+                                                <th class="border-b border-r border-slate-300 px-3 py-2 w-1/4">Transaction Event</th>
+                                                <th class="border-b border-r border-slate-300 px-3 py-2 w-3/8 text-indigo-900">Periodic System</th>
+                                                <th class="border-b border-slate-300 px-3 py-2 w-3/8 text-teal-900">Perpetual System</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="font-mono">
+                                            <tr class="bg-white hover:bg-slate-50 transition-colors">
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 font-sans font-semibold text-slate-700 align-top">
+                                                    Purchased P10,000 of merchandise on account.
+                                                </td>
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Purchases</span><span>10,000</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Accounts Payable</span><span>10,000</span></div>
+                                                </td>
+                                                <td class="border-b border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between font-bold text-teal-700"><span>Inventory</span><span>10,000</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Accounts Payable</span><span>10,000</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-slate-50 hover:bg-slate-100 transition-colors">
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 font-sans font-semibold text-slate-700 align-top">
+                                                    Paid P500 cash for freight on purchase.
+                                                </td>
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Freight In</span><span>500</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Cash</span><span>500</span></div>
+                                                </td>
+                                                <td class="border-b border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between font-bold text-teal-700"><span>Inventory</span><span>500</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Cash</span><span>500</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white hover:bg-slate-50 transition-colors">
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 font-sans font-semibold text-slate-700 align-top">
+                                                    Returned P1,000 of defective goods.
+                                                </td>
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Accounts Payable</span><span>1,000</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Purchase Returns</span><span>1,000</span></div>
+                                                </td>
+                                                <td class="border-b border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Accounts Payable</span><span>1,000</span></div>
+                                                    <div class="flex justify-between pl-4 font-bold text-teal-700"><span>Inventory</span><span>1,000</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-slate-50 hover:bg-slate-100 transition-colors">
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 font-sans font-semibold text-slate-700 align-top">
+                                                    Paid P9,000 balance, taking a 2% (P180) cash discount.
+                                                </td>
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Accounts Payable</span><span>9,000</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Purchase Discounts</span><span>180</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Cash</span><span>8,820</span></div>
+                                                </td>
+                                                <td class="border-b border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Accounts Payable</span><span>9,000</span></div>
+                                                    <div class="flex justify-between pl-4 font-bold text-teal-700"><span>Inventory</span><span>180</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Cash</span><span>8,820</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-white hover:bg-slate-50 transition-colors">
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 font-sans font-semibold text-slate-700 align-top">
+                                                    Sold P20,000 goods on account. (The cost was P12,000).
+                                                </td>
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Accounts Receivable</span><span>20,000</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Sales</span><span>20,000</span></div>
+                                                    <div class="text-[10px] text-slate-500 font-sans italic mt-1">(Cost is ignored until physical count at year-end).</div>
+                                                </td>
+                                                <td class="border-b border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Accounts Receivable</span><span>20,000</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Sales</span><span>20,000</span></div>
+                                                    <div class="flex justify-between mt-1 font-bold text-rose-700"><span>Cost of Goods Sold</span><span>12,000</span></div>
+                                                    <div class="flex justify-between pl-4 font-bold text-teal-700"><span>Inventory</span><span>12,000</span></div>
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-slate-50 hover:bg-slate-100 transition-colors">
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 font-sans font-semibold text-slate-700 align-top">
+                                                    Customer returned P2,000 goods. (The cost was P1,200).
+                                                </td>
+                                                <td class="border-b border-r border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Sales Returns</span><span>2,000</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Accounts Receivable</span><span>2,000</span></div>
+                                                </td>
+                                                <td class="border-b border-slate-300 px-3 py-2 align-top">
+                                                    <div class="flex justify-between"><span>Sales Returns</span><span>2,000</span></div>
+                                                    <div class="flex justify-between pl-4"><span>Accounts Receivable</span><span>2,000</span></div>
+                                                    <div class="flex justify-between mt-1 font-bold text-teal-700"><span>Inventory</span><span>1,200</span></div>
+                                                    <div class="flex justify-between pl-4 font-bold text-rose-700"><span>Cost of Goods Sold</span><span>1,200</span></div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-1" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-1">
+                        <div id="scroll-container-c1" class="flex-1 flex flex-col lg:flex-row gap-3 px-6 pt-6 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden">
+                            <div class="w-full lg:w-1/3 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded p-3 border border-slate-700 shadow-sm text-sm">
+                                    <p class="text-slate-200 mb-2">Ex 1a: Interactive Sample Transactions using the <strong>Periodic System</strong>.</p>
+                                    <h3 class="font-semibold text-slate-200 pb-0.1 text-lg">Transactions List</h3>
+                                    <ul class="list-decimal pl-4 font-mono text-[11px] text-slate-300 mb-3 space-y-2 mt-2">
+                                        <li><strong>Buy Inv:</strong> Purchased P50,000 merchandise on account, terms 2/10, n/30.</li>
+                                        <li><strong>Freight In:</strong> Paid P2,000 cash for freight on the above purchase (FOB Shipping Point).</li>
+                                        <li><strong>Purchase Return:</strong> Returned P5,000 of defective goods. Issued a Debit Memo.</li>
+                                        <li><strong>Pay AP:</strong> Paid the remaining balance within the 10-day discount period.</li>
+                                        <li><strong>Sell Inv:</strong> Sold P80,000 merchandise on account, terms 1/15, n/45. (Cost was P40,000).</li>
+                                        <li><strong>Freight Out:</strong> Paid P1,500 cash for delivery to customer (FOB Destination).</li>
+                                        <li><strong>Sales Return:</strong> Customer returned P10,000 of goods. Issued a Credit Memo. (Cost was P5,000).</li>
+                                        <li><strong>Collect AR:</strong> Collected the remaining balance within the discount period.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/3 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c1-container" class="bg-blue-50 rounded p-4 shadow-inner border-2 border-blue-300 font-mono text-xs text-slate-800 lg:h-full lg:overflow-y-auto pb-6">
+                                    <h4 class="font-bold text-sm text-blue-900 text-center uppercase bg-blue-50 mb-2">General Journal (Periodic System)</h4>
+                                    
+                                    <div class="flex justify-between border-b-2 border-blue-800 text-blue-900 font-bold text-[11px] uppercase pb-1 mb-2 sticky top-0 bg-blue-50 z-10">
+                                        <span class="w-1/2">Transaction</span>
+                                        <span class="w-1/4 text-right">Debit</span>
+                                        <span class="w-1/4 text-right">Credit</span>
+                                    </div>
+                                    <div id="c1-dynamic-journal" class="w-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.3)]">
+                            <div class="w-full bg-blue-950 p-3 border-t-2 border-blue-500">
+                                <p id="expC1" class="text-sm text-blue-100 leading-snug text-center">Review initial data.</p>
+                            </div>
+                            <div class="w-full bg-slate-800 border-t border-slate-700 p-2 flex flex-col gap-2">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-2">
+                                    <label class="flex items-center gap-1.5 text-xs text-blue-300 cursor-pointer font-medium">
+                                        <input type="checkbox" id="voiceC1" class="w-4 h-4 accent-blue-500"> Auto-Voice
+                                    </label>
+                                    <div id="circlesC1" class="flex flex-wrap justify-end gap-1"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-1.5">
+                                    <button id="btnStartC1" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">Start</button>
+                                    <button id="btnPrevC1" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">&laquo; Prev</button>
+                                    <button id="btnNextC1" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded font-bold text-sm border border-blue-500 disabled:opacity-50">Next &raquo;</button>
+                                    <button id="btnEndC1" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-1b" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-1b">
+                        <div id="scroll-container-c1b" class="flex-1 flex flex-col lg:flex-row gap-3 px-6 pt-6 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden">
+                            <div class="w-full lg:w-1/3 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded p-3 border border-slate-700 shadow-sm text-sm">
+                                    <p class="text-slate-200 mb-2">Ex 1b: Interactive Sample Transactions using the <strong>Perpetual System</strong>.</p>
+                                    <h3 class="font-semibold text-slate-200 pb-0.1 text-lg">Transactions List</h3>
+                                    <ul class="list-decimal pl-4 font-mono text-[11px] text-slate-300 mb-3 space-y-2 mt-2">
+                                        <li><strong>Buy Inv:</strong> Purchased P50,000 merchandise on account, terms 2/10, n/30.</li>
+                                        <li><strong>Freight In:</strong> Paid P2,000 cash for freight on the above purchase (FOB Shipping Point).</li>
+                                        <li><strong>Purchase Return:</strong> Returned P5,000 of defective goods. Issued a Debit Memo.</li>
+                                        <li><strong>Pay AP:</strong> Paid the remaining balance within the 10-day discount period.</li>
+                                        <li><strong>Sell Inv:</strong> Sold P80,000 merchandise on account, terms 1/15, n/45. (Cost was P40,000).</li>
+                                        <li><strong>Freight Out:</strong> Paid P1,500 cash for delivery to customer (FOB Destination).</li>
+                                        <li><strong>Sales Return:</strong> Customer returned P10,000 of goods. Issued a Credit Memo. (Cost was P5,000).</li>
+                                        <li><strong>Collect AR:</strong> Collected the remaining balance within the discount period.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-2/3 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c1b-container" class="bg-indigo-50 rounded p-4 shadow-inner border-2 border-indigo-300 font-mono text-xs text-slate-800 lg:h-full lg:overflow-y-auto pb-6">
+                                    <h4 class="font-bold text-sm text-indigo-900 text-center uppercase bg-indigo-50 mb-2">General Journal (Perpetual System)</h4>
+                                    
+                                    <div class="flex justify-between border-b-2 border-indigo-800 text-indigo-900 font-bold text-[11px] uppercase pb-1 mb-2 sticky top-0 bg-indigo-50 z-10">
+                                        <span class="w-1/2">Transaction</span>
+                                        <span class="w-1/4 text-right">Debit</span>
+                                        <span class="w-1/4 text-right">Credit</span>
+                                    </div>
+                                    <div id="c1b-dynamic-journal" class="w-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.3)]">
+                            <div class="w-full bg-indigo-950 p-3 border-t-2 border-indigo-500">
+                                <p id="expC1b" class="text-sm text-indigo-100 leading-snug text-center">Review initial data.</p>
+                            </div>
+                            <div class="w-full bg-slate-800 border-t border-slate-700 p-2 flex flex-col gap-2">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-2">
+                                    <label class="flex items-center gap-1.5 text-xs text-indigo-300 cursor-pointer font-medium">
+                                        <input type="checkbox" id="voiceC1b" class="w-4 h-4 accent-indigo-500"> Auto-Voice
+                                    </label>
+                                    <div id="circlesC1b" class="flex flex-wrap justify-end gap-1"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-1.5">
+                                    <button id="btnStartC1b" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">Start</button>
+                                    <button id="btnPrevC1b" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600 disabled:opacity-50">&laquo; Prev</button>
+                                    <button id="btnNextC1b" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded font-bold text-sm border border-indigo-500 disabled:opacity-50">Next &raquo;</button>
+                                    <button id="btnEndC1b" class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-1.5 rounded font-bold text-sm border border-slate-600">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-topics-3" class="view-section">
+                    <div class="book-viewport mt-4" id="viewport-3">
+                        <div class="content-flow" id="content-3">
+                            
+                            <section id="topic5" class="topic-section section-marker mb-6 avoid-break">
+                                <div class="bg-amber-50 border-l-4 border-amber-600 p-5 rounded-r-lg shadow-sm">
+                                    <h2 class="text-2xl font-extrabold text-slate-800 mb-3 tracking-tight">Step 5: Adjusting Inventory (Two Methods)</h2>
+                                    <p class="text-base text-slate-700 mb-4 leading-relaxed">In a <strong>periodic inventory system</strong>, the Inventory account sitting in the unadjusted trial balance still reflects the <em>beginning</em> inventory from the start of the year. It must be updated to the <em>ending</em> physical count. There are two acceptable accounting methods to accomplish this update within the 10-step cycle.</p>
+                                    
+                                    <div class="mt-6 mb-2">
+                                        <h3 class="font-bold text-slate-800 border-b-2 border-slate-300 pb-1 mb-3 text-lg">Method 1: The Adjusting Entry Method</h3>
+                                        <p class="text-sm text-slate-700 mb-3">We update inventory directly in Step 5 (Adjusting Entries) using the Income Summary account.</p>
+                                        <ul class="list-disc pl-6 text-sm text-slate-700 space-y-2 mb-4 bg-white p-4 rounded border border-slate-200">
+                                            <li><strong>Entry 1 (Remove Beg. Inv):</strong> Debit Income Summary, Credit Inventory (Beg amount).</li>
+                                            <li><strong>Entry 2 (Record End. Inv):</strong> Debit Inventory (End amount), Credit Income Summary.</li>
+                                            <li><em>Worksheet Impact:</em> These adjustments go into the "Adjustments" column. Inventory flows to the Balance Sheet. The two Income Summary amounts flow straight to the Income Statement columns (do not net them on the worksheet).</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mt-6">
+                                        <h3 class="font-bold text-slate-800 border-b-2 border-slate-300 pb-1 mb-3 text-lg">Method 2: The Closing Entry Method</h3>
+                                        <p class="text-sm text-slate-700 mb-3">We DO NOT adjust inventory in Step 5. We handle it completely in Step 8 (Closing Entries) while closing out Purchases and COGS accounts.</p>
+                                        <ul class="list-disc pl-6 text-sm text-slate-700 space-y-2 bg-white p-4 rounded border border-slate-200">
+                                            <li><strong>During Closing (Step 8):</strong> We Debit Ending Inventory (setting it up), Credit Beginning Inventory (removing it), Credit all Purchase costs (Purchases, Freight In), Debit contra-purchases, and plug the exact difference to Income Summary.</li>
+                                            <li><em>Worksheet Impact:</em> Inventory has NO adjustments in Step 5. Beginning Inventory goes straight to the Income Statement Debit column. Ending Inventory is physically written at the bottom of the worksheet and placed in the IS Credit column AND BS Debit column simultaneously.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-2" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-2">
+                        
+                        <div class="w-full bg-indigo-900 border-b border-indigo-700 p-3 flex justify-between items-center shrink-0 shadow-md z-20 px-6">
+                            <div class="text-indigo-100 font-bold text-sm tracking-widest uppercase">Master Case: Omega Merchandising</div>
+                            <div class="text-indigo-300 text-xs font-mono">Part 1: Steps 1 to 4 (Periodic)</div>
+                        </div>
+
+                        <div id="scroll-container-c2" class="flex-1 flex flex-col lg:flex-row gap-4 px-4 lg:px-6 pt-4 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden bg-slate-900">
+                            
+                            <div class="w-full lg:w-1/4 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded-lg p-4 border border-slate-700 shadow-lg text-sm">
+                                    <p class="text-slate-300 mb-3 text-xs leading-relaxed font-semibold text-amber-200">This master case covers the full 10 steps. We begin with a new business on Dec 1, 2025.</p>
+                                    <h3 class="font-bold text-white pb-2 text-[13px] border-b border-slate-600 mb-3 uppercase tracking-wider">Dec 2025 Transactions</h3>
+                                    <ul class="list-none pl-0 font-sans text-[11px] text-slate-300 space-y-2.5">
+                                        <li><strong>1:</strong> Owner invested P200k cash.</li>
+                                        <li><strong>2:</strong> Paid P24k for 1-yr rent (Asset Method).</li>
+                                        <li><strong>3:</strong> Bought P100k Equipment on acct.</li>
+                                        <li><strong>5:</strong> Bought P180k merch on acct, 2/10, n/30, FOB SP.</li>
+                                        <li><strong>6:</strong> Paid P5k freight on Dec 5 purch.</li>
+                                        <li><strong>8:</strong> Returned P6k of merch from Dec 5.</li>
+                                        <li><strong>14:</strong> Paid Dec 5 invoice in full, taking discount.</li>
+                                        <li><strong>15:</strong> Sold P300k merch on acct, 1/10, n/30, FOB Dest.</li>
+                                        <li><strong>16:</strong> Paid P7k freight on Dec 15 sale.</li>
+                                        <li><strong>18:</strong> Customer returned P8k of merch.</li>
+                                        <li><strong>24:</strong> Collected Dec 15 sale in full, taking discount.</li>
+                                        <li><strong>26:</strong> Bought P6k supplies for cash (Asset Method).</li>
+                                        <li><strong>28:</strong> Paid P40k salaries.</li>
+                                        <li><strong>29:</strong> Bought P40k merch on account.</li>
+                                        <li><strong>30:</strong> Sold P100k merch on account.</li>
+                                        <li><strong>30:</strong> Paid P12k utilities.</li>
+                                        <li><strong>31:</strong> Paid P3k misc exp.</li>
+                                        <li><strong>31:</strong> Owner withdrew P15k.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full lg:w-3/4 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c2-container" class="bg-indigo-50 rounded-lg p-5 shadow-inner border-2 border-indigo-300 font-mono text-sm text-slate-800 lg:h-full lg:overflow-y-auto pb-8 transition-colors duration-500">
+                                    
+                                    <div id="c2-dynamic-content" class="w-full">
+                                        </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.3)]">
+                            <div class="w-full bg-indigo-950 p-3 border-t-2 border-indigo-500">
+                                <p id="expC2" class="text-sm text-indigo-100 leading-relaxed text-center font-medium px-4">Step 1: Journalize transactions.</p>
+                            </div>
+                            <div class="w-full bg-slate-900 border-t border-slate-800 p-3 flex flex-col gap-3">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-3">
+                                    <label class="flex items-center gap-2 text-xs text-indigo-300 cursor-pointer font-bold tracking-wide hover:text-white transition-colors">
+                                        <input type="checkbox" id="voiceC2" class="w-4 h-4 accent-indigo-500 rounded"> Auto-Voice
+                                    </label>
+                                    <div id="circlesC2" class="flex flex-wrap justify-end gap-1.5"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-2">
+                                    <button id="btnStartC2" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">Start</button>
+                                    <button id="btnPrevC2" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">&laquo; Prev</button>
+                                    <button id="btnNextC2" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">Next &raquo;</button>
+                                    <button id="btnEndC2" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors uppercase">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-3" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-3">
+                        
+                        <div class="w-full bg-amber-900 border-b border-amber-700 p-3 flex justify-between items-center shrink-0 shadow-md z-20 px-6">
+                            <div class="text-amber-100 font-bold text-sm tracking-widest uppercase">Master Case: Omega Merchandising</div>
+                            <div class="text-amber-300 text-xs font-mono font-bold">Part 2: Adjusting Method (Steps 5-10)</div>
+                        </div>
+
+                        <div id="scroll-container-c3" class="flex-1 flex flex-col lg:flex-row gap-4 px-4 lg:px-6 pt-4 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden bg-slate-900">
+                            
+                            <div class="w-full lg:w-1/4 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded-lg p-4 border border-slate-700 shadow-lg text-sm">
+                                    <p class="text-slate-300 mb-3 text-xs leading-relaxed font-semibold">Using the Unadjusted TB from Part 1, complete the cycle using the <span class="text-amber-400 font-bold">Adjusting Entry Method</span> for inventory.</p>
+                                    <h3 class="font-bold text-white pb-2 text-[13px] border-b border-slate-600 mb-3 uppercase tracking-wider">Dec 31 Adjustments</h3>
+                                    <ul class="list-none pl-0 font-sans text-[11px] text-slate-300 space-y-2.5">
+                                        <li><strong>(a)</strong> Rent expired: P2,000.</li>
+                                        <li><strong>(b)</strong> Supplies on hand: P1,500.</li>
+                                        <li><strong>(c)</strong> Depreciation: P5,000.</li>
+                                        <li><strong>(d)</strong> Accrued Salaries: P3,000.</li>
+                                        <li><strong>(e)</strong> Accrued Utilities: P500.</li>
+                                        <li><strong>(f)</strong> Unearned income earned: (None).</li>
+                                        <li><strong>(g)</strong> Ending Inventory count is P35,000. (Beg Inv was 0 since business started Dec 1).</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full lg:w-3/4 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c3-container" class="bg-amber-50 rounded-lg p-3 lg:p-5 shadow-inner border-2 border-amber-300 font-mono text-[8px] md:text-[10px] text-slate-800 lg:h-full lg:overflow-y-auto pb-8 transition-colors duration-500">
+                                    
+                                    <div id="c3-dynamic-content" class="w-full">
+                                        </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.3)]">
+                            <div class="w-full bg-amber-950 p-3 border-t-2 border-amber-500">
+                                <p id="expC3" class="text-sm text-amber-100 leading-relaxed text-center font-medium px-4">Step 5 & 6: Worksheet.</p>
+                            </div>
+                            <div class="w-full bg-slate-900 border-t border-slate-800 p-3 flex flex-col gap-3">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-3">
+                                    <label class="flex items-center gap-2 text-xs text-amber-300 cursor-pointer font-bold tracking-wide hover:text-white transition-colors">
+                                        <input type="checkbox" id="voiceC3" class="w-4 h-4 accent-amber-500 rounded"> Auto-Voice
+                                    </label>
+                                    <div id="circlesC3" class="flex flex-wrap justify-end gap-1.5"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-2">
+                                    <button id="btnStartC3" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">Start</button>
+                                    <button id="btnPrevC3" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">&laquo; Prev</button>
+                                    <button id="btnNextC3" class="bg-amber-600 hover:bg-amber-500 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">Next &raquo;</button>
+                                    <button id="btnEndC3" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors uppercase">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="view-case-4" class="view-section">
+                    <div class="flex flex-col flex-1 min-h-0 w-full bg-slate-900 section-marker" id="case-study-4">
+                        
+                        <div class="w-full bg-teal-900 border-b border-teal-700 p-3 flex justify-between items-center shrink-0 shadow-md z-20 px-6">
+                            <div class="text-teal-100 font-bold text-sm tracking-widest uppercase">Master Case: Omega Merchandising</div>
+                            <div class="text-teal-300 text-xs font-mono font-bold">Part 3: Closing Method (Steps 5-10)</div>
+                        </div>
+
+                        <div id="scroll-container-c4" class="flex-1 flex flex-col lg:flex-row gap-4 px-4 lg:px-6 pt-4 pb-4 min-h-0 w-full overflow-y-auto lg:overflow-hidden bg-slate-900">
+                            
+                            <div class="w-full lg:w-1/4 flex flex-col gap-3 lg:overflow-y-auto pr-1">
+                                <div class="bg-slate-800 rounded-lg p-4 border border-slate-700 shadow-lg text-sm">
+                                    <p class="text-slate-300 mb-3 text-xs leading-relaxed font-semibold">Using the EXACT SAME Unadjusted TB from Part 1, complete the cycle using the <span class="text-teal-400 font-bold">Closing Entry Method</span> for inventory.</p>
+                                    <h3 class="font-bold text-white pb-2 text-[13px] border-b border-slate-600 mb-3 uppercase tracking-wider">Dec 31 Adjustments</h3>
+                                    <ul class="list-none pl-0 font-sans text-[11px] text-slate-300 space-y-2.5">
+                                        <li><strong>(a)</strong> Rent expired: P2,000.</li>
+                                        <li><strong>(b)</strong> Supplies on hand: P1,500.</li>
+                                        <li><strong>(c)</strong> Depreciation: P5,000.</li>
+                                        <li><strong>(d)</strong> Accrued Salaries: P3,000.</li>
+                                        <li><strong>(e)</strong> Accrued Utilities: P500.</li>
+                                        <li class="text-teal-300 mt-4 border-t border-slate-600 pt-2"><strong>(Note)</strong> Ending Inventory (P35,000) is NOT adjusted here. It goes directly to the IS Cr and BS Dr columns.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="w-full lg:w-3/4 flex flex-col gap-3 relative lg:overflow-hidden">
+                                <div id="cf-c4-container" class="bg-teal-50 rounded-lg p-3 lg:p-5 shadow-inner border-2 border-teal-300 font-mono text-[8px] md:text-[10px] text-slate-800 lg:h-full lg:overflow-y-auto pb-8 transition-colors duration-500">
+                                    
+                                    <div id="c4-dynamic-content" class="w-full">
+                                        </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex-shrink-0 w-full flex flex-col z-20 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.3)]">
+                            <div class="w-full bg-teal-950 p-3 border-t-2 border-teal-500">
+                                <p id="expC4" class="text-sm text-teal-100 leading-relaxed text-center font-medium px-4">Step 5 & 6: Worksheet (Closing Method).</p>
+                            </div>
+                            <div class="w-full bg-slate-900 border-t border-slate-800 p-3 flex flex-col gap-3">
+                                <div class="flex flex-col sm:flex-row items-center justify-between px-2 gap-3">
+                                    <label class="flex items-center gap-2 text-xs text-teal-300 cursor-pointer font-bold tracking-wide hover:text-white transition-colors">
+                                        <input type="checkbox" id="voiceC4" class="w-4 h-4 accent-teal-500 rounded"> Auto-Voice
+                                    </label>
+                                    <div id="circlesC4" class="flex flex-wrap justify-end gap-1.5"></div>
+                                </div>
+                                <div class="flex flex-wrap justify-center gap-2">
+                                    <button id="btnStartC4" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">Start</button>
+                                    <button id="btnPrevC4" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">&laquo; Prev</button>
+                                    <button id="btnNextC4" class="bg-teal-600 hover:bg-teal-500 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors disabled:opacity-30 disabled:cursor-not-allowed uppercase">Next &raquo;</button>
+                                    <button id="btnEndC4" class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded shadow font-bold text-xs tracking-wider transition-colors uppercase">End</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <footer class="text-center text-slate-400 py-1.5 font-mono text-[10px] tracking-widest flex-shrink-0 bg-white border-t border-slate-200 z-10 relative">
+                <p>This courseware is a private property of Joselito Villarta, CPA, MBA</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // --- View & Pagination Engine ---
+        const views = [
+            'view-topics-1',
+            'view-topics-2',
+            'view-case-1',
+            'view-case-1b',
+            'view-topics-3',
+            'view-case-2',
+            'view-case-3',
+            'view-case-4'
+        ];
+        let currentViewIndex = 0;
+        let currentPage = 0;
+        let totalPages = 1;
+        let currentZoom = 100;
+
+        function updateZoomVar() {
+            const isMobile = window.innerWidth < 1024;
+            const mobileBase = 24;   
+            const desktopBase = 16;  
+            const activeBase = isMobile ? mobileBase : desktopBase;
+            document.documentElement.style.fontSize = (currentZoom / 100 * activeBase) + 'px';
+            const zoomInput = document.getElementById('zoom-input');
+            if (zoomInput) {
+                zoomInput.value = currentZoom + '%';
+            }
+            setTimeout(updatePagination, 50);
+        }
+
+        function changeZoom(delta) {
+            currentZoom += delta;
+            if(currentZoom < 50) currentZoom = 50;
+            if(currentZoom > 200) currentZoom = 200;
+            updateZoomVar();
+        }
+
+        function setZoom(val) {
+            let parsed = parseInt(val.replace('%', ''));
+            if(!isNaN(parsed)) {
+                currentZoom = parsed;
+                if(currentZoom < 50) currentZoom = 50;
+                if(currentZoom > 200) currentZoom = 200;
+            }
+            updateZoomVar();
+        }
+
+        function getActiveContentViewport() {
+            const activeView = document.getElementById(views[currentViewIndex]);
+            if (!activeView) return null;
+            return {
+                content: activeView.querySelector('.content-flow'),
+                viewport: activeView.querySelector('.book-viewport')
+            };
+        }
+
+        function updatePagination() {
+            const els = getActiveContentViewport();
+            if (!els || !els.content || !els.viewport) {
+                document.getElementById('page-indicator').innerText = 'Ex.';
+                updateSidebarHighlighting(null);
+                return;
+            }
+            
+            const isDesktop = window.innerWidth >= 1024;
+            const colsPerPage = isDesktop ? 2 : 1;
+            const viewportWidth = els.viewport.clientWidth;
+            if (viewportWidth === 0) return; 
+
+            const colWidth = viewportWidth / colsPerPage;
+            els.content.style.columnWidth = colWidth + 'px';
+
+            setTimeout(() => {
+                const totalCols = Math.ceil(els.content.scrollWidth / colWidth);
+                totalPages = Math.max(1, totalCols - colsPerPage + 1); 
+                
+                if (currentPage >= totalPages) currentPage = Math.max(0, totalPages - 1);
+                
+                els.content.style.transform = 'translateX(-' + (currentPage * colWidth) + 'px)';
+                
+                let displayPage = currentPage + 1;
+                let displayTotal = totalPages;
+                document.getElementById('page-indicator').innerText = displayPage + ' / ' + displayTotal;
+                
+                updateSidebarHighlighting(els.content, colWidth);
+            }, 10);
+        }
+
+        function updateSidebarHighlighting(contentEl, colWidth) {
+            const allLinks = document.querySelectorAll('.nav-link');
+            allLinks.forEach(link => link.classList.remove('active', 'text-blue-700', 'text-teal-700', 'text-amber-700', 'text-indigo-700', 'bg-blue-50', 'bg-teal-50', 'bg-amber-50', 'bg-indigo-50', 'border-blue-500', 'border-indigo-500', 'border-amber-500', 'border-teal-500', 'bg-slate-100'));
+            
+            let activeId = null;
+            
+            if (!contentEl) {
+                if (views[currentViewIndex] === 'view-case-1') activeId = 'case-study-1';
+                else if (views[currentViewIndex] === 'view-case-1b') activeId = 'case-study-1b';
+                else if (views[currentViewIndex] === 'view-case-2') activeId = 'case-study-2';
+                else if (views[currentViewIndex] === 'view-case-3') activeId = 'case-study-3';
+                else if (views[currentViewIndex] === 'view-case-4') activeId = 'case-study-4';
+            } else {
+                const contentRect = contentEl.getBoundingClientRect();
+                const markers = contentEl.querySelectorAll('.section-marker');
+                const currentScrollPos = currentPage * colWidth;
+
+                markers.forEach(marker => {
+                    const markerRect = marker.getBoundingClientRect();
+                    const offsetLeft = markerRect.left - contentRect.left;
+                    if (offsetLeft <= currentScrollPos + (colWidth / 2)) {
+                        activeId = marker.id;
+                    }
+                });
+            }
+
+            if (activeId) {
+                const activeLink = document.querySelector(`.nav-link[data-target="${activeId}"]`);
+                if(activeLink) {
+                    activeLink.classList.add('active');
+                    if (activeId === 'case-study-1') activeLink.classList.add('text-blue-700', 'bg-blue-50', 'border-blue-500');
+                    else if (activeId === 'case-study-1b') activeLink.classList.add('text-indigo-700', 'bg-indigo-50', 'border-indigo-500');
+                    else if (activeId === 'case-study-2') activeLink.classList.add('text-indigo-700', 'bg-indigo-50', 'border-indigo-500');
+                    else if (activeId === 'case-study-3') activeLink.classList.add('text-amber-700', 'bg-amber-50', 'border-amber-500');
+                    else if (activeId === 'case-study-4') activeLink.classList.add('text-teal-700', 'bg-teal-50', 'border-teal-500');
+                    else activeLink.classList.add('bg-slate-100');
+                }
+            }
+        }
+
+        function switchView(index) {
+            if(index < 0 || index >= views.length) return;
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(views[index]).classList.add('active');
+            currentViewIndex = index;
+            currentPage = 0; 
+            updatePagination();
+        }
+
+        function nextPage() {
+            const els = getActiveContentViewport();
+            if (els && els.content) {
+                if(currentPage < totalPages - 1) {
+                    currentPage++;
+                    updatePagination();
+                } else {
+                    switchView(currentViewIndex + 1); 
+                }
+            } else {
+                switchView(currentViewIndex + 1); 
+            }
+        }
+
+        function prevPage() {
+            const els = getActiveContentViewport();
+            if (els && els.content) {
+                if(currentPage > 0) {
+                    currentPage--;
+                    updatePagination();
+                } else {
+                    if(currentViewIndex > 0) {
+                        switchView(currentViewIndex - 1);
+                        setTimeout(() => {
+                            currentPage = totalPages - 1;
+                            updatePagination();
+                        }, 50);
+                    }
+                }
+            } else {
+                if(currentViewIndex > 0) {
+                    switchView(currentViewIndex - 1);
+                    setTimeout(() => {
+                        currentPage = totalPages - 1;
+                        updatePagination();
+                    }, 50);
+                }
+            }
+        }
+
+        function goToSection(viewId, targetId) {
+            const vIndex = views.indexOf(viewId);
+            if(vIndex !== -1) {
+                if (currentViewIndex !== vIndex) {
+                    document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+                    document.getElementById(views[vIndex]).classList.add('active');
+                    currentViewIndex = vIndex;
+                }
+            }
+
+            if (targetId) {
+                const els = getActiveContentViewport();
+                if(els && els.content) {
+                    const targetEl = document.getElementById(targetId);
+                    if(targetEl) {
+                        const colWidth = els.viewport.clientWidth / (window.innerWidth >= 1024 ? 2 : 1);
+                        els.content.style.transition = 'none';
+                        els.content.style.transform = 'translateX(0px)';
+                        void els.content.offsetWidth; 
+                        const offset = targetEl.getBoundingClientRect().left - els.content.getBoundingClientRect().left;
+                        currentPage = Math.floor(offset / colWidth);
+                        els.content.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+                    }
+                }
+            }
+            updatePagination();
+            if(window.innerWidth < 1024) toggleMenu();
+        }
+
+        // Swipe logic
+        let touchstartX = 0; let touchstartY = 0;
+        let touchendX = 0; let touchendY = 0;
+        document.body.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; touchstartY = e.changedTouches[0].screenY; }, {passive: true});
+        document.body.addEventListener('touchend', e => { touchendX = e.changedTouches[0].screenX; touchendY = e.changedTouches[0].screenY; handleSwipe(e); }, {passive: true});
+        function handleSwipe(e) {
+            if (Math.abs(touchstartY - touchendY) > Math.abs(touchstartX - touchendX)) return;
+            const scrollableNode = e.target.closest('.overflow-x-auto, .overflow-y-auto');
+            if (scrollableNode && scrollableNode.scrollWidth > scrollableNode.clientWidth) return; 
+            if (e.target.tagName.toLowerCase() === 'input') return;
+
+            const swipeDist = touchstartX - touchendX;
+            if (swipeDist > 60) nextPage();
+            else if (swipeDist < -60) prevPage();
+        }
+
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('menuOverlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        const synth = window.speechSynthesis;
+        function playVoice(text, toggleId) {
+            if(document.getElementById(toggleId) && document.getElementById(toggleId).checked) {
+                synth.cancel();
+                let utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 1.1;
+                synth.speak(utterance);
+            }
+        }
+        
+        function updateScroll(containerId, lastElId) {
+            setTimeout(() => {
+                const c = document.getElementById(containerId);
+                const el = document.getElementById(lastElId);
+                if (c && el) {
+                    const cRect = c.getBoundingClientRect();
+                    const elRect = el.getBoundingClientRect();
+                    if (elRect.bottom > cRect.bottom) {
+                        c.scrollBy({ top: elRect.bottom - cRect.bottom + 40, behavior: 'smooth' });
+                    } else if (elRect.top < cRect.top) {
+                        c.scrollBy({ top: elRect.top - cRect.top - 40, behavior: 'smooth' });
+                    }
+                } else if (c && !el) {
+                    c.scrollTo({top: c.scrollHeight, behavior: 'smooth'});
+                }
+            }, 50);
+        }
+
+
+        // ==========================================
+        // DATA FOR CASE 1: Interactive Journal Toggle
+        // ==========================================
+        const c1Steps = [
+            { 
+                title: "Buy Inv", 
+                nar: "Purchased fifty thousand merchandise on account.",
+                per: { exp: "Under periodic, we debit Purchases. Inventory is ignored.", rows: [["Purchases", "50,000", ""], ["   Accounts Payable", "", "50,000"]] },
+                perp: { exp: "Under perpetual, we debit Inventory directly.", rows: [["Inventory", "50,000", ""], ["   Accounts Payable", "", "50,000"]] }
+            },
+            { 
+                title: "Freight In", 
+                nar: "Paid two thousand cash for freight.",
+                per: { exp: "Freight on purchases is recorded in a separate Freight In account.", rows: [["Freight In", "2,000", ""], ["   Cash", "", "2,000"]] },
+                perp: { exp: "Freight directly increases the cost of Inventory.", rows: [["Inventory", "2,000", ""], ["   Cash", "", "2,000"]] }
+            },
+            { 
+                title: "Purchase Return", 
+                nar: "Returned five thousand defective goods.",
+                per: { exp: "Reduce AP. Create contra-account Purchase Returns.", rows: [["Accounts Payable", "5,000", ""], ["   Purchase Returns", "", "5,000"]] },
+                perp: { exp: "Reduce AP and reduce Inventory directly.", rows: [["Accounts Payable", "5,000", ""], ["   Inventory", "", "5,000"]] }
+            },
+            { 
+                title: "Pay AP w/ Disc", 
+                nar: "Paid remaining balance taking a two percent discount.",
+                per: { exp: "Net AP is forty five thousand. Discount is nine hundred. Use Purchase Discounts account.", rows: [["Accounts Payable", "45,000", ""], ["   Purchase Discounts", "", "900"], ["   Cash", "", "44,100"]] },
+                perp: { exp: "Discount directly reduces the cost of Inventory.", rows: [["Accounts Payable", "45,000", ""], ["   Inventory", "", "900"], ["   Cash", "", "44,100"]] }
+            },
+            { 
+                title: "Sell Inv", 
+                nar: "Sold eighty thousand merchandise on account. Cost was forty eight thousand.",
+                per: { exp: "Only record the sale at retail price. Cost is ignored.", rows: [["Accounts Receivable", "80,000", ""], ["   Sales", "", "80,000"]] },
+                perp: { exp: "Record sale AND the exact cost transferring out of Inventory.", rows: [["Accounts Receivable", "80,000", ""], ["   Sales", "", "80,000"], ["Cost of Goods Sold", "48,000", ""], ["   Inventory", "", "48,000"]] }
+            },
+            { 
+                title: "Freight Out", 
+                nar: "Paid delivery expense.",
+                per: { exp: "Freight Out is an operating expense. Same for both systems.", rows: [["Freight Out", "1,500", ""], ["   Cash", "", "1,500"]] },
+                perp: { exp: "Freight Out is an operating expense. Same for both systems.", rows: [["Freight Out", "1,500", ""], ["   Cash", "", "1,500"]] }
+            },
+            { 
+                title: "Sales Return", 
+                nar: "Customer returned ten thousand goods. Cost was six thousand.",
+                per: { exp: "Reduce AR and record Sales Return. Ignore inventory.", rows: [["Sales Returns", "10,000", ""], ["   Accounts Receivable", "", "10,000"]] },
+                perp: { exp: "Record return AND put goods back into Inventory.", rows: [["Sales Returns", "10,000", ""], ["   Accounts Receivable", "", "10,000"], ["Inventory", "6,000", ""], ["   Cost of Goods Sold", "", "6,000"]] }
+            },
+            { 
+                title: "Collect w/ Disc", 
+                nar: "Collected remaining balance taking a one percent discount.",
+                per: { exp: "Net AR is seventy thousand. Discount is seven hundred. Same for both systems.", rows: [["Cash", "69,300", ""], ["Sales Discounts", "700", ""], ["   Accounts Receivable", "", "70,000"]] },
+                perp: { exp: "Net AR is seventy thousand. Discount is seven hundred. Same for both systems.", rows: [["Cash", "69,300", ""], ["Sales Discounts", "700", ""], ["   Accounts Receivable", "", "70,000"]] }
+            }
+        ];
+
+        let currC1 = 0;
+        function updateC1(isEnd = false) {
+            const step = c1Steps[currC1];
+            const data = step.per;
+            
+            document.getElementById('expC1').innerHTML = `<span class="font-bold text-blue-200">Step ${currC1 + 1}: ${step.title}</span><br><span class="mt-1 block text-blue-100">${data.exp}</span>`;
+            
+            document.getElementById('btnStartC1').disabled = (currC1 === 0);
+            document.getElementById('btnPrevC1').disabled = (currC1 === 0);
+            document.getElementById('btnNextC1').disabled = (currC1 === c1Steps.length - 1);
+
+            let html = '';
+            for(let i=0; i<=currC1; i++) {
+                let st = c1Steps[i];
+                let dt = st.per;
+                let bgClass = (i === currC1 && !isEnd) ? 'bg-white border-blue-400 border-2 shadow-sm' : 'border-b border-blue-200';
+                
+                html += `<div id="c1-row-${i}" class="acctg-row pb-2 mb-2 ${bgClass} rounded p-1">`;
+                html += `<div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Trans ${i+1}</div>`;
+                dt.rows.forEach(r => {
+                    let isDr = r[1] !== "";
+                    html += `<div class="flex justify-between text-blue-900 ${isDr ? 'font-bold' : ''}">`;
+                    html += `<span class="w-1/2 ${isDr ? '' : 'pl-4'}">${r[0].replace(/ /g, '&nbsp;')}</span>`;
+                    html += `<span class="w-1/4 text-right">${r[1]}</span>`;
+                    html += `<span class="w-1/4 text-right">${r[2]}</span>`;
+                    html += `</div>`;
+                });
+                html += `</div>`;
+            }
+            
+            document.getElementById('c1-dynamic-journal').innerHTML = html;
+
+            const container = document.getElementById('circlesC1');
+            container.innerHTML = '';
+            c1Steps.forEach((_, i) => {
+                const circle = document.createElement('div');
+                circle.className = `w-6 h-6 rounded-full flex items-center justify-center font-bold cursor-pointer text-[10px] shadow-sm ${i === currC1 ? 'bg-blue-500 text-white' : 'bg-slate-700 text-slate-300 border border-slate-600'}`;
+                circle.innerText = i + 1;
+                circle.onclick = () => { currC1 = i; updateC1(); };
+                container.appendChild(circle);
+            });
+
+            updateScroll('cf-c1-container', `c1-row-${currC1}`);
+            playVoice(step.nar, 'voiceC1');
+        }
+        
+        let currC1b = 0;
+        function updateC1b(isEnd = false) {
+            const step = c1Steps[currC1b];
+            const data = step.perp;
+            
+            document.getElementById('expC1b').innerHTML = `<span class="font-bold text-indigo-200">Step ${currC1b + 1}: ${step.title}</span><br><span class="mt-1 block text-indigo-100">${data.exp}</span>`;
+            
+            document.getElementById('btnStartC1b').disabled = (currC1b === 0);
+            document.getElementById('btnPrevC1b').disabled = (currC1b === 0);
+            document.getElementById('btnNextC1b').disabled = (currC1b === c1Steps.length - 1);
+
+            let html = '';
+            for(let i=0; i<=currC1b; i++) {
+                let st = c1Steps[i];
+                let dt = st.perp;
+                let bgClass = (i === currC1b && !isEnd) ? 'bg-white border-indigo-400 border-2 shadow-sm' : 'border-b border-indigo-200';
+                
+                html += `<div id="c1b-row-${i}" class="acctg-row pb-2 mb-2 ${bgClass} rounded p-1">`;
+                html += `<div class="text-[11px] text-slate-500 font-sans font-bold uppercase mb-1">Trans ${i+1}</div>`;
+                dt.rows.forEach(r => {
+                    let isDr = r[1] !== "";
+                    html += `<div class="flex justify-between text-indigo-900 ${isDr ? 'font-bold' : ''}">`;
+                    html += `<span class="w-1/2 ${isDr ? '' : 'pl-4'}">${r[0].replace(/ /g, '&nbsp;')}</span>`;
+                    html += `<span class="w-1/4 text-right">${r[1]}</span>`;
+                    html += `<span class="w-1/4 text-right">${r[2]}</span>`;
+                    html += `</div>`;
+                });
+                html += `</div>`;
+            }
+            
+            document.getElementById('c1b-dynamic-journal').innerHTML = html;
+
+            const container = document.getElementById('circlesC1b');
+            container.innerHTML = '';
+            c1Steps.forEach((_, i) => {
+                const circle = document.createElement('div');
+                circle.className = `w-6 h-6 rounded-full flex items-center justify-center font-bold cursor-pointer text-[10px] shadow-sm ${i === currC1b ? 'bg-indigo-500 text-white' : 'bg-slate-700 text-slate-300 border border-slate-600'}`;
+                circle.innerText = i + 1;
+                circle.onclick = () => { currC1b = i; updateC1b(); };
+                container.appendChild(circle);
+            });
+
+            updateScroll('cf-c1b-container', `c1b-row-${currC1b}`);
+            playVoice(step.nar, 'voiceC1b');
+        }
+
+
+        // ==========================================
+        // DATA FOR MASTER COMPREHENSIVE (Steps 1-10)
+        // ==========================================
+        
+        // 1. Journal Data
+        const jData = [
+            {d: "Dec 1", t: "Owner invested P200k.", n: "Debit cash, credit capital.", r: [["Cash", 200000, 0], ["Owner's Capital", 0, 200000]]},
+            {d: "Dec 2", t: "Paid rent 24k.", n: "Debit prepaid rent, credit cash.", r: [["Prepaid Rent", 24000, 0], ["Cash", 0, 24000]]},
+            {d: "Dec 3", t: "Bought equip 100k on acct.", n: "Debit equipment, credit accounts payable.", r: [["Office Equipment", 100000, 0], ["Accounts Payable", 0, 100000]]},
+            {d: "Dec 5", t: "Bought merch 180k on acct.", n: "Debit purchases, credit accounts payable.", r: [["Purchases", 180000, 0], ["Accounts Payable", 0, 180000]]},
+            {d: "Dec 6", t: "Paid freight in 5k.", n: "Debit freight in, credit cash.", r: [["Freight In", 5000, 0], ["Cash", 0, 5000]]},
+            {d: "Dec 8", t: "Returned 6k merch.", n: "Debit accounts payable, credit purchase returns.", r: [["Accounts Payable", 6000, 0], ["Purchase Returns", 0, 6000]]},
+            {d: "Dec 14", t: "Paid Dec 5 invoice in full.", n: "Debit AP 174k, credit discount and cash.", r: [["Accounts Payable", 174000, 0], ["Purchases Discounts", 0, 3480], ["Cash", 0, 170520]]},
+            {d: "Dec 15", t: "Sold merch 300k on acct.", n: "Debit accounts receivable, credit sales.", r: [["Accounts Receivable", 300000, 0], ["Sales", 0, 300000]]},
+            {d: "Dec 16", t: "Paid freight out 7k.", n: "Debit freight out, credit cash.", r: [["Freight Out", 7000, 0], ["Cash", 0, 7000]]},
+            {d: "Dec 18", t: "Customer returned 8k merch.", n: "Debit sales returns, credit accounts receivable.", r: [["Sales Returns", 8000, 0], ["Accounts Receivable", 0, 8000]]},
+            {d: "Dec 24", t: "Collected Dec 15 sale in full.", n: "Debit cash and discount, credit AR.", r: [["Cash", 289080, 0], ["Sales Discounts", 2920, 0], ["Accounts Receivable", 0, 292000]]},
+            {d: "Dec 26", t: "Bought supplies 6k.", n: "Debit supplies, credit cash.", r: [["Supplies", 6000, 0], ["Cash", 0, 6000]]},
+            {d: "Dec 28", t: "Paid salaries 40k.", n: "Debit salaries expense, credit cash.", r: [["Salaries Expense", 40000, 0], ["Cash", 0, 40000]]},
+            {d: "Dec 29", t: "Bought merch 40k on acct.", n: "Debit purchases, credit accounts payable.", r: [["Purchases", 40000, 0], ["Accounts Payable", 0, 40000]]},
+            {d: "Dec 30", t: "Sold merch 100k on acct.", n: "Debit accounts receivable, credit sales.", r: [["Accounts Receivable", 100000, 0], ["Sales", 0, 100000]]},
+            {d: "Dec 30", t: "Paid utilities 12k.", n: "Debit utilities expense, credit cash.", r: [["Utilities Expense", 12000, 0], ["Cash", 0, 12000]]},
+            {d: "Dec 31", t: "Paid misc 3k.", n: "Debit misc expense, credit cash.", r: [["Miscellaneous Exp.", 3000, 0], ["Cash", 0, 3000]]},
+            {d: "Dec 31", t: "Owner withdrew 15k.", n: "Debit drawings, credit cash.", r: [["Owner's Withdrawal", 15000, 0], ["Cash", 0, 15000]]}
+        ];
+
+        // 2. Ledger Data (Base UTB balances)
+        const lData = [
+            {n: "Cash", r: [[200000, ""], ["", 24000], ["", 5000], ["", 170520], ["", 7000], [289080, ""], ["", 6000], ["", 40000], ["", 12000], ["", 3000], ["", 15000]], bal: {dr: 206560, cr: 0}},
+            {n: "Accounts Receivable", r: [[300000, ""], ["", 8000], ["", 292000], [100000, ""]], bal: {dr: 100000, cr: 0}},
+            {n: "Inventory", r: [], bal: {dr: 0, cr: 0}},
+            {n: "Supplies", r: [[6000, ""]], bal: {dr: 6000, cr: 0}},
+            {n: "Prepaid Rent", r: [[24000, ""]], bal: {dr: 24000, cr: 0}},
+            {n: "Office Equipment", r: [[100000, ""]], bal: {dr: 100000, cr: 0}},
+            {n: "Accounts Payable", r: [["", 100000], ["", 180000], [6000, ""], [174000, ""], ["", 40000]], bal: {dr: 0, cr: 140000}},
+            {n: "Owner's Capital", r: [["", 200000]], bal: {dr: 0, cr: 200000}},
+            {n: "Owner's Withdrawal", r: [[15000, ""]], bal: {dr: 15000, cr: 0}},
+            {n: "Sales", r: [["", 300000], ["", 100000]], bal: {dr: 0, cr: 400000}},
+            {n: "Sales Discounts", r: [[2920, ""]], bal: {dr: 2920, cr: 0}},
+            {n: "Sales Returns", r: [[8000, ""]], bal: {dr: 8000, cr: 0}},
+            {n: "Purchases", r: [[180000, ""], [40000, ""]], bal: {dr: 220000, cr: 0}},
+            {n: "Purchases Discounts", r: [["", 3480]], bal: {dr: 0, cr: 3480}},
+            {n: "Purchase Returns", r: [["", 6000]], bal: {dr: 0, cr: 6000}},
+            {n: "Freight In", r: [[5000, ""]], bal: {dr: 5000, cr: 0}},
+            {n: "Freight Out", r: [[7000, ""]], bal: {dr: 7000, cr: 0}},
+            {n: "Salaries Expense", r: [[40000, ""]], bal: {dr: 40000, cr: 0}},
+            {n: "Utilities Expense", r: [[12000, ""]], bal: {dr: 12000, cr: 0}},
+            {n: "Miscellaneous Exp.", r: [[3000, ""]], bal: {dr: 3000, cr: 0}}
+        ];
+
+        // 3. UTB Generator
+        function genUTB() {
+            let html = `<table class="w-full text-left border-collapse text-xs text-indigo-900 bg-white border border-indigo-300">
+                <thead class="bg-indigo-100"><tr><th class="border border-indigo-300 px-2 py-1">Account Titles</th><th class="border border-indigo-300 px-2 py-1 text-right">Debit</th><th class="border border-indigo-300 px-2 py-1 text-right">Credit</th></tr></thead><tbody>`;
+            let tDr = 0, tCr = 0;
+            lData.forEach(a => {
+                if (a.bal.dr > 0 || a.bal.cr > 0 || a.n === "Inventory") {
+                    html += `<tr><td class="border border-indigo-300 px-2 py-1">${a.n}</td>`;
+                    html += `<td class="border border-indigo-300 px-2 py-1 text-right">${a.bal.dr ? a.bal.dr.toLocaleString() : (a.n==="Inventory"?"-":"")}</td>`;
+                    html += `<td class="border border-indigo-300 px-2 py-1 text-right">${a.bal.cr ? a.bal.cr.toLocaleString() : ""}</td></tr>`;
+                    tDr += a.bal.dr; tCr += a.bal.cr;
+                }
+            });
+            html += `<tr class="font-bold bg-indigo-200"><td class="border border-indigo-300 px-2 py-1">Totals</td><td class="border border-indigo-300 px-2 py-1 text-right">${tDr.toLocaleString()}</td><td class="border border-indigo-300 px-2 py-1 text-right">${tCr.toLocaleString()}</td></tr></tbody></table>`;
+            return html;
+        }
+
+        // C2 Controller (Steps 1-4)
+        const c2StepsList = [
+            { title: "Start", exp: "We begin step 1: Journalizing.", nar: "Let's begin step one.", type: "J", idx: 0 },
+            { title: "Dec 1-8", exp: "Journalize first batch of transactions.", nar: "Journalize transactions.", type: "J", idx: 5 },
+            { title: "Dec 14-24", exp: "Journalize collections and payments with discounts.", nar: "Journalize discounts.", type: "J", idx: 10 },
+            { title: "Dec 26-31", exp: "Journalize expenses and drawings.", nar: "Journalize expenses.", type: "J", idx: 17 },
+            { title: "Step 3: Ledgers", exp: "Post all entries to the General Ledger T-Accounts.", nar: "Post to the ledger.", type: "L", idx: 0 },
+            { title: "Step 4: Unadjusted TB", exp: "Extract balances to prove debits equal credits.", nar: "Extract unadjusted trial balance.", type: "T", idx: 0 }
+        ];
+
+        let currC2 = 0;
+        function updateC2(isEnd = false) {
+            const step = c2StepsList[currC2];
+            document.getElementById('expC2').innerHTML = `<span class="font-bold text-indigo-200">Step ${currC2 + 1}: ${step.title}</span><br><span class="mt-1 block text-indigo-100">${step.exp}</span>`;
+            
+            document.getElementById('btnStartC2').disabled = (currC2 === 0);
+            document.getElementById('btnPrevC2').disabled = (currC2 === 0);
+            document.getElementById('btnNextC2').disabled = (currC2 === c2StepsList.length - 1);
+
+            let html = '';
+            
+            if (step.type === "J") {
+                html += `<h4 class="font-extrabold text-sm text-indigo-900 text-center uppercase tracking-wider mb-2">Step 1 & 2: General Journal</h4>`;
+                html += `<div class="flex justify-between text-slate-500 font-sans font-bold text-[10px] uppercase pb-1 mb-2 sticky top-0 bg-indigo-50 z-10"><span class="w-1/2">Transaction</span><span class="w-1/4 text-right">Debit</span><span class="w-1/4 text-right">Credit</span></div>`;
+                for(let i=0; i<=step.idx; i++) {
+                    let st = jData[i];
+                    html += `<div class="acctg-row border-b border-indigo-200 pb-2 mb-2 bg-white p-2 rounded">`;
+                    html += `<div class="text-[10px] text-slate-500 font-sans font-bold uppercase mb-1">${st.d}: ${st.t}</div>`;
+                    st.r.forEach(r => {
+                        let isDr = r[1] > 0;
+                        html += `<div class="flex justify-between text-indigo-900 ${isDr ? 'font-bold' : ''}"><span class="w-1/2 ${isDr ? '' : 'pl-4'}">${r[0]}</span><span class="w-1/4 text-right">${r[1]?r[1].toLocaleString():''}</span><span class="w-1/4 text-right">${r[2]?r[2].toLocaleString():''}</span></div>`;
+                    });
+                    html += `</div>`;
+                }
+            } else if (step.type === "L") {
+                html += `<h4 class="font-extrabold text-sm text-indigo-900 text-center uppercase tracking-wider mb-4">Step 3: General Ledger</h4>`;
+                html += `<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 text-[9px] font-mono">`;
+                lData.forEach(a => {
+                    html += `<div class="t-account"><div class="t-header text-indigo-900 truncate">${a.n}</div><div class="t-body"><div class="t-col t-dr">`;
+                    a.r.forEach(r => { if(r[0]) html += `<div class="t-row"><span></span><span>${r[0].toLocaleString()}</span></div>`; });
+                    html += `</div><div class="t-col">`;
+                    a.r.forEach(r => { if(r[1]) html += `<div class="t-row"><span></span><span>${r[1].toLocaleString()}</span></div>`; });
+                    html += `</div></div>`;
+                    html += `<div class="t-body t-bal text-indigo-800"><div class="t-col t-dr"><div class="t-row"><span></span><span>${a.bal.dr?a.bal.dr.toLocaleString():''}</span></div></div><div class="t-col"><div class="t-row"><span></span><span>${a.bal.cr?a.bal.cr.toLocaleString():''}</span></div></div></div></div>`;
+                });
+                html += `</div>`;
+            } else if (step.type === "T") {
+                html += `<h4 class="font-extrabold text-sm text-indigo-900 text-center uppercase tracking-wider mb-4">Step 4: Unadjusted Trial Balance</h4>`;
+                html += `<div class="flex justify-center w-full"><div class="w-full max-w-lg">` + genUTB() + `</div></div>`;
+            }
+
+            document.getElementById('c2-dynamic-content').innerHTML = html;
+
+            const container = document.getElementById('circlesC2');
+            container.innerHTML = '';
+            c2StepsList.forEach((_, i) => {
+                const circle = document.createElement('div');
+                circle.className = `w-6 h-6 rounded-full flex items-center justify-center font-bold cursor-pointer text-[10px] shadow-sm ${i === currC2 ? 'bg-indigo-500 text-white' : 'bg-slate-700 text-slate-300 border border-slate-600'}`;
+                circle.innerText = i + 1;
+                circle.onclick = () => { currC2 = i; updateC2(); };
+                container.appendChild(circle);
+            });
+
+            updateScroll('cf-c2-container', null);
+            playVoice(step.nar, 'voiceC2');
+        }
+
+        // --- WORKSHEET & STATEMENTS ENGINE ---
+        
+        function getBaseAccounts() {
+            return [
+                {n: "Cash", dr: 206560, cr: 0},
+                {n: "Accounts Receivable", dr: 100000, cr: 0},
+                {n: "Inventory", dr: 0, cr: 0}, 
+                {n: "Supplies", dr: 6000, cr: 0},
+                {n: "Prepaid Rent", dr: 24000, cr: 0},
+                {n: "Office Equipment", dr: 100000, cr: 0},
+                {n: "Accumulated Depreciation", dr: 0, cr: 0},
+                {n: "Accounts Payable", dr: 0, cr: 140000},
+                {n: "Accrued Expenses Payable", dr: 0, cr: 0},
+                {n: "Owner's Capital", dr: 0, cr: 200000},
+                {n: "Owner's Withdrawal", dr: 15000, cr: 0},
+                {n: "Sales", dr: 0, cr: 400000},
+                {n: "Sales Discounts", dr: 2920, cr: 0},
+                {n: "Sales Returns", dr: 8000, cr: 0},
+                {n: "Purchases", dr: 220000, cr: 0},
+                {n: "Purchases Discounts", dr: 0, cr: 3480},
+                {n: "Purchase Returns", dr: 0, cr: 6000},
+                {n: "Freight In", dr: 5000, cr: 0},
+                {n: "Freight Out", dr: 7000, cr: 0},
+                {n: "Salaries Expense", dr: 40000, cr: 0},
+                {n: "Utilities Expense", dr: 12000, cr: 0},
+                {n: "Miscellaneous Exp.", dr: 3000, cr: 0},
+                {n: "Rent Expense", dr: 0, cr: 0},
+                {n: "Supplies Expense", dr: 0, cr: 0},
+                {n: "Depreciation Expense", dr: 0, cr: 0},
+                {n: "Income Summary", dr: 0, cr: 0}
+            ];
+        }
+
+        function genWorksheet(isAdjMethod, stepIdx, themeColor) {
+            let accs = getBaseAccounts();
+            let html = `<h4 class="font-extrabold text-sm text-${themeColor}-900 text-center uppercase tracking-wider mb-2">Step 5 & 6: Worksheet</h4>`;
+            html += `<div class="overflow-x-auto w-full avoid-break"><table class="w-full min-w-[800px] text-left border-collapse text-slate-800 ws-table text-[9px] md:text-[10px]">
+                <thead><tr><th class="px-1 py-1 w-[120px]" rowspan="2">Account Titles</th><th colspan="2" class="px-1 py-1 bg-slate-200">Unadjusted TB</th><th colspan="2" class="px-1 py-1 bg-${themeColor}-100">Adjustments</th><th colspan="2" class="px-1 py-1 bg-slate-200">Adjusted TB</th><th colspan="2" class="px-1 py-1 bg-blue-100">Income Statement</th><th colspan="2" class="px-1 py-1 bg-teal-100">Balance Sheet</th></tr>
+                <tr><th class="bg-slate-100">Dr</th><th class="bg-slate-100">Cr</th><th class="bg-${themeColor}-50">Dr</th><th class="bg-${themeColor}-50">Cr</th><th class="bg-slate-100">Dr</th><th class="bg-slate-100">Cr</th><th class="bg-blue-50">Dr</th><th class="bg-blue-50">Cr</th><th class="bg-teal-50">Dr</th><th class="bg-teal-50">Cr</th></tr></thead><tbody class="font-mono text-right">`;
+
+            let sAdjDr=0, sAdjCr=0, sAtbDr=0, sAtbCr=0, sIsDr=0, sIsCr=0, sBsDr=0, sBsCr=0;
+
+            accs.forEach(a => {
+                let adjDr = 0, adjCr = 0, lDr = '', lCr = '';
+                
+                if(stepIdx >= 1) { if(a.n==="Rent Expense"){adjDr=2000;lDr="(a) 2k";} if(a.n==="Prepaid Rent"){adjCr=2000;lCr="(a) 2k";} }
+                if(stepIdx >= 2) { if(a.n==="Supplies Expense"){adjDr=4500;lDr="(b) 4.5k";} if(a.n==="Supplies"){adjCr=4500;lCr="(b) 4.5k";} }
+                if(stepIdx >= 3) { if(a.n==="Depreciation Expense"){adjDr=5000;lDr="(c) 5k";} if(a.n==="Accumulated Depreciation"){adjCr=5000;lCr="(c) 5k";} }
+                if(stepIdx >= 4) { if(a.n==="Salaries Expense"){adjDr=3000;lDr="(d) 3k";} }
+                if(stepIdx >= 5) { if(a.n==="Utilities Expense"){adjDr=500;lDr=(lDr?lDr+" ":"")+"(e) 0.5k";} if(a.n==="Accrued Expenses Payable"){adjCr=3500;lCr="(de) 3.5k";} }
+                
+                if(isAdjMethod && stepIdx >= 6) {
+                    if(a.n==="Inventory"){adjDr=35000;lDr="(g) 35k";}
+                    if(a.n==="Income Summary"){adjCr=35000;lCr="(g) 35k";}
+                }
+
+                sAdjDr += adjDr; sAdjCr += adjCr;
+
+                let atbDr = 0, atbCr = 0;
+                if (stepIdx >= 7) {
+                    if (a.n==="Income Summary" && isAdjMethod) {
+                        atbDr=adjDr; atbCr=adjCr;
+                    } else if (a.n==="Inventory" && !isAdjMethod) {
+                        
+                    } else {
+                        let net = (a.dr + adjDr) - (a.cr + adjCr);
+                        if(net > 0) atbDr = net; else if (net < 0) atbCr = -net;
+                    }
+                    sAtbDr += atbDr; sAtbCr += atbCr;
+                }
+
+                let isDr=0, isCr=0, bsDr=0, bsCr=0;
+                if (stepIdx >= 8) {
+                    let isIS = ["Sales", "Sales Discounts", "Sales Returns", "Purchases", "Purchases Discounts", "Purchase Returns", "Freight In", "Freight Out", "Salaries Expense", "Supplies Expense", "Rent Expense", "Utilities Expense", "Miscellaneous Exp.", "Depreciation Expense"].includes(a.n);
+                    
+                    if (a.n==="Income Summary" && isAdjMethod) {
+                        isDr=atbDr; isCr=atbCr;
+                    } else if (a.n==="Inventory" && !isAdjMethod) {
+                        isDr=0; isCr=35000; bsDr=35000;
+                    } else if (isIS) {
+                        isDr=atbDr; isCr=atbCr;
+                    } else {
+                        bsDr=atbDr; bsCr=atbCr;
+                    }
+                    sIsDr += isDr; sIsCr += isCr; sBsDr += bsDr; sBsCr += bsCr;
+                }
+
+                if (a.dr>0 || a.cr>0 || adjDr>0 || adjCr>0 || a.n==="Inventory") {
+                    html += `<tr><td class="text-left font-sans truncate">${a.n}</td>`;
+                    html += `<td class="bg-slate-50">${a.dr?a.dr.toLocaleString():''}</td><td class="bg-slate-50">${a.cr?a.cr.toLocaleString():''}</td>`;
+                    html += `<td class="bg-${themeColor}-50 text-red-600 font-bold">${lDr}</td><td class="bg-${themeColor}-50 text-green-600 font-bold">${lCr}</td>`;
+                    html += `<td class="bg-slate-50">${stepIdx>=7 && atbDr?atbDr.toLocaleString():''}</td><td class="bg-slate-50">${stepIdx>=7 && atbCr?atbCr.toLocaleString():''}</td>`;
+                    html += `<td class="bg-blue-50 text-blue-800 font-bold">${stepIdx>=8 && isDr?isDr.toLocaleString():''}</td><td class="bg-blue-50 text-blue-800 font-bold">${stepIdx>=8 && isCr?isCr.toLocaleString():''}</td>`;
+                    html += `<td class="bg-teal-50 text-teal-800 font-bold">${stepIdx>=8 && bsDr?bsDr.toLocaleString():''}</td><td class="bg-teal-50 text-teal-800 font-bold">${stepIdx>=8 && bsCr?bsCr.toLocaleString():''}</td></tr>`;
+                }
+            });
+
+            html += `<tr class="font-bold bg-slate-200"><td class="text-left font-sans">Subtotals</td><td>749,480</td><td>749,480</td><td class="bg-${themeColor}-100">${stepIdx>=6?sAdjDr.toLocaleString():''}</td><td class="bg-${themeColor}-100">${stepIdx>=6?sAdjCr.toLocaleString():''}</td><td class="bg-slate-200">${stepIdx>=7?sAtbDr.toLocaleString():''}</td><td class="bg-slate-200">${stepIdx>=7?sAtbCr.toLocaleString():''}</td><td class="bg-blue-100">${stepIdx>=8?sIsDr.toLocaleString():''}</td><td class="bg-blue-100">${stepIdx>=8?sIsCr.toLocaleString():''}</td><td class="bg-teal-100">${stepIdx>=8?sBsDr.toLocaleString():''}</td><td class="bg-teal-100">${stepIdx>=8?sBsCr.toLocaleString():''}</td></tr>`;
+
+            if (stepIdx >= 9) {
+                let ni = sIsCr - sIsDr;
+                html += `<tr class="bg-indigo-100 font-bold"><td class="text-left font-sans text-indigo-700">Net Income</td><td colspan="6"></td><td class="text-indigo-700">${ni.toLocaleString()}</td><td></td><td></td><td class="text-indigo-700">${ni.toLocaleString()}</td></tr>`;
+                html += `<tr class="border-y-4 border-double border-slate-600 font-bold bg-slate-300"><td class="text-left font-sans">Final Totals</td><td colspan="6"></td><td>${(sIsDr+ni).toLocaleString()}</td><td>${sIsCr.toLocaleString()}</td><td>${sBsDr.toLocaleString()}</td><td>${(sBsCr+ni).toLocaleString()}</td></tr>`;
+            }
+            html += `</tbody></table></div>`;
+            return html;
+        }
+
+        function genFinancialStatements() {
+            return `
+            <div class="mt-6 bg-white p-4 rounded shadow border border-slate-200">
+                <h4 class="font-extrabold text-sm text-indigo-900 text-center uppercase tracking-wider mb-4">Step 7: Financial Statements</h4>
+                <div class="border border-slate-300 rounded mb-4">
+                    <h5 class="font-bold text-center border-b border-slate-300 bg-slate-100 py-1">Income Statement</h5>
+                    <div class="p-2 text-xs font-mono">
+                        <div class="flex justify-between font-bold mt-1"><span>Gross Sales</span><span>400,000</span></div>
+                        <div class="flex justify-between pl-4 text-red-700"><span>Less: Sales Discounts</span><span>(2,920)</span></div>
+                        <div class="flex justify-between pl-4 text-red-700 border-b border-slate-300"><span>Less: Sales Returns</span><span>(8,000)</span></div>
+                        <div class="flex justify-between font-bold"><span>Net Sales</span><span>389,080</span></div>
+                        <div class="flex justify-between font-bold mt-2"><span>Cost of Goods Sold:</span><span></span></div>
+                        <div class="flex justify-between pl-4"><span>Beginning Inventory</span><span>0</span></div>
+                        <div class="flex justify-between pl-4"><span>Purchases</span><span>220,000</span></div>
+                        <div class="flex justify-between pl-4 text-red-700"><span>Less: Purchase Disc</span><span>(3,480)</span></div>
+                        <div class="flex justify-between pl-4 text-red-700"><span>Less: Purchase Ret</span><span>(6,000)</span></div>
+                        <div class="flex justify-between pl-4"><span>Add: Freight In</span><span>5,000</span></div>
+                        <div class="flex justify-between pl-4 font-semibold border-t border-slate-200"><span>Cost of Goods Avail.</span><span>215,520</span></div>
+                        <div class="flex justify-between pl-4 text-red-700 border-b border-slate-300"><span>Less: Ending Inventory</span><span>(35,000)</span></div>
+                        <div class="flex justify-between font-bold text-rose-800"><span>Cost of Goods Sold</span><span>(180,520)</span></div>
+                        <div class="flex justify-between font-bold text-indigo-700 mt-2 border-b-2 border-indigo-200"><span>Gross Profit</span><span>208,560</span></div>
+                        <div class="flex justify-between font-bold mt-2"><span>Operating Expenses:</span><span></span></div>
+                        <div class="flex justify-between pl-4"><span>Salaries Expense</span><span>(43,000)</span></div>
+                        <div class="flex justify-between pl-4"><span>Rent Expense</span><span>(2,000)</span></div>
+                        <div class="flex justify-between pl-4"><span>Supplies Expense</span><span>(4,500)</span></div>
+                        <div class="flex justify-between pl-4"><span>Utilities Expense</span><span>(12,500)</span></div>
+                        <div class="flex justify-between pl-4"><span>Depreciation Expense</span><span>(5,000)</span></div>
+                        <div class="flex justify-between pl-4"><span>Freight Out</span><span>(7,000)</span></div>
+                        <div class="flex justify-between pl-4 border-b border-slate-300"><span>Miscellaneous Exp</span><span>(3,000)</span></div>
+                        <div class="flex justify-between font-bold text-indigo-700 border-t-2 border-double border-indigo-800 mt-2 pt-1 text-sm"><span>Net Income</span><span>131,560</span></div>
+                    </div>
+                </div>
+                <div class="border border-slate-300 rounded mb-4">
+                    <h5 class="font-bold text-center border-b border-slate-300 bg-slate-100 py-1">Statement of Changes in Equity</h5>
+                    <div class="p-2 text-xs font-mono">
+                        <div class="flex justify-between mt-1"><span>Capital, Dec 1</span><span>200,000</span></div>
+                        <div class="flex justify-between text-green-700"><span>Add: Net Income</span><span>131,560</span></div>
+                        <div class="flex justify-between text-red-700 border-b border-slate-300 pb-1"><span>Less: Drawings</span><span>(15,000)</span></div>
+                        <div class="flex justify-between font-bold text-indigo-700 border-t-2 border-double border-indigo-800 mt-1 pt-1 text-sm"><span>Capital, Dec 31</span><span>316,560</span></div>
+                    </div>
+                </div>
+                <div class="border border-slate-300 rounded">
+                    <h5 class="font-bold text-center border-b border-slate-300 bg-slate-100 py-1">Balance Sheet</h5>
+                    <div class="grid grid-cols-2 gap-4 p-2 text-xs font-mono">
+                        <div>
+                            <div class="font-bold border-b border-slate-400 mb-1 text-center">ASSETS</div>
+                            <div class="flex justify-between"><span>Cash</span><span>206,560</span></div>
+                            <div class="flex justify-between"><span>AR</span><span>100,000</span></div>
+                            <div class="flex justify-between text-green-700 font-bold"><span>Inventory</span><span>35,000</span></div>
+                            <div class="flex justify-between"><span>Supplies</span><span>1,500</span></div>
+                            <div class="flex justify-between"><span>Prepaid Rent</span><span>22,000</span></div>
+                            <div class="flex justify-between"><span>Equipment</span><span>100,000</span></div>
+                            <div class="flex justify-between text-red-700 border-b border-slate-300"><span>Accum. Depr.</span><span>(5,000)</span></div>
+                            <div class="flex justify-between font-bold text-indigo-700 border-t-2 border-double border-indigo-800 mt-1 pt-1"><span>Total</span><span>460,060</span></div>
+                        </div>
+                        <div>
+                            <div class="font-bold border-b border-slate-400 mb-1 text-center">LIABILITIES & EQUITY</div>
+                            <div class="flex justify-between"><span>Accounts Payable</span><span>140,000</span></div>
+                            <div class="flex justify-between border-b border-slate-300"><span>Accrued Exp Pay</span><span>3,500</span></div>
+                            <div class="flex justify-between font-bold text-indigo-700 mt-1"><span>Total Liab</span><span>143,500</span></div>
+                            <div class="flex justify-between mt-4 border-b border-slate-300"><span>Capital, Dec 31</span><span>316,560</span></div>
+                            <div class="flex justify-between font-bold text-indigo-700 border-t-2 border-double border-indigo-800 mt-1 pt-1"><span>Total</span><span>460,060</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `;
+        }
+
+        function genClosing(isAdjMethod) {
+            let html = `<div class="mt-6 bg-white p-4 rounded shadow border border-slate-200">
+                <h4 class="font-extrabold text-sm text-indigo-900 text-center uppercase tracking-wider mb-3">Step 8: Closing Entries</h4>`;
+            
+            if (isAdjMethod) {
+                html += `<div class="acctg-row border-b border-slate-200 pb-2 mb-2 bg-amber-50 p-2 rounded">
+                    <div class="text-[10px] text-slate-500 font-sans font-bold uppercase mb-1">Close Revenue (R)</div>
+                    <div class="flex justify-between font-bold text-indigo-900"><span>Sales</span><span>400,000</span><span></span></div>
+                    <div class="flex justify-between font-bold text-indigo-900"><span>Purchases Discounts</span><span>3,480</span><span></span></div>
+                    <div class="flex justify-between font-bold text-indigo-900"><span>Purchase Returns</span><span>6,000</span><span></span></div>
+                    <div class="flex justify-between text-indigo-900"><span class="pl-4">Income Summary</span><span></span><span>409,480</span></div>
+                    <div class="text-[9px] text-slate-500 font-sans italic mt-1">(Inventory was already adjusted in Step 5, so it is omitted here).</div>
+                </div>`;
+                html += `<div class="acctg-row border-b border-slate-200 pb-2 mb-2 bg-amber-50 p-2 rounded">
+                    <div class="text-[10px] text-slate-500 font-sans font-bold uppercase mb-1">Close Expenses (E)</div>
+                    <div class="flex justify-between font-bold text-indigo-900"><span>Income Summary</span><span>277,920</span><span></span></div>
+                    <div class="flex justify-between text-indigo-900"><span class="pl-4">Sales Discounts</span><span></span><span>2,920</span></div>
+                    <div class="flex justify-between text-indigo-900"><span class="pl-4">Sales Returns</span><span></span><span>8,000</span></div>
+                    <div class="flex justify-between text-indigo-900"><span class="pl-4">Purchases</span><span></span><span>220,000</span></div>
+                    <div class="flex justify-between text-indigo-900"><span class="pl-4">Freight In</span><span></span><span>5,000</span></div>
+                    <div class="flex justify-between text-indigo-900"><span class="pl-4">All other Op. Expenses...</span><span></span><span>42,000</span></div>
+                </div>`;
+                html += `<div class="acctg-row border-b border-slate-200 pb-2 mb-2">
+                    <div class="text-[10px] text-slate-500 font-sans font-bold uppercase mb-1">Close Income Summary (I)</div>
+                    <div class="flex justify-between font-bold text-indigo-900"><span>Income Summary</span><span>131,560</span><span></span></div>
+                    <div class="flex justify-between text-indigo-900"><span class="pl-4">Owner's Capital</span><span></span><span>131,560</span></div>
+                    <div class="text-[9px] text-slate-500 font-sans italic mt-1">(409,480 - 277,920 = 131,560)</div>
+                </div>`;
+            } else {
+                html += `<div class="acctg-row border-b border-slate-200 pb-2 mb-2 bg-teal-50 p-2 rounded">
+                    <div class="text-[10px] text-slate-500 font-sans font-bold uppercase mb-1">Close Revenue AND Update End Inv</div>
+                    <div class="flex justify-between font-bold text-teal-900"><span>Inventory (End)</span><span>35,000</span><span></span></div>
+                    <div class="flex justify-between font-bold text-teal-900"><span>Sales</span><span>400,000</span><span></span></div>
+                    <div class="flex justify-between font-bold text-teal-900"><span>Purchases Discounts</span><span>3,480</span><span></span></div>
+                    <div class="flex justify-between font-bold text-teal-900"><span>Purchase Returns</span><span>6,000</span><span></span></div>
+                    <div class="flex justify-between text-teal-900"><span class="pl-4">Income Summary</span><span></span><span>444,480</span></div>
+                </div>`;
+                html += `<div class="acctg-row border-b border-slate-200 pb-2 mb-2 bg-teal-50 p-2 rounded">
+                    <div class="text-[10px] text-slate-500 font-sans font-bold uppercase mb-1">Close Expenses AND Remove Beg Inv</div>
+                    <div class="flex justify-between font-bold text-teal-900"><span>Income Summary</span><span>312,920</span><span></span></div>
+                    <div class="flex justify-between text-teal-900"><span class="pl-4">Inventory (Beg)</span><span></span><span>0</span></div>
+                    <div class="flex justify-between text-teal-900"><span class="pl-4">Sales Discounts</span><span></span><span>2,920</span></div>
+                    <div class="flex justify-between text-teal-900"><span class="pl-4">Sales Returns</span><span></span><span>8,000</span></div>
+                    <div class="flex justify-between text-teal-900"><span class="pl-4">Purchases</span><span></span><span>220,000</span></div>
+                    <div class="flex justify-between text-teal-900"><span class="pl-4">Freight In</span><span></span><span>5,000</span></div>
+                    <div class="flex justify-between text-teal-900"><span class="pl-4">All other Op. Expenses...</span><span></span><span>77,000</span></div>
+                </div>`;
+                html += `<div class="acctg-row border-b border-slate-200 pb-2 mb-2">
+                    <div class="text-[10px] text-slate-500 font-sans font-bold uppercase mb-1">Close Income Summary (I)</div>
+                    <div class="flex justify-between font-bold text-teal-900"><span>Income Summary</span><span>131,560</span><span></span></div>
+                    <div class="flex justify-between text-teal-900"><span class="pl-4">Owner's Capital</span><span></span><span>131,560</span></div>
+                    <div class="text-[9px] text-slate-500 font-sans italic mt-1">(444,480 - 312,920 = 131,560 Net Income)</div>
+                </div>`;
+            }
+
+            html += `<div class="acctg-row pb-2 mb-2">
+                <div class="text-[10px] text-slate-500 font-sans font-bold uppercase mb-1">Close Drawings (D)</div>
+                <div class="flex justify-between font-bold text-indigo-900"><span>Owner's Capital</span><span>15,000</span><span></span></div>
+                <div class="flex justify-between text-indigo-900"><span class="pl-4">Owner's Withdrawal</span><span></span><span>15,000</span></div>
+            </div></div>`;
+
+            html += `
+            <div class="mt-4 bg-white p-4 rounded shadow border border-slate-200">
+                <h4 class="font-extrabold text-sm text-indigo-900 text-center uppercase tracking-wider mb-4">Step 9 & 10: PCTB and Reversing</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+                    <div class="border border-slate-300 p-2 rounded">
+                        <h5 class="font-bold text-center border-b border-slate-300 pb-1 mb-1 bg-slate-100">Post-Closing Trial Balance</h5>
+                        <div class="flex justify-between"><span>Cash</span><span>206,560</span></div>
+                        <div class="flex justify-between"><span>AR</span><span>100,000</span></div>
+                        <div class="flex justify-between"><span>Inventory</span><span>35,000</span></div>
+                        <div class="flex justify-between"><span>Supplies</span><span>1,500</span></div>
+                        <div class="flex justify-between"><span>Prepaid Rent</span><span>22,000</span></div>
+                        <div class="flex justify-between"><span>Equipment</span><span>100,000</span></div>
+                        <div class="flex justify-between text-red-700"><span>Accum. Depr.</span><span>(5,000)</span></div>
+                        <div class="flex justify-between text-red-700"><span>AP</span><span>(140,000)</span></div>
+                        <div class="flex justify-between text-red-700"><span>Accrued Exp Pay</span><span>(3,500)</span></div>
+                        <div class="flex justify-between text-red-700 border-b border-slate-300 pb-1"><span>Capital</span><span>(316,560)</span></div>
+                        <div class="flex justify-between font-bold mt-1 text-slate-800"><span>Total Dr</span><span>465,060</span></div>
+                        <div class="flex justify-between font-bold text-slate-800"><span>Total Cr</span><span>465,060</span></div>
+                    </div>
+                    <div class="border border-slate-300 p-2 rounded h-fit">
+                        <h5 class="font-bold text-center border-b border-slate-300 pb-1 mb-1 text-rose-800 bg-rose-50">Reversing Entries (Jan 1)</h5>
+                        <div class="flex justify-between font-bold text-rose-900 mt-2"><span>Accrued Expenses Payable</span><span>3,500</span></div>
+                        <div class="flex justify-between text-rose-900"><span class="pl-4">Salaries Expense</span><span>3,000</span></div>
+                        <div class="flex justify-between text-rose-900"><span class="pl-4">Utilities Expense</span><span>500</span></div>
+                        <p class="text-[9px] font-sans text-slate-500 italic mt-2">We reverse the accrued expenses setup on Dec 31 to simplify payroll and utility payments in the new year.</p>
+                    </div>
+                </div>
+            </div>
+            `;
+            return html;
+        }
+
+        const c3StepsList = [
+            { title: "Start", exp: "We begin step 5: Adjusting Entries.", nar: "Let's begin step five.", idx: 0 },
+            { title: "Adj a: Rent", exp: "Record expired rent.", nar: "Record rent adjustment.", idx: 1 },
+            { title: "Adj b: Supplies", exp: "Record used supplies.", nar: "Record supplies adjustment.", idx: 2 },
+            { title: "Adj c: Depr", exp: "Record depreciation.", nar: "Record depreciation.", idx: 3 },
+            { title: "Adj d-e: Accruals", exp: "Record accrued expenses.", nar: "Record accrued expenses.", idx: 4 },
+            { title: "Adj f: Inventory", exp: "ADJUSTING METHOD: Record ending inventory directly into the adjustments column.", nar: "Record ending inventory adjustment.", idx: 6 },
+            { title: "Step 5: Adjusted TB", exp: "Combine columns to form Adjusted TB.", nar: "Calculate adjusted trial balance.", idx: 7 },
+            { title: "Step 6: Worksheet", exp: "Extend nominal to IS, real to BS.", nar: "Extend columns.", idx: 8 },
+            { title: "Net Income", exp: "Calculate Net Income to balance.", nar: "Calculate net income.", idx: 9 },
+            { title: "Step 7: Fin Statements", exp: "Generate formal statements.", nar: "Generate statements.", idx: 10 },
+            { title: "Step 8-10: Closing/Rev", exp: "Execute REID closing and reversing.", nar: "Execute closing entries.", idx: 11 }
+        ];
+
+        let currC3 = 0;
+        function updateC3(isEnd = false) {
+            const step = c3StepsList[currC3];
+            document.getElementById('expC3').innerHTML = `<span class="font-bold text-amber-200">Step ${currC3 + 1}: ${step.title}</span><br><span class="mt-1 block text-amber-100">${step.exp}</span>`;
+            
+            document.getElementById('btnStartC3').disabled = (currC3 === 0);
+            document.getElementById('btnPrevC3').disabled = (currC3 === 0);
+            document.getElementById('btnNextC3').disabled = (currC3 === c3StepsList.length - 1);
+
+            let html = genWorksheet(true, step.idx, 'amber');
+            if (step.idx >= 10) html += genFinancialStatements();
+            if (step.idx >= 11) html += genClosing(true);
+
+            document.getElementById('c3-dynamic-content').innerHTML = html;
+
+            const container = document.getElementById('circlesC3');
+            container.innerHTML = '';
+            c3StepsList.forEach((_, i) => {
+                const circle = document.createElement('div');
+                circle.className = `w-6 h-6 rounded-full flex items-center justify-center font-bold cursor-pointer text-[10px] shadow-sm ${i === currC3 ? 'bg-amber-500 text-white' : 'bg-slate-700 text-slate-300 border border-slate-600'}`;
+                circle.innerText = i + 1;
+                circle.onclick = () => { currC3 = i; updateC3(); };
+                container.appendChild(circle);
+            });
+
+            updateScroll('cf-c3-container', null);
+            playVoice(step.nar, 'voiceC3');
+        }
+
+        const c4StepsList = [
+            { title: "Start", exp: "We begin step 5: Adjusting Entries.", nar: "Let's begin step five.", idx: 0 },
+            { title: "Adj a: Rent", exp: "Record expired rent.", nar: "Record rent adjustment.", idx: 1 },
+            { title: "Adj b: Supplies", exp: "Record used supplies.", nar: "Record supplies adjustment.", idx: 2 },
+            { title: "Adj c: Depr", exp: "Record depreciation.", nar: "Record depreciation.", idx: 3 },
+            { title: "Adj d-e: Accruals", exp: "Record accrued expenses.", nar: "Record accrued expenses.", idx: 4 },
+            { title: "NO INV ADJ", exp: "CLOSING METHOD: Notice there is NO adjustment for inventory here. It is ignored until closing.", nar: "Skip inventory adjustment.", idx: 6 },
+            { title: "Step 5: Adjusted TB", exp: "Combine columns to form Adjusted TB.", nar: "Calculate adjusted trial balance.", idx: 7 },
+            { title: "Step 6: Worksheet", exp: "Extend nominal to IS, real to BS. End Inv is directly placed into IS Cr and BS Dr.", nar: "Extend columns and ending inventory.", idx: 8 },
+            { title: "Net Income", exp: "Calculate Net Income to balance.", nar: "Calculate net income.", idx: 9 },
+            { title: "Step 7: Fin Statements", exp: "Generate formal statements.", nar: "Generate statements.", idx: 10 },
+            { title: "Step 8-10: Closing/Rev", exp: "Execute closing entries (adjusting inventory here) and reversing.", nar: "Execute closing entries.", idx: 11 }
+        ];
+
+        let currC4 = 0;
+        function updateC4(isEnd = false) {
+            const step = c4StepsList[currC4];
+            document.getElementById('expC4').innerHTML = `<span class="font-bold text-teal-200">Step ${currC4 + 1}: ${step.title}</span><br><span class="mt-1 block text-teal-100">${step.exp}</span>`;
+            
+            document.getElementById('btnStartC4').disabled = (currC4 === 0);
+            document.getElementById('btnPrevC4').disabled = (currC4 === 0);
+            document.getElementById('btnNextC4').disabled = (currC4 === c4StepsList.length - 1);
+
+            let html = genWorksheet(false, step.idx, 'teal');
+            if (step.idx >= 10) html += genFinancialStatements();
+            if (step.idx >= 11) html += genClosing(false);
+
+            document.getElementById('c4-dynamic-content').innerHTML = html;
+
+            const container = document.getElementById('circlesC4');
+            container.innerHTML = '';
+            c4StepsList.forEach((_, i) => {
+                const circle = document.createElement('div');
+                circle.className = `w-6 h-6 rounded-full flex items-center justify-center font-bold cursor-pointer text-[10px] shadow-sm ${i === currC4 ? 'bg-teal-500 text-white' : 'bg-slate-700 text-slate-300 border border-slate-600'}`;
+                circle.innerText = i + 1;
+                circle.onclick = () => { currC4 = i; updateC4(); };
+                container.appendChild(circle);
+            });
+
+            updateScroll('cf-c4-container', null);
+            playVoice(step.nar, 'voiceC4');
+        }
+
+        window.onload = () => { 
+            
+            // Cleanly attach all button events for the various cases
+            
+            // C1 Initialization
+            const btnStartC1 = document.getElementById('btnStartC1');
+            if (btnStartC1) {
+                btnStartC1.onclick = () => { currC1 = 0; updateC1(); };
+                document.getElementById('btnPrevC1').onclick = () => { if(currC1 > 0) { currC1--; updateC1(); } };
+                document.getElementById('btnNextC1').onclick = () => { if(currC1 < c1Steps.length - 1) { currC1++; updateC1(); } };
+                document.getElementById('btnEndC1').onclick = () => { currC1 = c1Steps.length - 1; updateC1(true); };
+            }
+            
+            // C1b Initialization
+            const btnStartC1b = document.getElementById('btnStartC1b');
+            if (btnStartC1b) {
+                btnStartC1b.onclick = () => { currC1b = 0; updateC1b(); };
+                document.getElementById('btnPrevC1b').onclick = () => { if(currC1b > 0) { currC1b--; updateC1b(); } };
+                document.getElementById('btnNextC1b').onclick = () => { if(currC1b < c1Steps.length - 1) { currC1b++; updateC1b(); } };
+                document.getElementById('btnEndC1b').onclick = () => { currC1b = c1Steps.length - 1; updateC1b(true); };
+            }
+
+            // C2 Initialization
+            const btnStartC2 = document.getElementById('btnStartC2');
+            if (btnStartC2) {
+                btnStartC2.onclick = () => { currC2 = 0; updateC2(); };
+                document.getElementById('btnPrevC2').onclick = () => { if(currC2 > 0) { currC2--; updateC2(); } };
+                document.getElementById('btnNextC2').onclick = () => { if(currC2 < c2StepsList.length - 1) { currC2++; updateC2(); } };
+                document.getElementById('btnEndC2').onclick = () => { currC2 = c2StepsList.length - 1; updateC2(true); };
+            }
+
+            // C3 Initialization
+            const btnStartC3 = document.getElementById('btnStartC3');
+            if (btnStartC3) {
+                btnStartC3.onclick = () => { currC3 = 0; updateC3(); };
+                document.getElementById('btnPrevC3').onclick = () => { if(currC3 > 0) { currC3--; updateC3(); } };
+                document.getElementById('btnNextC3').onclick = () => { if(currC3 < c3StepsList.length - 1) { currC3++; updateC3(); } };
+                document.getElementById('btnEndC3').onclick = () => { currC3 = c3StepsList.length - 1; updateC3(true); };
+            }
+            
+            // C4 Initialization
+            const btnStartC4 = document.getElementById('btnStartC4');
+            if (btnStartC4) {
+                btnStartC4.onclick = () => { currC4 = 0; updateC4(); };
+                document.getElementById('btnPrevC4').onclick = () => { if(currC4 > 0) { currC4--; updateC4(); } };
+                document.getElementById('btnNextC4').onclick = () => { if(currC4 < c4StepsList.length - 1) { currC4++; updateC4(); } };
+                document.getElementById('btnEndC4').onclick = () => { currC4 = c4StepsList.length - 1; updateC4(true); };
+            }
+            
+            updateC1();
+            updateC1b();
+            updateC2();
+            updateC3();
+            updateC4();
+            
+            updateZoomVar();
+            window.addEventListener('resize', updateZoomVar);
+        };
+    </script>
+</body>
+</html>
